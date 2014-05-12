@@ -9,21 +9,21 @@
 Inspired by [MEAN](http://meanjs.org/)
 
 ## TODOS
-- [] add MEAN Application generator
-- [] add CRUD Module sub-generator
-- [] add Module sub-generator
-- [] add Route sub-generator
-- [] add Controller sub-generator
-- [] add View sub-generator
-- [] add Service sub-generator
-- [] add Directive sub-generator
-- [] add Filter sub-generator
-- [] add Config sub-generator
-- [] add Test sub-generator
-- [] add Express Model sub-generator
-- [] add Express Controller sub-generator
-- [] add Express Routes sub-generator
-- [] add Express Test sub-generator
+- [ ] add MEAN Application generator
+- [ ] add CRUD Module sub-generator
+- [ ] add Module sub-generator
+- [ ] add Route sub-generator
+- [ ] add Controller sub-generator
+- [ ] add View sub-generator
+- [ ] add Service sub-generator
+- [ ] add Directive sub-generator
+- [ ] add Filter sub-generator
+- [ ] add Config sub-generator
+- [ ] add Test sub-generator
+- [ ] add Express Model sub-generator
+- [ ] add Express Controller sub-generator
+- [ ] add Express Routes sub-generator
+- [ ] add Express Test sub-generator
 
 ## Getting Started
 

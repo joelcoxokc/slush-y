@@ -1,0 +1,41 @@
+{
+    "name": "slush-meanjs",
+    "description": "A slush generator to scaffold MEAN Apps",
+    "version": "0.1.0",
+    "homepage": "https://github.com/arvindr21/slush-meanjs",
+    "author": {
+        "name": "Arvind Ravulavaru",
+        "email": "arvind.ravulavaru@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/arvindr21/slush-meanjs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/arvindr21/slush-meanjs/issues"
+    },
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://github.com/arvindr21/slush-meanjs/blob/master/LICENSE"
+    }],
+    "main": "slushfile.js",
+    "engines": {
+        "node": ">= 0.10.26",
+        "npm": ">=1.4.3"
+    },
+    "scripts": {
+        "test": "echo \"No tests\""
+    },
+    "dependencies": {
+        "gulp": "^3.6.2",
+        "gulp-template": "^0.1.1",
+        "gulp-install": "^0.1.4",
+        "gulp-conflict": "^0.1.1",
+        "gulp-rename": "^1.2.0",
+        "underscore.string": "^2.3.3",
+        "inquirer": "^0.4.1"
+    },
+    "keywords": [
+        "slushgenerator"
+    ]
+}

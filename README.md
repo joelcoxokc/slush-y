@@ -1,5 +1,7 @@
 # slush-meanjs [![Build Status](https://secure.travis-ci.org/arvindr21/slush-meanjs.png?branch=master)](https://travis-ci.org/arvindr21/slush-meanjs) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-meanjs.png)](http://badges.enytc.com/for/npm/slush-meanjs) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arvindr21/slush-meanjs/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+[![NPM](https://nodei.co/npm/slush-meanjs.png?downloads=true&stars=true)](https://nodei.co/npm/slush-meanjs/)
+
 > A slush generator to scaffold MEAN Apps
 
 ### Developement in progress

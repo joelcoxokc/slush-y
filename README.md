@@ -9,7 +9,7 @@
 Inspired by [MEAN](http://meanjs.org/)
 
 ## TODOS
-- [ ] add MEAN Application generator
+- [x] add MEAN Application generator
 - [ ] add CRUD Module sub-generator
 - [ ] add Module sub-generator
 - [ ] add Route sub-generator
@@ -53,6 +53,32 @@ Run the generator from within the new folder:
 
 ```bash
 $ cd my-slush-meanjs && slush meanjs
+```
+## Run the app 
+
+To run the app , first make sure mongoDB is running (```$ mongod```) then
+
+```bash
+$ gulp 
+```
+then navigate to ```http://localhost:3000```
+
+To build & generate minified js & css files inside the public/dist folder, run
+
+```bash
+$ gulp build
+```
+
+To lint files
+
+```bash
+$ gulp lint
+```
+
+To run tests
+
+```bash
+$ gulp test
 ```
 
 ## Getting To Know Slush

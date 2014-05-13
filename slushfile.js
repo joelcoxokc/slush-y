@@ -18,33 +18,79 @@ var gulp = require('gulp'),
 
 gulp.task('default', function (done) {
     var prompts = [{
-        type: 'input',
-        name: 'appName',
-        message: 'What is the name of your generator?',
-        default: gulp.args.join(' ')
-    }, {
-        type: 'input',
-        name: 'appDescription',
-        message: 'What is the description for your generator?'
-    }, {
-        type: 'confirm',
-        name: 'moveon',
-        message: 'Continue?'
-    }];
+            name: 'appName',
+            message: 'What would you like to call your application?',
+            default: 'MEAN'
+        }, {
+            name: 'appDescription',
+            message: 'How would you describe your application?',
+            default: 'Full-Stack JavaScript with MongoDB, Express, AngularJS, and Node.js'
+        }, {
+            name: 'appKeywords',
+            message: 'How would you describe your application in comma seperated key words?',
+            default: 'MongoDB, Express, AngularJS, Node.js'
+        }, {
+            name: 'appAuthor',
+            message: 'What is your company/author name?'
+        }, {
+            type: 'confirm',
+            name: 'addArticleExample',
+            message: 'Would you like to generate the article example CRUD module?',
+            default: true
+        },{
+            type: 'checkbox',
+            name: 'modules',
+            message: 'Which AngularJS modules would you like to include?',
+            choices: [{
+                value: 'angularCookies',
+                name: 'ngCookies',
+                checked: true
+            }, {
+                value: 'angularAnimate',
+                name: 'ngAnimate',
+                checked: true
+            }, {
+                value: 'angularTouch',
+                name: 'ngTouch',
+                checked: true
+            }, {
+                value: 'angularSanitize',
+                name: 'ngSanitize',
+                checked: true
+            }]
+        }];
     //Ask
     inquirer.prompt(prompts,
         function (answers) {
-            if (!answers.moveon) {
+            if (!answers.modules) {
                 return done();
             }
-            answers.appNameSlug = _.slugify(answers.appName);
-            gulp.src(__dirname + '/templates/**')
+            answers.slugifiedAppName = _.slugify(answers.appName);
+            answers.humanizedAppName = _.humanize(answers.appName);
+            answers.capitalizedAppAuthor = _.capitalize(answers.appAuthor);
+            answers.angularCookies = _.contains(answers.modules, 'angularCookies');
+            answers.angularAnimate = _.contains(answers.modules, 'angularAnimate');
+            answers.angularTouch = _.contains(answers.modules, 'angularTouch');
+            answers.angularSanitize = _.contains(answers.modules, 'angularSanitize');
+
+            gulp.src(__dirname + '/templates/app/static/**')
+                .pipe(rename(function(file) {
+                        if (file.basename.indexOf('__') == 0) {
+                            file.basename = '.' + file.basename.slice(2);
+                        }
+                 }))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'));
+            
+            if(answers.addArticleExample)
+            {
+                gulp.src(__dirname + '/templates/app/article/**')
+                    .pipe(conflict('./'))
+                    .pipe(gulp.dest('./'));
+            }
+
+            gulp.src(__dirname + '/templates/app/dynamic/**')
                 .pipe(template(answers))
-                .pipe(rename(function (file) {
-                    if (file.basename[0] === '_') {
-                        file.basename = '.' + file.basename.slice(1);
-                    }
-                }))
                 .pipe(conflict('./'))
                 .pipe(gulp.dest('./'))
                 .pipe(install())

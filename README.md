@@ -61,7 +61,7 @@ To run the app , first make sure mongoDB is running (```$ mongod```) then
 ```bash
 $ gulp 
 ```
-then navigate to ```http://localhost:3000```
+and navigate to ```http://localhost:3000```
 
 To build & generate minified js & css files inside the public/dist folder, run
 

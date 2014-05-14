@@ -1,7 +1,7 @@
 {
   "name": "slush-meanjs",
   "description": "A slush generator to scaffold MEAN Apps. Inspired by http://meanjs.org",
-  "version": "0.1.17",
+  "version": "0.1.18",
   "homepage": "https://github.com/arvindr21/slush-meanjs",
   "author": {
     "name": "Arvind Ravulavaru",

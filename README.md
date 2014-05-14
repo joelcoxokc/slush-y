@@ -13,7 +13,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add CRUD Module sub-generator
 - [x] add Module sub-generator
 - [x] add Route sub-generator
-- [ ] add Controller sub-generator
+- [x] add Controller sub-generator
 - [ ] add View sub-generator
 - [ ] add Service sub-generator
 - [ ] add Directive sub-generator

@@ -25,3 +25,4 @@ gulp = require('./generators/angularRoute')(gulp, install, conflict, template, r
 gulp = require('./generators/angularController')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
 gulp = require('./generators/angularView')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
 gulp = require('./generators/angularService')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
+gulp = require('./generators/angularDirective')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);

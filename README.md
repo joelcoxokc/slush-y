@@ -16,7 +16,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add Controller sub-generator
 - [x] add View sub-generator
 - [x] add Service sub-generator
-- [ ] add Directive sub-generator
+- [x] add Directive sub-generator
 - [ ] add Filter sub-generator
 - [ ] add Config sub-generator
 - [ ] add Test sub-generator

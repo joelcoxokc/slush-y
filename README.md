@@ -12,7 +12,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add MEAN Application generator
 - [x] add CRUD Module sub-generator
 - [x] add Module sub-generator
-- [ ] add Route sub-generator
+- [x] add Route sub-generator
 - [ ] add Controller sub-generator
 - [ ] add View sub-generator
 - [ ] add Service sub-generator

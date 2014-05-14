@@ -21,3 +21,4 @@ var gulp = require('gulp'),
 gulp = require('./generators/app')(gulp, install, conflict, template, rename, _, inquirer);
 gulp = require('./generators/crudModule')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
 gulp = require('./generators/angularModule')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);
+gulp = require('./generators/angularRoute')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp);

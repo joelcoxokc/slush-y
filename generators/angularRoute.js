@@ -54,15 +54,15 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 				var prompts = [{
 					name: 'routePath',
 					message: 'What do you want your route path to be?',
-					default: this.slugifiedName
+					default: answers.slugifiedName
 				}, {
 					name: 'viewName',
 					message: 'What do you want to call your view?',
-					default: this.slugifiedName
+					default: answers.slugifiedName
 				}, {
 					name: 'controllerName',
 					message: 'What do you want to call your controller?',
-					default: this.classifiedName
+					default: answers.classifiedName
 				}];
 
 				inquirer.prompt(prompts,function (ans) {

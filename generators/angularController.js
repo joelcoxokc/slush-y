@@ -4,7 +4,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 
 		if (!this.args[0]) {
 			console.log('******    Incorrect usage of the sub-generator!!                ******');
-			console.log('******    Try slush meanjs:angular-controller <route-name>      ******');
+			console.log('******    Try slush meanjs:angular-controller <controller-name>      ******');
 			console.log('******    Ex: slush meanjs:angular-controller books             ******');
 			return done();
 		}

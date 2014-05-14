@@ -13,7 +13,7 @@ Inspired by [MEAN](http://meanjs.org/)
 <td>Command</td>
 </tr>
 <tr>
-<td>[MEAN Application generator](#application-generator)</td>
+<td><a href="#application-generator">MEAN Application generator</a></td>
 <td>slush meanjs</td>
 </tr>
 <tr>

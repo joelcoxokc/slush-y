@@ -3,9 +3,9 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 	gulp.task('angular-directive', function (done) {
 
 		if (!this.args[0]) {
-			console.log('******    Incorrect usage of the sub-generator!!                ******');
+			console.log('******    Incorrect usage of the sub-generator!!                    ******');
 			console.log('******    Try slush meanjs:angular-directive <directive-name>       ******');
-			console.log('******    Ex: slush meanjs:angular-directive books                ******');
+			console.log('******    Ex: slush meanjs:angular-directive article                ******');
 			return done();
 		}
 		var moduleName = this.args[0];

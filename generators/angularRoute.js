@@ -6,7 +6,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		{
 			console.log('******    Incorrect usage of the sub-generator!!           ******');
 			console.log('******    Try slush meanjs:angular-route <route-name>      ******');
-			console.log('******    Ex: slush meanjs:angular-route books             ******');
+			console.log('******    Ex: slush meanjs:angular-route article           ******');
 			return done();
 		}
 		var moduleName = this.args[0];

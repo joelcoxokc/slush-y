@@ -1,4 +1,4 @@
-module.exports = function(gulp, install, conflict, template, rename, _, inquirer){
+module.exports = function(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp){
 	gulp.task('default', function (done) {
 	    var prompts = [{
 	            name: 'appName',

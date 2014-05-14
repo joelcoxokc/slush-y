@@ -6,7 +6,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		{
 			console.log('******    Incorrect usage of the sub-generator!!           ******');
 			console.log('******    Try slush meanjs:angular-view <view-name>        ******');
-			console.log('******    Ex: slush meanjs:angular-view books              ******');
+			console.log('******    Ex: slush meanjs:angular-view article            ******');
 			return done();
 		}
 		var moduleName = this.args[0];

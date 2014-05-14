@@ -4,26 +4,75 @@
 
 > A slush generator to scaffold MEAN Apps
 
-### Developement in progress
-
 Inspired by [MEAN](http://meanjs.org/)
 
-## TODOS
-- [x] add MEAN Application generator
-- [x] add CRUD Module sub-generator
-- [x] add Module sub-generator
-- [x] add Route sub-generator
-- [x] add Controller sub-generator
-- [x] add View sub-generator
-- [x] add Service sub-generator
-- [x] add Directive sub-generator
-- [x] add Filter sub-generator
-- [x] add Config sub-generator
-- [x] add Test sub-generator
-- [x] add Express Model sub-generator
-- [x] add Express Controller sub-generator
-- [x] add Express Routes sub-generator
-- [x] add Express Test sub-generator
+## FEATURES
+<table>
+<tr>
+<td>Feature</td>
+<td>Command</td>
+</tr>
+<tr>
+<td>[MEAN Application generator](#application-generator)</td>
+<td>slush meanjs</td>
+</tr>
+<tr>
+<td>CRUD Module sub-generator</td>
+<td>slush meanjs:crud-module {{module-name}}</td>
+</tr>
+<tr>
+<td>Module sub-generator</td>
+<td>slush meanjs:angular-module {{module-name}}</td>
+</tr>
+<tr>
+<td>Route sub-generator</td>
+<td>slush meanjs:angular-route {{route-name}}</td>
+</tr>
+<tr>
+<td>Controller sub-generator</td>
+<td>slush meanjs:angular-controller {{controller-name}}</td>
+</tr>
+<tr>
+<td>View sub-generator</td>
+<td>slush meanjs:angular-view {{view-name}}</td>
+</tr>
+<tr>
+<td>Service sub-generator</td>
+<td>slush meanjs:angular-service {{service-name}}</td>
+</tr>
+<tr>
+<td>Directive sub-generator</td>
+<td>slush meanjs:angular-directive {{directive-name}}</td>
+</tr>
+<tr>
+<td>Filter sub-generator</td>
+<td>slush meanjs:angular-filter {{filter-name}}</td>
+</tr>
+<tr>
+<td>Config sub-generator</td>
+<td>slush meanjs:angular-config {{config-name}}</td>
+</tr>
+<tr>
+<td>Test sub-generator</td>
+<td>slush meanjs:angular-test {{controller-name}}</td>
+</tr>
+<tr>
+<td>Express Model sub-generator</td>
+<td>slush meanjs:express-model {{model-name}}</td>
+</tr>
+<tr>
+<td>Express Controller sub-generator</td>
+<td>slush meanjs:express-controller {{controller-name}}</td>
+</tr>
+<tr>
+<td>Express Routes sub-generator</td>
+<td>slush meanjs:express-route {{route-name}}</td>
+</tr>
+<tr>
+<td>Express Test sub-generator</td>
+<td>slush meanjs:express-test {{model-name}}</td>
+</tr>
+</table>
 
 ## Getting Started
 
@@ -122,4 +171,3 @@ HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
-

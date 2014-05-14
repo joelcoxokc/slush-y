@@ -4,8 +4,8 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 
 		if (!this.args[0]) {
 			console.log('******    Incorrect usage of the sub-generator!!           ******');
-			console.log('******    Try slush meanjs:express-test <model-name>      ******');
-			console.log('******    Ex: slush meanjs:express-test books             ******');
+			console.log('******    Try slush meanjs:express-test <model-name>       ******');
+			console.log('******    Ex: slush meanjs:express-test article            ******');
 			return done();
 		}
 		var moduleName = this.args[0];

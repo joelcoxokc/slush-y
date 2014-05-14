@@ -5,7 +5,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		{
 			console.log('******    Incorrect usage of the sub-generator!!        ******');
 			console.log('******    Try slush meanjs:crud-module <module-name>    ******');
-			console.log('******    Ex: slush meanjs:crud-module books            ******');
+			console.log('******    Ex: slush meanjs:crud-module article          ******');
 			return done();
 		}
 		var moduleName = this.args[0];

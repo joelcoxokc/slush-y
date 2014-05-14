@@ -2,9 +2,9 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 	gulp.task('express-controller', function (done) {
 
 		if (!this.args[0]) {
-			console.log('******    Incorrect usage of the sub-generator!!                ******');
-			console.log('******    Try slush meanjs:express-controller <model-name>      ******');
-			console.log('******    Ex: slush meanjs:express-controller books             ******');
+			console.log('******    Incorrect usage of the sub-generator!!                     ******');
+			console.log('******    Try slush meanjs:express-controller <controller-name>      ******');
+			console.log('******    Ex: slush meanjs:express-controller article                ******');
 			return done();
 		}
 		var moduleName = this.args[0];

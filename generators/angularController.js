@@ -3,9 +3,9 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 	gulp.task('angular-controller', function (done) {
 
 		if (!this.args[0]) {
-			console.log('******    Incorrect usage of the sub-generator!!                ******');
+			console.log('******    Incorrect usage of the sub-generator!!                     ******');
 			console.log('******    Try slush meanjs:angular-controller <controller-name>      ******');
-			console.log('******    Ex: slush meanjs:angular-controller books             ******');
+			console.log('******    Ex: slush meanjs:angular-controller article                ******');
 			return done();
 		}
 		var moduleName = this.args[0];

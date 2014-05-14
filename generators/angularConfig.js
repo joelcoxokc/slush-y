@@ -3,9 +3,9 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 	gulp.task('angular-config', function (done) {
 
 		if (!this.args[0]) {
-			console.log('******    Incorrect usage of the sub-generator!!               ******');
-			console.log('******    Try slush meanjs:angular-config <config-name>        ******');
-			console.log('******    Ex: slush meanjs:angular-config books                ******');
+			console.log('******    Incorrect usage of the sub-generator!!                ******');
+			console.log('******    Try slush meanjs:angular-config <config-name>         ******');
+			console.log('******    Ex: slush meanjs:angular-config article               ******');
 			return done();
 		}
 		var moduleName = this.args[0];

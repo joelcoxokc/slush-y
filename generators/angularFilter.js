@@ -3,9 +3,9 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
 	gulp.task('angular-filter', function (done) {
 
 		if (!this.args[0]) {
-			console.log('******    Incorrect usage of the sub-generator!!                ******');
-			console.log('******    Try slush meanjs:angular-filter <filter-name>         ******');
-			console.log('******    Ex: slush meanjs:angular-filter books                 ******');
+			console.log('******    Incorrect usage of the sub-generator!!                  ******');
+			console.log('******    Try slush meanjs:angular-filter <filter-name>           ******');
+			console.log('******    Ex: slush meanjs:angular-filter article                 ******');
 			return done();
 		}
 		var moduleName = this.args[0];

@@ -20,7 +20,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add Filter sub-generator
 - [x] add Config sub-generator
 - [x] add Test sub-generator
-- [ ] add Express Model sub-generator
+- [x] add Express Model sub-generator
 - [ ] add Express Controller sub-generator
 - [ ] add Express Routes sub-generator
 - [ ] add Express Test sub-generator

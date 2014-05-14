@@ -60,80 +60,70 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		        answers.humanizedPluralName = _.humanize(answers.slugifiedPluralName);
 		        answers.humanizedSingularName = _.humanize(answers.slugifiedSingularName);
 		        
-		        if(answers.addMenuItems)
-		        {
-		        	var prompts = [{
-			                name: 'menuId',
-			                message: 'What is your menu identifier?',
-			                default: 'topbar'
-			            }];
+		        //public folders
+		        if (answers.addCSSFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/css');
+		        if (answers.addImagesFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/img');
+		        if (answers.addDirectivesFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/directives');
+		        if (answers.addFiltersFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/filters');
 
-			        inquirer.prompt(prompts,
-				        function (ans) {
-				        	if (!answers) {
-				                return done();
-				            }
-				            answers.menuId = ans.menuId;
-				            initScaffold(answers, done);
-						});
+		        // Create public folders for ng
+				mkdirp('public/modules/' + answers.slugifiedPluralName + '/config');
+				mkdirp('public/modules/' + answers.slugifiedPluralName + '/controllers');
+				mkdirp('public/modules/' + answers.slugifiedPluralName + '/services');
+				mkdirp('public/modules/' + answers.slugifiedPluralName + '/tests');
+
+				// express-modules
+		        gulp.src(__dirname + '/../templates/crud-module/express-module/**')
+			        .pipe(template(answers))
+			        .pipe(rename(function(file) {
+		                    if (file.basename.indexOf('_') == 0) {
+		                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+		                    }
+		             }))
+			        .pipe(conflict('./'))
+			        .pipe(gulp.dest('./'));
+
+			    // Menu configuration
+		        if (answers.addMenuItems) {
+		        	answers.menuId = 'topbar';
+		            gulp.src(__dirname + '/../templates/crud-module/angular-module/config/**')
+			        .pipe(template(answers))
+			        .pipe(rename(function(file) {
+		                    if (file.basename.indexOf('_') == 0) {
+		                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+		                    }
+		             }))
+			        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
+			        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'));			
 		        }
-		        else
-		        {
-		        	initScaffold(answers, done);
-		        }
-	        });
+
+		        gulp.src(__dirname + '/../templates/crud-module/angular-module/views/**')
+			        .pipe(template(answers))
+			        .pipe(rename(function(file) {
+		                    if (file.basename.indexOf('list') >= 0) {
+		                        file.basename = file.basename.replace('_', answers.slugifiedPluralName) ;
+		                    }
+		                    else {
+		                        file.basename = file.basename.replace('_', answers.slugifiedSingularName) ;
+		                    }
+		             }))
+			        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
+			        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'));	
+
+			    gulp.src(__dirname + '/../templates/crud-module/angular-module/public/**')
+			        .pipe(template(answers))
+			        .pipe(rename(function(file) {
+		                    if (file.basename.indexOf('_') == 0) {
+		                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+		                    }
+		             }))
+			        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
+			        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'))
+			        .on('end', function () {
+		                done();
+		            });	
+				        
+			    });
 	});
-
-	function initScaffold(answers, done)
-	{
-		//public folders
-        if (answers.addCSSFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/css');
-        if (answers.addImagesFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/img');
-        if (answers.addDirectivesFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/directives');
-        if (answers.addFiltersFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/filters');
-
-        // Create public folders for ng
-		mkdirp('public/modules/' + answers.slugifiedPluralName + '/config');
-		mkdirp('public/modules/' + answers.slugifiedPluralName + '/controllers');
-		mkdirp('public/modules/' + answers.slugifiedPluralName + '/services');
-		mkdirp('public/modules/' + answers.slugifiedPluralName + '/tests');
-
-		// express-modules
-        gulp.src(__dirname + '/../templates/crud-module/express-module/**')
-	        .pipe(template(answers))
-	        .pipe(rename(function(file) {
-                    if (file.basename.indexOf('_') == 0) {
-                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
-                    }
-             }))
-	        .pipe(conflict('./'))
-	        .pipe(gulp.dest('./'));
-
-	    // Render menu configuration
-        if (answers.addMenuItems) {
-            gulp.src(__dirname + '/../templates/crud-module/angular-module/config/**')
-	        .pipe(template(answers))
-	        .pipe(rename(function(file) {
-                    if (file.basename.indexOf('_') == 0) {
-                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
-                    }
-             }))
-	        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
-	        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'));			
-        }
-
-	    gulp.src(__dirname + '/../templates/crud-module/angular-module/public/**')
-	        .pipe(template(answers))
-	        .pipe(rename(function(file) {
-                    if (file.basename.indexOf('_') == 0) {
-                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
-                    }
-             }))
-	        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
-	        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'))
-	        .on('end', function () {
-                done();
-            });								
-	}
 	return gulp;
 }

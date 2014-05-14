@@ -18,7 +18,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add Service sub-generator
 - [x] add Directive sub-generator
 - [x] add Filter sub-generator
-- [ ] add Config sub-generator
+- [x] add Config sub-generator
 - [ ] add Test sub-generator
 - [ ] add Express Model sub-generator
 - [ ] add Express Controller sub-generator

@@ -22,7 +22,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add Test sub-generator
 - [x] add Express Model sub-generator
 - [x] add Express Controller sub-generator
-- [ ] add Express Routes sub-generator
+- [x] add Express Routes sub-generator
 - [ ] add Express Test sub-generator
 
 ## Getting Started

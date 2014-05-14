@@ -10,7 +10,7 @@ Inspired by [MEAN](http://meanjs.org/)
 
 ## TODOS
 - [x] add MEAN Application generator
-- [ ] add CRUD Module sub-generator
+- [x] add CRUD Module sub-generator
 - [ ] add Module sub-generator
 - [ ] add Route sub-generator
 - [ ] add Controller sub-generator

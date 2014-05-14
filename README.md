@@ -21,7 +21,7 @@ Inspired by [MEAN](http://meanjs.org/)
 - [x] add Config sub-generator
 - [x] add Test sub-generator
 - [x] add Express Model sub-generator
-- [ ] add Express Controller sub-generator
+- [x] add Express Controller sub-generator
 - [ ] add Express Routes sub-generator
 - [ ] add Express Test sub-generator
 

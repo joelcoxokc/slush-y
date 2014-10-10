@@ -1,12 +1,9 @@
 {
-  "name": "slush-meanjs",
+  "name": "slush-soa",
   "description": "A slush generator to scaffold MEAN Apps. Inspired by http://meanjs.org",
-  "version": "0.2.3",
+  "version": "0.0.1",
   "homepage": "https://github.com/arvindr21/slush-meanjs",
-  "author": {
-    "name": "Arvind Ravulavaru",
-    "email": "arvind.ravulavaru@gmail.com"
-  },
+  "author": "Arvind Ravulavaru <arvind.ravulavaru@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git://github.com/arvindr21/slush-meanjs.git"
@@ -46,5 +43,6 @@
     "Expressjs",
     "Angularjs",
     "Node"
-  ]
+  ],
+  "license": "ISC"
 }

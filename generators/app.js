@@ -55,7 +55,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 	            answers.angularAnimate = _.contains(answers.modules, 'angularAnimate');
 	            answers.angularTouch = _.contains(answers.modules, 'angularTouch');
 	            answers.angularSanitize = _.contains(answers.modules, 'angularSanitize');
-	            gulp.src(__dirname + '/../templates/app/static/**')
+	            gulp.src(__dirname + '/../templates/root/static/**/*')
 	                .pipe(rename(function(file) {
 	                        if (file.basename.indexOf('__') == 0) {
 	                            file.basename = '.' + file.basename.slice(2);
@@ -63,22 +63,22 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 	                 }))
 	                .pipe(conflict('./'))
 	                .pipe(gulp.dest('./'));
-	            
-	            if(answers.addArticleExample)
-	            {
-	                gulp.src(__dirname + '/../templates/app/article/**')
-	                    .pipe(conflict('./'))
-	                    .pipe(gulp.dest('./'));
-	            }
 
-	            gulp.src(__dirname + '/../templates/app/dynamic/**')
-	                .pipe(template(answers))
-	                .pipe(conflict('./'))
-	                .pipe(gulp.dest('./'))
-	                .pipe(install())
-	                .on('end', function () {
-	                    done();
-	                });
+	            // if(answers.addArticleExample)
+	            // {
+	            //     gulp.src(__dirname + '/../templates/app/article/**')
+	            //         .pipe(conflict('./'))
+	            //         .pipe(gulp.dest('./'));
+	            // }
+
+	            // gulp.src(__dirname + '/../templates/app/dynamic/**')
+	            //     .pipe(template(answers))
+	            //     .pipe(conflict('./'))
+	            //     .pipe(gulp.dest('./'))
+	            //     .pipe(install())
+	            //     .on('end', function () {
+	            //         done();
+	            //     });
 	        });
 	});
 	return gulp;

@@ -5,7 +5,6 @@
     .factory('logger', logger);
     function logger() {
       var logIt;
-      var toastr = toastr || {};
       toastr.options = {
         'closeButton': true,
         'positionClass': 'toast-bottom-right',

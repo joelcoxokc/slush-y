@@ -6,22 +6,28 @@ angular
   .controller('SettingsCtrl', SettingsCtrl);
 
   /* @inject */
-  function SettingsCtrl($scope, User, Auth) {
+  function SettingsCtrl(Resolved, $scope, User, Auth, $state, logger) {
     var vm = this;
     vm.errors = {};
     vm.updateUser = updateUser;
     vm.changePassword = changePassword;
-    <% if(restangular){ %>
-    vm.user = Auth.user;<% } %><% if(http){ %>
-    vm.user = Auth.getCurrentUser();<% } %>
+
+    vm.user = Resolved;
 
     console.log('User', vm.user);
 
     //////////////////////
 
     function updateUser(){<% if(restangular){ %>
-      vm.user.save();<% } %><% if(http){ %>
-      User.update(vm.user._id, vm.user);<% } %>
+      vm.user.save()<% } %><% if(http){ %>
+      User.update(vm.user._id, vm.user)<% } %>
+        .then( function ( data ){
+          logger.logSuccess('User Updated')
+          $state.go('admin')
+        })
+        .catch( function (error){
+          logger.logError('User not updated')
+        })
     }
 
     function changePassword(form) {
@@ -30,6 +36,7 @@ angular
         Auth.changePassword( vm.user.oldPassword, vm.user.newPassword )
         .then( function() {
           vm.message = 'Password successfully changed.';
+          $state.go('admin')
         })
         .catch( function() {
           form.password.$setValidity('mongoose', false);

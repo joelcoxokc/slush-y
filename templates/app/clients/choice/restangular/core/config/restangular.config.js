@@ -15,5 +15,7 @@
       route: 'restangularRoute',
       selfLink: 'self.href'
     });
+
+
   }
 }).call(this);

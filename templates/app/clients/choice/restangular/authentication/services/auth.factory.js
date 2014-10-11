@@ -6,13 +6,20 @@
     .factory('Auth', Auth);
 
     /* @inject */
-    function Auth(User, $storage, serverUrl, $location, $rootScope, $http, $q) {
+    function Auth(User, $storage, authRestangular, serverUrl, $location, $rootScope, $http, $q, logger) {
       var self = this;
 
+      var AuthService = authRestangular.all('auth');
+
       var currentUser = {};
+      var userApi = createUrl(serverUrl, 'users');
+      var authApi = createUrl(serverUrl, 'auth');
+
+
       if($storage.get('user_token')){
         currentUser = User.one('me').get().$object;
       }
+
       return {
         login: login,
         logout: logout,
@@ -41,19 +48,16 @@
           email: user.email,
           password: user.password
         };
-        $http
-          .post(serverUrl+'auth/local', {
-            email: user.email,
-            password: user.password
-          })
-          .then(function ( res ) {
-            console.log('data', res.data);
-            $storage.setObject('user', res.data.user );
-            $storage.set('user_token', res.data.token );
+
+        AuthService.all('local').post( LoginData )
+          .then(function ( response ) {
+            logger.logSuccess('User Logged in')
+            $storage.setUser( response );
             currentUser = User.one('me').get().$object;
-            deferred.resolve(res.data);
+            deferred.resolve(response);
           })
           .catch(function ( err ) {
+            logger.logError('Error Logging in')
             logout();
             deferred.reject( err );
           }.bind(self));
@@ -82,15 +86,16 @@
       function createUser(user, cb) {
         var callback = cb || angular.noop;
         var q = $q.defer();
-        $http.post(serverUrl + 'users', user)
-          .then(function (data) {
-            console.log('create', data);
-            $storage.set('user_token', data.token);
+        // $http.post(serverUrl + 'users', user)
+        User.post(user)
+          .then(function ( response ) {
+            logger.logSuccess('User '+ response.user.name +' Created');
+            $storage.setUser( response );
             currentUser = User.one('me').get().$object;
-            q.resolve(data);
+            q.resolve( response );
           })
           .catch(function (err) {
-            console.log('err', err);
+            logger.logError('Error creating User' + user.name);
             logout();
             q.reject(err);
           });
@@ -106,23 +111,23 @@
        * @return {Promise}
        */
       function changePassword(oldPassword, newPassword, cb) {
+        var q = $q.defer()
         var callback = cb || angular.noop;
-        return $http.put(serverUrl + 'users/' + currentUser._id + '/password', {
-            oldPassword: oldPassword,
-            newPassword: newPassword
-          });
-        // return User.one(currentUser._id)
-        //   .one('password')
-          // .put({
-          //   oldPassword: oldPassword,
-          //   newPassword: newPassword
-          // })
-        //   .then(function (user) {
-        //     return callback(user);
-        //   })
-        //   .catch(function (err) {
-        //     return callback(err);
-        //   });
+        var passwordData =  {
+          oldPassword: oldPassword,
+          newPassword: newPassword
+        };
+
+        return $http.put( createUrl(userApi,currentUser._id,'password'), passwordData)
+          .then( function (data){
+            logger.logSuccess('Password Changed');
+            q.resolve( data );
+          })
+          .catch( function ( error ){
+            logger.logSuccess('Error Changing Password');
+            q.reject( error );
+          })
+        return q.promise;
       }
 
       /**
@@ -176,6 +181,11 @@
        */
       function getToken() {
         return $storage.get('user_token');
+      }
+
+      function createUrl(){
+        var args = Array.prototype.slice.call(arguments)
+        return args.join('/');
       }
     }
 }).call(this);

@@ -13,13 +13,19 @@
         url: '/settings/profile',
         templateUrl: 'app/authentication/views/settings/edit-profile.client.view.html',
         controller: 'SettingsCtrl as vm',
-        authenticate:true
+        authenticate:true,
+        resolve: {
+          Resolved: Resolved
+        }
       })
       .state('password', {
         url: '/settings/password',
         templateUrl: 'app/authentication/views/settings/change-password.view.html',
         controller: 'SettingsCtrl as vm',
-        authenticate:true
+        authenticate:true,
+        resolve: {
+          Resolved: Resolved
+        }
       })
       .state('accounts', {
         url: '/settings/accounts',
@@ -48,6 +54,15 @@
       ////////////////
 
 
+    /* @inject */
+    function Resolved(User){<% if(restangular){ %>
+      return User.one('me').get()<% } %><% if(http){ %>
+      return User.getMe()<% } %>
+        .then(function ( response ){<% if(restangular){ %>
+          return response;<% } %><% if(http){ %>
+          return response.data;<% } %>
+        });
+    }
     /* @inject */
     function resolvedUsers(User){<% if(restangular){ %>
       return User.getList()<% } %><% if(http){ %>

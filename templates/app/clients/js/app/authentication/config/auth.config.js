@@ -14,7 +14,7 @@
   /* @inject */
   function authRestangular(Restangular){
     return Restangular.withConfig(function(RestangularConfigurer) {
-      RestangularConfigurer.setBaseUrl('http://localhost:9000/auth');
+      RestangularConfigurer.setBaseUrl('http://localhost:9000/api');
     });
   }<% } %>
 }).call(this);

@@ -3,10 +3,10 @@
   // <%= humanizedModuleName %> module config
   angular
     .module('<%= slugifiedModuleName %>')
-    .run( Run );
+    .config( Configuration );
 
   /* @inject */
-  function Run(Menus) {
+  function Configuration() {
     // Config logic
     // ...
   }

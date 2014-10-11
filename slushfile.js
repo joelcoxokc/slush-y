@@ -28,6 +28,7 @@ gulp = require('./generators/angularRoute')(gulp, install, conflict, template, r
 gulp = require('./generators/angularController')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/angularView')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/angularService')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
+gulp = require('./generators/angularFactory')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/angularDirective')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/angularFilter')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/angularConfig')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);

@@ -1,6 +1,6 @@
 module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp) {
   var fs = require('fs');
-  gulp.task('angular-service', function (done) {
+  gulp.task('angular-factory', function (done) {
 
     if (!this.args[0]) {
       console.log('******    Incorrect usage of the sub-generator!!                ******');
@@ -53,8 +53,8 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
         if( answers.moduleName === 'core' || answers.moduleName === 'authentication' ){
           var destination = 'client/app/'
         }
-        console.log(destination + answers.moduleName + '/services/')
-        gulp.src(__dirname + '/../templates/angular-service/_.client.service.js')
+
+        gulp.src(__dirname + '/../templates/angular-factory/_.client.service.js')
               .pipe(template(answers))
               .pipe(rename(function(file) {
                     if (file.basename.indexOf('_') == 0) {

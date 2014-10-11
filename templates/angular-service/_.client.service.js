@@ -7,20 +7,26 @@
 
   /* @inject */
   function <%= classifiedName %>() {
-
-    // Define private variables here . . .
-
-    // Define Public API
-    var instance = {
-      someMethod: someMethod
-    };
-
-    return instance;
+    this._storage = {};
 
     // <%= humanizedName %> service logic
     // ...
-    function someMethod() {
-      return true;
+    this.set = function(key, val) {
+      return this._storage[key] = val;
+    }
+    this.get = function(key) {
+      if (key){
+        return this._storage[key];
+      }
+      return this._storage;
+    }
+    this.remove = function(key){
+      if (key){
+        var result = this._storage[key];
+        delete this._storage[key];
+        return result;
+      }
+      this._storage = {};
     }
 
   }

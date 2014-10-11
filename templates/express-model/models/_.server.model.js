@@ -10,8 +10,8 @@ var mongoose = require('mongoose'),
  * <%= classifiedModelName %> Schema
  */
 var <%= classifiedModelName %>Schema = new Schema({
-	// <%= classifiedModelName %> model fields   
+	// <%= classifiedModelName %> model fields
 	// ...
 });
 
-mongoose.model('<%= classifiedModelName %>', <%= classifiedModelName %>Schema);
+module.exports = mongoose.model('<%= classifiedModelName %>', <%= classifiedModelName %>Schema);

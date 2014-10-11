@@ -4,9 +4,11 @@
     .module('core')
     .controller('SideBarCtrl', SideBarCtrl);
     /* @inject */
-    function SideBarCtrl($scope, $location, $state, Auth) {
+    function SideBarCtrl($scope, $location, $state, Auth, Menus) {
 
       $scope.isLoggedIn = Auth.isLoggedIn;
+
+      $scope.menu = Menus.getMenu('topbar');
 
       $scope.isCollapsed = true;
       $scope.references = [

@@ -1,15 +1,27 @@
-'use strict';
+;(function(){
+  'use strict';
 
-angular.module('<%= slugifiedModuleName %>').factory('<%= classifiedName %>', [
-	function() {
-		// <%= humanizedName %> service logic 
-		// ...
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .factory('<%= classifiedName %>', <%= classifiedName %>);
 
-		// Public API
-		return {
-			someMethod: function() {
-				return true;
-			}
-		};
-	}
-]);
+  /* @inject */
+  function <%= classifiedName %>() {
+
+    // Define private variables here . . .
+
+    // Define Public API
+    var instance = {
+      someMethod: someMethod
+    };
+
+    return instance;
+
+    // <%= humanizedName %> service logic
+    // ...
+    function someMethod() {
+      return true;
+    }
+
+  }
+}).call(this);

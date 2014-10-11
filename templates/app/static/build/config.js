@@ -23,7 +23,7 @@ var config = {
       stylus: './client/styles/app.styl',
       less: './client/styles/app.less',
       sass: './client/styles/app.scss',
-      css: ['./client/styles/**/*.css'],
+      css: ['./client/app/**/*.css'],
     },
     index: './client/index.html',
     templates:{

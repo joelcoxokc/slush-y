@@ -4,7 +4,7 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
-
+var _ = require('lodash');
 var validationError = function(res, err) {
   return res.json(422, err);
 };
@@ -92,6 +92,47 @@ exports.me = function(req, res, next) {
     res.json(user);
   });
 };
+
+
+/**
+ * Update user details
+ */
+exports.update = function(req, res) {
+  // Init Variables
+  var user = req.user;
+  var message = null;
+
+  // For security measurement we remove the roles from the req.body object
+  delete req.body.roles;
+
+  if (user) {
+    // Merge existing user
+    user = _.extend(user, req.body);
+    // user.updated = Date.now();
+    // user.displayName = user.firstName + ' ' + user.lastName;
+
+    user.save(function(err) {
+      if (err) {
+        return res.send(400, {
+          message: getErrorMessage(err)
+        });
+      } else {
+        req.login(user, function(err) {
+          if (err) {
+            res.send(400, err);
+          } else {
+            res.jsonp(user);
+          }
+        });
+      }
+    });
+  } else {
+    res.send(400, {
+      message: 'User is not signed in'
+    });
+  }
+};
+
 
 /**
  * Authentication callback

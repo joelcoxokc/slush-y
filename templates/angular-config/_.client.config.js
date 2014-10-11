@@ -1,9 +1,13 @@
-'use strict';
+;(function(){
+  'use strict';
+  // <%= humanizedModuleName %> module config
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .run( Run );
 
-// <%= humanizedModuleName %> module config
-angular.module('<%= slugifiedModuleName %>').run(['Menus',
-	function(Menus) {
-		// Config logic 
-		// ...
-	}
-]);
+  /* @inject */
+  function Run(Menus) {
+    // Config logic
+    // ...
+  }
+}).call(this);

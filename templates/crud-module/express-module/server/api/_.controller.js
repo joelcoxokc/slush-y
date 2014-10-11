@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-  <%= classifiedSingularName %> = mongoose.model('<%= classifiedSingularName %>'),
+  <%= classifiedSingularName %> = require('./<%= camelizedSingularName %>.model.js'),
   _ = require('lodash');
 
 /**

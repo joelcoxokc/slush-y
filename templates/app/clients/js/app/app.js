@@ -2,7 +2,6 @@
 'use strict';
 angular
   .module('<%= slugifiedAppName %>', [
-  '<%= slugifiedAppName %>.factories',
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -11,29 +10,10 @@ angular
   'ui.router',
   'ui.bootstrap',
   'core',
-  'users'
+  'authentication'
 
   ])
-  .constant('serverBaseUrl', 'http://localhost:9000')
-  .constant('serverUrl', 'http://localhost:9000/api/')
-  .config( appConfig )
   .run( run );
-
-  /* @inject */
-  function appConfig(RestangularProvider, $stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
-
-    // $locationProvider.hashPrefix('!');
-
-    RestangularProvider.setBaseUrl('http://localhost:9000/api/');
-    RestangularProvider.setRestangularFields({
-      id: '_id',
-      route: 'restangularRoute',
-      selfLink: 'self.href'
-    });
-
-    $locationProvider.html5Mode(true);
-    $httpProvider.interceptors.push('authInterceptor');
-  }
 
   /* @inject */
   function run($rootScope, $location, Auth) {

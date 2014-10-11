@@ -58,7 +58,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 	        	if (!answers) {
 	                return done();
 	            }
-	            
+
 	             // modulename
 	            answers.slugifiedName = _.slugify(_.humanize(moduleName));
 
@@ -74,18 +74,18 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 				answers.addViewsFolder = _.contains(answers.folders, 'addViewsFolder');
 
 				// create root folder
-				mkdirp('public/modules/' + answers.slugifiedName);
-		        
+				mkdirp('client/app/modules/' + answers.slugifiedName);
+
 		        // Create module sub-folders
-				if (answers.addConfigFolder) mkdirp('public/modules/' + answers.slugifiedName + '/config');
-				if (answers.addControllersFolder) mkdirp('public/modules/' + answers.slugifiedName + '/controllers');
-				if (answers.addCSSFolder) mkdirp('public/modules/' + answers.slugifiedName + '/css');
-				if (answers.addDirectivesFolder) mkdirp('public/modules/' + answers.slugifiedName + '/directives');
-				if (answers.addFiltersFolder) mkdirp('public/modules/' + answers.slugifiedName + '/filters');
-				if (answers.addImagesFolder) mkdirp('public/modules/' + answers.slugifiedName + '/img');
-				if (answers.addServicesFolder) mkdirp('public/modules/' + answers.slugifiedName + '/services');
-				if (answers.addTestsFolder) mkdirp('public/modules/' + answers.slugifiedName + '/tests');
-				if (answers.addViewsFolder) mkdirp('public/modules/' + answers.slugifiedName + '/views');
+				if (answers.addConfigFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/config');
+				if (answers.addControllersFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/controllers');
+				if (answers.addCSSFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/css');
+				if (answers.addDirectivesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/directives');
+				if (answers.addFiltersFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/filters');
+				if (answers.addImagesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/img');
+				if (answers.addServicesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/services');
+				if (answers.addTestsFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/tests');
+				if (answers.addViewsFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/views');
 
 			    gulp.src(__dirname + '/../templates/angular-module/**')
 			        .pipe(template(answers))
@@ -94,12 +94,12 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		                        file.basename = file.basename.replace('_',answers.slugifiedName);
 		                    }
 		             }))
-			        .pipe(conflict('public/modules/' + answers.slugifiedName+'/'))
-			        .pipe(gulp.dest('public/modules/' + answers.slugifiedName+'/'))
+			        .pipe(conflict('client/app/modules/' + answers.slugifiedName+'/'))
+			        .pipe(gulp.dest('client/app/modules/' + answers.slugifiedName+'/'))
 			        .on('end', function () {
 		                done();
-		            });	
-				        
+		            });
+
 			    });
 	});
 	return gulp;

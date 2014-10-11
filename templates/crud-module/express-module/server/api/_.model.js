@@ -26,4 +26,4 @@ var <%= classifiedSingularName %>Schema = new Schema({
   }
 });
 
-mongoose.model('<%= classifiedSingularName %>', <%= classifiedSingularName %>Schema);
+module.exports = mongoose.model('<%= classifiedSingularName %>', <%= classifiedSingularName %>Schema);

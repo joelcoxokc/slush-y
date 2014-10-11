@@ -1,12 +1,17 @@
-'use strict';
+;(function(){
+  'use strict';
 
-angular.module('<%= slugifiedModuleName %>').filter('<%= camelizedName %>', [
-	function() {
-		return function(input) {
-			// <%= humanizedName %> directive logic 
-			// ...
+  angular
+    .module('<%= slugifiedModuleName %>')
+    .filter('<%= camelizedName %>', <%= camelizedName %>);
 
-			return '<%= camelizedName %> filter: ' + input;
-		};
-	}
-]);
+  /* @inject */
+  function <%= camelizedName %>() {
+    return function(input) {
+      // <%= humanizedName %> directive logic
+      // ...
+
+      return '<%= camelizedName %> filter: ' + input;
+    };
+  }
+}).call(this);

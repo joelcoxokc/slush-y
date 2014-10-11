@@ -1,8 +1,10 @@
 'use strict';
-
+var express = require('express');
 module.exports = function(app) {
-  var users = require('../../app/controllers/users');
-  var <%= camelizedPluralName %> = require('../../app/controllers/<%= slugifiedPluralName %>');
+  var users = require('../user/user.controller');
+  var <%= camelizedPluralName %> = require('./<%= camelizedSingularName %>.controller.js');
+
+  var router = express.Router();
 
   // <%= humanizedPluralName %> Routes
   app.route('/<%= slugifiedPluralName %>')
@@ -16,4 +18,7 @@ module.exports = function(app) {
 
   // Finish by binding the <%= humanizedSingularName %> middleware
   app.param('<%= camelizedSingularName %>Id', <%= camelizedPluralName %>.<%= camelizedSingularName %>ByID);
+
+
+  app.use('/api/<%= slugifiedPluralName %>', router)
 };

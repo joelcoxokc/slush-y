@@ -62,27 +62,27 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
             answers.humanizedSingularName = _.humanize(answers.slugifiedSingularName);
 
             //client folders
-            if (answers.addCSSFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/css');
-            if (answers.addImagesFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/img');
-            if (answers.addDirectivesFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/directives');
-            if (answers.addFiltersFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/filters');
+            if (answers.addCSSFolder) mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/css');
+            if (answers.addImagesFolder) mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/img');
+            if (answers.addDirectivesFolder) mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/directives');
+            if (answers.addFiltersFolder) mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/filters');
 
             // Create client folders for ng
-          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/config');
-          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/controllers');
-          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/services');
-          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/tests');
+          mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/config');
+          mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/controllers');
+          mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/services');
+          mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/tests');
 
         // express-modules
-            gulp.src(__dirname + '/../templates/crud-module/express-module/api/**')
+            gulp.src(__dirname + '/../templates/crud-module/express-module/server/thing/**')
               .pipe(template(answers))
               .pipe(rename(function(file) {
                         if (file.basename.indexOf('_') == 0) {
-                            file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+                            file.basename = answers.slugifiedSingularName + '.'+file.basename.slice(2);
                         }
                  }))
               .pipe(conflict('./'))
-              .pipe(gulp.dest('./server/api/' + answers.slugifiedPluralName));
+              .pipe(gulp.dest('./server/api/' + answers.slugifiedSingularName));
 
           // Menu configuration
             if (answers.addMenuItems) {
@@ -94,8 +94,8 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                             file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
                         }
                  }))
-              .pipe(conflict('client/app/states/' + answers.slugifiedPluralName+'/'))
-              .pipe(gulp.dest('client/app/states/' + answers.slugifiedPluralName+'/'));
+              .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'));
             }
 
             gulp.src(__dirname + '/../templates/crud-module/angular-module/views/**')
@@ -108,8 +108,8 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                             file.basename = file.basename.replace('_', answers.slugifiedSingularName) ;
                         }
                  }))
-              .pipe(conflict('client/app/states/' + answers.slugifiedPluralName+'/'))
-              .pipe(gulp.dest('client/app/states/' + answers.slugifiedPluralName+'/'));
+              .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'));
 
           gulp.src(__dirname + '/../templates/crud-module/angular-module/client/**')
               .pipe(template(answers))
@@ -118,8 +118,8 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                             file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
                         }
                  }))
-              .pipe(conflict('client/app/states/' + answers.slugifiedPluralName+'/'))
-              .pipe(gulp.dest('client/app/states/' + answers.slugifiedPluralName+'/'))
+              .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'))
               .on('end', function () {
                     done();
                 });

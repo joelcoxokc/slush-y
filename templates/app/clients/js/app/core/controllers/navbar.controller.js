@@ -6,12 +6,15 @@ angular
   .controller('NavbarCtrl', NavbarCtrl);
 
   /* @inject */
-  function NavbarCtrl($scope, $location, Auth) {
+  function NavbarCtrl($scope, $location, Auth, Menus) {
     var vm = this;
     vm.menu = [{
       'title': 'Home',
       'link': '/'
     }];
+
+    $scope.menu = Menus.getMenu('topbar');
+
 
     vm.isCollapsed = true;
     vm.isLoggedIn = Auth.isLoggedIn;

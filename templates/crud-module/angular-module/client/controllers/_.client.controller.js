@@ -7,8 +7,8 @@
     .controller('<%= classifiedPluralName %>Controller', <%= classifiedPluralName %>Controller);
 
   /* @inject */
-  function <%= classifiedPluralName %>Controller($scope, $stateParams, $location, Authentication, <%= classifiedPluralName %>) {
-    $scope.authentication = Authentication;
+  function <%= classifiedPluralName %>Controller($scope, $stateParams, $location, <%= classifiedPluralName %>) {
+
 
     // Create new <%= humanizedSingularName %>
     $scope.create = function() {

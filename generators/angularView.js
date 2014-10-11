@@ -10,7 +10,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 			return done();
 		}
 		var moduleName = this.args[0];
-		var modulesFolder = process.cwd() + '/public/modules/';
+		var modulesFolder = process.cwd() + '/client/app/modules/';
 
 	     var prompts = [{
 			type: 'list',
@@ -39,14 +39,14 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 	        	if (!answers) {
 	                return done();
 	            }
-	            
+
 	           	answers.slugifiedModuleName = _.slugify(answers.moduleName);
 				answers.humanizedModuleName = _.humanize(answers.moduleName);
-				
+
 				answers.slugifiedName = _.slugify(_.humanize(moduleName));
 				answers.classifiedName = _.classify(answers.slugifiedName);
 				answers.humanizedName = _.humanize(answers.slugifiedName);
-				
+
 				var prompts = [{
 					name: 'controllerName',
 					message: 'What is the name of the controller this view will use?',
@@ -64,7 +64,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		            }
 		            answers.controllerName = ans.controllerName;
 		            answers.addRoute = ans.addRoute;
-			
+
 					answers.slugifiedControllerName = _.slugify(answers.controllerName);
 					answers.classifiedControllerName = _.classify(answers.slugifiedControllerName);
 
@@ -102,7 +102,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 							        fs.writeFile(routesFilePath,routesFileContent.replace('$stateProvider.', compiledTemplate),function(){
 								        fs.unlinkSync('./temp.client.route.js');
 								    });
-					            });	
+					            });
 				         }
 				         else
 				         {
@@ -116,7 +116,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 					                    }
 					             }))
 						        .pipe(conflict('public/modules/' + answers.slugifiedModuleName + '/config/'))
-						        .pipe(gulp.dest('public/modules/' + answers.slugifiedModuleName + '/config/'));	
+						        .pipe(gulp.dest('public/modules/' + answers.slugifiedModuleName + '/config/'));
 				         }
 
 				         gulp.src(__dirname + '/../templates/angular-view/_.client.view.html')
@@ -130,12 +130,12 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 							 .pipe(gulp.dest('public/modules/' + answers.slugifiedModuleName + '/views/'))
 							 .on('end', function () {
 							 	done();
-							});	
+							});
 					}
 
 	        	});
-				
-	            
+
+
 	});
 	});
 	return gulp;

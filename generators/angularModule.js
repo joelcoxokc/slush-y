@@ -23,8 +23,8 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 				name: 'controllers',
 				checked: true
 			}, {
-				value: 'addCSSFolder',
-				name: 'css',
+				value: 'addStylesFolder',
+				name: 'styles',
 				checked: false
 			}, {
 				value: 'addDirectivesFolder',
@@ -36,7 +36,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 				checked: false
 			}, {
 				value: 'addImagesFolder',
-				name: 'img',
+				name: 'images',
 				checked: false
 			}, {
 				value: 'addServicesFolder',
@@ -65,7 +65,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 
 	            answers.addConfigFolder = _.contains(answers.folders, 'addConfigFolder');
 				answers.addControllersFolder = _.contains(answers.folders, 'addControllersFolder');
-				answers.addCSSFolder = _.contains(answers.folders, 'addCSSFolder');
+				answers.addStylesFolder = _.contains(answers.folders, 'addStylesFolder');
 				answers.addDirectivesFolder = _.contains(answers.folders, 'addDirectivesFolder');
 				answers.addFiltersFolder = _.contains(answers.folders, 'addFiltersFolder');
 				answers.addImagesFolder = _.contains(answers.folders, 'addImagesFolder');
@@ -79,10 +79,10 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 		        // Create module sub-folders
 				if (answers.addConfigFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/config');
 				if (answers.addControllersFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/controllers');
-				if (answers.addCSSFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/css');
+				if (answers.addStylesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/styles');
 				if (answers.addDirectivesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/directives');
 				if (answers.addFiltersFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/filters');
-				if (answers.addImagesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/img');
+				if (answers.addImagesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/images');
 				if (answers.addServicesFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/services');
 				if (answers.addTestsFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/tests');
 				if (answers.addViewsFolder) mkdirp('client/app/modules/' + answers.slugifiedName + '/views');

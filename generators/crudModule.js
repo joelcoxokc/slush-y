@@ -1,5 +1,11 @@
-module.exports = function(gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp){
+var path = require('path');
+module.exports = function(gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp, g, Config){
   gulp.task('crud-module', function (done) {
+
+    var globals = new Config('./soa.json');
+    var moduleDir = __dirname + '/../templates/crud-module/angular-module/';
+    var serverDir = __dirname + '/../templates/crud-module/express-module/';
+    console.log(globals);
 
     if(!this.args[0])
     {
@@ -73,8 +79,12 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
           mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/services');
           mkdirp('client/app/modules/' + answers.slugifiedPluralName + '/tests');
 
+          answers.restangular = globals.data.restangular;
+          answers.httpType = globals.data.httpType;
+          answers.http = globals.data.http;
+
         // express-modules
-            gulp.src(__dirname + '/../templates/crud-module/express-module/server/thing/**')
+            gulp.src( serverDir + 'server/thing/**')
               .pipe(template(answers))
               .pipe(rename(function(file) {
                         if (file.basename.indexOf('_') == 0) {
@@ -87,7 +97,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
           // Menu configuration
             if (answers.addMenuItems) {
               answers.menuId = 'topbar';
-                gulp.src(__dirname + '/../templates/crud-module/angular-module/config/**')
+                gulp.src( moduleDir + 'base/config/**' )
               .pipe(template(answers))
               .pipe(rename(function(file) {
                         if (file.basename.indexOf('_') == 0) {
@@ -98,7 +108,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'));
             }
 
-            gulp.src(__dirname + '/../templates/crud-module/angular-module/views/**')
+            gulp.src( moduleDir + 'base/views/**' )
               .pipe(template(answers))
               .pipe(rename(function(file) {
                         if (file.basename.indexOf('list') >= 0) {
@@ -111,7 +121,19 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
               .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'));
 
-          gulp.src(__dirname + '/../templates/crud-module/angular-module/client/**')
+          gulp.src( moduleDir + 'base/client/**' )
+              .pipe(template(answers))
+              .pipe(rename(function(file) {
+                        if (file.basename.indexOf('_') == 0) {
+                            file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+                        }
+                 }))
+              .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'))
+
+              console.log(moduleDir + globals.data.httpType + '/client/**')
+
+          gulp.src( moduleDir + globals.data.httpType + '/client/**' )
               .pipe(template(answers))
               .pipe(rename(function(file) {
                         if (file.basename.indexOf('_') == 0) {

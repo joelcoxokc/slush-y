@@ -6,13 +6,7 @@
     .factory('<%= classifiedPluralName %>', <%= classifiedPluralName %>);
 
     /* @inject */
-    function <%= classifiedPluralName %>($resource) {
-      return $resource('<%= slugifiedPluralName %>/:<%= camelizedSingularName %>Id', {
-          <%= camelizedSingularName %>Id: '@_id'
-      }, {
-          update: {
-              method: 'PUT'
-          }
-      });
+    function <%= classifiedPluralName %>(Restangular) {
+      return Restangular.service('<%= slugifiedPluralName %>');
     }
 }).call(this);

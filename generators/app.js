@@ -42,10 +42,6 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                 value: 'http',
                 name: 'angular $http',
                 default: false
-              },{
-                value: 'ngResource',
-                name: 'ngResource',
-                default: false
               }]
           },{
               type: 'checkbox',

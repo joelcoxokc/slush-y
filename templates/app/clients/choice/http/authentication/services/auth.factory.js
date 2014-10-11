@@ -154,7 +154,7 @@
         } else {
           User.getMe()
             .then(function ( response ){
-              if(respons.data){
+              if(response.data){
                 currentUser = response.data;
                 $storage.setObject(currentUser);
                 callback(true)

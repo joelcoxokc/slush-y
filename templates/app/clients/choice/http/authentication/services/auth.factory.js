@@ -152,7 +152,17 @@
         if(currentUser.hasOwnProperty('role')) {
           callback(true);
         } else {
-          callback(false);
+          User.getMe()
+            .then(function ( response ){
+              if(respons.data){
+                currentUser = response.data;
+                $storage.setObject(currentUser);
+                callback(true)
+              }
+            })
+            .catch( function (error) {
+              callback(false);
+            })
         }
       }
 

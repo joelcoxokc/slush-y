@@ -115,7 +115,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                   .pipe(conflict('./'))
                   .pipe(gulp.dest('./client'))
 
-              gulp.src(__dirname + '/../templates/app/clients/choices/'+values.httpType+'**/*')
+              gulp.src(__dirname + '/../templates/app/clients/choice/'+values.httpType+'/**/*')
                   .pipe(rename(function(file) {
                           if (file.basename.indexOf('__') == 0) {
                               file.basename = '.' + file.basename.slice(2);
@@ -123,7 +123,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                    }))
                   .pipe(template(values))
                   .pipe(conflict('./'))
-                  .pipe(gulp.dest('./client'))
+                  .pipe(gulp.dest('./client/app'))
 
 
               gulp.src( templatePath + '/app/soa.json')

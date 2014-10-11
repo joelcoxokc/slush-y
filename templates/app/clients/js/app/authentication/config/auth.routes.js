@@ -12,16 +12,19 @@
       .state('profile', {
         url: '/settings/profile',
         templateUrl: 'app/authentication/views/settings/edit-profile.client.view.html',
-        controller: 'SettingsCtrl as vm'
+        controller: 'SettingsCtrl as vm',
+        authenticate:true
       })
       .state('password', {
         url: '/settings/password',
         templateUrl: 'app/authentication/views/settings/change-password.view.html',
-        controller: 'SettingsCtrl as vm'
+        controller: 'SettingsCtrl as vm',
+        authenticate:true
       })
       .state('accounts', {
         url: '/settings/accounts',
-        templateUrl: 'app/authentication/views/settings/social-accounts.client.view.html'
+        templateUrl: 'app/authentication/views/settings/social-accounts.client.view.html',
+        authenticate:true
       })
       .state('signup', {
         url: '/signup',
@@ -37,6 +40,7 @@
         url: '/admin',
         templateUrl: 'app/authentication/views/admin/admin.view.html',
         controller: 'AdminCtrl as vm',
+        authenticate:true,
         resolve: {
           resolvedUsers: resolvedUsers
         }

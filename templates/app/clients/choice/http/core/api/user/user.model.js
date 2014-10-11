@@ -17,7 +17,8 @@
         create: create,
         update: update,
         destroy: destroy,
-        changePassword: changePassword
+        changePassword: changePassword,
+        getMe: getMe
       };
       return instance;
 
@@ -86,6 +87,9 @@
             q.reject(err);
           });
         return q.promise;
+      }
+      function getMe(){
+        return $http.get([api, 'me'].join('/'))
       }
     }
 

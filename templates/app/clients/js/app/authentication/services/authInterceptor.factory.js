@@ -22,7 +22,6 @@ angular
     // Intercept 401s and redirect you to login
     function responseError(response) {
       if(response.status === 401) {
-        $location.path('/signin');
         // remove any stale tokens
         $storage.clear('user_token');
         return $q.reject(response);

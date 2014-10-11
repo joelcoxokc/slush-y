@@ -69,6 +69,7 @@
       "expect": true,
       "browser": true,
       "element": true,
-      "by": true
+      "by": true,
+      "toastr":true
     }
 }

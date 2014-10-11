@@ -21,6 +21,12 @@
       var value = localStorage.getItem(key);
       return value;
     };
+    this.setUser = function(data){
+      var token = data.token;
+      var user = data.user;
+      this.set('user_token', token);
+      return this.setObject('user', user);
+    };
     this.clear = function(key){
       if(key){
         delete localStorage[key];

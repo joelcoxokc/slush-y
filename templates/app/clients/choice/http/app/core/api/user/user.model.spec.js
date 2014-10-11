@@ -1,18 +1,18 @@
 
 'use strict';
-describe('Model: Thing', function () {
+describe('API: User', function () {
 
   // load the service's module
   beforeEach(module('core'));
 
   // instantiate service
-  var Thing;
-  beforeEach(inject(function (_Thing_) {
-    Thing = _Thing_;
+  var User;
+  beforeEach(inject(function (_User_) {
+    User = _User_;
   }));
 
   it('should do something', function () {
-    expect(!!Thing).toBe(true);
+    expect(!!User).toBe(true);
   });
 
 });

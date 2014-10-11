@@ -45,11 +45,12 @@
 
 
     /* @inject */
-    function resolvedUsers(User){
-      return User.getList()
-        .then(function (data){
-          console.log('resolved', data);
-          return data;
+    function resolvedUsers(User){<% if(restangular){ %>
+      return User.getList()<% } %><% if(http){ %>
+      return User.all()<% } %>
+        .then(function ( response ){<% if(restangular){ %>
+          return response;<% } %><% if(http){ %>
+          return response.data;<% } %>
         });
     }
   }

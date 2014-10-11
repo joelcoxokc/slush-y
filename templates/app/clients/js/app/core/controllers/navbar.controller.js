@@ -25,7 +25,7 @@ angular
 
     function logout() {
       Auth.logout();
-      $location.path('/login');
+      $location.path('/signout');
     }
 
     function isActive(route) {

@@ -11,15 +11,17 @@ angular
     vm.errors = {};
     vm.updateUser = updateUser;
     vm.changePassword = changePassword;
-
-    vm.user = Auth.user;
+    <% if(restangular){ %>
+    vm.user = Auth.user;<% } %><% if(http){ %>
+    vm.user = Auth.getCurrentUser();<% } %>
 
     console.log('User', vm.user);
 
     //////////////////////
 
-    function updateUser(){
-      vm.user.save();
+    function updateUser(){<% if(restangular){ %>
+      vm.user.save();<% } %><% if(http){ %>
+      User.update(vm.user._id, vm.user);<% } %>
     }
 
     function changePassword(form) {

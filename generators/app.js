@@ -91,7 +91,8 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 
               values.httpType = answers.httpType;
               values[answers.httpType] = true;
-
+              if(answers.httpType !== 'restangular'){ values.restangular = false; }
+              if(answers.httpType !== 'http'){ values.http = false; }
 
               console.log(values)
               gulp.src(__dirname + '/../templates/app/static/**/*')
@@ -105,6 +106,16 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                   .pipe(gulp.dest('./'));
 
               gulp.src(__dirname + '/../templates/app/clients/'+values.script+'/**/*')
+                  .pipe(rename(function(file) {
+                          if (file.basename.indexOf('__') == 0) {
+                              file.basename = '.' + file.basename.slice(2);
+                          }
+                   }))
+                  .pipe(template(values))
+                  .pipe(conflict('./'))
+                  .pipe(gulp.dest('./client'))
+
+              gulp.src(__dirname + '/../templates/app/clients/choices/'+values.httpType+'**/*')
                   .pipe(rename(function(file) {
                           if (file.basename.indexOf('__') == 0) {
                               file.basename = '.' + file.basename.slice(2);

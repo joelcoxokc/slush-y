@@ -1,5 +1,11 @@
-module.exports = function(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp){
+var fs = require('fs-extra');
+module.exports = function(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g){
 	gulp.task('default', function (done) {
+			// var values = config.get()
+			var values = {}
+
+			var templatePath = __dirname + '/../templates';
+
 	    var prompts = [{
 	            name: 'appName',
 	            message: 'What would you like to call your application?',
@@ -16,10 +22,14 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 	            name: 'appAuthor',
 	            message: 'What is your company/author name?'
 	        }, {
-	            type: 'confirm',
-	            name: 'addArticleExample',
-	            message: 'Would you like to generate the article example CRUD module?',
-	            default: true
+	            type: 'list',
+	            name: 'script',
+	            message: 'What script would you like to use?',
+	            choices: [{
+	            	value: 'js',
+	              name: 'Javascript',
+	              default: true
+	            }]
 	        },{
 	            type: 'checkbox',
 	            name: 'modules',
@@ -48,38 +58,59 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 	        	if (!answers.appName) {
 	                return done();
 	            }
-	            answers.slugifiedAppName = _.slugify(answers.appName);
-	            answers.humanizedAppName = _.humanize(answers.appName);
-	            answers.capitalizedAppAuthor = _.capitalize(answers.appAuthor);
-	            answers.angularCookies = _.contains(answers.modules, 'angularCookies');
-	            answers.angularAnimate = _.contains(answers.modules, 'angularAnimate');
-	            answers.angularTouch = _.contains(answers.modules, 'angularTouch');
-	            answers.angularSanitize = _.contains(answers.modules, 'angularSanitize');
-	            gulp.src(__dirname + '/../templates/root/static/**/*')
+	            console.log(answers)
+	            values.slugifiedAppName = _.slugify(answers.appName);
+	            values.humanizedAppName = _.humanize(answers.appName);
+	            values.capitalizedAppAuthor = _.capitalize(answers.appAuthor);
+	            values.angularCookies = _.contains(answers.modules, 'angularCookies');
+	            values.angularAnimate = _.contains(answers.modules, 'angularAnimate');
+	            values.angularTouch = _.contains(answers.modules, 'angularTouch');
+	            values.angularSanitize = _.contains(answers.modules, 'angularSanitize');
+	            values.clientDir = './client';
+	            values.serverDir = './server';
+	            if(answers.script === 'js') {
+	            	values.script = 'js';
+	            	values.js = true;
+	            }
+	            if(answers.script === 'coffee'){
+	             	values.script = 'coffee';
+	             	values.coffee = true;
+	            }
+	            gulp.src(__dirname + '/../templates/app/static/**/*')
 	                .pipe(rename(function(file) {
 	                        if (file.basename.indexOf('__') == 0) {
 	                            file.basename = '.' + file.basename.slice(2);
 	                        }
 	                 }))
+	                .pipe(template(values))
 	                .pipe(conflict('./'))
 	                .pipe(gulp.dest('./'));
 
-	            // if(answers.addArticleExample)
-	            // {
-	            //     gulp.src(__dirname + '/../templates/app/article/**')
-	            //         .pipe(conflict('./'))
-	            //         .pipe(gulp.dest('./'));
-	            // }
+	            gulp.src(__dirname + '/../templates/app/clients/'+values.script+'/**/*')
+	            		.pipe(rename(function(file) {
+	                        if (file.basename.indexOf('__') == 0) {
+	                            file.basename = '.' + file.basename.slice(2);
+	                        }
+	                 }))
+	                .pipe(template(values))
+	                .pipe(conflict('./'))
+	                .pipe(gulp.dest('./client'))
 
-	            // gulp.src(__dirname + '/../templates/app/dynamic/**')
-	            //     .pipe(template(answers))
-	            //     .pipe(conflict('./'))
-	            //     .pipe(gulp.dest('./'))
-	            //     .pipe(install())
-	            //     .on('end', function () {
-	            //         done();
-	            //     });
+
+	            gulp.src( templatePath + '/app/soa.json')
+	            		.pipe( g.jsonEditor( function (json){
+	            			return values;
+	            		} ) )
+	            		.pipe( gulp.dest('./') )
+	                .pipe(install())
+	                .on('end', function () {
+	                    done();
+	                });
 	        });
+
+
+
+
 	});
 	return gulp;
 }

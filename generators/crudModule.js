@@ -1,16 +1,16 @@
 module.exports = function(gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp){
-	gulp.task('crud-module', function (done) {
+  gulp.task('crud-module', function (done) {
 
-		if(!this.args[0])
-		{
-			console.log('******    Incorrect usage of the sub-generator!!        ******');
-			console.log('******    Try slush meanjs:crud-module <module-name>    ******');
-			console.log('******    Ex: slush meanjs:crud-module article          ******');
-			return done();
-		}
-		var moduleName = this.args[0];
+    if(!this.args[0])
+    {
+      console.log('******    Incorrect usage of the sub-generator!!        ******');
+      console.log('******    Try slush meanjs:crud-module <module-name>    ******');
+      console.log('******    Ex: slush meanjs:crud-module article          ******');
+      return done();
+    }
+    var moduleName = this.args[0];
 
-	    var prompts = [{
+      var prompts = [{
             type: 'checkbox',
             name: 'folders',
             message: 'Which supplemental folders would you like to include in your angular module?',
@@ -37,93 +37,94 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
             message: 'Would you like to add the CRUD module links to a menu?',
             default: true
         }];
-	    //Ask
-	    inquirer.prompt(prompts,
-	        function (answers) {
-	        	if (!answers) {
-	                return done();
-	            }
-	            
-	            answers.addCSSFolder = _.contains(answers.folders, 'addCSSFolder');
-	            answers.addImagesFolder = _.contains(answers.folders, 'addImagesFolder');
-	            answers.addDirectivesFolder = _.contains(answers.folders, 'addDirectivesFolder');
-	            answers.addFiltersFolder = _.contains(answers.folders, 'addFiltersFolder');
-	            answers.addMenuItems = answers.addMenuItems;
-	            // modulenames
-	            answers.slugifiedName = _.slugify(moduleName);
-		        answers.slugifiedPluralName = inflections.pluralize(answers.slugifiedName);
-		        answers.slugifiedSingularName = inflections.singularize(answers.slugifiedName);
-		        answers.camelizedPluralName = _.camelize(answers.slugifiedPluralName);
-		        answers.camelizedSingularName = _.camelize(answers.slugifiedSingularName);
-		        answers.classifiedPluralName = _.classify(answers.slugifiedPluralName);
-		        answers.classifiedSingularName = _.classify(answers.slugifiedSingularName);
-		        answers.humanizedPluralName = _.humanize(answers.slugifiedPluralName);
-		        answers.humanizedSingularName = _.humanize(answers.slugifiedSingularName);
-		        
-		        //public folders
-		        if (answers.addCSSFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/css');
-		        if (answers.addImagesFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/img');
-		        if (answers.addDirectivesFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/directives');
-		        if (answers.addFiltersFolder) mkdirp('public/modules/' + answers.slugifiedPluralName + '/filters');
+      //Ask
+      inquirer.prompt(prompts,
+          function (answers) {
+            if (!answers) {
+                  return done();
+              }
 
-		        // Create public folders for ng
-				mkdirp('public/modules/' + answers.slugifiedPluralName + '/config');
-				mkdirp('public/modules/' + answers.slugifiedPluralName + '/controllers');
-				mkdirp('public/modules/' + answers.slugifiedPluralName + '/services');
-				mkdirp('public/modules/' + answers.slugifiedPluralName + '/tests');
+            answers.addCSSFolder = _.contains(answers.folders, 'addCSSFolder');
+            answers.addImagesFolder = _.contains(answers.folders, 'addImagesFolder');
+            answers.addDirectivesFolder = _.contains(answers.folders, 'addDirectivesFolder');
+            answers.addFiltersFolder = _.contains(answers.folders, 'addFiltersFolder');
+            answers.addMenuItems = answers.addMenuItems;
+            // modulenames
+            answers.slugifiedName = _.slugify(moduleName);
 
-				// express-modules
-		        gulp.src(__dirname + '/../templates/crud-module/express-module/**')
-			        .pipe(template(answers))
-			        .pipe(rename(function(file) {
-		                    if (file.basename.indexOf('_') == 0) {
-		                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
-		                    }
-		             }))
-			        .pipe(conflict('./'))
-			        .pipe(gulp.dest('./'));
+            answers.slugifiedPluralName = inflections.pluralize(answers.slugifiedName);
+            answers.slugifiedSingularName = inflections.singularize(answers.slugifiedName);
+            answers.camelizedPluralName = _.camelize(answers.slugifiedPluralName);
+            answers.camelizedSingularName = _.camelize(answers.slugifiedSingularName);
+            answers.classifiedPluralName = _.classify(answers.slugifiedPluralName);
+            answers.classifiedSingularName = _.classify(answers.slugifiedSingularName);
+            answers.humanizedPluralName = _.humanize(answers.slugifiedPluralName);
+            answers.humanizedSingularName = _.humanize(answers.slugifiedSingularName);
 
-			    // Menu configuration
-		        if (answers.addMenuItems) {
-		        	answers.menuId = 'topbar';
-		            gulp.src(__dirname + '/../templates/crud-module/angular-module/config/**')
-			        .pipe(template(answers))
-			        .pipe(rename(function(file) {
-		                    if (file.basename.indexOf('_') == 0) {
-		                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
-		                    }
-		             }))
-			        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
-			        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'));			
-		        }
+            //client folders
+            if (answers.addCSSFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/css');
+            if (answers.addImagesFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/img');
+            if (answers.addDirectivesFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/directives');
+            if (answers.addFiltersFolder) mkdirp('client/app/states/' + answers.slugifiedPluralName + '/filters');
 
-		        gulp.src(__dirname + '/../templates/crud-module/angular-module/views/**')
-			        .pipe(template(answers))
-			        .pipe(rename(function(file) {
-		                    if (file.basename.indexOf('list') >= 0) {
-		                        file.basename = file.basename.replace('_', answers.slugifiedPluralName) ;
-		                    }
-		                    else {
-		                        file.basename = file.basename.replace('_', answers.slugifiedSingularName) ;
-		                    }
-		             }))
-			        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
-			        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'));	
+            // Create client folders for ng
+          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/config');
+          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/controllers');
+          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/services');
+          mkdirp('client/app/states/' + answers.slugifiedPluralName + '/tests');
 
-			    gulp.src(__dirname + '/../templates/crud-module/angular-module/public/**')
-			        .pipe(template(answers))
-			        .pipe(rename(function(file) {
-		                    if (file.basename.indexOf('_') == 0) {
-		                        file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
-		                    }
-		             }))
-			        .pipe(conflict('public/modules/' + answers.slugifiedPluralName+'/'))
-			        .pipe(gulp.dest('public/modules/' + answers.slugifiedPluralName+'/'))
-			        .on('end', function () {
-		                done();
-		            });	
-				        
-			    });
-	});
-	return gulp;
+        // express-modules
+            gulp.src(__dirname + '/../templates/crud-module/express-module/api/**')
+              .pipe(template(answers))
+              .pipe(rename(function(file) {
+                        if (file.basename.indexOf('_') == 0) {
+                            file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+                        }
+                 }))
+              .pipe(conflict('./'))
+              .pipe(gulp.dest('./server/api/' + answers.slugifiedPluralName));
+
+          // Menu configuration
+            if (answers.addMenuItems) {
+              answers.menuId = 'topbar';
+                gulp.src(__dirname + '/../templates/crud-module/angular-module/config/**')
+              .pipe(template(answers))
+              .pipe(rename(function(file) {
+                        if (file.basename.indexOf('_') == 0) {
+                            file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+                        }
+                 }))
+              .pipe(conflict('client/app/states/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/states/' + answers.slugifiedPluralName+'/'));
+            }
+
+            gulp.src(__dirname + '/../templates/crud-module/angular-module/views/**')
+              .pipe(template(answers))
+              .pipe(rename(function(file) {
+                        if (file.basename.indexOf('list') >= 0) {
+                            file.basename = file.basename.replace('_', answers.slugifiedPluralName) ;
+                        }
+                        else {
+                            file.basename = file.basename.replace('_', answers.slugifiedSingularName) ;
+                        }
+                 }))
+              .pipe(conflict('client/app/states/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/states/' + answers.slugifiedPluralName+'/'));
+
+          gulp.src(__dirname + '/../templates/crud-module/angular-module/client/**')
+              .pipe(template(answers))
+              .pipe(rename(function(file) {
+                        if (file.basename.indexOf('_') == 0) {
+                            file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+                        }
+                 }))
+              .pipe(conflict('client/app/states/' + answers.slugifiedPluralName+'/'))
+              .pipe(gulp.dest('client/app/states/' + answers.slugifiedPluralName+'/'))
+              .on('end', function () {
+                    done();
+                });
+
+          });
+  });
+  return gulp;
 }

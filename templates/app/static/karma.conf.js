@@ -1,52 +1,65 @@
-'use strict';
-
-/**
- * Module dependencies.
- */
-var applicationConfiguration = require('./config/config');
-
 // Karma configuration
+// http://karma-runner.github.io/0.10/config/configuration-file.html
+
+
 module.exports = function(config) {
-	config.set({
-		// Frameworks to use
-		frameworks: ['jasmine'],
 
-		// List of files / patterns to load in the browser
-		files: applicationConfiguration.assets.lib.js.concat(applicationConfiguration.assets.js, applicationConfiguration.assets.tests),
+  var bower= [
+  ];
+  var client= [
+  ];
+  config.set({
+    // base path, that will be used to resolve files and exclude
+    basePath: '',
 
-		// Test results reporter to use
-		// Possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
-		//reporters: ['progress'],
-		reporters: ['progress'],
+    // testing framework to use (jasmine/mocha/qunit/...)
+    frameworks: ['jasmine'],
 
-		// Web server port
-		port: 9876,
+    // list of files / patterns to load in the browser
+    files: bower.concat(client),
 
-		// Enable / disable colors in the output (reporters and logs)
-		colors: true,
+    preprocessors: {
+      '**/*.jade': 'ng-jade2js',
+      '**/*.html': 'html2js',
+      '**/*.coffee': 'coffee'
+    },
 
-		// Level of logging
-		// Possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-		logLevel: config.LOG_INFO,
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'client/'
+    },
 
-		// Enable / disable watching file and executing tests whenever any file changes
-		autoWatch: true,
+    ngJade2JsPreprocessor: {
+      stripPrefix: 'client/'
+    },
 
-		// Start these browsers, currently available:
-		// - Chrome
-		// - ChromeCanary
-		// - Firefox
-		// - Opera
-		// - Safari (only Mac)
-		// - PhantomJS
-		// - IE (only Windows)
-		browsers: ['PhantomJS'],
+    // list of files / patterns to exclude
+    exclude: [],
 
-		// If browser does not capture in given timeout [ms], kill it
-		captureTimeout: 60000,
+    // web server port
+    port: 8080,
 
-		// Continuous Integration mode
-		// If true, it capture browsers, run tests and exit
-		singleRun: true
-	});
+    // level of logging
+    // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
+    logLevel: config.LOG_ERROR,
+
+
+    // enable / disable watching file and executing tests whenever any file changes
+    autoWatch: true,
+
+
+    // Start these browsers, currently available:
+    // - Chrome
+    // - ChromeCanary
+    // - Firefox
+    // - Opera
+    // - Safari (only Mac)
+    // - PhantomJS
+    // - IE (only Windows)
+    browsers: ['Chrome'],
+
+
+    // Continuous Integration mode
+    // if true, it capture browsers, run tests and exit
+    singleRun: false
+  });
 };

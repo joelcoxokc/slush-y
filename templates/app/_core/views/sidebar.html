@@ -1,0 +1,23 @@
+<!-- <div class="sidebar-module sidebar-module-inset"> -->
+  <!-- <h4>About</h4> -->
+  <!-- <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p> -->
+<!-- </div> -->
+<div class="sidebar-module" ng-show="isLoggedIn()">
+  <h4>Steps to ng-guide</h4>
+  <ol class="list-unstyled">
+    <!-- <li><a ui-sref="main">Home</a></li> -->
+    <li ng-repeat="link in steps"><a ui-sref="{{link.state}}" class="sidebar-btn" ng-class="{'active': isActive(link.state)}">{{link.title}}</a></li>
+
+    <!-- <li><a ui-sref="steps.three" class="sidebar-btn">Step 3</a></li> -->
+    <!-- <li><a ui-sref="steps.four" class="sidebar-btn">Step 4</a></li> -->
+    <!-- <li><a ui-sref="steps.five" class="sidebar-btn">Step 5</a></li> -->
+  </ol>
+</div>
+<div class="sidebar-module" ng-show="isLoggedIn()">
+  <h4>References</h4>
+  <ol class="list-unstyled">
+    <li ng-repeat="ref in references">
+      <a href="{{rec.link}}">{{ref.title}}</a>
+    </li>
+  </ol>
+</div>

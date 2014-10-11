@@ -93,45 +93,22 @@ exports.me = function(req, res, next) {
   });
 };
 
-
 /**
  * Update user details
  */
 exports.update = function(req, res) {
-  // Init Variables
-  var user = req.user;
-  var message = null;
-
-  // For security measurement we remove the roles from the req.body object
-  delete req.body.roles;
-
-  if (user) {
-    // Merge existing user
-    user = _.extend(user, req.body);
-    // user.updated = Date.now();
-    // user.displayName = user.firstName + ' ' + user.lastName;
-
-    user.save(function(err) {
-      if (err) {
-        return res.send(400, {
-          message: getErrorMessage(err)
-        });
-      } else {
-        req.login(user, function(err) {
-          if (err) {
-            res.send(400, err);
-          } else {
-            res.jsonp(user);
-          }
-        });
-      }
+  if(req.body._id) { delete req.body._id; }
+  User.findById(req.params.id, function (err, user) {
+    if (err) { return handleError(res, err); }
+    if(!user) { return res.send(404); }
+    var updated = _.merge(user, req.body);
+    updated.save(function (err) {
+      if (err) { return handleError(res, err); }
+      return res.json(200, user);
     });
-  } else {
-    res.send(400, {
-      message: 'User is not signed in'
-    });
-  }
+  });
 };
+
 
 
 /**

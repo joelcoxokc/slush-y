@@ -29,8 +29,10 @@
       vm.details = false;
     }
 
-    function destroy(user) {
-      user.remove();
+    function destroy(user) {<% if(restangular){ %>
+      user.remove();<% } %><% if(http){ %>
+      User.destroy(user._id);<% } %>
+
       angular.forEach(vm.users, function(u, i) {
         if (u === user) {
           vm.users.splice(i, 1);

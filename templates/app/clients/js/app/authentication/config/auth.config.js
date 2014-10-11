@@ -1,8 +1,8 @@
 ;(function(){
 'use strict';
   angular
-    .module('authentication')
-    .factory( 'authRestangular', authRestangular )
+    .module('authentication')<% if(restangular){ %>
+    .factory( 'authRestangular', authRestangular )<% } %>
     .config( authenticationConfig );
 
   /* @inject */
@@ -10,11 +10,11 @@
 
     $httpProvider.interceptors.push('authInterceptor');
 
-  }
+  }<% if(restangular){ %>
   /* @inject */
   function authRestangular(Restangular){
     return Restangular.withConfig(function(RestangularConfigurer) {
       RestangularConfigurer.setBaseUrl('http://localhost:9000/auth');
     });
-  }
+  }<% } %>
 }).call(this);

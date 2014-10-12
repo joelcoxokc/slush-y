@@ -1,6 +1,6 @@
 module.exports = function(gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp){
   var fs = require('fs');
-  gulp.task('angular-route', function (done) {
+  gulp.task('route', function (done) {
 
     if(!this.args[0])
     {

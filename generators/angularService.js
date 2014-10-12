@@ -1,6 +1,6 @@
 module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp) {
   var fs = require('fs');
-  gulp.task('angular-service', function (done) {
+  gulp.task('service', function (done) {
 
     if (!this.args[0]) {
       console.log('******    Incorrect usage of the sub-generator!!                ******');

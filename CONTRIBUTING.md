@@ -1,4 +1,4 @@
-# Contributing to slush-meanjs
+# Contributing to slush-y
 
 Please take a moment to review this document in order to make the contribution
 process easy and effective for everyone involved.
@@ -93,11 +93,11 @@ project:
 
    ```bash
    # Clone your fork of the repo into the current directory
-   git clone https://github.com/<your-username>/slush-meanjs
+   git clone https://github.com/<your-username>/slush-y
    # Navigate to the newly cloned directory
-   cd slush-meanjs
+   cd slush-y
    # Assign the original repo to a remote called "upstream"
-   git remote add upstream https://github.com/arvindr21/slush-meanjs
+   git remote add upstream https://github.com/arvindr21/slush-y
    ```
 
 2. If you cloned a while ago, get the latest changes from upstream:

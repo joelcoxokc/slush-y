@@ -1,5 +1,5 @@
 module.exports = function(gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp){
-	gulp.task('angular-module', function (done) {
+	gulp.task('module', function (done) {
 
 		if(!this.args[0])
 		{

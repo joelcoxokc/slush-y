@@ -45,7 +45,7 @@ var AUTOPREFIXER_BROWSERS = [
  */
 
 var client = {
-  moduleName: 'mean',
+  moduleName: '<%= slugifiedAppName %>',
   root: './client',
   index: './client/index.html',
   app: './client/app',
@@ -99,8 +99,8 @@ gulp
   .task('watch', function (){
 
     gulp.watch(client.scripts, ['scripts:dev'], g.livereload.changed);
-    gulp.watch(client.styles, ['styles:dev'], g.livereload.changed);
-    gulp.watch(client.templates, ['templates:dev'], g.livereload.changed);
+    gulp.watch(client.styles, g.livereload.changed);
+    gulp.watch(client.templates, g.livereload.changed);
 
   })
 

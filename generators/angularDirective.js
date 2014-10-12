@@ -9,7 +9,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
       return done();
     }
     var moduleName = this.args[0];
-    var modulesFolder = process.cwd() + '/client/app/modules/';
+    var modulesFolder = process.cwd() + '/client/app/modules';
 
     var prompts = [{
       type: 'list',
@@ -24,6 +24,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
         value: 'authentication'
       }]
     }];
+
 
     // Add module choices
         fs.readdirSync(modulesFolder).forEach(function(folder) {

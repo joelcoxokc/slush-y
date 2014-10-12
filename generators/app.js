@@ -9,7 +9,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
       var prompts = [{
               name: 'appName',
               message: 'What would you like to call your application?',
-              default: 'MEAN'
+              default: 'Beast'
           }, {
               name: 'appDescription',
               message: 'How would you describe your application?',
@@ -18,7 +18,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               name: 'appKeywords',
               message: 'How would you describe your application in comma seperated key words?',
               default: 'MongoDB, Express, AngularJS, Node.js'
-          }, {
+          },{
               name: 'appAuthor',
               message: 'What is your company/author name?'
           }, {
@@ -43,6 +43,11 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                 name: 'angular $http',
                 default: false
               }]
+          },{
+              type: 'confirm',
+              name: 'auth',
+              message: 'Would you like authentication built in?',
+              default: true
           },{
               type: 'checkbox',
               name: 'modules',
@@ -81,7 +86,9 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               values.angularSanitize = _.contains(answers.modules, 'angularSanitize');
               values.clientDir = './client';
               values.serverDir = './server';
-
+              values.auth = answers.auth;
+              if( !values.auth ){ values.base = true; }
+              if( values.auth ){ values.base = false; }
               values.script = answers.script;
               values[ answers.script ] = true;
 
@@ -90,7 +97,26 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               if(answers.httpType !== 'restangular'){ values.restangular = false; }
               if(answers.httpType !== 'http'){ values.http = false; }
 
-              console.log(values)
+              mkdirp('client/app/modules');
+
+              var serverTemplatesDir;
+              if( values.auth ){
+                serverTemplatesDir = 'auth';
+              }
+              if( values.base ){
+                serverTemplatesDir = 'base';
+              }
+
+              gulp.src(__dirname + '/../templates/app/root/'+serverTemplatesDir+'/**/*')
+                .pipe(rename(function(file) {
+                    if (file.basename.indexOf('__') == 0) {
+                        file.basename = '.' + file.basename.slice(2);
+                    }
+                 }))
+                .pipe(template(values))
+                .pipe(conflict('./'))
+                .pipe(gulp.dest('./'));
+
               gulp.src(__dirname + '/../templates/app/static/**/*')
                   .pipe(rename(function(file) {
                           if (file.basename.indexOf('__') == 0) {

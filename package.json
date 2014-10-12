@@ -1,20 +1,20 @@
 {
-  "name": "slush-soa",
-  "description": "A slush generator to scaffold MEAN Apps. Inspired by http://meanjs.org",
-  "version": "0.0.1",
-  "homepage": "https://github.com/arvindr21/slush-meanjs",
-  "author": "Arvind Ravulavaru <arvind.ravulavaru@gmail.com>",
+  "name": "slush-y",
+  "description": "A slush generator for Best Practices with AngularJS Fullstack applications.",
+  "version": "1.0.3",
+  "homepage": "https://github.com/joelcoxokc/slush-y",
+  "author": "Joel Cox <joel.cox@hackreactor.com>",
   "repository": {
     "type": "git",
-    "url": "git://github.com/arvindr21/slush-meanjs.git"
+    "url": "git://github.com/joelcoxokc/slush-y.git"
   },
   "bugs": {
-    "url": "https://github.com/arvindr21/slush-meanjs/issues"
+    "url": "https://github.com/joelcoxokc/slush-y/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/arvindr21/slush-meanjs/blob/master/LICENSE"
+      "url": "https://github.com/joelcoxokc/slush-y/blob/master/LICENSE"
     }
   ],
   "main": "slushfile.js",
@@ -44,9 +44,12 @@
     "slushgenerator",
     "MEAN",
     "MongoDB",
+    "Angular",
+    "Fullstack",
     "Expressjs",
     "Angularjs",
     "Node"
   ],
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {}
 }

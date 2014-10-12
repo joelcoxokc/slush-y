@@ -14,7 +14,7 @@
     vm.deleteThing = deleteThing;
 
 
-    console.log(Resolved)
+
     socket.syncUpdates('things', vm.awesomeThings);
 
     ////////////////////

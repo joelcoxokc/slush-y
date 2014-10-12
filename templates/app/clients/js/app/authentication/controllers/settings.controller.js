@@ -22,11 +22,11 @@ angular
       vm.user.save()<% } %><% if(http){ %>
       User.update(vm.user._id, vm.user)<% } %>
         .then( function ( data ){
-          logger.logSuccess('User Updated')
-          $state.go('admin')
+          logger.logSuccess('User Updated');
+          $state.go('admin');
         })
         .catch( function (error){
-          logger.logError('User not updated')
+          logger.logError('User not updated');
         })
     }
 
@@ -36,7 +36,7 @@ angular
         Auth.changePassword( vm.user.oldPassword, vm.user.newPassword )
         .then( function() {
           vm.message = 'Password successfully changed.';
-          $state.go('admin')
+          $state.go('admin');
         })
         .catch( function() {
           form.password.$setValidity('mongoose', false);

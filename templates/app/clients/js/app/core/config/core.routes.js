@@ -28,7 +28,7 @@
         return Thing.all()
           .then( function ( response ){
             return response.data;
-          })
+          });
       }<% } %>
   }
 }).call(this);

@@ -51,14 +51,13 @@
         $http
           .post(authApi, LoginData)
           .then(function ( response ) {
-            logger.log('Successfully Signed in')
-            console.log(response.data)
+            logger.log('Successfully Signed in');
             $storage.setUser( response.data );
             currentUser = response.data.user;
             deferred.resolve(response.data);
           })
           .catch(function ( err ) {
-            logger.logError('There was an error signing in')
+            logger.logError('There was an error signing in');
             logout();
             deferred.reject( err );
           }.bind(self));
@@ -141,7 +140,7 @@
        * @return {Boolean}
        */
       function isLoggedIn() {
-        reloadUser()
+        reloadUser();
         return currentUser.hasOwnProperty('role');
       }
 
@@ -157,12 +156,12 @@
               if(response.data){
                 currentUser = response.data;
                 $storage.setObject(currentUser);
-                callback(true)
+                callback(true);
               }
             })
             .catch( function (error) {
               callback(false);
-            })
+            });
         }
       }
 
@@ -195,7 +194,7 @@
       function reloadUserAsync() {
         var q = $q.defer();
         if(currentUser._id){
-          q.resolve(currentUser)
+          q.resolve(currentUser);
         }
         $http
           .get( [userApi, 'me'].join('/') )

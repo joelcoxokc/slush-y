@@ -51,13 +51,13 @@
 
         AuthService.all('local').post( LoginData )
           .then(function ( response ) {
-            logger.logSuccess('User Logged in')
+            logger.logSuccess('User Logged in');
             $storage.setUser( response );
             currentUser = User.one('me').get().$object;
             deferred.resolve(response);
           })
           .catch(function ( err ) {
-            logger.logError('Error Logging in')
+            logger.logError('Error Logging in');
             logout();
             deferred.reject( err );
           }.bind(self));
@@ -126,7 +126,7 @@
           .catch( function ( error ){
             logger.logSuccess('Error Changing Password');
             q.reject( error );
-          })
+          });
         return q.promise;
       }
 
@@ -184,7 +184,7 @@
       }
 
       function createUrl(){
-        var args = Array.prototype.slice.call(arguments)
+        var args = Array.prototype.slice.call(arguments);
         return args.join('/');
       }
     }

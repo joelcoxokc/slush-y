@@ -74,7 +74,7 @@
         return q.promise;
       }
       function changePassword( id, data ){
-        var url = [api,id,'password'].join('/')
+        var url = [api,id,'password'].join('/');
         var q = $q.defer();
         $http
           .put( url, data )
@@ -89,7 +89,7 @@
         return q.promise;
       }
       function getMe(){
-        return $http.get([api, 'me'].join('/'))
+        return $http.get([api, 'me'].join('/'));
       }
     }
 

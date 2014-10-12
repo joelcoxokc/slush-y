@@ -8,7 +8,7 @@
         Auth,
         $storage,
         user,
-        userStore
+        userStore;
 
 
 
@@ -23,14 +23,14 @@
       Auth = _Auth_;
       $storage = _$storage_;
       $httpBackend.expectGET('http://localhost:9000/api/users')
-        .respond({user:user, toke: '202093938932'})
+        .respond({user:user, toke: '202093938932'});
 
       $httpBackend.expectPOST('http://localhost:9000/api/auth/local', user)
-        .respond(user)
+        .respond(user);
       Auth.login(user)
         .then(function(){
           userStore = $storage.getObject('user');
-        })
+        });
 
     }));
 
@@ -42,8 +42,8 @@
       Auth.login(user)
         .then(function(){
           userStore = $storage.getObject('user');
-          console.log(userStore)
-        })
+          console.log(userStore);
+        });
       userStore = $storage.getObject('user_token');
       expect(Auth).toBeTruthy();
     });

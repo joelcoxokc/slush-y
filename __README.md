@@ -1,14 +1,11 @@
 <!-- # slush-y [![Build Status](https://secure.travis-ci.org/joelcoxio/slush-y.png?branch=master)](https://travis-ci.org/arvindr21/slush-y) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-y.png)](http://badges.enytc.com/for/npm/slush-y) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arvindr21/slush-y/trend.png)](https://bitdeli.com/free "Bitdeli Badge") -->
 
-<!-- [![NPM](https://nodei.co/npm/slush-y.png?downloads=true&stars=true)](https://nodei.co/npm/slush-y/) -->
-# slush-y
-#### Why 'Y' ? Because it is easy to type!
+[![NPM](https://nodei.co/npm/slush-y.png?downloads=true&stars=true)](https://nodei.co/npm/slush-y/)
 
 > A slush generator to scaffold MEAN Apps
 
 Inspired by [MEAN](http://meanjs.org/)
 Inspired by [slush-meanjs](http://npmjs.org/package/slush-meanjs)
-Inspired by John Papa's [angularjs-styleguide](https://github.com/johnpapa/angularjs-styleguide#factories)
 
 ## Getting Started
 
@@ -46,11 +43,7 @@ To run the app , first make sure mongoDB is running (```$ mongod```) then
 ```bash
 $ gulp
 ```
-or
-```bash
-$ gulp dev
-```
-and navigate to ```http://localhost:9000```
+and navigate to ```http://localhost:3000```
 
 To generate minified js & css files inside the `public/dist` folder, run
 
@@ -61,7 +54,7 @@ $ gulp build
 To lint files
 
 ```bash
-$ gulp jshint
+$ gulp lint
 ```
 
 To run tests
@@ -77,52 +70,48 @@ $ gulp test
 <td>Command</td>
 </tr>
 <tr>
-<td><a href="#application-generator">Application Generator</a></td>
+<td><a href="#application-generator">MEAN Application generator</a></td>
 <td>slush y</td>
 </tr>
 <tr>
 <td><a href="#crud-module-sub-generato">CRUD Module sub-generator</a></td>
-<td>slush y:crud {{module-name}}</td>
+<td>slush y:crud-module {{module-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-module-sub-generator">AngularJs Module sub-generator</a></td>
-<td>slush y:module {{module-name}}</td>
+<td>slush y:angular-module {{module-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-route-sub-generator">AngularJs Route sub-generator</a></td>
-<td>slush y:route {{route-name}}</td>
+<td>slush y:angular-route {{route-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-controller-sub-generator">AngularJs Controller sub-generator</a></td>
-<td>slush y:controller {{controller-name}}</td>
+<td>slush y:angular-controller {{controller-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-view-sub-generator">AngularJs View sub-generator</a></td>
-<td>slush y:view {{view-name}}</td>
+<td>slush y:angular-view {{view-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-service-sub-generator">AngularJs Service sub-generator</a></td>
-<td>slush y:service {{service-name}}</td>
-</tr>
-<tr>
-<td><a href="#angularjs-factory-sub-generator">AngularJs Factory sub-generator</a></td>
-<td>slush y:factory {{service-name}}</td>
+<td>slush y:angular-service {{service-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-directive-sub-generator">AngularJs Directive sub-generator</a></td>
-<td>slush y:directive {{directive-name}}</td>
+<td>slush y:angular-directive {{directive-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-filter-sub-generator">AngularJs Filter sub-generator</a></td>
-<td>slush y:filter {{filter-name}}</td>
+<td>slush y:angular-filter {{filter-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-config-sub-generator">AngularJs Config sub-generator</a></td>
-<td>slush y:config {{config-name}}</td>
+<td>slush y:angular-config {{config-name}}</td>
 </tr>
 <tr>
 <td><a href="#angularjs-test-sub-generator">AngularJs Test sub-generator</a></td>
-<td>slush y:test {{controller-name}}</td>
+<td>slush y:angular-test {{controller-name}}</td>
 </tr>
 <tr>
 <td><a href="#express-model-sub-generator">Express Model sub-generator</a></td>
@@ -146,9 +135,8 @@ $ gulp test
 
 ## Application Generator
 
-The application generator will provide you with a rich and well structure starting template to build your next team project. The application is a Full Stack application with node & express server, and a modularly architected client.
+The application generator will help you create a fresh copy of a MEAN.JS application in your working folder. To create your MEAN application, navigate to a new project folder, and then use *slush y* to generate your application:
 
-In order To create your MEAN application, navigate to a new project folder, and then use *slush y* to generate your application:
 
 ```
 $ slush y
@@ -167,60 +155,41 @@ Now, the application generator does a great job scaffolding a whole application,
 
 ## CRUD Module Sub-Generator
 
-The CRUD module sub-generator will help you create a new CRUD module (CREATE, READ, UPDATE, DELETE).
+The CRUD module sub-generator will help you create a new CRUD module, similar to the article sample provided with the project. To create a new CRUD module you will need to use *slush y* again:
 
-To create a new CRUD module you will need to use *slush y* again:
 
 ```
-$ slush y:crud <module-name>
+$ slush y:crud-module <module-name>
 ```
 
-The CRUD Module will generate a whole new module in your client side modules directory.
-##### Client
-* config
-* controllers
-* directives
-* services
-* tests
-* styles
-* views
+This will create both AngularJS and Express files supporting full CRUD functionality, and add the Karma and Mocha tests.
 
-This will also generator the full api for this module. the angular-service in the services directory is directly connected to the api created on the backend.
-
-##### Server
-* model  -  (Mongoose Model & Schema)
-* controller  -  (Express request and response handler)
-* route  -  (Express Restful Router)
-* test  -  (mocha super test)
-
-The Module comes packed with everything you need to start developing.
 
 **Note:** Don’t forget to use your module name as an argument when calling the CRUD module sub-generator.
 
+
+
 ## AngularJS Module Sub-Generator
 
-Generates a new AngularJS module structure. For this purpose you can use the Angular module sub-generator. It will create the proper folder structure for you and the module initialization file. Creating a new AngularJS module is simple:
+Another redundant task is creating a new AngularJS module structure. For this purpose you can use the Angular module sub-generator. It will create the proper folder structure for you and the module initialization file. Creating a new AngularJS module is simple:
+
 
 ```
-$ slush y:module <module-name>
+$ slush y:angular-module <module-name>
 ```
 
-The sub-generator will ask for more information about your folder structure, and will create the empty new AngularJS module.
-Instead of manually filling out the components ti this new module, we can use the provided sub-generators
-to fill in the missing gaps.
+The sub-generator will ask for more information about your folder structure, and will create the empty new AngularJS module. Now, to fill that new module with your business logic, we provided you with several AngularJS entities sub-generators.
 
 
-#AngularJS Sub-Generators
-
-The Sub-Generators will read the current modules in modules directory, and ask will which which module to use.
-Based upon your option, the generator will generate the proper files the proper directory within the chosen module.
 
 ## AngularJS Route Sub-Generator
 
 To construct your module you will often need to create a new route. The AngularJS route sub-generator will help you create a view, controller and a proper route in your module **routes.js** file. If it can’t find the module routes file the sub-generator will create one for you. Creating a new AngularJS route will involve executing this command:
 
+
+
 ```
-$ slush y:route <route-name>
+$ slush y:angular-route <route-name>
 ```
 
 The sub-generator will ask for more information about your controller, view and routing URL, and will generate the appropriate files for you.
@@ -233,7 +202,7 @@ The AngularJS Controller sub-generator will create a new AngularJS controller in
 
 
 ```
-$ slush y:controller <controller-name>
+$ slush y:angular-controller <controller-name>
 ```
 
 The sub-generator will ask you for the module name under which you would like to create your new controller, and will create a new AngularJS controller file in that module **controllers** folder and a test file in the **tests** folder.
@@ -249,7 +218,7 @@ Once you have your controller file ready, you may want to add a view that makes 
 
 
 ```
-$ slush y:view <view-name>
+$ slush y:angular-view <view-name>
 ```
 
 The sub-generator will ask you for the module name under which you would like to create your new view, and some additional routing information. It will then create a new view file in that module's **views** folder and add a routing state to the module **routes.js** file. If it can’t find the module routes file it will create one for you.
@@ -262,7 +231,7 @@ The AngularJS service sub-generator will create a new AngularJS service in the s
 
 
 ```
-$ slush y:service <service-name>
+$ slush y:angular-service <service-name>
 ```
 
 The sub-generator will ask you for the module name under which you would like to create your new service, and will create a new AngularJS service file in that module's **services** folder.
@@ -275,7 +244,7 @@ The AngularJS directive sub-generator will create a new AngularJS directive in t
 
 
 ```
-$ slush y:directive <directive-name>
+$ slush y:angular-directive <directive-name>
 ```
 
 The sub-generator will ask you for the module name under which you would like to create your new directive, and will create a new AngularJS directive file in that module's **directives** folder.
@@ -288,7 +257,7 @@ The AngularJS filter sub-generator will create a new AngularJS filter in a speci
 
 
 ```
-$ slush y:filter <filter-name>
+$ slush y:angular-filter <filter-name>
 ```
 
 The sub-generator will ask you for the module name under which you would like to create your new filter, and will create a new AngularJS filter file in that module **filters** folder.
@@ -301,7 +270,7 @@ The AngularJS config sub-generator will create a new AngularJS config section in
 
 
 ```
-$ slush y:config <config-name>
+$ slush y:angular-config <config-name>
 ```
 
 The sub-generator will ask you for the module name under which you would like to create your new config, and will create a new AngularJS config file in that module's **config** folder.
@@ -314,7 +283,7 @@ Your MEAN application comes pre-bundled with the Karma test runner and Jasmine t
 
 
 ```
-$ slush y:test <controller-name>
+$ slush y:angular-test <controller-name>
 ```
 
 This will create a test file for your controller, and if the sub-generator doesn’t find the specified controller file, it will create one for you.

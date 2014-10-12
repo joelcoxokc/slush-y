@@ -1,6 +1,6 @@
 var path = require('path');
 module.exports = function(gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp, g, Config){
-  gulp.task('crud-module', function (done) {
+  gulp.task('crud', function (done) {
 
     var globals = new Config('./soa.json');
     var moduleDir = __dirname + '/../templates/crud-module/angular-module/';

@@ -97,7 +97,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               if(answers.httpType !== 'restangular'){ values.restangular = false; }
               if(answers.httpType !== 'http'){ values.http = false; }
 
-              mkdirp('client/app/modules');
+              mkdirp('./client/app/modules');
 
               var serverTemplatesDir;
               if( values.auth ){

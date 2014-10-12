@@ -1,0 +1,5343 @@
+a.bg-red,
+.bg-red {
+  background-color: #e51c23;
+  color: #fff;
+}
+button[color=red],
+button.button-red,
+a.button-red,
+.button-red {
+  background-color: #e51c23;
+  color: #fff;
+}
+button[color=red]:hover,
+button.button-red:hover,
+a.button-red:hover,
+.button-red:hover,
+button[color=red]:focus,
+button.button-red:focus,
+a.button-red:focus,
+.button-red:focus,
+button[color=red].active,
+button.button-red.active,
+a.button-red.active,
+.button-red.active {
+  background-color: #e51c23;
+}
+a.bg-red-0,
+.bg-red-0 {
+  color: #424242;
+}
+button[color=red-0],
+button.button-red-0,
+a.button-red-0,
+.button-red-0 {
+  color: #424242;
+}
+a.bg-red-100,
+.bg-red-100 {
+  background-color: #f9bdbb;
+  color: #fff;
+}
+a.bg-red-100,
+.bg-red-100 {
+  color: #424242;
+}
+button[color=red-100],
+button.button-red-100,
+a.button-red-100,
+.button-red-100 {
+  background-color: #f9bdbb;
+  color: #fff;
+}
+button[color=red-100]:hover,
+button.button-red-100:hover,
+a.button-red-100:hover,
+.button-red-100:hover,
+button[color=red-100]:focus,
+button.button-red-100:focus,
+a.button-red-100:focus,
+.button-red-100:focus,
+button[color=red-100].active,
+button.button-red-100.active,
+a.button-red-100.active,
+.button-red-100.active {
+  background-color: #f9bdbb;
+}
+button[color=red-100],
+button.button-red-100,
+a.button-red-100,
+.button-red-100 {
+  color: #424242;
+}
+a.bg-red-100,
+.bg-red-100 {
+  color: #424242;
+}
+button[color=red-100],
+button.button-red-100,
+a.button-red-100,
+.button-red-100 {
+  color: #424242;
+}
+a.bg-red-200,
+.bg-red-200 {
+  background-color: #f69988;
+  color: #fff;
+}
+button[color=red-200],
+button.button-red-200,
+a.button-red-200,
+.button-red-200 {
+  background-color: #f69988;
+  color: #fff;
+}
+button[color=red-200]:hover,
+button.button-red-200:hover,
+a.button-red-200:hover,
+.button-red-200:hover,
+button[color=red-200]:focus,
+button.button-red-200:focus,
+a.button-red-200:focus,
+.button-red-200:focus,
+button[color=red-200].active,
+button.button-red-200.active,
+a.button-red-200.active,
+.button-red-200.active {
+  background-color: #f69988;
+}
+a.bg-red-300,
+.bg-red-300 {
+  background-color: #f36c60;
+  color: #fff;
+}
+button[color=red-300],
+button.button-red-300,
+a.button-red-300,
+.button-red-300 {
+  background-color: #f36c60;
+  color: #fff;
+}
+button[color=red-300]:hover,
+button.button-red-300:hover,
+a.button-red-300:hover,
+.button-red-300:hover,
+button[color=red-300]:focus,
+button.button-red-300:focus,
+a.button-red-300:focus,
+.button-red-300:focus,
+button[color=red-300].active,
+button.button-red-300.active,
+a.button-red-300.active,
+.button-red-300.active {
+  background-color: #f36c60;
+}
+a.bg-red-400,
+.bg-red-400 {
+  background-color: #e84e40;
+  color: #fff;
+}
+button[color=red-400],
+button.button-red-400,
+a.button-red-400,
+.button-red-400 {
+  background-color: #e84e40;
+  color: #fff;
+}
+button[color=red-400]:hover,
+button.button-red-400:hover,
+a.button-red-400:hover,
+.button-red-400:hover,
+button[color=red-400]:focus,
+button.button-red-400:focus,
+a.button-red-400:focus,
+.button-red-400:focus,
+button[color=red-400].active,
+button.button-red-400.active,
+a.button-red-400.active,
+.button-red-400.active {
+  background-color: #e84e40;
+}
+a.bg-red-500,
+.bg-red-500 {
+  background-color: #e51c23;
+  color: #fff;
+}
+button[color=red-500],
+button.button-red-500,
+a.button-red-500,
+.button-red-500 {
+  background-color: #e51c23;
+  color: #fff;
+}
+button[color=red-500]:hover,
+button.button-red-500:hover,
+a.button-red-500:hover,
+.button-red-500:hover,
+button[color=red-500]:focus,
+button.button-red-500:focus,
+a.button-red-500:focus,
+.button-red-500:focus,
+button[color=red-500].active,
+button.button-red-500.active,
+a.button-red-500.active,
+.button-red-500.active {
+  background-color: #e51c23;
+}
+a.bg-red-600,
+.bg-red-600 {
+  background-color: #dd191d;
+  color: #fff;
+}
+button[color=red-600],
+button.button-red-600,
+a.button-red-600,
+.button-red-600 {
+  background-color: #dd191d;
+  color: #fff;
+}
+button[color=red-600]:hover,
+button.button-red-600:hover,
+a.button-red-600:hover,
+.button-red-600:hover,
+button[color=red-600]:focus,
+button.button-red-600:focus,
+a.button-red-600:focus,
+.button-red-600:focus,
+button[color=red-600].active,
+button.button-red-600.active,
+a.button-red-600.active,
+.button-red-600.active {
+  background-color: #dd191d;
+}
+a.bg-red-700,
+.bg-red-700 {
+  background-color: #d01716;
+  color: #fff;
+}
+button[color=red-700],
+button.button-red-700,
+a.button-red-700,
+.button-red-700 {
+  background-color: #d01716;
+  color: #fff;
+}
+button[color=red-700]:hover,
+button.button-red-700:hover,
+a.button-red-700:hover,
+.button-red-700:hover,
+button[color=red-700]:focus,
+button.button-red-700:focus,
+a.button-red-700:focus,
+.button-red-700:focus,
+button[color=red-700].active,
+button.button-red-700.active,
+a.button-red-700.active,
+.button-red-700.active {
+  background-color: #d01716;
+}
+a.bg-red-800,
+.bg-red-800 {
+  background-color: #c41411;
+  color: #fff;
+}
+button[color=red-800],
+button.button-red-800,
+a.button-red-800,
+.button-red-800 {
+  background-color: #c41411;
+  color: #fff;
+}
+button[color=red-800]:hover,
+button.button-red-800:hover,
+a.button-red-800:hover,
+.button-red-800:hover,
+button[color=red-800]:focus,
+button.button-red-800:focus,
+a.button-red-800:focus,
+.button-red-800:focus,
+button[color=red-800].active,
+button.button-red-800.active,
+a.button-red-800.active,
+.button-red-800.active {
+  background-color: #c41411;
+}
+a.bg-red-900,
+.bg-red-900 {
+  background-color: #b0120a;
+  color: #fff;
+}
+button[color=red-900],
+button.button-red-900,
+a.button-red-900,
+.button-red-900 {
+  background-color: #b0120a;
+  color: #fff;
+}
+button[color=red-900]:hover,
+button.button-red-900:hover,
+a.button-red-900:hover,
+.button-red-900:hover,
+button[color=red-900]:focus,
+button.button-red-900:focus,
+a.button-red-900:focus,
+.button-red-900:focus,
+button[color=red-900].active,
+button.button-red-900.active,
+a.button-red-900.active,
+.button-red-900.active {
+  background-color: #b0120a;
+}
+a.bg-pink,
+.bg-pink {
+  background-color: #e91e63;
+  color: #fff;
+}
+button[color=pink],
+button.button-pink,
+a.button-pink,
+.button-pink {
+  background-color: #e91e63;
+  color: #fff;
+}
+button[color=pink]:hover,
+button.button-pink:hover,
+a.button-pink:hover,
+.button-pink:hover,
+button[color=pink]:focus,
+button.button-pink:focus,
+a.button-pink:focus,
+.button-pink:focus,
+button[color=pink].active,
+button.button-pink.active,
+a.button-pink.active,
+.button-pink.active {
+  background-color: #e91e63;
+}
+a.bg-pink-0,
+.bg-pink-0 {
+  color: #424242;
+}
+button[color=pink-0],
+button.button-pink-0,
+a.button-pink-0,
+.button-pink-0 {
+  color: #424242;
+}
+a.bg-pink-100,
+.bg-pink-100 {
+  background-color: #f8bbd0;
+  color: #fff;
+}
+a.bg-pink-100,
+.bg-pink-100 {
+  color: #424242;
+}
+button[color=pink-100],
+button.button-pink-100,
+a.button-pink-100,
+.button-pink-100 {
+  background-color: #f8bbd0;
+  color: #fff;
+}
+button[color=pink-100]:hover,
+button.button-pink-100:hover,
+a.button-pink-100:hover,
+.button-pink-100:hover,
+button[color=pink-100]:focus,
+button.button-pink-100:focus,
+a.button-pink-100:focus,
+.button-pink-100:focus,
+button[color=pink-100].active,
+button.button-pink-100.active,
+a.button-pink-100.active,
+.button-pink-100.active {
+  background-color: #f8bbd0;
+}
+button[color=pink-100],
+button.button-pink-100,
+a.button-pink-100,
+.button-pink-100 {
+  color: #424242;
+}
+a.bg-pink-100,
+.bg-pink-100 {
+  color: #424242;
+}
+button[color=pink-100],
+button.button-pink-100,
+a.button-pink-100,
+.button-pink-100 {
+  color: #424242;
+}
+a.bg-pink-200,
+.bg-pink-200 {
+  background-color: #f48fb1;
+  color: #fff;
+}
+button[color=pink-200],
+button.button-pink-200,
+a.button-pink-200,
+.button-pink-200 {
+  background-color: #f48fb1;
+  color: #fff;
+}
+button[color=pink-200]:hover,
+button.button-pink-200:hover,
+a.button-pink-200:hover,
+.button-pink-200:hover,
+button[color=pink-200]:focus,
+button.button-pink-200:focus,
+a.button-pink-200:focus,
+.button-pink-200:focus,
+button[color=pink-200].active,
+button.button-pink-200.active,
+a.button-pink-200.active,
+.button-pink-200.active {
+  background-color: #f48fb1;
+}
+a.bg-pink-300,
+.bg-pink-300 {
+  background-color: #f06292;
+  color: #fff;
+}
+button[color=pink-300],
+button.button-pink-300,
+a.button-pink-300,
+.button-pink-300 {
+  background-color: #f06292;
+  color: #fff;
+}
+button[color=pink-300]:hover,
+button.button-pink-300:hover,
+a.button-pink-300:hover,
+.button-pink-300:hover,
+button[color=pink-300]:focus,
+button.button-pink-300:focus,
+a.button-pink-300:focus,
+.button-pink-300:focus,
+button[color=pink-300].active,
+button.button-pink-300.active,
+a.button-pink-300.active,
+.button-pink-300.active {
+  background-color: #f06292;
+}
+a.bg-pink-400,
+.bg-pink-400 {
+  background-color: #ec407a;
+  color: #fff;
+}
+button[color=pink-400],
+button.button-pink-400,
+a.button-pink-400,
+.button-pink-400 {
+  background-color: #ec407a;
+  color: #fff;
+}
+button[color=pink-400]:hover,
+button.button-pink-400:hover,
+a.button-pink-400:hover,
+.button-pink-400:hover,
+button[color=pink-400]:focus,
+button.button-pink-400:focus,
+a.button-pink-400:focus,
+.button-pink-400:focus,
+button[color=pink-400].active,
+button.button-pink-400.active,
+a.button-pink-400.active,
+.button-pink-400.active {
+  background-color: #ec407a;
+}
+a.bg-pink-500,
+.bg-pink-500 {
+  background-color: #e91e63;
+  color: #fff;
+}
+button[color=pink-500],
+button.button-pink-500,
+a.button-pink-500,
+.button-pink-500 {
+  background-color: #e91e63;
+  color: #fff;
+}
+button[color=pink-500]:hover,
+button.button-pink-500:hover,
+a.button-pink-500:hover,
+.button-pink-500:hover,
+button[color=pink-500]:focus,
+button.button-pink-500:focus,
+a.button-pink-500:focus,
+.button-pink-500:focus,
+button[color=pink-500].active,
+button.button-pink-500.active,
+a.button-pink-500.active,
+.button-pink-500.active {
+  background-color: #e91e63;
+}
+a.bg-pink-600,
+.bg-pink-600 {
+  background-color: #d81b60;
+  color: #fff;
+}
+button[color=pink-600],
+button.button-pink-600,
+a.button-pink-600,
+.button-pink-600 {
+  background-color: #d81b60;
+  color: #fff;
+}
+button[color=pink-600]:hover,
+button.button-pink-600:hover,
+a.button-pink-600:hover,
+.button-pink-600:hover,
+button[color=pink-600]:focus,
+button.button-pink-600:focus,
+a.button-pink-600:focus,
+.button-pink-600:focus,
+button[color=pink-600].active,
+button.button-pink-600.active,
+a.button-pink-600.active,
+.button-pink-600.active {
+  background-color: #d81b60;
+}
+a.bg-pink-700,
+.bg-pink-700 {
+  background-color: #c2185b;
+  color: #fff;
+}
+button[color=pink-700],
+button.button-pink-700,
+a.button-pink-700,
+.button-pink-700 {
+  background-color: #c2185b;
+  color: #fff;
+}
+button[color=pink-700]:hover,
+button.button-pink-700:hover,
+a.button-pink-700:hover,
+.button-pink-700:hover,
+button[color=pink-700]:focus,
+button.button-pink-700:focus,
+a.button-pink-700:focus,
+.button-pink-700:focus,
+button[color=pink-700].active,
+button.button-pink-700.active,
+a.button-pink-700.active,
+.button-pink-700.active {
+  background-color: #c2185b;
+}
+a.bg-pink-800,
+.bg-pink-800 {
+  background-color: #ad1457;
+  color: #fff;
+}
+button[color=pink-800],
+button.button-pink-800,
+a.button-pink-800,
+.button-pink-800 {
+  background-color: #ad1457;
+  color: #fff;
+}
+button[color=pink-800]:hover,
+button.button-pink-800:hover,
+a.button-pink-800:hover,
+.button-pink-800:hover,
+button[color=pink-800]:focus,
+button.button-pink-800:focus,
+a.button-pink-800:focus,
+.button-pink-800:focus,
+button[color=pink-800].active,
+button.button-pink-800.active,
+a.button-pink-800.active,
+.button-pink-800.active {
+  background-color: #ad1457;
+}
+a.bg-pink-900,
+.bg-pink-900 {
+  background-color: #880e4f;
+  color: #fff;
+}
+button[color=pink-900],
+button.button-pink-900,
+a.button-pink-900,
+.button-pink-900 {
+  background-color: #880e4f;
+  color: #fff;
+}
+button[color=pink-900]:hover,
+button.button-pink-900:hover,
+a.button-pink-900:hover,
+.button-pink-900:hover,
+button[color=pink-900]:focus,
+button.button-pink-900:focus,
+a.button-pink-900:focus,
+.button-pink-900:focus,
+button[color=pink-900].active,
+button.button-pink-900.active,
+a.button-pink-900.active,
+.button-pink-900.active {
+  background-color: #880e4f;
+}
+a.bg-purple,
+.bg-purple {
+  background-color: #9c27b0;
+  color: #fff;
+}
+button[color=purple],
+button.button-purple,
+a.button-purple,
+.button-purple {
+  background-color: #9c27b0;
+  color: #fff;
+}
+button[color=purple]:hover,
+button.button-purple:hover,
+a.button-purple:hover,
+.button-purple:hover,
+button[color=purple]:focus,
+button.button-purple:focus,
+a.button-purple:focus,
+.button-purple:focus,
+button[color=purple].active,
+button.button-purple.active,
+a.button-purple.active,
+.button-purple.active {
+  background-color: #9c27b0;
+}
+a.bg-purple-0,
+.bg-purple-0 {
+  color: #424242;
+}
+button[color=purple-0],
+button.button-purple-0,
+a.button-purple-0,
+.button-purple-0 {
+  color: #424242;
+}
+a.bg-purple-100,
+.bg-purple-100 {
+  background-color: #e1bee7;
+  color: #fff;
+}
+a.bg-purple-100,
+.bg-purple-100 {
+  color: #424242;
+}
+button[color=purple-100],
+button.button-purple-100,
+a.button-purple-100,
+.button-purple-100 {
+  background-color: #e1bee7;
+  color: #fff;
+}
+button[color=purple-100]:hover,
+button.button-purple-100:hover,
+a.button-purple-100:hover,
+.button-purple-100:hover,
+button[color=purple-100]:focus,
+button.button-purple-100:focus,
+a.button-purple-100:focus,
+.button-purple-100:focus,
+button[color=purple-100].active,
+button.button-purple-100.active,
+a.button-purple-100.active,
+.button-purple-100.active {
+  background-color: #e1bee7;
+}
+button[color=purple-100],
+button.button-purple-100,
+a.button-purple-100,
+.button-purple-100 {
+  color: #424242;
+}
+a.bg-purple-100,
+.bg-purple-100 {
+  color: #424242;
+}
+button[color=purple-100],
+button.button-purple-100,
+a.button-purple-100,
+.button-purple-100 {
+  color: #424242;
+}
+a.bg-purple-200,
+.bg-purple-200 {
+  background-color: #ce93d8;
+  color: #fff;
+}
+button[color=purple-200],
+button.button-purple-200,
+a.button-purple-200,
+.button-purple-200 {
+  background-color: #ce93d8;
+  color: #fff;
+}
+button[color=purple-200]:hover,
+button.button-purple-200:hover,
+a.button-purple-200:hover,
+.button-purple-200:hover,
+button[color=purple-200]:focus,
+button.button-purple-200:focus,
+a.button-purple-200:focus,
+.button-purple-200:focus,
+button[color=purple-200].active,
+button.button-purple-200.active,
+a.button-purple-200.active,
+.button-purple-200.active {
+  background-color: #ce93d8;
+}
+a.bg-purple-300,
+.bg-purple-300 {
+  background-color: #ba68c8;
+  color: #fff;
+}
+button[color=purple-300],
+button.button-purple-300,
+a.button-purple-300,
+.button-purple-300 {
+  background-color: #ba68c8;
+  color: #fff;
+}
+button[color=purple-300]:hover,
+button.button-purple-300:hover,
+a.button-purple-300:hover,
+.button-purple-300:hover,
+button[color=purple-300]:focus,
+button.button-purple-300:focus,
+a.button-purple-300:focus,
+.button-purple-300:focus,
+button[color=purple-300].active,
+button.button-purple-300.active,
+a.button-purple-300.active,
+.button-purple-300.active {
+  background-color: #ba68c8;
+}
+a.bg-purple-400,
+.bg-purple-400 {
+  background-color: #ab47bc;
+  color: #fff;
+}
+button[color=purple-400],
+button.button-purple-400,
+a.button-purple-400,
+.button-purple-400 {
+  background-color: #ab47bc;
+  color: #fff;
+}
+button[color=purple-400]:hover,
+button.button-purple-400:hover,
+a.button-purple-400:hover,
+.button-purple-400:hover,
+button[color=purple-400]:focus,
+button.button-purple-400:focus,
+a.button-purple-400:focus,
+.button-purple-400:focus,
+button[color=purple-400].active,
+button.button-purple-400.active,
+a.button-purple-400.active,
+.button-purple-400.active {
+  background-color: #ab47bc;
+}
+a.bg-purple-500,
+.bg-purple-500 {
+  background-color: #9c27b0;
+  color: #fff;
+}
+button[color=purple-500],
+button.button-purple-500,
+a.button-purple-500,
+.button-purple-500 {
+  background-color: #9c27b0;
+  color: #fff;
+}
+button[color=purple-500]:hover,
+button.button-purple-500:hover,
+a.button-purple-500:hover,
+.button-purple-500:hover,
+button[color=purple-500]:focus,
+button.button-purple-500:focus,
+a.button-purple-500:focus,
+.button-purple-500:focus,
+button[color=purple-500].active,
+button.button-purple-500.active,
+a.button-purple-500.active,
+.button-purple-500.active {
+  background-color: #9c27b0;
+}
+a.bg-purple-600,
+.bg-purple-600 {
+  background-color: #8e24aa;
+  color: #fff;
+}
+button[color=purple-600],
+button.button-purple-600,
+a.button-purple-600,
+.button-purple-600 {
+  background-color: #8e24aa;
+  color: #fff;
+}
+button[color=purple-600]:hover,
+button.button-purple-600:hover,
+a.button-purple-600:hover,
+.button-purple-600:hover,
+button[color=purple-600]:focus,
+button.button-purple-600:focus,
+a.button-purple-600:focus,
+.button-purple-600:focus,
+button[color=purple-600].active,
+button.button-purple-600.active,
+a.button-purple-600.active,
+.button-purple-600.active {
+  background-color: #8e24aa;
+}
+a.bg-purple-700,
+.bg-purple-700 {
+  background-color: #7b1fa2;
+  color: #fff;
+}
+button[color=purple-700],
+button.button-purple-700,
+a.button-purple-700,
+.button-purple-700 {
+  background-color: #7b1fa2;
+  color: #fff;
+}
+button[color=purple-700]:hover,
+button.button-purple-700:hover,
+a.button-purple-700:hover,
+.button-purple-700:hover,
+button[color=purple-700]:focus,
+button.button-purple-700:focus,
+a.button-purple-700:focus,
+.button-purple-700:focus,
+button[color=purple-700].active,
+button.button-purple-700.active,
+a.button-purple-700.active,
+.button-purple-700.active {
+  background-color: #7b1fa2;
+}
+a.bg-purple-800,
+.bg-purple-800 {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+button[color=purple-800],
+button.button-purple-800,
+a.button-purple-800,
+.button-purple-800 {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+button[color=purple-800]:hover,
+button.button-purple-800:hover,
+a.button-purple-800:hover,
+.button-purple-800:hover,
+button[color=purple-800]:focus,
+button.button-purple-800:focus,
+a.button-purple-800:focus,
+.button-purple-800:focus,
+button[color=purple-800].active,
+button.button-purple-800.active,
+a.button-purple-800.active,
+.button-purple-800.active {
+  background-color: #6a1b9a;
+}
+a.bg-purple-900,
+.bg-purple-900 {
+  background-color: #4a148c;
+  color: #fff;
+}
+button[color=purple-900],
+button.button-purple-900,
+a.button-purple-900,
+.button-purple-900 {
+  background-color: #4a148c;
+  color: #fff;
+}
+button[color=purple-900]:hover,
+button.button-purple-900:hover,
+a.button-purple-900:hover,
+.button-purple-900:hover,
+button[color=purple-900]:focus,
+button.button-purple-900:focus,
+a.button-purple-900:focus,
+.button-purple-900:focus,
+button[color=purple-900].active,
+button.button-purple-900.active,
+a.button-purple-900.active,
+.button-purple-900.active {
+  background-color: #4a148c;
+}
+a.bg-indigo,
+.bg-indigo {
+  background-color: #3f51b5;
+  color: #fff;
+}
+button[color=indigo],
+button.button-indigo,
+a.button-indigo,
+.button-indigo {
+  background-color: #3f51b5;
+  color: #fff;
+}
+button[color=indigo]:hover,
+button.button-indigo:hover,
+a.button-indigo:hover,
+.button-indigo:hover,
+button[color=indigo]:focus,
+button.button-indigo:focus,
+a.button-indigo:focus,
+.button-indigo:focus,
+button[color=indigo].active,
+button.button-indigo.active,
+a.button-indigo.active,
+.button-indigo.active {
+  background-color: #3f51b5;
+}
+a.bg-indigo-0,
+.bg-indigo-0 {
+  color: #424242;
+}
+button[color=indigo-0],
+button.button-indigo-0,
+a.button-indigo-0,
+.button-indigo-0 {
+  color: #424242;
+}
+a.bg-indigo-100,
+.bg-indigo-100 {
+  background-color: #c5cae9;
+  color: #fff;
+}
+a.bg-indigo-100,
+.bg-indigo-100 {
+  color: #424242;
+}
+button[color=indigo-100],
+button.button-indigo-100,
+a.button-indigo-100,
+.button-indigo-100 {
+  background-color: #c5cae9;
+  color: #fff;
+}
+button[color=indigo-100]:hover,
+button.button-indigo-100:hover,
+a.button-indigo-100:hover,
+.button-indigo-100:hover,
+button[color=indigo-100]:focus,
+button.button-indigo-100:focus,
+a.button-indigo-100:focus,
+.button-indigo-100:focus,
+button[color=indigo-100].active,
+button.button-indigo-100.active,
+a.button-indigo-100.active,
+.button-indigo-100.active {
+  background-color: #c5cae9;
+}
+button[color=indigo-100],
+button.button-indigo-100,
+a.button-indigo-100,
+.button-indigo-100 {
+  color: #424242;
+}
+a.bg-indigo-100,
+.bg-indigo-100 {
+  color: #424242;
+}
+button[color=indigo-100],
+button.button-indigo-100,
+a.button-indigo-100,
+.button-indigo-100 {
+  color: #424242;
+}
+a.bg-indigo-200,
+.bg-indigo-200 {
+  background-color: #9fa8da;
+  color: #fff;
+}
+button[color=indigo-200],
+button.button-indigo-200,
+a.button-indigo-200,
+.button-indigo-200 {
+  background-color: #9fa8da;
+  color: #fff;
+}
+button[color=indigo-200]:hover,
+button.button-indigo-200:hover,
+a.button-indigo-200:hover,
+.button-indigo-200:hover,
+button[color=indigo-200]:focus,
+button.button-indigo-200:focus,
+a.button-indigo-200:focus,
+.button-indigo-200:focus,
+button[color=indigo-200].active,
+button.button-indigo-200.active,
+a.button-indigo-200.active,
+.button-indigo-200.active {
+  background-color: #9fa8da;
+}
+a.bg-indigo-300,
+.bg-indigo-300 {
+  background-color: #7986cb;
+  color: #fff;
+}
+button[color=indigo-300],
+button.button-indigo-300,
+a.button-indigo-300,
+.button-indigo-300 {
+  background-color: #7986cb;
+  color: #fff;
+}
+button[color=indigo-300]:hover,
+button.button-indigo-300:hover,
+a.button-indigo-300:hover,
+.button-indigo-300:hover,
+button[color=indigo-300]:focus,
+button.button-indigo-300:focus,
+a.button-indigo-300:focus,
+.button-indigo-300:focus,
+button[color=indigo-300].active,
+button.button-indigo-300.active,
+a.button-indigo-300.active,
+.button-indigo-300.active {
+  background-color: #7986cb;
+}
+a.bg-indigo-400,
+.bg-indigo-400 {
+  background-color: #5c6bc0;
+  color: #fff;
+}
+button[color=indigo-400],
+button.button-indigo-400,
+a.button-indigo-400,
+.button-indigo-400 {
+  background-color: #5c6bc0;
+  color: #fff;
+}
+button[color=indigo-400]:hover,
+button.button-indigo-400:hover,
+a.button-indigo-400:hover,
+.button-indigo-400:hover,
+button[color=indigo-400]:focus,
+button.button-indigo-400:focus,
+a.button-indigo-400:focus,
+.button-indigo-400:focus,
+button[color=indigo-400].active,
+button.button-indigo-400.active,
+a.button-indigo-400.active,
+.button-indigo-400.active {
+  background-color: #5c6bc0;
+}
+a.bg-indigo-500,
+.bg-indigo-500 {
+  background-color: #3f51b5;
+  color: #fff;
+}
+button[color=indigo-500],
+button.button-indigo-500,
+a.button-indigo-500,
+.button-indigo-500 {
+  background-color: #3f51b5;
+  color: #fff;
+}
+button[color=indigo-500]:hover,
+button.button-indigo-500:hover,
+a.button-indigo-500:hover,
+.button-indigo-500:hover,
+button[color=indigo-500]:focus,
+button.button-indigo-500:focus,
+a.button-indigo-500:focus,
+.button-indigo-500:focus,
+button[color=indigo-500].active,
+button.button-indigo-500.active,
+a.button-indigo-500.active,
+.button-indigo-500.active {
+  background-color: #3f51b5;
+}
+a.bg-indigo-600,
+.bg-indigo-600 {
+  background-color: #3949ab;
+  color: #fff;
+}
+button[color=indigo-600],
+button.button-indigo-600,
+a.button-indigo-600,
+.button-indigo-600 {
+  background-color: #3949ab;
+  color: #fff;
+}
+button[color=indigo-600]:hover,
+button.button-indigo-600:hover,
+a.button-indigo-600:hover,
+.button-indigo-600:hover,
+button[color=indigo-600]:focus,
+button.button-indigo-600:focus,
+a.button-indigo-600:focus,
+.button-indigo-600:focus,
+button[color=indigo-600].active,
+button.button-indigo-600.active,
+a.button-indigo-600.active,
+.button-indigo-600.active {
+  background-color: #3949ab;
+}
+a.bg-indigo-700,
+.bg-indigo-700 {
+  background-color: #303f9f;
+  color: #fff;
+}
+button[color=indigo-700],
+button.button-indigo-700,
+a.button-indigo-700,
+.button-indigo-700 {
+  background-color: #303f9f;
+  color: #fff;
+}
+button[color=indigo-700]:hover,
+button.button-indigo-700:hover,
+a.button-indigo-700:hover,
+.button-indigo-700:hover,
+button[color=indigo-700]:focus,
+button.button-indigo-700:focus,
+a.button-indigo-700:focus,
+.button-indigo-700:focus,
+button[color=indigo-700].active,
+button.button-indigo-700.active,
+a.button-indigo-700.active,
+.button-indigo-700.active {
+  background-color: #303f9f;
+}
+a.bg-indigo-800,
+.bg-indigo-800 {
+  background-color: #283593;
+  color: #fff;
+}
+button[color=indigo-800],
+button.button-indigo-800,
+a.button-indigo-800,
+.button-indigo-800 {
+  background-color: #283593;
+  color: #fff;
+}
+button[color=indigo-800]:hover,
+button.button-indigo-800:hover,
+a.button-indigo-800:hover,
+.button-indigo-800:hover,
+button[color=indigo-800]:focus,
+button.button-indigo-800:focus,
+a.button-indigo-800:focus,
+.button-indigo-800:focus,
+button[color=indigo-800].active,
+button.button-indigo-800.active,
+a.button-indigo-800.active,
+.button-indigo-800.active {
+  background-color: #283593;
+}
+a.bg-indigo-900,
+.bg-indigo-900 {
+  background-color: #1a237e;
+  color: #fff;
+}
+button[color=indigo-900],
+button.button-indigo-900,
+a.button-indigo-900,
+.button-indigo-900 {
+  background-color: #1a237e;
+  color: #fff;
+}
+button[color=indigo-900]:hover,
+button.button-indigo-900:hover,
+a.button-indigo-900:hover,
+.button-indigo-900:hover,
+button[color=indigo-900]:focus,
+button.button-indigo-900:focus,
+a.button-indigo-900:focus,
+.button-indigo-900:focus,
+button[color=indigo-900].active,
+button.button-indigo-900.active,
+a.button-indigo-900.active,
+.button-indigo-900.active {
+  background-color: #1a237e;
+}
+a.bg-blue,
+.bg-blue {
+  background-color: #5677fc;
+  color: #fff;
+}
+button[color=blue],
+button.button-blue,
+a.button-blue,
+.button-blue {
+  background-color: #5677fc;
+  color: #fff;
+}
+button[color=blue]:hover,
+button.button-blue:hover,
+a.button-blue:hover,
+.button-blue:hover,
+button[color=blue]:focus,
+button.button-blue:focus,
+a.button-blue:focus,
+.button-blue:focus,
+button[color=blue].active,
+button.button-blue.active,
+a.button-blue.active,
+.button-blue.active {
+  background-color: #5677fc;
+}
+a.bg-blue-0,
+.bg-blue-0 {
+  color: #424242;
+}
+button[color=blue-0],
+button.button-blue-0,
+a.button-blue-0,
+.button-blue-0 {
+  color: #424242;
+}
+a.bg-blue-100,
+.bg-blue-100 {
+  background-color: #d0d9ff;
+  color: #fff;
+}
+a.bg-blue-100,
+.bg-blue-100 {
+  color: #424242;
+}
+button[color=blue-100],
+button.button-blue-100,
+a.button-blue-100,
+.button-blue-100 {
+  background-color: #d0d9ff;
+  color: #fff;
+}
+button[color=blue-100]:hover,
+button.button-blue-100:hover,
+a.button-blue-100:hover,
+.button-blue-100:hover,
+button[color=blue-100]:focus,
+button.button-blue-100:focus,
+a.button-blue-100:focus,
+.button-blue-100:focus,
+button[color=blue-100].active,
+button.button-blue-100.active,
+a.button-blue-100.active,
+.button-blue-100.active {
+  background-color: #d0d9ff;
+}
+button[color=blue-100],
+button.button-blue-100,
+a.button-blue-100,
+.button-blue-100 {
+  color: #424242;
+}
+a.bg-blue-100,
+.bg-blue-100 {
+  color: #424242;
+}
+button[color=blue-100],
+button.button-blue-100,
+a.button-blue-100,
+.button-blue-100 {
+  color: #424242;
+}
+a.bg-blue-200,
+.bg-blue-200 {
+  background-color: #afbfff;
+  color: #fff;
+}
+button[color=blue-200],
+button.button-blue-200,
+a.button-blue-200,
+.button-blue-200 {
+  background-color: #afbfff;
+  color: #fff;
+}
+button[color=blue-200]:hover,
+button.button-blue-200:hover,
+a.button-blue-200:hover,
+.button-blue-200:hover,
+button[color=blue-200]:focus,
+button.button-blue-200:focus,
+a.button-blue-200:focus,
+.button-blue-200:focus,
+button[color=blue-200].active,
+button.button-blue-200.active,
+a.button-blue-200.active,
+.button-blue-200.active {
+  background-color: #afbfff;
+}
+a.bg-blue-300,
+.bg-blue-300 {
+  background-color: #91a7ff;
+  color: #fff;
+}
+button[color=blue-300],
+button.button-blue-300,
+a.button-blue-300,
+.button-blue-300 {
+  background-color: #91a7ff;
+  color: #fff;
+}
+button[color=blue-300]:hover,
+button.button-blue-300:hover,
+a.button-blue-300:hover,
+.button-blue-300:hover,
+button[color=blue-300]:focus,
+button.button-blue-300:focus,
+a.button-blue-300:focus,
+.button-blue-300:focus,
+button[color=blue-300].active,
+button.button-blue-300.active,
+a.button-blue-300.active,
+.button-blue-300.active {
+  background-color: #91a7ff;
+}
+a.bg-blue-400,
+.bg-blue-400 {
+  background-color: #738ffe;
+  color: #fff;
+}
+button[color=blue-400],
+button.button-blue-400,
+a.button-blue-400,
+.button-blue-400 {
+  background-color: #738ffe;
+  color: #fff;
+}
+button[color=blue-400]:hover,
+button.button-blue-400:hover,
+a.button-blue-400:hover,
+.button-blue-400:hover,
+button[color=blue-400]:focus,
+button.button-blue-400:focus,
+a.button-blue-400:focus,
+.button-blue-400:focus,
+button[color=blue-400].active,
+button.button-blue-400.active,
+a.button-blue-400.active,
+.button-blue-400.active {
+  background-color: #738ffe;
+}
+a.bg-blue-500,
+.bg-blue-500 {
+  background-color: #5677fc;
+  color: #fff;
+}
+button[color=blue-500],
+button.button-blue-500,
+a.button-blue-500,
+.button-blue-500 {
+  background-color: #5677fc;
+  color: #fff;
+}
+button[color=blue-500]:hover,
+button.button-blue-500:hover,
+a.button-blue-500:hover,
+.button-blue-500:hover,
+button[color=blue-500]:focus,
+button.button-blue-500:focus,
+a.button-blue-500:focus,
+.button-blue-500:focus,
+button[color=blue-500].active,
+button.button-blue-500.active,
+a.button-blue-500.active,
+.button-blue-500.active {
+  background-color: #5677fc;
+}
+a.bg-blue-600,
+.bg-blue-600 {
+  background-color: #4e6cef;
+  color: #fff;
+}
+button[color=blue-600],
+button.button-blue-600,
+a.button-blue-600,
+.button-blue-600 {
+  background-color: #4e6cef;
+  color: #fff;
+}
+button[color=blue-600]:hover,
+button.button-blue-600:hover,
+a.button-blue-600:hover,
+.button-blue-600:hover,
+button[color=blue-600]:focus,
+button.button-blue-600:focus,
+a.button-blue-600:focus,
+.button-blue-600:focus,
+button[color=blue-600].active,
+button.button-blue-600.active,
+a.button-blue-600.active,
+.button-blue-600.active {
+  background-color: #4e6cef;
+}
+a.bg-blue-700,
+.bg-blue-700 {
+  background-color: #455ede;
+  color: #fff;
+}
+button[color=blue-700],
+button.button-blue-700,
+a.button-blue-700,
+.button-blue-700 {
+  background-color: #455ede;
+  color: #fff;
+}
+button[color=blue-700]:hover,
+button.button-blue-700:hover,
+a.button-blue-700:hover,
+.button-blue-700:hover,
+button[color=blue-700]:focus,
+button.button-blue-700:focus,
+a.button-blue-700:focus,
+.button-blue-700:focus,
+button[color=blue-700].active,
+button.button-blue-700.active,
+a.button-blue-700.active,
+.button-blue-700.active {
+  background-color: #455ede;
+}
+a.bg-blue-800,
+.bg-blue-800 {
+  background-color: #3b50ce;
+  color: #fff;
+}
+button[color=blue-800],
+button.button-blue-800,
+a.button-blue-800,
+.button-blue-800 {
+  background-color: #3b50ce;
+  color: #fff;
+}
+button[color=blue-800]:hover,
+button.button-blue-800:hover,
+a.button-blue-800:hover,
+.button-blue-800:hover,
+button[color=blue-800]:focus,
+button.button-blue-800:focus,
+a.button-blue-800:focus,
+.button-blue-800:focus,
+button[color=blue-800].active,
+button.button-blue-800.active,
+a.button-blue-800.active,
+.button-blue-800.active {
+  background-color: #3b50ce;
+}
+a.bg-blue-900,
+.bg-blue-900 {
+  background-color: #2a36b1;
+  color: #fff;
+}
+button[color=blue-900],
+button.button-blue-900,
+a.button-blue-900,
+.button-blue-900 {
+  background-color: #2a36b1;
+  color: #fff;
+}
+button[color=blue-900]:hover,
+button.button-blue-900:hover,
+a.button-blue-900:hover,
+.button-blue-900:hover,
+button[color=blue-900]:focus,
+button.button-blue-900:focus,
+a.button-blue-900:focus,
+.button-blue-900:focus,
+button[color=blue-900].active,
+button.button-blue-900.active,
+a.button-blue-900.active,
+.button-blue-900.active {
+  background-color: #2a36b1;
+}
+a.bg-lightblue,
+.bg-lightblue {
+  background-color: #03a9f4;
+  color: #fff;
+}
+button[color=lightblue],
+button.button-lightblue,
+a.button-lightblue,
+.button-lightblue {
+  background-color: #03a9f4;
+  color: #fff;
+}
+button[color=lightblue]:hover,
+button.button-lightblue:hover,
+a.button-lightblue:hover,
+.button-lightblue:hover,
+button[color=lightblue]:focus,
+button.button-lightblue:focus,
+a.button-lightblue:focus,
+.button-lightblue:focus,
+button[color=lightblue].active,
+button.button-lightblue.active,
+a.button-lightblue.active,
+.button-lightblue.active {
+  background-color: #03a9f4;
+}
+a.bg-lightblue-0,
+.bg-lightblue-0 {
+  color: #424242;
+}
+button[color=lightblue-0],
+button.button-lightblue-0,
+a.button-lightblue-0,
+.button-lightblue-0 {
+  color: #424242;
+}
+a.bg-lightblue-100,
+.bg-lightblue-100 {
+  background-color: #b3e5fc;
+  color: #fff;
+}
+a.bg-lightblue-100,
+.bg-lightblue-100 {
+  color: #424242;
+}
+button[color=lightblue-100],
+button.button-lightblue-100,
+a.button-lightblue-100,
+.button-lightblue-100 {
+  background-color: #b3e5fc;
+  color: #fff;
+}
+button[color=lightblue-100]:hover,
+button.button-lightblue-100:hover,
+a.button-lightblue-100:hover,
+.button-lightblue-100:hover,
+button[color=lightblue-100]:focus,
+button.button-lightblue-100:focus,
+a.button-lightblue-100:focus,
+.button-lightblue-100:focus,
+button[color=lightblue-100].active,
+button.button-lightblue-100.active,
+a.button-lightblue-100.active,
+.button-lightblue-100.active {
+  background-color: #b3e5fc;
+}
+button[color=lightblue-100],
+button.button-lightblue-100,
+a.button-lightblue-100,
+.button-lightblue-100 {
+  color: #424242;
+}
+a.bg-lightblue-100,
+.bg-lightblue-100 {
+  color: #424242;
+}
+button[color=lightblue-100],
+button.button-lightblue-100,
+a.button-lightblue-100,
+.button-lightblue-100 {
+  color: #424242;
+}
+a.bg-lightblue-200,
+.bg-lightblue-200 {
+  background-color: #81d4fa;
+  color: #fff;
+}
+button[color=lightblue-200],
+button.button-lightblue-200,
+a.button-lightblue-200,
+.button-lightblue-200 {
+  background-color: #81d4fa;
+  color: #fff;
+}
+button[color=lightblue-200]:hover,
+button.button-lightblue-200:hover,
+a.button-lightblue-200:hover,
+.button-lightblue-200:hover,
+button[color=lightblue-200]:focus,
+button.button-lightblue-200:focus,
+a.button-lightblue-200:focus,
+.button-lightblue-200:focus,
+button[color=lightblue-200].active,
+button.button-lightblue-200.active,
+a.button-lightblue-200.active,
+.button-lightblue-200.active {
+  background-color: #81d4fa;
+}
+a.bg-lightblue-300,
+.bg-lightblue-300 {
+  background-color: #4fc3f7;
+  color: #fff;
+}
+button[color=lightblue-300],
+button.button-lightblue-300,
+a.button-lightblue-300,
+.button-lightblue-300 {
+  background-color: #4fc3f7;
+  color: #fff;
+}
+button[color=lightblue-300]:hover,
+button.button-lightblue-300:hover,
+a.button-lightblue-300:hover,
+.button-lightblue-300:hover,
+button[color=lightblue-300]:focus,
+button.button-lightblue-300:focus,
+a.button-lightblue-300:focus,
+.button-lightblue-300:focus,
+button[color=lightblue-300].active,
+button.button-lightblue-300.active,
+a.button-lightblue-300.active,
+.button-lightblue-300.active {
+  background-color: #4fc3f7;
+}
+a.bg-lightblue-400,
+.bg-lightblue-400 {
+  background-color: #29b6f6;
+  color: #fff;
+}
+button[color=lightblue-400],
+button.button-lightblue-400,
+a.button-lightblue-400,
+.button-lightblue-400 {
+  background-color: #29b6f6;
+  color: #fff;
+}
+button[color=lightblue-400]:hover,
+button.button-lightblue-400:hover,
+a.button-lightblue-400:hover,
+.button-lightblue-400:hover,
+button[color=lightblue-400]:focus,
+button.button-lightblue-400:focus,
+a.button-lightblue-400:focus,
+.button-lightblue-400:focus,
+button[color=lightblue-400].active,
+button.button-lightblue-400.active,
+a.button-lightblue-400.active,
+.button-lightblue-400.active {
+  background-color: #29b6f6;
+}
+a.bg-lightblue-500,
+.bg-lightblue-500 {
+  background-color: #03a9f4;
+  color: #fff;
+}
+button[color=lightblue-500],
+button.button-lightblue-500,
+a.button-lightblue-500,
+.button-lightblue-500 {
+  background-color: #03a9f4;
+  color: #fff;
+}
+button[color=lightblue-500]:hover,
+button.button-lightblue-500:hover,
+a.button-lightblue-500:hover,
+.button-lightblue-500:hover,
+button[color=lightblue-500]:focus,
+button.button-lightblue-500:focus,
+a.button-lightblue-500:focus,
+.button-lightblue-500:focus,
+button[color=lightblue-500].active,
+button.button-lightblue-500.active,
+a.button-lightblue-500.active,
+.button-lightblue-500.active {
+  background-color: #03a9f4;
+}
+a.bg-lightblue-600,
+.bg-lightblue-600 {
+  background-color: #039be5;
+  color: #fff;
+}
+button[color=lightblue-600],
+button.button-lightblue-600,
+a.button-lightblue-600,
+.button-lightblue-600 {
+  background-color: #039be5;
+  color: #fff;
+}
+button[color=lightblue-600]:hover,
+button.button-lightblue-600:hover,
+a.button-lightblue-600:hover,
+.button-lightblue-600:hover,
+button[color=lightblue-600]:focus,
+button.button-lightblue-600:focus,
+a.button-lightblue-600:focus,
+.button-lightblue-600:focus,
+button[color=lightblue-600].active,
+button.button-lightblue-600.active,
+a.button-lightblue-600.active,
+.button-lightblue-600.active {
+  background-color: #039be5;
+}
+a.bg-lightblue-700,
+.bg-lightblue-700 {
+  background-color: #0288d1;
+  color: #fff;
+}
+button[color=lightblue-700],
+button.button-lightblue-700,
+a.button-lightblue-700,
+.button-lightblue-700 {
+  background-color: #0288d1;
+  color: #fff;
+}
+button[color=lightblue-700]:hover,
+button.button-lightblue-700:hover,
+a.button-lightblue-700:hover,
+.button-lightblue-700:hover,
+button[color=lightblue-700]:focus,
+button.button-lightblue-700:focus,
+a.button-lightblue-700:focus,
+.button-lightblue-700:focus,
+button[color=lightblue-700].active,
+button.button-lightblue-700.active,
+a.button-lightblue-700.active,
+.button-lightblue-700.active {
+  background-color: #0288d1;
+}
+a.bg-lightblue-800,
+.bg-lightblue-800 {
+  background-color: #0277bd;
+  color: #fff;
+}
+button[color=lightblue-800],
+button.button-lightblue-800,
+a.button-lightblue-800,
+.button-lightblue-800 {
+  background-color: #0277bd;
+  color: #fff;
+}
+button[color=lightblue-800]:hover,
+button.button-lightblue-800:hover,
+a.button-lightblue-800:hover,
+.button-lightblue-800:hover,
+button[color=lightblue-800]:focus,
+button.button-lightblue-800:focus,
+a.button-lightblue-800:focus,
+.button-lightblue-800:focus,
+button[color=lightblue-800].active,
+button.button-lightblue-800.active,
+a.button-lightblue-800.active,
+.button-lightblue-800.active {
+  background-color: #0277bd;
+}
+a.bg-lightblue-900,
+.bg-lightblue-900 {
+  background-color: #01579b;
+  color: #fff;
+}
+button[color=lightblue-900],
+button.button-lightblue-900,
+a.button-lightblue-900,
+.button-lightblue-900 {
+  background-color: #01579b;
+  color: #fff;
+}
+button[color=lightblue-900]:hover,
+button.button-lightblue-900:hover,
+a.button-lightblue-900:hover,
+.button-lightblue-900:hover,
+button[color=lightblue-900]:focus,
+button.button-lightblue-900:focus,
+a.button-lightblue-900:focus,
+.button-lightblue-900:focus,
+button[color=lightblue-900].active,
+button.button-lightblue-900.active,
+a.button-lightblue-900.active,
+.button-lightblue-900.active {
+  background-color: #01579b;
+}
+a.bg-cyan,
+.bg-cyan {
+  background-color: #00bcd4;
+  color: #fff;
+}
+button[color=cyan],
+button.button-cyan,
+a.button-cyan,
+.button-cyan {
+  background-color: #00bcd4;
+  color: #fff;
+}
+button[color=cyan]:hover,
+button.button-cyan:hover,
+a.button-cyan:hover,
+.button-cyan:hover,
+button[color=cyan]:focus,
+button.button-cyan:focus,
+a.button-cyan:focus,
+.button-cyan:focus,
+button[color=cyan].active,
+button.button-cyan.active,
+a.button-cyan.active,
+.button-cyan.active {
+  background-color: #00bcd4;
+}
+a.bg-cyan-0,
+.bg-cyan-0 {
+  color: #424242;
+}
+button[color=cyan-0],
+button.button-cyan-0,
+a.button-cyan-0,
+.button-cyan-0 {
+  color: #424242;
+}
+a.bg-cyan-100,
+.bg-cyan-100 {
+  background-color: #b2ebf2;
+  color: #fff;
+}
+a.bg-cyan-100,
+.bg-cyan-100 {
+  color: #424242;
+}
+button[color=cyan-100],
+button.button-cyan-100,
+a.button-cyan-100,
+.button-cyan-100 {
+  background-color: #b2ebf2;
+  color: #fff;
+}
+button[color=cyan-100]:hover,
+button.button-cyan-100:hover,
+a.button-cyan-100:hover,
+.button-cyan-100:hover,
+button[color=cyan-100]:focus,
+button.button-cyan-100:focus,
+a.button-cyan-100:focus,
+.button-cyan-100:focus,
+button[color=cyan-100].active,
+button.button-cyan-100.active,
+a.button-cyan-100.active,
+.button-cyan-100.active {
+  background-color: #b2ebf2;
+}
+button[color=cyan-100],
+button.button-cyan-100,
+a.button-cyan-100,
+.button-cyan-100 {
+  color: #424242;
+}
+a.bg-cyan-100,
+.bg-cyan-100 {
+  color: #424242;
+}
+button[color=cyan-100],
+button.button-cyan-100,
+a.button-cyan-100,
+.button-cyan-100 {
+  color: #424242;
+}
+a.bg-cyan-200,
+.bg-cyan-200 {
+  background-color: #80deea;
+  color: #fff;
+}
+button[color=cyan-200],
+button.button-cyan-200,
+a.button-cyan-200,
+.button-cyan-200 {
+  background-color: #80deea;
+  color: #fff;
+}
+button[color=cyan-200]:hover,
+button.button-cyan-200:hover,
+a.button-cyan-200:hover,
+.button-cyan-200:hover,
+button[color=cyan-200]:focus,
+button.button-cyan-200:focus,
+a.button-cyan-200:focus,
+.button-cyan-200:focus,
+button[color=cyan-200].active,
+button.button-cyan-200.active,
+a.button-cyan-200.active,
+.button-cyan-200.active {
+  background-color: #80deea;
+}
+a.bg-cyan-300,
+.bg-cyan-300 {
+  background-color: #4dd0e1;
+  color: #fff;
+}
+button[color=cyan-300],
+button.button-cyan-300,
+a.button-cyan-300,
+.button-cyan-300 {
+  background-color: #4dd0e1;
+  color: #fff;
+}
+button[color=cyan-300]:hover,
+button.button-cyan-300:hover,
+a.button-cyan-300:hover,
+.button-cyan-300:hover,
+button[color=cyan-300]:focus,
+button.button-cyan-300:focus,
+a.button-cyan-300:focus,
+.button-cyan-300:focus,
+button[color=cyan-300].active,
+button.button-cyan-300.active,
+a.button-cyan-300.active,
+.button-cyan-300.active {
+  background-color: #4dd0e1;
+}
+a.bg-cyan-400,
+.bg-cyan-400 {
+  background-color: #26c6da;
+  color: #fff;
+}
+button[color=cyan-400],
+button.button-cyan-400,
+a.button-cyan-400,
+.button-cyan-400 {
+  background-color: #26c6da;
+  color: #fff;
+}
+button[color=cyan-400]:hover,
+button.button-cyan-400:hover,
+a.button-cyan-400:hover,
+.button-cyan-400:hover,
+button[color=cyan-400]:focus,
+button.button-cyan-400:focus,
+a.button-cyan-400:focus,
+.button-cyan-400:focus,
+button[color=cyan-400].active,
+button.button-cyan-400.active,
+a.button-cyan-400.active,
+.button-cyan-400.active {
+  background-color: #26c6da;
+}
+a.bg-cyan-500,
+.bg-cyan-500 {
+  background-color: #00bcd4;
+  color: #fff;
+}
+button[color=cyan-500],
+button.button-cyan-500,
+a.button-cyan-500,
+.button-cyan-500 {
+  background-color: #00bcd4;
+  color: #fff;
+}
+button[color=cyan-500]:hover,
+button.button-cyan-500:hover,
+a.button-cyan-500:hover,
+.button-cyan-500:hover,
+button[color=cyan-500]:focus,
+button.button-cyan-500:focus,
+a.button-cyan-500:focus,
+.button-cyan-500:focus,
+button[color=cyan-500].active,
+button.button-cyan-500.active,
+a.button-cyan-500.active,
+.button-cyan-500.active {
+  background-color: #00bcd4;
+}
+a.bg-cyan-600,
+.bg-cyan-600 {
+  background-color: #00acc1;
+  color: #fff;
+}
+button[color=cyan-600],
+button.button-cyan-600,
+a.button-cyan-600,
+.button-cyan-600 {
+  background-color: #00acc1;
+  color: #fff;
+}
+button[color=cyan-600]:hover,
+button.button-cyan-600:hover,
+a.button-cyan-600:hover,
+.button-cyan-600:hover,
+button[color=cyan-600]:focus,
+button.button-cyan-600:focus,
+a.button-cyan-600:focus,
+.button-cyan-600:focus,
+button[color=cyan-600].active,
+button.button-cyan-600.active,
+a.button-cyan-600.active,
+.button-cyan-600.active {
+  background-color: #00acc1;
+}
+a.bg-cyan-700,
+.bg-cyan-700 {
+  background-color: #0097a7;
+  color: #fff;
+}
+button[color=cyan-700],
+button.button-cyan-700,
+a.button-cyan-700,
+.button-cyan-700 {
+  background-color: #0097a7;
+  color: #fff;
+}
+button[color=cyan-700]:hover,
+button.button-cyan-700:hover,
+a.button-cyan-700:hover,
+.button-cyan-700:hover,
+button[color=cyan-700]:focus,
+button.button-cyan-700:focus,
+a.button-cyan-700:focus,
+.button-cyan-700:focus,
+button[color=cyan-700].active,
+button.button-cyan-700.active,
+a.button-cyan-700.active,
+.button-cyan-700.active {
+  background-color: #0097a7;
+}
+a.bg-cyan-800,
+.bg-cyan-800 {
+  background-color: #00838f;
+  color: #fff;
+}
+button[color=cyan-800],
+button.button-cyan-800,
+a.button-cyan-800,
+.button-cyan-800 {
+  background-color: #00838f;
+  color: #fff;
+}
+button[color=cyan-800]:hover,
+button.button-cyan-800:hover,
+a.button-cyan-800:hover,
+.button-cyan-800:hover,
+button[color=cyan-800]:focus,
+button.button-cyan-800:focus,
+a.button-cyan-800:focus,
+.button-cyan-800:focus,
+button[color=cyan-800].active,
+button.button-cyan-800.active,
+a.button-cyan-800.active,
+.button-cyan-800.active {
+  background-color: #00838f;
+}
+a.bg-cyan-900,
+.bg-cyan-900 {
+  background-color: #006064;
+  color: #fff;
+}
+button[color=cyan-900],
+button.button-cyan-900,
+a.button-cyan-900,
+.button-cyan-900 {
+  background-color: #006064;
+  color: #fff;
+}
+button[color=cyan-900]:hover,
+button.button-cyan-900:hover,
+a.button-cyan-900:hover,
+.button-cyan-900:hover,
+button[color=cyan-900]:focus,
+button.button-cyan-900:focus,
+a.button-cyan-900:focus,
+.button-cyan-900:focus,
+button[color=cyan-900].active,
+button.button-cyan-900.active,
+a.button-cyan-900.active,
+.button-cyan-900.active {
+  background-color: #006064;
+}
+a.bg-teal,
+.bg-teal {
+  background-color: #009688;
+  color: #fff;
+}
+button[color=teal],
+button.button-teal,
+a.button-teal,
+.button-teal {
+  background-color: #009688;
+  color: #fff;
+}
+button[color=teal]:hover,
+button.button-teal:hover,
+a.button-teal:hover,
+.button-teal:hover,
+button[color=teal]:focus,
+button.button-teal:focus,
+a.button-teal:focus,
+.button-teal:focus,
+button[color=teal].active,
+button.button-teal.active,
+a.button-teal.active,
+.button-teal.active {
+  background-color: #009688;
+}
+a.bg-teal-0,
+.bg-teal-0 {
+  color: #424242;
+}
+button[color=teal-0],
+button.button-teal-0,
+a.button-teal-0,
+.button-teal-0 {
+  color: #424242;
+}
+a.bg-teal-100,
+.bg-teal-100 {
+  background-color: #b2dfdb;
+  color: #fff;
+}
+a.bg-teal-100,
+.bg-teal-100 {
+  color: #424242;
+}
+button[color=teal-100],
+button.button-teal-100,
+a.button-teal-100,
+.button-teal-100 {
+  background-color: #b2dfdb;
+  color: #fff;
+}
+button[color=teal-100]:hover,
+button.button-teal-100:hover,
+a.button-teal-100:hover,
+.button-teal-100:hover,
+button[color=teal-100]:focus,
+button.button-teal-100:focus,
+a.button-teal-100:focus,
+.button-teal-100:focus,
+button[color=teal-100].active,
+button.button-teal-100.active,
+a.button-teal-100.active,
+.button-teal-100.active {
+  background-color: #b2dfdb;
+}
+button[color=teal-100],
+button.button-teal-100,
+a.button-teal-100,
+.button-teal-100 {
+  color: #424242;
+}
+a.bg-teal-100,
+.bg-teal-100 {
+  color: #424242;
+}
+button[color=teal-100],
+button.button-teal-100,
+a.button-teal-100,
+.button-teal-100 {
+  color: #424242;
+}
+a.bg-teal-200,
+.bg-teal-200 {
+  background-color: #80cbc4;
+  color: #fff;
+}
+button[color=teal-200],
+button.button-teal-200,
+a.button-teal-200,
+.button-teal-200 {
+  background-color: #80cbc4;
+  color: #fff;
+}
+button[color=teal-200]:hover,
+button.button-teal-200:hover,
+a.button-teal-200:hover,
+.button-teal-200:hover,
+button[color=teal-200]:focus,
+button.button-teal-200:focus,
+a.button-teal-200:focus,
+.button-teal-200:focus,
+button[color=teal-200].active,
+button.button-teal-200.active,
+a.button-teal-200.active,
+.button-teal-200.active {
+  background-color: #80cbc4;
+}
+a.bg-teal-300,
+.bg-teal-300 {
+  background-color: #4db6ac;
+  color: #fff;
+}
+button[color=teal-300],
+button.button-teal-300,
+a.button-teal-300,
+.button-teal-300 {
+  background-color: #4db6ac;
+  color: #fff;
+}
+button[color=teal-300]:hover,
+button.button-teal-300:hover,
+a.button-teal-300:hover,
+.button-teal-300:hover,
+button[color=teal-300]:focus,
+button.button-teal-300:focus,
+a.button-teal-300:focus,
+.button-teal-300:focus,
+button[color=teal-300].active,
+button.button-teal-300.active,
+a.button-teal-300.active,
+.button-teal-300.active {
+  background-color: #4db6ac;
+}
+a.bg-teal-400,
+.bg-teal-400 {
+  background-color: #26a69a;
+  color: #fff;
+}
+button[color=teal-400],
+button.button-teal-400,
+a.button-teal-400,
+.button-teal-400 {
+  background-color: #26a69a;
+  color: #fff;
+}
+button[color=teal-400]:hover,
+button.button-teal-400:hover,
+a.button-teal-400:hover,
+.button-teal-400:hover,
+button[color=teal-400]:focus,
+button.button-teal-400:focus,
+a.button-teal-400:focus,
+.button-teal-400:focus,
+button[color=teal-400].active,
+button.button-teal-400.active,
+a.button-teal-400.active,
+.button-teal-400.active {
+  background-color: #26a69a;
+}
+a.bg-teal-500,
+.bg-teal-500 {
+  background-color: #009688;
+  color: #fff;
+}
+button[color=teal-500],
+button.button-teal-500,
+a.button-teal-500,
+.button-teal-500 {
+  background-color: #009688;
+  color: #fff;
+}
+button[color=teal-500]:hover,
+button.button-teal-500:hover,
+a.button-teal-500:hover,
+.button-teal-500:hover,
+button[color=teal-500]:focus,
+button.button-teal-500:focus,
+a.button-teal-500:focus,
+.button-teal-500:focus,
+button[color=teal-500].active,
+button.button-teal-500.active,
+a.button-teal-500.active,
+.button-teal-500.active {
+  background-color: #009688;
+}
+a.bg-teal-600,
+.bg-teal-600 {
+  background-color: #00897b;
+  color: #fff;
+}
+button[color=teal-600],
+button.button-teal-600,
+a.button-teal-600,
+.button-teal-600 {
+  background-color: #00897b;
+  color: #fff;
+}
+button[color=teal-600]:hover,
+button.button-teal-600:hover,
+a.button-teal-600:hover,
+.button-teal-600:hover,
+button[color=teal-600]:focus,
+button.button-teal-600:focus,
+a.button-teal-600:focus,
+.button-teal-600:focus,
+button[color=teal-600].active,
+button.button-teal-600.active,
+a.button-teal-600.active,
+.button-teal-600.active {
+  background-color: #00897b;
+}
+a.bg-teal-700,
+.bg-teal-700 {
+  background-color: #00796b;
+  color: #fff;
+}
+button[color=teal-700],
+button.button-teal-700,
+a.button-teal-700,
+.button-teal-700 {
+  background-color: #00796b;
+  color: #fff;
+}
+button[color=teal-700]:hover,
+button.button-teal-700:hover,
+a.button-teal-700:hover,
+.button-teal-700:hover,
+button[color=teal-700]:focus,
+button.button-teal-700:focus,
+a.button-teal-700:focus,
+.button-teal-700:focus,
+button[color=teal-700].active,
+button.button-teal-700.active,
+a.button-teal-700.active,
+.button-teal-700.active {
+  background-color: #00796b;
+}
+a.bg-teal-800,
+.bg-teal-800 {
+  background-color: #00695c;
+  color: #fff;
+}
+button[color=teal-800],
+button.button-teal-800,
+a.button-teal-800,
+.button-teal-800 {
+  background-color: #00695c;
+  color: #fff;
+}
+button[color=teal-800]:hover,
+button.button-teal-800:hover,
+a.button-teal-800:hover,
+.button-teal-800:hover,
+button[color=teal-800]:focus,
+button.button-teal-800:focus,
+a.button-teal-800:focus,
+.button-teal-800:focus,
+button[color=teal-800].active,
+button.button-teal-800.active,
+a.button-teal-800.active,
+.button-teal-800.active {
+  background-color: #00695c;
+}
+a.bg-teal-900,
+.bg-teal-900 {
+  background-color: #004d40;
+  color: #fff;
+}
+button[color=teal-900],
+button.button-teal-900,
+a.button-teal-900,
+.button-teal-900 {
+  background-color: #004d40;
+  color: #fff;
+}
+button[color=teal-900]:hover,
+button.button-teal-900:hover,
+a.button-teal-900:hover,
+.button-teal-900:hover,
+button[color=teal-900]:focus,
+button.button-teal-900:focus,
+a.button-teal-900:focus,
+.button-teal-900:focus,
+button[color=teal-900].active,
+button.button-teal-900.active,
+a.button-teal-900.active,
+.button-teal-900.active {
+  background-color: #004d40;
+}
+a.bg-green,
+.bg-green {
+  background-color: #259b24;
+  color: #fff;
+}
+button[color=green],
+button.button-green,
+a.button-green,
+.button-green {
+  background-color: #259b24;
+  color: #fff;
+}
+button[color=green]:hover,
+button.button-green:hover,
+a.button-green:hover,
+.button-green:hover,
+button[color=green]:focus,
+button.button-green:focus,
+a.button-green:focus,
+.button-green:focus,
+button[color=green].active,
+button.button-green.active,
+a.button-green.active,
+.button-green.active {
+  background-color: #259b24;
+}
+a.bg-green-0,
+.bg-green-0 {
+  color: #424242;
+}
+button[color=green-0],
+button.button-green-0,
+a.button-green-0,
+.button-green-0 {
+  color: #424242;
+}
+a.bg-green-100,
+.bg-green-100 {
+  background-color: #a3e9a4;
+  color: #fff;
+}
+a.bg-green-100,
+.bg-green-100 {
+  color: #424242;
+}
+button[color=green-100],
+button.button-green-100,
+a.button-green-100,
+.button-green-100 {
+  background-color: #a3e9a4;
+  color: #fff;
+}
+button[color=green-100]:hover,
+button.button-green-100:hover,
+a.button-green-100:hover,
+.button-green-100:hover,
+button[color=green-100]:focus,
+button.button-green-100:focus,
+a.button-green-100:focus,
+.button-green-100:focus,
+button[color=green-100].active,
+button.button-green-100.active,
+a.button-green-100.active,
+.button-green-100.active {
+  background-color: #a3e9a4;
+}
+button[color=green-100],
+button.button-green-100,
+a.button-green-100,
+.button-green-100 {
+  color: #424242;
+}
+a.bg-green-100,
+.bg-green-100 {
+  color: #424242;
+}
+button[color=green-100],
+button.button-green-100,
+a.button-green-100,
+.button-green-100 {
+  color: #424242;
+}
+a.bg-green-200,
+.bg-green-200 {
+  background-color: #72d572;
+  color: #fff;
+}
+button[color=green-200],
+button.button-green-200,
+a.button-green-200,
+.button-green-200 {
+  background-color: #72d572;
+  color: #fff;
+}
+button[color=green-200]:hover,
+button.button-green-200:hover,
+a.button-green-200:hover,
+.button-green-200:hover,
+button[color=green-200]:focus,
+button.button-green-200:focus,
+a.button-green-200:focus,
+.button-green-200:focus,
+button[color=green-200].active,
+button.button-green-200.active,
+a.button-green-200.active,
+.button-green-200.active {
+  background-color: #72d572;
+}
+a.bg-green-300,
+.bg-green-300 {
+  background-color: #42bd41;
+  color: #fff;
+}
+button[color=green-300],
+button.button-green-300,
+a.button-green-300,
+.button-green-300 {
+  background-color: #42bd41;
+  color: #fff;
+}
+button[color=green-300]:hover,
+button.button-green-300:hover,
+a.button-green-300:hover,
+.button-green-300:hover,
+button[color=green-300]:focus,
+button.button-green-300:focus,
+a.button-green-300:focus,
+.button-green-300:focus,
+button[color=green-300].active,
+button.button-green-300.active,
+a.button-green-300.active,
+.button-green-300.active {
+  background-color: #42bd41;
+}
+a.bg-green-400,
+.bg-green-400 {
+  background-color: #2baf2b;
+  color: #fff;
+}
+button[color=green-400],
+button.button-green-400,
+a.button-green-400,
+.button-green-400 {
+  background-color: #2baf2b;
+  color: #fff;
+}
+button[color=green-400]:hover,
+button.button-green-400:hover,
+a.button-green-400:hover,
+.button-green-400:hover,
+button[color=green-400]:focus,
+button.button-green-400:focus,
+a.button-green-400:focus,
+.button-green-400:focus,
+button[color=green-400].active,
+button.button-green-400.active,
+a.button-green-400.active,
+.button-green-400.active {
+  background-color: #2baf2b;
+}
+a.bg-green-500,
+.bg-green-500 {
+  background-color: #259b24;
+  color: #fff;
+}
+button[color=green-500],
+button.button-green-500,
+a.button-green-500,
+.button-green-500 {
+  background-color: #259b24;
+  color: #fff;
+}
+button[color=green-500]:hover,
+button.button-green-500:hover,
+a.button-green-500:hover,
+.button-green-500:hover,
+button[color=green-500]:focus,
+button.button-green-500:focus,
+a.button-green-500:focus,
+.button-green-500:focus,
+button[color=green-500].active,
+button.button-green-500.active,
+a.button-green-500.active,
+.button-green-500.active {
+  background-color: #259b24;
+}
+a.bg-green-600,
+.bg-green-600 {
+  background-color: #0a8f08;
+  color: #fff;
+}
+button[color=green-600],
+button.button-green-600,
+a.button-green-600,
+.button-green-600 {
+  background-color: #0a8f08;
+  color: #fff;
+}
+button[color=green-600]:hover,
+button.button-green-600:hover,
+a.button-green-600:hover,
+.button-green-600:hover,
+button[color=green-600]:focus,
+button.button-green-600:focus,
+a.button-green-600:focus,
+.button-green-600:focus,
+button[color=green-600].active,
+button.button-green-600.active,
+a.button-green-600.active,
+.button-green-600.active {
+  background-color: #0a8f08;
+}
+a.bg-green-700,
+.bg-green-700 {
+  background-color: #0a7e07;
+  color: #fff;
+}
+button[color=green-700],
+button.button-green-700,
+a.button-green-700,
+.button-green-700 {
+  background-color: #0a7e07;
+  color: #fff;
+}
+button[color=green-700]:hover,
+button.button-green-700:hover,
+a.button-green-700:hover,
+.button-green-700:hover,
+button[color=green-700]:focus,
+button.button-green-700:focus,
+a.button-green-700:focus,
+.button-green-700:focus,
+button[color=green-700].active,
+button.button-green-700.active,
+a.button-green-700.active,
+.button-green-700.active {
+  background-color: #0a7e07;
+}
+a.bg-green-800,
+.bg-green-800 {
+  background-color: #056f00;
+  color: #fff;
+}
+button[color=green-800],
+button.button-green-800,
+a.button-green-800,
+.button-green-800 {
+  background-color: #056f00;
+  color: #fff;
+}
+button[color=green-800]:hover,
+button.button-green-800:hover,
+a.button-green-800:hover,
+.button-green-800:hover,
+button[color=green-800]:focus,
+button.button-green-800:focus,
+a.button-green-800:focus,
+.button-green-800:focus,
+button[color=green-800].active,
+button.button-green-800.active,
+a.button-green-800.active,
+.button-green-800.active {
+  background-color: #056f00;
+}
+a.bg-green-900,
+.bg-green-900 {
+  background-color: #0d5302;
+  color: #fff;
+}
+button[color=green-900],
+button.button-green-900,
+a.button-green-900,
+.button-green-900 {
+  background-color: #0d5302;
+  color: #fff;
+}
+button[color=green-900]:hover,
+button.button-green-900:hover,
+a.button-green-900:hover,
+.button-green-900:hover,
+button[color=green-900]:focus,
+button.button-green-900:focus,
+a.button-green-900:focus,
+.button-green-900:focus,
+button[color=green-900].active,
+button.button-green-900.active,
+a.button-green-900.active,
+.button-green-900.active {
+  background-color: #0d5302;
+}
+a.bg-lightgreen,
+.bg-lightgreen {
+  background-color: #8bc34a;
+  color: #fff;
+}
+button[color=lightgreen],
+button.button-lightgreen,
+a.button-lightgreen,
+.button-lightgreen {
+  background-color: #8bc34a;
+  color: #fff;
+}
+button[color=lightgreen]:hover,
+button.button-lightgreen:hover,
+a.button-lightgreen:hover,
+.button-lightgreen:hover,
+button[color=lightgreen]:focus,
+button.button-lightgreen:focus,
+a.button-lightgreen:focus,
+.button-lightgreen:focus,
+button[color=lightgreen].active,
+button.button-lightgreen.active,
+a.button-lightgreen.active,
+.button-lightgreen.active {
+  background-color: #8bc34a;
+}
+a.bg-lightgreen-0,
+.bg-lightgreen-0 {
+  color: #424242;
+}
+button[color=lightgreen-0],
+button.button-lightgreen-0,
+a.button-lightgreen-0,
+.button-lightgreen-0 {
+  color: #424242;
+}
+a.bg-lightgreen-100,
+.bg-lightgreen-100 {
+  background-color: #dcedc8;
+  color: #fff;
+}
+a.bg-lightgreen-100,
+.bg-lightgreen-100 {
+  color: #424242;
+}
+button[color=lightgreen-100],
+button.button-lightgreen-100,
+a.button-lightgreen-100,
+.button-lightgreen-100 {
+  background-color: #dcedc8;
+  color: #fff;
+}
+button[color=lightgreen-100]:hover,
+button.button-lightgreen-100:hover,
+a.button-lightgreen-100:hover,
+.button-lightgreen-100:hover,
+button[color=lightgreen-100]:focus,
+button.button-lightgreen-100:focus,
+a.button-lightgreen-100:focus,
+.button-lightgreen-100:focus,
+button[color=lightgreen-100].active,
+button.button-lightgreen-100.active,
+a.button-lightgreen-100.active,
+.button-lightgreen-100.active {
+  background-color: #dcedc8;
+}
+button[color=lightgreen-100],
+button.button-lightgreen-100,
+a.button-lightgreen-100,
+.button-lightgreen-100 {
+  color: #424242;
+}
+a.bg-lightgreen-100,
+.bg-lightgreen-100 {
+  color: #424242;
+}
+button[color=lightgreen-100],
+button.button-lightgreen-100,
+a.button-lightgreen-100,
+.button-lightgreen-100 {
+  color: #424242;
+}
+a.bg-lightgreen-200,
+.bg-lightgreen-200 {
+  background-color: #c5e1a5;
+  color: #fff;
+}
+button[color=lightgreen-200],
+button.button-lightgreen-200,
+a.button-lightgreen-200,
+.button-lightgreen-200 {
+  background-color: #c5e1a5;
+  color: #fff;
+}
+button[color=lightgreen-200]:hover,
+button.button-lightgreen-200:hover,
+a.button-lightgreen-200:hover,
+.button-lightgreen-200:hover,
+button[color=lightgreen-200]:focus,
+button.button-lightgreen-200:focus,
+a.button-lightgreen-200:focus,
+.button-lightgreen-200:focus,
+button[color=lightgreen-200].active,
+button.button-lightgreen-200.active,
+a.button-lightgreen-200.active,
+.button-lightgreen-200.active {
+  background-color: #c5e1a5;
+}
+a.bg-lightgreen-300,
+.bg-lightgreen-300 {
+  background-color: #aed581;
+  color: #fff;
+}
+button[color=lightgreen-300],
+button.button-lightgreen-300,
+a.button-lightgreen-300,
+.button-lightgreen-300 {
+  background-color: #aed581;
+  color: #fff;
+}
+button[color=lightgreen-300]:hover,
+button.button-lightgreen-300:hover,
+a.button-lightgreen-300:hover,
+.button-lightgreen-300:hover,
+button[color=lightgreen-300]:focus,
+button.button-lightgreen-300:focus,
+a.button-lightgreen-300:focus,
+.button-lightgreen-300:focus,
+button[color=lightgreen-300].active,
+button.button-lightgreen-300.active,
+a.button-lightgreen-300.active,
+.button-lightgreen-300.active {
+  background-color: #aed581;
+}
+a.bg-lightgreen-400,
+.bg-lightgreen-400 {
+  background-color: #9ccc65;
+  color: #fff;
+}
+button[color=lightgreen-400],
+button.button-lightgreen-400,
+a.button-lightgreen-400,
+.button-lightgreen-400 {
+  background-color: #9ccc65;
+  color: #fff;
+}
+button[color=lightgreen-400]:hover,
+button.button-lightgreen-400:hover,
+a.button-lightgreen-400:hover,
+.button-lightgreen-400:hover,
+button[color=lightgreen-400]:focus,
+button.button-lightgreen-400:focus,
+a.button-lightgreen-400:focus,
+.button-lightgreen-400:focus,
+button[color=lightgreen-400].active,
+button.button-lightgreen-400.active,
+a.button-lightgreen-400.active,
+.button-lightgreen-400.active {
+  background-color: #9ccc65;
+}
+a.bg-lightgreen-500,
+.bg-lightgreen-500 {
+  background-color: #8bc34a;
+  color: #fff;
+}
+button[color=lightgreen-500],
+button.button-lightgreen-500,
+a.button-lightgreen-500,
+.button-lightgreen-500 {
+  background-color: #8bc34a;
+  color: #fff;
+}
+button[color=lightgreen-500]:hover,
+button.button-lightgreen-500:hover,
+a.button-lightgreen-500:hover,
+.button-lightgreen-500:hover,
+button[color=lightgreen-500]:focus,
+button.button-lightgreen-500:focus,
+a.button-lightgreen-500:focus,
+.button-lightgreen-500:focus,
+button[color=lightgreen-500].active,
+button.button-lightgreen-500.active,
+a.button-lightgreen-500.active,
+.button-lightgreen-500.active {
+  background-color: #8bc34a;
+}
+a.bg-lightgreen-600,
+.bg-lightgreen-600 {
+  background-color: #7cb342;
+  color: #fff;
+}
+button[color=lightgreen-600],
+button.button-lightgreen-600,
+a.button-lightgreen-600,
+.button-lightgreen-600 {
+  background-color: #7cb342;
+  color: #fff;
+}
+button[color=lightgreen-600]:hover,
+button.button-lightgreen-600:hover,
+a.button-lightgreen-600:hover,
+.button-lightgreen-600:hover,
+button[color=lightgreen-600]:focus,
+button.button-lightgreen-600:focus,
+a.button-lightgreen-600:focus,
+.button-lightgreen-600:focus,
+button[color=lightgreen-600].active,
+button.button-lightgreen-600.active,
+a.button-lightgreen-600.active,
+.button-lightgreen-600.active {
+  background-color: #7cb342;
+}
+a.bg-lightgreen-700,
+.bg-lightgreen-700 {
+  background-color: #689f38;
+  color: #fff;
+}
+button[color=lightgreen-700],
+button.button-lightgreen-700,
+a.button-lightgreen-700,
+.button-lightgreen-700 {
+  background-color: #689f38;
+  color: #fff;
+}
+button[color=lightgreen-700]:hover,
+button.button-lightgreen-700:hover,
+a.button-lightgreen-700:hover,
+.button-lightgreen-700:hover,
+button[color=lightgreen-700]:focus,
+button.button-lightgreen-700:focus,
+a.button-lightgreen-700:focus,
+.button-lightgreen-700:focus,
+button[color=lightgreen-700].active,
+button.button-lightgreen-700.active,
+a.button-lightgreen-700.active,
+.button-lightgreen-700.active {
+  background-color: #689f38;
+}
+a.bg-lightgreen-800,
+.bg-lightgreen-800 {
+  background-color: #558b2f;
+  color: #fff;
+}
+button[color=lightgreen-800],
+button.button-lightgreen-800,
+a.button-lightgreen-800,
+.button-lightgreen-800 {
+  background-color: #558b2f;
+  color: #fff;
+}
+button[color=lightgreen-800]:hover,
+button.button-lightgreen-800:hover,
+a.button-lightgreen-800:hover,
+.button-lightgreen-800:hover,
+button[color=lightgreen-800]:focus,
+button.button-lightgreen-800:focus,
+a.button-lightgreen-800:focus,
+.button-lightgreen-800:focus,
+button[color=lightgreen-800].active,
+button.button-lightgreen-800.active,
+a.button-lightgreen-800.active,
+.button-lightgreen-800.active {
+  background-color: #558b2f;
+}
+a.bg-lightgreen-900,
+.bg-lightgreen-900 {
+  background-color: #33691e;
+  color: #fff;
+}
+button[color=lightgreen-900],
+button.button-lightgreen-900,
+a.button-lightgreen-900,
+.button-lightgreen-900 {
+  background-color: #33691e;
+  color: #fff;
+}
+button[color=lightgreen-900]:hover,
+button.button-lightgreen-900:hover,
+a.button-lightgreen-900:hover,
+.button-lightgreen-900:hover,
+button[color=lightgreen-900]:focus,
+button.button-lightgreen-900:focus,
+a.button-lightgreen-900:focus,
+.button-lightgreen-900:focus,
+button[color=lightgreen-900].active,
+button.button-lightgreen-900.active,
+a.button-lightgreen-900.active,
+.button-lightgreen-900.active {
+  background-color: #33691e;
+}
+a.bg-lime,
+.bg-lime {
+  background-color: #cddc39;
+  color: #fff;
+}
+button[color=lime],
+button.button-lime,
+a.button-lime,
+.button-lime {
+  background-color: #cddc39;
+  color: #fff;
+}
+button[color=lime]:hover,
+button.button-lime:hover,
+a.button-lime:hover,
+.button-lime:hover,
+button[color=lime]:focus,
+button.button-lime:focus,
+a.button-lime:focus,
+.button-lime:focus,
+button[color=lime].active,
+button.button-lime.active,
+a.button-lime.active,
+.button-lime.active {
+  background-color: #cddc39;
+}
+a.bg-lime-0,
+.bg-lime-0 {
+  color: #424242;
+}
+button[color=lime-0],
+button.button-lime-0,
+a.button-lime-0,
+.button-lime-0 {
+  color: #424242;
+}
+a.bg-lime-100,
+.bg-lime-100 {
+  background-color: #f0f4c3;
+  color: #fff;
+}
+a.bg-lime-100,
+.bg-lime-100 {
+  color: #424242;
+}
+button[color=lime-100],
+button.button-lime-100,
+a.button-lime-100,
+.button-lime-100 {
+  background-color: #f0f4c3;
+  color: #fff;
+}
+button[color=lime-100]:hover,
+button.button-lime-100:hover,
+a.button-lime-100:hover,
+.button-lime-100:hover,
+button[color=lime-100]:focus,
+button.button-lime-100:focus,
+a.button-lime-100:focus,
+.button-lime-100:focus,
+button[color=lime-100].active,
+button.button-lime-100.active,
+a.button-lime-100.active,
+.button-lime-100.active {
+  background-color: #f0f4c3;
+}
+button[color=lime-100],
+button.button-lime-100,
+a.button-lime-100,
+.button-lime-100 {
+  color: #424242;
+}
+a.bg-lime-100,
+.bg-lime-100 {
+  color: #424242;
+}
+button[color=lime-100],
+button.button-lime-100,
+a.button-lime-100,
+.button-lime-100 {
+  color: #424242;
+}
+a.bg-lime-200,
+.bg-lime-200 {
+  background-color: #e6ee9c;
+  color: #fff;
+}
+button[color=lime-200],
+button.button-lime-200,
+a.button-lime-200,
+.button-lime-200 {
+  background-color: #e6ee9c;
+  color: #fff;
+}
+button[color=lime-200]:hover,
+button.button-lime-200:hover,
+a.button-lime-200:hover,
+.button-lime-200:hover,
+button[color=lime-200]:focus,
+button.button-lime-200:focus,
+a.button-lime-200:focus,
+.button-lime-200:focus,
+button[color=lime-200].active,
+button.button-lime-200.active,
+a.button-lime-200.active,
+.button-lime-200.active {
+  background-color: #e6ee9c;
+}
+a.bg-lime-300,
+.bg-lime-300 {
+  background-color: #dce775;
+  color: #fff;
+}
+button[color=lime-300],
+button.button-lime-300,
+a.button-lime-300,
+.button-lime-300 {
+  background-color: #dce775;
+  color: #fff;
+}
+button[color=lime-300]:hover,
+button.button-lime-300:hover,
+a.button-lime-300:hover,
+.button-lime-300:hover,
+button[color=lime-300]:focus,
+button.button-lime-300:focus,
+a.button-lime-300:focus,
+.button-lime-300:focus,
+button[color=lime-300].active,
+button.button-lime-300.active,
+a.button-lime-300.active,
+.button-lime-300.active {
+  background-color: #dce775;
+}
+a.bg-lime-400,
+.bg-lime-400 {
+  background-color: #d4e157;
+  color: #fff;
+}
+button[color=lime-400],
+button.button-lime-400,
+a.button-lime-400,
+.button-lime-400 {
+  background-color: #d4e157;
+  color: #fff;
+}
+button[color=lime-400]:hover,
+button.button-lime-400:hover,
+a.button-lime-400:hover,
+.button-lime-400:hover,
+button[color=lime-400]:focus,
+button.button-lime-400:focus,
+a.button-lime-400:focus,
+.button-lime-400:focus,
+button[color=lime-400].active,
+button.button-lime-400.active,
+a.button-lime-400.active,
+.button-lime-400.active {
+  background-color: #d4e157;
+}
+a.bg-lime-500,
+.bg-lime-500 {
+  background-color: #cddc39;
+  color: #fff;
+}
+button[color=lime-500],
+button.button-lime-500,
+a.button-lime-500,
+.button-lime-500 {
+  background-color: #cddc39;
+  color: #fff;
+}
+button[color=lime-500]:hover,
+button.button-lime-500:hover,
+a.button-lime-500:hover,
+.button-lime-500:hover,
+button[color=lime-500]:focus,
+button.button-lime-500:focus,
+a.button-lime-500:focus,
+.button-lime-500:focus,
+button[color=lime-500].active,
+button.button-lime-500.active,
+a.button-lime-500.active,
+.button-lime-500.active {
+  background-color: #cddc39;
+}
+a.bg-lime-600,
+.bg-lime-600 {
+  background-color: #c0ca33;
+  color: #fff;
+}
+button[color=lime-600],
+button.button-lime-600,
+a.button-lime-600,
+.button-lime-600 {
+  background-color: #c0ca33;
+  color: #fff;
+}
+button[color=lime-600]:hover,
+button.button-lime-600:hover,
+a.button-lime-600:hover,
+.button-lime-600:hover,
+button[color=lime-600]:focus,
+button.button-lime-600:focus,
+a.button-lime-600:focus,
+.button-lime-600:focus,
+button[color=lime-600].active,
+button.button-lime-600.active,
+a.button-lime-600.active,
+.button-lime-600.active {
+  background-color: #c0ca33;
+}
+a.bg-lime-700,
+.bg-lime-700 {
+  background-color: #afb42b;
+  color: #fff;
+}
+button[color=lime-700],
+button.button-lime-700,
+a.button-lime-700,
+.button-lime-700 {
+  background-color: #afb42b;
+  color: #fff;
+}
+button[color=lime-700]:hover,
+button.button-lime-700:hover,
+a.button-lime-700:hover,
+.button-lime-700:hover,
+button[color=lime-700]:focus,
+button.button-lime-700:focus,
+a.button-lime-700:focus,
+.button-lime-700:focus,
+button[color=lime-700].active,
+button.button-lime-700.active,
+a.button-lime-700.active,
+.button-lime-700.active {
+  background-color: #afb42b;
+}
+a.bg-lime-800,
+.bg-lime-800 {
+  background-color: #9e9d24;
+  color: #fff;
+}
+button[color=lime-800],
+button.button-lime-800,
+a.button-lime-800,
+.button-lime-800 {
+  background-color: #9e9d24;
+  color: #fff;
+}
+button[color=lime-800]:hover,
+button.button-lime-800:hover,
+a.button-lime-800:hover,
+.button-lime-800:hover,
+button[color=lime-800]:focus,
+button.button-lime-800:focus,
+a.button-lime-800:focus,
+.button-lime-800:focus,
+button[color=lime-800].active,
+button.button-lime-800.active,
+a.button-lime-800.active,
+.button-lime-800.active {
+  background-color: #9e9d24;
+}
+a.bg-lime-900,
+.bg-lime-900 {
+  background-color: #827717;
+  color: #fff;
+}
+button[color=lime-900],
+button.button-lime-900,
+a.button-lime-900,
+.button-lime-900 {
+  background-color: #827717;
+  color: #fff;
+}
+button[color=lime-900]:hover,
+button.button-lime-900:hover,
+a.button-lime-900:hover,
+.button-lime-900:hover,
+button[color=lime-900]:focus,
+button.button-lime-900:focus,
+a.button-lime-900:focus,
+.button-lime-900:focus,
+button[color=lime-900].active,
+button.button-lime-900.active,
+a.button-lime-900.active,
+.button-lime-900.active {
+  background-color: #827717;
+}
+a.bg-yellow,
+.bg-yellow {
+  background-color: #ffeb3b;
+  color: #fff;
+}
+button[color=yellow],
+button.button-yellow,
+a.button-yellow,
+.button-yellow {
+  background-color: #ffeb3b;
+  color: #fff;
+}
+button[color=yellow]:hover,
+button.button-yellow:hover,
+a.button-yellow:hover,
+.button-yellow:hover,
+button[color=yellow]:focus,
+button.button-yellow:focus,
+a.button-yellow:focus,
+.button-yellow:focus,
+button[color=yellow].active,
+button.button-yellow.active,
+a.button-yellow.active,
+.button-yellow.active {
+  background-color: #ffeb3b;
+}
+a.bg-yellow-0,
+.bg-yellow-0 {
+  color: #424242;
+}
+button[color=yellow-0],
+button.button-yellow-0,
+a.button-yellow-0,
+.button-yellow-0 {
+  color: #424242;
+}
+a.bg-yellow-100,
+.bg-yellow-100 {
+  background-color: #fff9c4;
+  color: #fff;
+}
+a.bg-yellow-100,
+.bg-yellow-100 {
+  color: #424242;
+}
+button[color=yellow-100],
+button.button-yellow-100,
+a.button-yellow-100,
+.button-yellow-100 {
+  background-color: #fff9c4;
+  color: #fff;
+}
+button[color=yellow-100]:hover,
+button.button-yellow-100:hover,
+a.button-yellow-100:hover,
+.button-yellow-100:hover,
+button[color=yellow-100]:focus,
+button.button-yellow-100:focus,
+a.button-yellow-100:focus,
+.button-yellow-100:focus,
+button[color=yellow-100].active,
+button.button-yellow-100.active,
+a.button-yellow-100.active,
+.button-yellow-100.active {
+  background-color: #fff9c4;
+}
+button[color=yellow-100],
+button.button-yellow-100,
+a.button-yellow-100,
+.button-yellow-100 {
+  color: #424242;
+}
+a.bg-yellow-100,
+.bg-yellow-100 {
+  color: #424242;
+}
+button[color=yellow-100],
+button.button-yellow-100,
+a.button-yellow-100,
+.button-yellow-100 {
+  color: #424242;
+}
+a.bg-yellow-200,
+.bg-yellow-200 {
+  background-color: #fff59d;
+  color: #fff;
+}
+button[color=yellow-200],
+button.button-yellow-200,
+a.button-yellow-200,
+.button-yellow-200 {
+  background-color: #fff59d;
+  color: #fff;
+}
+button[color=yellow-200]:hover,
+button.button-yellow-200:hover,
+a.button-yellow-200:hover,
+.button-yellow-200:hover,
+button[color=yellow-200]:focus,
+button.button-yellow-200:focus,
+a.button-yellow-200:focus,
+.button-yellow-200:focus,
+button[color=yellow-200].active,
+button.button-yellow-200.active,
+a.button-yellow-200.active,
+.button-yellow-200.active {
+  background-color: #fff59d;
+}
+a.bg-yellow-300,
+.bg-yellow-300 {
+  background-color: #fff176;
+  color: #fff;
+}
+button[color=yellow-300],
+button.button-yellow-300,
+a.button-yellow-300,
+.button-yellow-300 {
+  background-color: #fff176;
+  color: #fff;
+}
+button[color=yellow-300]:hover,
+button.button-yellow-300:hover,
+a.button-yellow-300:hover,
+.button-yellow-300:hover,
+button[color=yellow-300]:focus,
+button.button-yellow-300:focus,
+a.button-yellow-300:focus,
+.button-yellow-300:focus,
+button[color=yellow-300].active,
+button.button-yellow-300.active,
+a.button-yellow-300.active,
+.button-yellow-300.active {
+  background-color: #fff176;
+}
+a.bg-yellow-400,
+.bg-yellow-400 {
+  background-color: #ffee58;
+  color: #fff;
+}
+button[color=yellow-400],
+button.button-yellow-400,
+a.button-yellow-400,
+.button-yellow-400 {
+  background-color: #ffee58;
+  color: #fff;
+}
+button[color=yellow-400]:hover,
+button.button-yellow-400:hover,
+a.button-yellow-400:hover,
+.button-yellow-400:hover,
+button[color=yellow-400]:focus,
+button.button-yellow-400:focus,
+a.button-yellow-400:focus,
+.button-yellow-400:focus,
+button[color=yellow-400].active,
+button.button-yellow-400.active,
+a.button-yellow-400.active,
+.button-yellow-400.active {
+  background-color: #ffee58;
+}
+a.bg-yellow-500,
+.bg-yellow-500 {
+  background-color: #ffeb3b;
+  color: #fff;
+}
+button[color=yellow-500],
+button.button-yellow-500,
+a.button-yellow-500,
+.button-yellow-500 {
+  background-color: #ffeb3b;
+  color: #fff;
+}
+button[color=yellow-500]:hover,
+button.button-yellow-500:hover,
+a.button-yellow-500:hover,
+.button-yellow-500:hover,
+button[color=yellow-500]:focus,
+button.button-yellow-500:focus,
+a.button-yellow-500:focus,
+.button-yellow-500:focus,
+button[color=yellow-500].active,
+button.button-yellow-500.active,
+a.button-yellow-500.active,
+.button-yellow-500.active {
+  background-color: #ffeb3b;
+}
+a.bg-yellow-600,
+.bg-yellow-600 {
+  background-color: #fdd835;
+  color: #fff;
+}
+button[color=yellow-600],
+button.button-yellow-600,
+a.button-yellow-600,
+.button-yellow-600 {
+  background-color: #fdd835;
+  color: #fff;
+}
+button[color=yellow-600]:hover,
+button.button-yellow-600:hover,
+a.button-yellow-600:hover,
+.button-yellow-600:hover,
+button[color=yellow-600]:focus,
+button.button-yellow-600:focus,
+a.button-yellow-600:focus,
+.button-yellow-600:focus,
+button[color=yellow-600].active,
+button.button-yellow-600.active,
+a.button-yellow-600.active,
+.button-yellow-600.active {
+  background-color: #fdd835;
+}
+a.bg-yellow-700,
+.bg-yellow-700 {
+  background-color: #fbc02d;
+  color: #fff;
+}
+button[color=yellow-700],
+button.button-yellow-700,
+a.button-yellow-700,
+.button-yellow-700 {
+  background-color: #fbc02d;
+  color: #fff;
+}
+button[color=yellow-700]:hover,
+button.button-yellow-700:hover,
+a.button-yellow-700:hover,
+.button-yellow-700:hover,
+button[color=yellow-700]:focus,
+button.button-yellow-700:focus,
+a.button-yellow-700:focus,
+.button-yellow-700:focus,
+button[color=yellow-700].active,
+button.button-yellow-700.active,
+a.button-yellow-700.active,
+.button-yellow-700.active {
+  background-color: #fbc02d;
+}
+a.bg-yellow-800,
+.bg-yellow-800 {
+  background-color: #f9a825;
+  color: #fff;
+}
+button[color=yellow-800],
+button.button-yellow-800,
+a.button-yellow-800,
+.button-yellow-800 {
+  background-color: #f9a825;
+  color: #fff;
+}
+button[color=yellow-800]:hover,
+button.button-yellow-800:hover,
+a.button-yellow-800:hover,
+.button-yellow-800:hover,
+button[color=yellow-800]:focus,
+button.button-yellow-800:focus,
+a.button-yellow-800:focus,
+.button-yellow-800:focus,
+button[color=yellow-800].active,
+button.button-yellow-800.active,
+a.button-yellow-800.active,
+.button-yellow-800.active {
+  background-color: #f9a825;
+}
+a.bg-yellow-900,
+.bg-yellow-900 {
+  background-color: #f57f17;
+  color: #fff;
+}
+button[color=yellow-900],
+button.button-yellow-900,
+a.button-yellow-900,
+.button-yellow-900 {
+  background-color: #f57f17;
+  color: #fff;
+}
+button[color=yellow-900]:hover,
+button.button-yellow-900:hover,
+a.button-yellow-900:hover,
+.button-yellow-900:hover,
+button[color=yellow-900]:focus,
+button.button-yellow-900:focus,
+a.button-yellow-900:focus,
+.button-yellow-900:focus,
+button[color=yellow-900].active,
+button.button-yellow-900.active,
+a.button-yellow-900.active,
+.button-yellow-900.active {
+  background-color: #f57f17;
+}
+a.bg-amber,
+.bg-amber {
+  background-color: #ffc107;
+  color: #fff;
+}
+button[color=amber],
+button.button-amber,
+a.button-amber,
+.button-amber {
+  background-color: #ffc107;
+  color: #fff;
+}
+button[color=amber]:hover,
+button.button-amber:hover,
+a.button-amber:hover,
+.button-amber:hover,
+button[color=amber]:focus,
+button.button-amber:focus,
+a.button-amber:focus,
+.button-amber:focus,
+button[color=amber].active,
+button.button-amber.active,
+a.button-amber.active,
+.button-amber.active {
+  background-color: #ffc107;
+}
+a.bg-amber-0,
+.bg-amber-0 {
+  color: #424242;
+}
+button[color=amber-0],
+button.button-amber-0,
+a.button-amber-0,
+.button-amber-0 {
+  color: #424242;
+}
+a.bg-amber-100,
+.bg-amber-100 {
+  background-color: #ffecb3;
+  color: #fff;
+}
+a.bg-amber-100,
+.bg-amber-100 {
+  color: #424242;
+}
+button[color=amber-100],
+button.button-amber-100,
+a.button-amber-100,
+.button-amber-100 {
+  background-color: #ffecb3;
+  color: #fff;
+}
+button[color=amber-100]:hover,
+button.button-amber-100:hover,
+a.button-amber-100:hover,
+.button-amber-100:hover,
+button[color=amber-100]:focus,
+button.button-amber-100:focus,
+a.button-amber-100:focus,
+.button-amber-100:focus,
+button[color=amber-100].active,
+button.button-amber-100.active,
+a.button-amber-100.active,
+.button-amber-100.active {
+  background-color: #ffecb3;
+}
+button[color=amber-100],
+button.button-amber-100,
+a.button-amber-100,
+.button-amber-100 {
+  color: #424242;
+}
+a.bg-amber-100,
+.bg-amber-100 {
+  color: #424242;
+}
+button[color=amber-100],
+button.button-amber-100,
+a.button-amber-100,
+.button-amber-100 {
+  color: #424242;
+}
+a.bg-amber-200,
+.bg-amber-200 {
+  background-color: #ffe082;
+  color: #fff;
+}
+button[color=amber-200],
+button.button-amber-200,
+a.button-amber-200,
+.button-amber-200 {
+  background-color: #ffe082;
+  color: #fff;
+}
+button[color=amber-200]:hover,
+button.button-amber-200:hover,
+a.button-amber-200:hover,
+.button-amber-200:hover,
+button[color=amber-200]:focus,
+button.button-amber-200:focus,
+a.button-amber-200:focus,
+.button-amber-200:focus,
+button[color=amber-200].active,
+button.button-amber-200.active,
+a.button-amber-200.active,
+.button-amber-200.active {
+  background-color: #ffe082;
+}
+a.bg-amber-300,
+.bg-amber-300 {
+  background-color: #ffd54f;
+  color: #fff;
+}
+button[color=amber-300],
+button.button-amber-300,
+a.button-amber-300,
+.button-amber-300 {
+  background-color: #ffd54f;
+  color: #fff;
+}
+button[color=amber-300]:hover,
+button.button-amber-300:hover,
+a.button-amber-300:hover,
+.button-amber-300:hover,
+button[color=amber-300]:focus,
+button.button-amber-300:focus,
+a.button-amber-300:focus,
+.button-amber-300:focus,
+button[color=amber-300].active,
+button.button-amber-300.active,
+a.button-amber-300.active,
+.button-amber-300.active {
+  background-color: #ffd54f;
+}
+a.bg-amber-400,
+.bg-amber-400 {
+  background-color: #ffca28;
+  color: #fff;
+}
+button[color=amber-400],
+button.button-amber-400,
+a.button-amber-400,
+.button-amber-400 {
+  background-color: #ffca28;
+  color: #fff;
+}
+button[color=amber-400]:hover,
+button.button-amber-400:hover,
+a.button-amber-400:hover,
+.button-amber-400:hover,
+button[color=amber-400]:focus,
+button.button-amber-400:focus,
+a.button-amber-400:focus,
+.button-amber-400:focus,
+button[color=amber-400].active,
+button.button-amber-400.active,
+a.button-amber-400.active,
+.button-amber-400.active {
+  background-color: #ffca28;
+}
+a.bg-amber-500,
+.bg-amber-500 {
+  background-color: #ffc107;
+  color: #fff;
+}
+button[color=amber-500],
+button.button-amber-500,
+a.button-amber-500,
+.button-amber-500 {
+  background-color: #ffc107;
+  color: #fff;
+}
+button[color=amber-500]:hover,
+button.button-amber-500:hover,
+a.button-amber-500:hover,
+.button-amber-500:hover,
+button[color=amber-500]:focus,
+button.button-amber-500:focus,
+a.button-amber-500:focus,
+.button-amber-500:focus,
+button[color=amber-500].active,
+button.button-amber-500.active,
+a.button-amber-500.active,
+.button-amber-500.active {
+  background-color: #ffc107;
+}
+a.bg-amber-600,
+.bg-amber-600 {
+  background-color: #ffb300;
+  color: #fff;
+}
+button[color=amber-600],
+button.button-amber-600,
+a.button-amber-600,
+.button-amber-600 {
+  background-color: #ffb300;
+  color: #fff;
+}
+button[color=amber-600]:hover,
+button.button-amber-600:hover,
+a.button-amber-600:hover,
+.button-amber-600:hover,
+button[color=amber-600]:focus,
+button.button-amber-600:focus,
+a.button-amber-600:focus,
+.button-amber-600:focus,
+button[color=amber-600].active,
+button.button-amber-600.active,
+a.button-amber-600.active,
+.button-amber-600.active {
+  background-color: #ffb300;
+}
+a.bg-amber-700,
+.bg-amber-700 {
+  background-color: #ffa000;
+  color: #fff;
+}
+button[color=amber-700],
+button.button-amber-700,
+a.button-amber-700,
+.button-amber-700 {
+  background-color: #ffa000;
+  color: #fff;
+}
+button[color=amber-700]:hover,
+button.button-amber-700:hover,
+a.button-amber-700:hover,
+.button-amber-700:hover,
+button[color=amber-700]:focus,
+button.button-amber-700:focus,
+a.button-amber-700:focus,
+.button-amber-700:focus,
+button[color=amber-700].active,
+button.button-amber-700.active,
+a.button-amber-700.active,
+.button-amber-700.active {
+  background-color: #ffa000;
+}
+a.bg-amber-800,
+.bg-amber-800 {
+  background-color: #ff8f00;
+  color: #fff;
+}
+button[color=amber-800],
+button.button-amber-800,
+a.button-amber-800,
+.button-amber-800 {
+  background-color: #ff8f00;
+  color: #fff;
+}
+button[color=amber-800]:hover,
+button.button-amber-800:hover,
+a.button-amber-800:hover,
+.button-amber-800:hover,
+button[color=amber-800]:focus,
+button.button-amber-800:focus,
+a.button-amber-800:focus,
+.button-amber-800:focus,
+button[color=amber-800].active,
+button.button-amber-800.active,
+a.button-amber-800.active,
+.button-amber-800.active {
+  background-color: #ff8f00;
+}
+a.bg-amber-900,
+.bg-amber-900 {
+  background-color: #ff6f00;
+  color: #fff;
+}
+button[color=amber-900],
+button.button-amber-900,
+a.button-amber-900,
+.button-amber-900 {
+  background-color: #ff6f00;
+  color: #fff;
+}
+button[color=amber-900]:hover,
+button.button-amber-900:hover,
+a.button-amber-900:hover,
+.button-amber-900:hover,
+button[color=amber-900]:focus,
+button.button-amber-900:focus,
+a.button-amber-900:focus,
+.button-amber-900:focus,
+button[color=amber-900].active,
+button.button-amber-900.active,
+a.button-amber-900.active,
+.button-amber-900.active {
+  background-color: #ff6f00;
+}
+a.bg-orange,
+.bg-orange {
+  background-color: #ff9800;
+  color: #fff;
+}
+button[color=orange],
+button.button-orange,
+a.button-orange,
+.button-orange {
+  background-color: #ff9800;
+  color: #fff;
+}
+button[color=orange]:hover,
+button.button-orange:hover,
+a.button-orange:hover,
+.button-orange:hover,
+button[color=orange]:focus,
+button.button-orange:focus,
+a.button-orange:focus,
+.button-orange:focus,
+button[color=orange].active,
+button.button-orange.active,
+a.button-orange.active,
+.button-orange.active {
+  background-color: #ff9800;
+}
+a.bg-orange-0,
+.bg-orange-0 {
+  color: #424242;
+}
+button[color=orange-0],
+button.button-orange-0,
+a.button-orange-0,
+.button-orange-0 {
+  color: #424242;
+}
+a.bg-orange-100,
+.bg-orange-100 {
+  background-color: #ffe0b2;
+  color: #fff;
+}
+a.bg-orange-100,
+.bg-orange-100 {
+  color: #424242;
+}
+button[color=orange-100],
+button.button-orange-100,
+a.button-orange-100,
+.button-orange-100 {
+  background-color: #ffe0b2;
+  color: #fff;
+}
+button[color=orange-100]:hover,
+button.button-orange-100:hover,
+a.button-orange-100:hover,
+.button-orange-100:hover,
+button[color=orange-100]:focus,
+button.button-orange-100:focus,
+a.button-orange-100:focus,
+.button-orange-100:focus,
+button[color=orange-100].active,
+button.button-orange-100.active,
+a.button-orange-100.active,
+.button-orange-100.active {
+  background-color: #ffe0b2;
+}
+button[color=orange-100],
+button.button-orange-100,
+a.button-orange-100,
+.button-orange-100 {
+  color: #424242;
+}
+a.bg-orange-100,
+.bg-orange-100 {
+  color: #424242;
+}
+button[color=orange-100],
+button.button-orange-100,
+a.button-orange-100,
+.button-orange-100 {
+  color: #424242;
+}
+a.bg-orange-200,
+.bg-orange-200 {
+  background-color: #ffcc80;
+  color: #fff;
+}
+button[color=orange-200],
+button.button-orange-200,
+a.button-orange-200,
+.button-orange-200 {
+  background-color: #ffcc80;
+  color: #fff;
+}
+button[color=orange-200]:hover,
+button.button-orange-200:hover,
+a.button-orange-200:hover,
+.button-orange-200:hover,
+button[color=orange-200]:focus,
+button.button-orange-200:focus,
+a.button-orange-200:focus,
+.button-orange-200:focus,
+button[color=orange-200].active,
+button.button-orange-200.active,
+a.button-orange-200.active,
+.button-orange-200.active {
+  background-color: #ffcc80;
+}
+a.bg-orange-300,
+.bg-orange-300 {
+  background-color: #ffb74d;
+  color: #fff;
+}
+button[color=orange-300],
+button.button-orange-300,
+a.button-orange-300,
+.button-orange-300 {
+  background-color: #ffb74d;
+  color: #fff;
+}
+button[color=orange-300]:hover,
+button.button-orange-300:hover,
+a.button-orange-300:hover,
+.button-orange-300:hover,
+button[color=orange-300]:focus,
+button.button-orange-300:focus,
+a.button-orange-300:focus,
+.button-orange-300:focus,
+button[color=orange-300].active,
+button.button-orange-300.active,
+a.button-orange-300.active,
+.button-orange-300.active {
+  background-color: #ffb74d;
+}
+a.bg-orange-400,
+.bg-orange-400 {
+  background-color: #ffa726;
+  color: #fff;
+}
+button[color=orange-400],
+button.button-orange-400,
+a.button-orange-400,
+.button-orange-400 {
+  background-color: #ffa726;
+  color: #fff;
+}
+button[color=orange-400]:hover,
+button.button-orange-400:hover,
+a.button-orange-400:hover,
+.button-orange-400:hover,
+button[color=orange-400]:focus,
+button.button-orange-400:focus,
+a.button-orange-400:focus,
+.button-orange-400:focus,
+button[color=orange-400].active,
+button.button-orange-400.active,
+a.button-orange-400.active,
+.button-orange-400.active {
+  background-color: #ffa726;
+}
+a.bg-orange-500,
+.bg-orange-500 {
+  background-color: #ff9800;
+  color: #fff;
+}
+button[color=orange-500],
+button.button-orange-500,
+a.button-orange-500,
+.button-orange-500 {
+  background-color: #ff9800;
+  color: #fff;
+}
+button[color=orange-500]:hover,
+button.button-orange-500:hover,
+a.button-orange-500:hover,
+.button-orange-500:hover,
+button[color=orange-500]:focus,
+button.button-orange-500:focus,
+a.button-orange-500:focus,
+.button-orange-500:focus,
+button[color=orange-500].active,
+button.button-orange-500.active,
+a.button-orange-500.active,
+.button-orange-500.active {
+  background-color: #ff9800;
+}
+a.bg-orange-600,
+.bg-orange-600 {
+  background-color: #fb8c00;
+  color: #fff;
+}
+button[color=orange-600],
+button.button-orange-600,
+a.button-orange-600,
+.button-orange-600 {
+  background-color: #fb8c00;
+  color: #fff;
+}
+button[color=orange-600]:hover,
+button.button-orange-600:hover,
+a.button-orange-600:hover,
+.button-orange-600:hover,
+button[color=orange-600]:focus,
+button.button-orange-600:focus,
+a.button-orange-600:focus,
+.button-orange-600:focus,
+button[color=orange-600].active,
+button.button-orange-600.active,
+a.button-orange-600.active,
+.button-orange-600.active {
+  background-color: #fb8c00;
+}
+a.bg-orange-700,
+.bg-orange-700 {
+  background-color: #f57c00;
+  color: #fff;
+}
+button[color=orange-700],
+button.button-orange-700,
+a.button-orange-700,
+.button-orange-700 {
+  background-color: #f57c00;
+  color: #fff;
+}
+button[color=orange-700]:hover,
+button.button-orange-700:hover,
+a.button-orange-700:hover,
+.button-orange-700:hover,
+button[color=orange-700]:focus,
+button.button-orange-700:focus,
+a.button-orange-700:focus,
+.button-orange-700:focus,
+button[color=orange-700].active,
+button.button-orange-700.active,
+a.button-orange-700.active,
+.button-orange-700.active {
+  background-color: #f57c00;
+}
+a.bg-orange-800,
+.bg-orange-800 {
+  background-color: #ef6c00;
+  color: #fff;
+}
+button[color=orange-800],
+button.button-orange-800,
+a.button-orange-800,
+.button-orange-800 {
+  background-color: #ef6c00;
+  color: #fff;
+}
+button[color=orange-800]:hover,
+button.button-orange-800:hover,
+a.button-orange-800:hover,
+.button-orange-800:hover,
+button[color=orange-800]:focus,
+button.button-orange-800:focus,
+a.button-orange-800:focus,
+.button-orange-800:focus,
+button[color=orange-800].active,
+button.button-orange-800.active,
+a.button-orange-800.active,
+.button-orange-800.active {
+  background-color: #ef6c00;
+}
+a.bg-orange-900,
+.bg-orange-900 {
+  background-color: #e65100;
+  color: #fff;
+}
+button[color=orange-900],
+button.button-orange-900,
+a.button-orange-900,
+.button-orange-900 {
+  background-color: #e65100;
+  color: #fff;
+}
+button[color=orange-900]:hover,
+button.button-orange-900:hover,
+a.button-orange-900:hover,
+.button-orange-900:hover,
+button[color=orange-900]:focus,
+button.button-orange-900:focus,
+a.button-orange-900:focus,
+.button-orange-900:focus,
+button[color=orange-900].active,
+button.button-orange-900.active,
+a.button-orange-900.active,
+.button-orange-900.active {
+  background-color: #e65100;
+}
+a.bg-deeporange,
+.bg-deeporange {
+  background-color: #ff5722;
+  color: #fff;
+}
+button[color=deeporange],
+button.button-deeporange,
+a.button-deeporange,
+.button-deeporange {
+  background-color: #ff5722;
+  color: #fff;
+}
+button[color=deeporange]:hover,
+button.button-deeporange:hover,
+a.button-deeporange:hover,
+.button-deeporange:hover,
+button[color=deeporange]:focus,
+button.button-deeporange:focus,
+a.button-deeporange:focus,
+.button-deeporange:focus,
+button[color=deeporange].active,
+button.button-deeporange.active,
+a.button-deeporange.active,
+.button-deeporange.active {
+  background-color: #ff5722;
+}
+a.bg-deeporange-0,
+.bg-deeporange-0 {
+  color: #424242;
+}
+button[color=deeporange-0],
+button.button-deeporange-0,
+a.button-deeporange-0,
+.button-deeporange-0 {
+  color: #424242;
+}
+a.bg-deeporange-100,
+.bg-deeporange-100 {
+  background-color: #ffccbc;
+  color: #fff;
+}
+a.bg-deeporange-100,
+.bg-deeporange-100 {
+  color: #424242;
+}
+button[color=deeporange-100],
+button.button-deeporange-100,
+a.button-deeporange-100,
+.button-deeporange-100 {
+  background-color: #ffccbc;
+  color: #fff;
+}
+button[color=deeporange-100]:hover,
+button.button-deeporange-100:hover,
+a.button-deeporange-100:hover,
+.button-deeporange-100:hover,
+button[color=deeporange-100]:focus,
+button.button-deeporange-100:focus,
+a.button-deeporange-100:focus,
+.button-deeporange-100:focus,
+button[color=deeporange-100].active,
+button.button-deeporange-100.active,
+a.button-deeporange-100.active,
+.button-deeporange-100.active {
+  background-color: #ffccbc;
+}
+button[color=deeporange-100],
+button.button-deeporange-100,
+a.button-deeporange-100,
+.button-deeporange-100 {
+  color: #424242;
+}
+a.bg-deeporange-100,
+.bg-deeporange-100 {
+  color: #424242;
+}
+button[color=deeporange-100],
+button.button-deeporange-100,
+a.button-deeporange-100,
+.button-deeporange-100 {
+  color: #424242;
+}
+a.bg-deeporange-200,
+.bg-deeporange-200 {
+  background-color: #ffab91;
+  color: #fff;
+}
+button[color=deeporange-200],
+button.button-deeporange-200,
+a.button-deeporange-200,
+.button-deeporange-200 {
+  background-color: #ffab91;
+  color: #fff;
+}
+button[color=deeporange-200]:hover,
+button.button-deeporange-200:hover,
+a.button-deeporange-200:hover,
+.button-deeporange-200:hover,
+button[color=deeporange-200]:focus,
+button.button-deeporange-200:focus,
+a.button-deeporange-200:focus,
+.button-deeporange-200:focus,
+button[color=deeporange-200].active,
+button.button-deeporange-200.active,
+a.button-deeporange-200.active,
+.button-deeporange-200.active {
+  background-color: #ffab91;
+}
+a.bg-deeporange-300,
+.bg-deeporange-300 {
+  background-color: #ff8a65;
+  color: #fff;
+}
+button[color=deeporange-300],
+button.button-deeporange-300,
+a.button-deeporange-300,
+.button-deeporange-300 {
+  background-color: #ff8a65;
+  color: #fff;
+}
+button[color=deeporange-300]:hover,
+button.button-deeporange-300:hover,
+a.button-deeporange-300:hover,
+.button-deeporange-300:hover,
+button[color=deeporange-300]:focus,
+button.button-deeporange-300:focus,
+a.button-deeporange-300:focus,
+.button-deeporange-300:focus,
+button[color=deeporange-300].active,
+button.button-deeporange-300.active,
+a.button-deeporange-300.active,
+.button-deeporange-300.active {
+  background-color: #ff8a65;
+}
+a.bg-deeporange-400,
+.bg-deeporange-400 {
+  background-color: #ff7043;
+  color: #fff;
+}
+button[color=deeporange-400],
+button.button-deeporange-400,
+a.button-deeporange-400,
+.button-deeporange-400 {
+  background-color: #ff7043;
+  color: #fff;
+}
+button[color=deeporange-400]:hover,
+button.button-deeporange-400:hover,
+a.button-deeporange-400:hover,
+.button-deeporange-400:hover,
+button[color=deeporange-400]:focus,
+button.button-deeporange-400:focus,
+a.button-deeporange-400:focus,
+.button-deeporange-400:focus,
+button[color=deeporange-400].active,
+button.button-deeporange-400.active,
+a.button-deeporange-400.active,
+.button-deeporange-400.active {
+  background-color: #ff7043;
+}
+a.bg-deeporange-500,
+.bg-deeporange-500 {
+  background-color: #ff5722;
+  color: #fff;
+}
+button[color=deeporange-500],
+button.button-deeporange-500,
+a.button-deeporange-500,
+.button-deeporange-500 {
+  background-color: #ff5722;
+  color: #fff;
+}
+button[color=deeporange-500]:hover,
+button.button-deeporange-500:hover,
+a.button-deeporange-500:hover,
+.button-deeporange-500:hover,
+button[color=deeporange-500]:focus,
+button.button-deeporange-500:focus,
+a.button-deeporange-500:focus,
+.button-deeporange-500:focus,
+button[color=deeporange-500].active,
+button.button-deeporange-500.active,
+a.button-deeporange-500.active,
+.button-deeporange-500.active {
+  background-color: #ff5722;
+}
+a.bg-deeporange-600,
+.bg-deeporange-600 {
+  background-color: #f4511e;
+  color: #fff;
+}
+button[color=deeporange-600],
+button.button-deeporange-600,
+a.button-deeporange-600,
+.button-deeporange-600 {
+  background-color: #f4511e;
+  color: #fff;
+}
+button[color=deeporange-600]:hover,
+button.button-deeporange-600:hover,
+a.button-deeporange-600:hover,
+.button-deeporange-600:hover,
+button[color=deeporange-600]:focus,
+button.button-deeporange-600:focus,
+a.button-deeporange-600:focus,
+.button-deeporange-600:focus,
+button[color=deeporange-600].active,
+button.button-deeporange-600.active,
+a.button-deeporange-600.active,
+.button-deeporange-600.active {
+  background-color: #f4511e;
+}
+a.bg-deeporange-700,
+.bg-deeporange-700 {
+  background-color: #e64a19;
+  color: #fff;
+}
+button[color=deeporange-700],
+button.button-deeporange-700,
+a.button-deeporange-700,
+.button-deeporange-700 {
+  background-color: #e64a19;
+  color: #fff;
+}
+button[color=deeporange-700]:hover,
+button.button-deeporange-700:hover,
+a.button-deeporange-700:hover,
+.button-deeporange-700:hover,
+button[color=deeporange-700]:focus,
+button.button-deeporange-700:focus,
+a.button-deeporange-700:focus,
+.button-deeporange-700:focus,
+button[color=deeporange-700].active,
+button.button-deeporange-700.active,
+a.button-deeporange-700.active,
+.button-deeporange-700.active {
+  background-color: #e64a19;
+}
+a.bg-deeporange-800,
+.bg-deeporange-800 {
+  background-color: #d84315;
+  color: #fff;
+}
+button[color=deeporange-800],
+button.button-deeporange-800,
+a.button-deeporange-800,
+.button-deeporange-800 {
+  background-color: #d84315;
+  color: #fff;
+}
+button[color=deeporange-800]:hover,
+button.button-deeporange-800:hover,
+a.button-deeporange-800:hover,
+.button-deeporange-800:hover,
+button[color=deeporange-800]:focus,
+button.button-deeporange-800:focus,
+a.button-deeporange-800:focus,
+.button-deeporange-800:focus,
+button[color=deeporange-800].active,
+button.button-deeporange-800.active,
+a.button-deeporange-800.active,
+.button-deeporange-800.active {
+  background-color: #d84315;
+}
+a.bg-deeporange-900,
+.bg-deeporange-900 {
+  background-color: #bf360c;
+  color: #fff;
+}
+button[color=deeporange-900],
+button.button-deeporange-900,
+a.button-deeporange-900,
+.button-deeporange-900 {
+  background-color: #bf360c;
+  color: #fff;
+}
+button[color=deeporange-900]:hover,
+button.button-deeporange-900:hover,
+a.button-deeporange-900:hover,
+.button-deeporange-900:hover,
+button[color=deeporange-900]:focus,
+button.button-deeporange-900:focus,
+a.button-deeporange-900:focus,
+.button-deeporange-900:focus,
+button[color=deeporange-900].active,
+button.button-deeporange-900.active,
+a.button-deeporange-900.active,
+.button-deeporange-900.active {
+  background-color: #bf360c;
+}
+a.bg-brown,
+.bg-brown {
+  background-color: #795548;
+  color: #fff;
+}
+button[color=brown],
+button.button-brown,
+a.button-brown,
+.button-brown {
+  background-color: #795548;
+  color: #fff;
+}
+button[color=brown]:hover,
+button.button-brown:hover,
+a.button-brown:hover,
+.button-brown:hover,
+button[color=brown]:focus,
+button.button-brown:focus,
+a.button-brown:focus,
+.button-brown:focus,
+button[color=brown].active,
+button.button-brown.active,
+a.button-brown.active,
+.button-brown.active {
+  background-color: #795548;
+}
+a.bg-brown-0,
+.bg-brown-0 {
+  color: #424242;
+}
+button[color=brown-0],
+button.button-brown-0,
+a.button-brown-0,
+.button-brown-0 {
+  color: #424242;
+}
+a.bg-brown-100,
+.bg-brown-100 {
+  background-color: #d7ccc8;
+  color: #fff;
+}
+a.bg-brown-100,
+.bg-brown-100 {
+  color: #424242;
+}
+button[color=brown-100],
+button.button-brown-100,
+a.button-brown-100,
+.button-brown-100 {
+  background-color: #d7ccc8;
+  color: #fff;
+}
+button[color=brown-100]:hover,
+button.button-brown-100:hover,
+a.button-brown-100:hover,
+.button-brown-100:hover,
+button[color=brown-100]:focus,
+button.button-brown-100:focus,
+a.button-brown-100:focus,
+.button-brown-100:focus,
+button[color=brown-100].active,
+button.button-brown-100.active,
+a.button-brown-100.active,
+.button-brown-100.active {
+  background-color: #d7ccc8;
+}
+button[color=brown-100],
+button.button-brown-100,
+a.button-brown-100,
+.button-brown-100 {
+  color: #424242;
+}
+a.bg-brown-100,
+.bg-brown-100 {
+  color: #424242;
+}
+button[color=brown-100],
+button.button-brown-100,
+a.button-brown-100,
+.button-brown-100 {
+  color: #424242;
+}
+a.bg-brown-200,
+.bg-brown-200 {
+  background-color: #bcaaa4;
+  color: #fff;
+}
+button[color=brown-200],
+button.button-brown-200,
+a.button-brown-200,
+.button-brown-200 {
+  background-color: #bcaaa4;
+  color: #fff;
+}
+button[color=brown-200]:hover,
+button.button-brown-200:hover,
+a.button-brown-200:hover,
+.button-brown-200:hover,
+button[color=brown-200]:focus,
+button.button-brown-200:focus,
+a.button-brown-200:focus,
+.button-brown-200:focus,
+button[color=brown-200].active,
+button.button-brown-200.active,
+a.button-brown-200.active,
+.button-brown-200.active {
+  background-color: #bcaaa4;
+}
+a.bg-brown-300,
+.bg-brown-300 {
+  background-color: #a1887f;
+  color: #fff;
+}
+button[color=brown-300],
+button.button-brown-300,
+a.button-brown-300,
+.button-brown-300 {
+  background-color: #a1887f;
+  color: #fff;
+}
+button[color=brown-300]:hover,
+button.button-brown-300:hover,
+a.button-brown-300:hover,
+.button-brown-300:hover,
+button[color=brown-300]:focus,
+button.button-brown-300:focus,
+a.button-brown-300:focus,
+.button-brown-300:focus,
+button[color=brown-300].active,
+button.button-brown-300.active,
+a.button-brown-300.active,
+.button-brown-300.active {
+  background-color: #a1887f;
+}
+a.bg-brown-400,
+.bg-brown-400 {
+  background-color: #8d6e63;
+  color: #fff;
+}
+button[color=brown-400],
+button.button-brown-400,
+a.button-brown-400,
+.button-brown-400 {
+  background-color: #8d6e63;
+  color: #fff;
+}
+button[color=brown-400]:hover,
+button.button-brown-400:hover,
+a.button-brown-400:hover,
+.button-brown-400:hover,
+button[color=brown-400]:focus,
+button.button-brown-400:focus,
+a.button-brown-400:focus,
+.button-brown-400:focus,
+button[color=brown-400].active,
+button.button-brown-400.active,
+a.button-brown-400.active,
+.button-brown-400.active {
+  background-color: #8d6e63;
+}
+a.bg-brown-500,
+.bg-brown-500 {
+  background-color: #795548;
+  color: #fff;
+}
+button[color=brown-500],
+button.button-brown-500,
+a.button-brown-500,
+.button-brown-500 {
+  background-color: #795548;
+  color: #fff;
+}
+button[color=brown-500]:hover,
+button.button-brown-500:hover,
+a.button-brown-500:hover,
+.button-brown-500:hover,
+button[color=brown-500]:focus,
+button.button-brown-500:focus,
+a.button-brown-500:focus,
+.button-brown-500:focus,
+button[color=brown-500].active,
+button.button-brown-500.active,
+a.button-brown-500.active,
+.button-brown-500.active {
+  background-color: #795548;
+}
+a.bg-brown-600,
+.bg-brown-600 {
+  background-color: #6d4c41;
+  color: #fff;
+}
+button[color=brown-600],
+button.button-brown-600,
+a.button-brown-600,
+.button-brown-600 {
+  background-color: #6d4c41;
+  color: #fff;
+}
+button[color=brown-600]:hover,
+button.button-brown-600:hover,
+a.button-brown-600:hover,
+.button-brown-600:hover,
+button[color=brown-600]:focus,
+button.button-brown-600:focus,
+a.button-brown-600:focus,
+.button-brown-600:focus,
+button[color=brown-600].active,
+button.button-brown-600.active,
+a.button-brown-600.active,
+.button-brown-600.active {
+  background-color: #6d4c41;
+}
+a.bg-brown-700,
+.bg-brown-700 {
+  background-color: #5d4037;
+  color: #fff;
+}
+button[color=brown-700],
+button.button-brown-700,
+a.button-brown-700,
+.button-brown-700 {
+  background-color: #5d4037;
+  color: #fff;
+}
+button[color=brown-700]:hover,
+button.button-brown-700:hover,
+a.button-brown-700:hover,
+.button-brown-700:hover,
+button[color=brown-700]:focus,
+button.button-brown-700:focus,
+a.button-brown-700:focus,
+.button-brown-700:focus,
+button[color=brown-700].active,
+button.button-brown-700.active,
+a.button-brown-700.active,
+.button-brown-700.active {
+  background-color: #5d4037;
+}
+a.bg-brown-800,
+.bg-brown-800 {
+  background-color: #4e342e;
+  color: #fff;
+}
+button[color=brown-800],
+button.button-brown-800,
+a.button-brown-800,
+.button-brown-800 {
+  background-color: #4e342e;
+  color: #fff;
+}
+button[color=brown-800]:hover,
+button.button-brown-800:hover,
+a.button-brown-800:hover,
+.button-brown-800:hover,
+button[color=brown-800]:focus,
+button.button-brown-800:focus,
+a.button-brown-800:focus,
+.button-brown-800:focus,
+button[color=brown-800].active,
+button.button-brown-800.active,
+a.button-brown-800.active,
+.button-brown-800.active {
+  background-color: #4e342e;
+}
+a.bg-brown-900,
+.bg-brown-900 {
+  background-color: #3e2723;
+  color: #fff;
+}
+button[color=brown-900],
+button.button-brown-900,
+a.button-brown-900,
+.button-brown-900 {
+  background-color: #3e2723;
+  color: #fff;
+}
+button[color=brown-900]:hover,
+button.button-brown-900:hover,
+a.button-brown-900:hover,
+.button-brown-900:hover,
+button[color=brown-900]:focus,
+button.button-brown-900:focus,
+a.button-brown-900:focus,
+.button-brown-900:focus,
+button[color=brown-900].active,
+button.button-brown-900.active,
+a.button-brown-900.active,
+.button-brown-900.active {
+  background-color: #3e2723;
+}
+a.bg-grey,
+.bg-grey {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+button[color=grey],
+button.button-grey,
+a.button-grey,
+.button-grey {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+button[color=grey]:hover,
+button.button-grey:hover,
+a.button-grey:hover,
+.button-grey:hover,
+button[color=grey]:focus,
+button.button-grey:focus,
+a.button-grey:focus,
+.button-grey:focus,
+button[color=grey].active,
+button.button-grey.active,
+a.button-grey.active,
+.button-grey.active {
+  background-color: #9e9e9e;
+}
+a.bg-grey-0,
+.bg-grey-0 {
+  color: #424242;
+}
+button[color=grey-0],
+button.button-grey-0,
+a.button-grey-0,
+.button-grey-0 {
+  color: #424242;
+}
+a.bg-grey-50,
+.bg-grey-50 {
+  background-color: #fafafa;
+  color: #fff;
+}
+a.bg-grey-50,
+.bg-grey-50 {
+  color: #424242;
+}
+button[color=grey-50],
+button.button-grey-50,
+a.button-grey-50,
+.button-grey-50 {
+  background-color: #fafafa;
+  color: #fff;
+}
+button[color=grey-50]:hover,
+button.button-grey-50:hover,
+a.button-grey-50:hover,
+.button-grey-50:hover,
+button[color=grey-50]:focus,
+button.button-grey-50:focus,
+a.button-grey-50:focus,
+.button-grey-50:focus,
+button[color=grey-50].active,
+button.button-grey-50.active,
+a.button-grey-50.active,
+.button-grey-50.active {
+  background-color: #fafafa;
+}
+button[color=grey-50],
+button.button-grey-50,
+a.button-grey-50,
+.button-grey-50 {
+  color: #424242;
+}
+a.bg-grey-50,
+.bg-grey-50 {
+  color: #424242;
+}
+button[color=grey-50],
+button.button-grey-50,
+a.button-grey-50,
+.button-grey-50 {
+  color: #424242;
+}
+a.bg-grey-100,
+.bg-grey-100 {
+  background-color: #f5f5f5;
+  color: #fff;
+}
+a.bg-grey-100,
+.bg-grey-100 {
+  color: #424242;
+}
+button[color=grey-100],
+button.button-grey-100,
+a.button-grey-100,
+.button-grey-100 {
+  background-color: #f5f5f5;
+  color: #fff;
+}
+button[color=grey-100]:hover,
+button.button-grey-100:hover,
+a.button-grey-100:hover,
+.button-grey-100:hover,
+button[color=grey-100]:focus,
+button.button-grey-100:focus,
+a.button-grey-100:focus,
+.button-grey-100:focus,
+button[color=grey-100].active,
+button.button-grey-100.active,
+a.button-grey-100.active,
+.button-grey-100.active {
+  background-color: #f5f5f5;
+}
+button[color=grey-100],
+button.button-grey-100,
+a.button-grey-100,
+.button-grey-100 {
+  color: #424242;
+}
+a.bg-grey-100,
+.bg-grey-100 {
+  color: #424242;
+}
+button[color=grey-100],
+button.button-grey-100,
+a.button-grey-100,
+.button-grey-100 {
+  color: #424242;
+}
+a.bg-grey-200,
+.bg-grey-200 {
+  background-color: #eee;
+  color: #fff;
+}
+button[color=grey-200],
+button.button-grey-200,
+a.button-grey-200,
+.button-grey-200 {
+  background-color: #eee;
+  color: #fff;
+}
+button[color=grey-200]:hover,
+button.button-grey-200:hover,
+a.button-grey-200:hover,
+.button-grey-200:hover,
+button[color=grey-200]:focus,
+button.button-grey-200:focus,
+a.button-grey-200:focus,
+.button-grey-200:focus,
+button[color=grey-200].active,
+button.button-grey-200.active,
+a.button-grey-200.active,
+.button-grey-200.active {
+  background-color: #eee;
+}
+a.bg-grey-300,
+.bg-grey-300 {
+  background-color: #e0e0e0;
+  color: #fff;
+}
+button[color=grey-300],
+button.button-grey-300,
+a.button-grey-300,
+.button-grey-300 {
+  background-color: #e0e0e0;
+  color: #fff;
+}
+button[color=grey-300]:hover,
+button.button-grey-300:hover,
+a.button-grey-300:hover,
+.button-grey-300:hover,
+button[color=grey-300]:focus,
+button.button-grey-300:focus,
+a.button-grey-300:focus,
+.button-grey-300:focus,
+button[color=grey-300].active,
+button.button-grey-300.active,
+a.button-grey-300.active,
+.button-grey-300.active {
+  background-color: #e0e0e0;
+}
+a.bg-grey-400,
+.bg-grey-400 {
+  background-color: #bdbdbd;
+  color: #fff;
+}
+button[color=grey-400],
+button.button-grey-400,
+a.button-grey-400,
+.button-grey-400 {
+  background-color: #bdbdbd;
+  color: #fff;
+}
+button[color=grey-400]:hover,
+button.button-grey-400:hover,
+a.button-grey-400:hover,
+.button-grey-400:hover,
+button[color=grey-400]:focus,
+button.button-grey-400:focus,
+a.button-grey-400:focus,
+.button-grey-400:focus,
+button[color=grey-400].active,
+button.button-grey-400.active,
+a.button-grey-400.active,
+.button-grey-400.active {
+  background-color: #bdbdbd;
+}
+a.bg-grey-500,
+.bg-grey-500 {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+button[color=grey-500],
+button.button-grey-500,
+a.button-grey-500,
+.button-grey-500 {
+  background-color: #9e9e9e;
+  color: #fff;
+}
+button[color=grey-500]:hover,
+button.button-grey-500:hover,
+a.button-grey-500:hover,
+.button-grey-500:hover,
+button[color=grey-500]:focus,
+button.button-grey-500:focus,
+a.button-grey-500:focus,
+.button-grey-500:focus,
+button[color=grey-500].active,
+button.button-grey-500.active,
+a.button-grey-500.active,
+.button-grey-500.active {
+  background-color: #9e9e9e;
+}
+a.bg-grey-600,
+.bg-grey-600 {
+  background-color: #757575;
+  color: #fff;
+}
+button[color=grey-600],
+button.button-grey-600,
+a.button-grey-600,
+.button-grey-600 {
+  background-color: #757575;
+  color: #fff;
+}
+button[color=grey-600]:hover,
+button.button-grey-600:hover,
+a.button-grey-600:hover,
+.button-grey-600:hover,
+button[color=grey-600]:focus,
+button.button-grey-600:focus,
+a.button-grey-600:focus,
+.button-grey-600:focus,
+button[color=grey-600].active,
+button.button-grey-600.active,
+a.button-grey-600.active,
+.button-grey-600.active {
+  background-color: #757575;
+}
+a.bg-grey-700,
+.bg-grey-700 {
+  background-color: #616161;
+  color: #fff;
+}
+button[color=grey-700],
+button.button-grey-700,
+a.button-grey-700,
+.button-grey-700 {
+  background-color: #616161;
+  color: #fff;
+}
+button[color=grey-700]:hover,
+button.button-grey-700:hover,
+a.button-grey-700:hover,
+.button-grey-700:hover,
+button[color=grey-700]:focus,
+button.button-grey-700:focus,
+a.button-grey-700:focus,
+.button-grey-700:focus,
+button[color=grey-700].active,
+button.button-grey-700.active,
+a.button-grey-700.active,
+.button-grey-700.active {
+  background-color: #616161;
+}
+a.bg-grey-800,
+.bg-grey-800 {
+  background-color: #424242;
+  color: #fff;
+}
+button[color=grey-800],
+button.button-grey-800,
+a.button-grey-800,
+.button-grey-800 {
+  background-color: #424242;
+  color: #fff;
+}
+button[color=grey-800]:hover,
+button.button-grey-800:hover,
+a.button-grey-800:hover,
+.button-grey-800:hover,
+button[color=grey-800]:focus,
+button.button-grey-800:focus,
+a.button-grey-800:focus,
+.button-grey-800:focus,
+button[color=grey-800].active,
+button.button-grey-800.active,
+a.button-grey-800.active,
+.button-grey-800.active {
+  background-color: #424242;
+}
+a.bg-grey-900,
+.bg-grey-900 {
+  background-color: #212121;
+  color: #fff;
+}
+button[color=grey-900],
+button.button-grey-900,
+a.button-grey-900,
+.button-grey-900 {
+  background-color: #212121;
+  color: #fff;
+}
+button[color=grey-900]:hover,
+button.button-grey-900:hover,
+a.button-grey-900:hover,
+.button-grey-900:hover,
+button[color=grey-900]:focus,
+button.button-grey-900:focus,
+a.button-grey-900:focus,
+.button-grey-900:focus,
+button[color=grey-900].active,
+button.button-grey-900.active,
+a.button-grey-900.active,
+.button-grey-900.active {
+  background-color: #212121;
+}
+a.bg-grey-1000,
+.bg-grey-1000 {
+  background-color: #000;
+  color: #fff;
+}
+button[color=grey-1000],
+button.button-grey-1000,
+a.button-grey-1000,
+.button-grey-1000 {
+  background-color: #000;
+  color: #fff;
+}
+button[color=grey-1000]:hover,
+button.button-grey-1000:hover,
+a.button-grey-1000:hover,
+.button-grey-1000:hover,
+button[color=grey-1000]:focus,
+button.button-grey-1000:focus,
+a.button-grey-1000:focus,
+.button-grey-1000:focus,
+button[color=grey-1000].active,
+button.button-grey-1000.active,
+a.button-grey-1000.active,
+.button-grey-1000.active {
+  background-color: #000;
+}
+a.bg-bluegrey,
+.bg-bluegrey {
+  background-color: #607d8b;
+  color: #fff;
+}
+button[color=bluegrey],
+button.button-bluegrey,
+a.button-bluegrey,
+.button-bluegrey {
+  background-color: #607d8b;
+  color: #fff;
+}
+button[color=bluegrey]:hover,
+button.button-bluegrey:hover,
+a.button-bluegrey:hover,
+.button-bluegrey:hover,
+button[color=bluegrey]:focus,
+button.button-bluegrey:focus,
+a.button-bluegrey:focus,
+.button-bluegrey:focus,
+button[color=bluegrey].active,
+button.button-bluegrey.active,
+a.button-bluegrey.active,
+.button-bluegrey.active {
+  background-color: #607d8b;
+}
+a.bg-bluegrey-0,
+.bg-bluegrey-0 {
+  color: #424242;
+}
+button[color=bluegrey-0],
+button.button-bluegrey-0,
+a.button-bluegrey-0,
+.button-bluegrey-0 {
+  color: #424242;
+}
+a.bg-bluegrey-50,
+.bg-bluegrey-50 {
+  background-color: #eceff1;
+  color: #fff;
+}
+a.bg-bluegrey-50,
+.bg-bluegrey-50 {
+  color: #424242;
+}
+button[color=bluegrey-50],
+button.button-bluegrey-50,
+a.button-bluegrey-50,
+.button-bluegrey-50 {
+  background-color: #eceff1;
+  color: #fff;
+}
+button[color=bluegrey-50]:hover,
+button.button-bluegrey-50:hover,
+a.button-bluegrey-50:hover,
+.button-bluegrey-50:hover,
+button[color=bluegrey-50]:focus,
+button.button-bluegrey-50:focus,
+a.button-bluegrey-50:focus,
+.button-bluegrey-50:focus,
+button[color=bluegrey-50].active,
+button.button-bluegrey-50.active,
+a.button-bluegrey-50.active,
+.button-bluegrey-50.active {
+  background-color: #eceff1;
+}
+button[color=bluegrey-50],
+button.button-bluegrey-50,
+a.button-bluegrey-50,
+.button-bluegrey-50 {
+  color: #424242;
+}
+a.bg-bluegrey-50,
+.bg-bluegrey-50 {
+  color: #424242;
+}
+button[color=bluegrey-50],
+button.button-bluegrey-50,
+a.button-bluegrey-50,
+.button-bluegrey-50 {
+  color: #424242;
+}
+a.bg-bluegrey-100,
+.bg-bluegrey-100 {
+  background-color: #cfd8dc;
+  color: #fff;
+}
+a.bg-bluegrey-100,
+.bg-bluegrey-100 {
+  color: #424242;
+}
+button[color=bluegrey-100],
+button.button-bluegrey-100,
+a.button-bluegrey-100,
+.button-bluegrey-100 {
+  background-color: #cfd8dc;
+  color: #fff;
+}
+button[color=bluegrey-100]:hover,
+button.button-bluegrey-100:hover,
+a.button-bluegrey-100:hover,
+.button-bluegrey-100:hover,
+button[color=bluegrey-100]:focus,
+button.button-bluegrey-100:focus,
+a.button-bluegrey-100:focus,
+.button-bluegrey-100:focus,
+button[color=bluegrey-100].active,
+button.button-bluegrey-100.active,
+a.button-bluegrey-100.active,
+.button-bluegrey-100.active {
+  background-color: #cfd8dc;
+}
+button[color=bluegrey-100],
+button.button-bluegrey-100,
+a.button-bluegrey-100,
+.button-bluegrey-100 {
+  color: #424242;
+}
+a.bg-bluegrey-100,
+.bg-bluegrey-100 {
+  color: #424242;
+}
+button[color=bluegrey-100],
+button.button-bluegrey-100,
+a.button-bluegrey-100,
+.button-bluegrey-100 {
+  color: #424242;
+}
+a.bg-bluegrey-200,
+.bg-bluegrey-200 {
+  background-color: #b0bec5;
+  color: #fff;
+}
+button[color=bluegrey-200],
+button.button-bluegrey-200,
+a.button-bluegrey-200,
+.button-bluegrey-200 {
+  background-color: #b0bec5;
+  color: #fff;
+}
+button[color=bluegrey-200]:hover,
+button.button-bluegrey-200:hover,
+a.button-bluegrey-200:hover,
+.button-bluegrey-200:hover,
+button[color=bluegrey-200]:focus,
+button.button-bluegrey-200:focus,
+a.button-bluegrey-200:focus,
+.button-bluegrey-200:focus,
+button[color=bluegrey-200].active,
+button.button-bluegrey-200.active,
+a.button-bluegrey-200.active,
+.button-bluegrey-200.active {
+  background-color: #b0bec5;
+}
+a.bg-bluegrey-300,
+.bg-bluegrey-300 {
+  background-color: #90a4ae;
+  color: #fff;
+}
+button[color=bluegrey-300],
+button.button-bluegrey-300,
+a.button-bluegrey-300,
+.button-bluegrey-300 {
+  background-color: #90a4ae;
+  color: #fff;
+}
+button[color=bluegrey-300]:hover,
+button.button-bluegrey-300:hover,
+a.button-bluegrey-300:hover,
+.button-bluegrey-300:hover,
+button[color=bluegrey-300]:focus,
+button.button-bluegrey-300:focus,
+a.button-bluegrey-300:focus,
+.button-bluegrey-300:focus,
+button[color=bluegrey-300].active,
+button.button-bluegrey-300.active,
+a.button-bluegrey-300.active,
+.button-bluegrey-300.active {
+  background-color: #90a4ae;
+}
+a.bg-bluegrey-400,
+.bg-bluegrey-400 {
+  background-color: #78909c;
+  color: #fff;
+}
+button[color=bluegrey-400],
+button.button-bluegrey-400,
+a.button-bluegrey-400,
+.button-bluegrey-400 {
+  background-color: #78909c;
+  color: #fff;
+}
+button[color=bluegrey-400]:hover,
+button.button-bluegrey-400:hover,
+a.button-bluegrey-400:hover,
+.button-bluegrey-400:hover,
+button[color=bluegrey-400]:focus,
+button.button-bluegrey-400:focus,
+a.button-bluegrey-400:focus,
+.button-bluegrey-400:focus,
+button[color=bluegrey-400].active,
+button.button-bluegrey-400.active,
+a.button-bluegrey-400.active,
+.button-bluegrey-400.active {
+  background-color: #78909c;
+}
+a.bg-bluegrey-500,
+.bg-bluegrey-500 {
+  background-color: #607d8b;
+  color: #fff;
+}
+button[color=bluegrey-500],
+button.button-bluegrey-500,
+a.button-bluegrey-500,
+.button-bluegrey-500 {
+  background-color: #607d8b;
+  color: #fff;
+}
+button[color=bluegrey-500]:hover,
+button.button-bluegrey-500:hover,
+a.button-bluegrey-500:hover,
+.button-bluegrey-500:hover,
+button[color=bluegrey-500]:focus,
+button.button-bluegrey-500:focus,
+a.button-bluegrey-500:focus,
+.button-bluegrey-500:focus,
+button[color=bluegrey-500].active,
+button.button-bluegrey-500.active,
+a.button-bluegrey-500.active,
+.button-bluegrey-500.active {
+  background-color: #607d8b;
+}
+a.bg-bluegrey-600,
+.bg-bluegrey-600 {
+  background-color: #546e7a;
+  color: #fff;
+}
+button[color=bluegrey-600],
+button.button-bluegrey-600,
+a.button-bluegrey-600,
+.button-bluegrey-600 {
+  background-color: #546e7a;
+  color: #fff;
+}
+button[color=bluegrey-600]:hover,
+button.button-bluegrey-600:hover,
+a.button-bluegrey-600:hover,
+.button-bluegrey-600:hover,
+button[color=bluegrey-600]:focus,
+button.button-bluegrey-600:focus,
+a.button-bluegrey-600:focus,
+.button-bluegrey-600:focus,
+button[color=bluegrey-600].active,
+button.button-bluegrey-600.active,
+a.button-bluegrey-600.active,
+.button-bluegrey-600.active {
+  background-color: #546e7a;
+}
+a.bg-bluegrey-700,
+.bg-bluegrey-700 {
+  background-color: #455a64;
+  color: #fff;
+}
+button[color=bluegrey-700],
+button.button-bluegrey-700,
+a.button-bluegrey-700,
+.button-bluegrey-700 {
+  background-color: #455a64;
+  color: #fff;
+}
+button[color=bluegrey-700]:hover,
+button.button-bluegrey-700:hover,
+a.button-bluegrey-700:hover,
+.button-bluegrey-700:hover,
+button[color=bluegrey-700]:focus,
+button.button-bluegrey-700:focus,
+a.button-bluegrey-700:focus,
+.button-bluegrey-700:focus,
+button[color=bluegrey-700].active,
+button.button-bluegrey-700.active,
+a.button-bluegrey-700.active,
+.button-bluegrey-700.active {
+  background-color: #455a64;
+}
+a.bg-bluegrey-800,
+.bg-bluegrey-800 {
+  background-color: #37474f;
+  color: #fff;
+}
+button[color=bluegrey-800],
+button.button-bluegrey-800,
+a.button-bluegrey-800,
+.button-bluegrey-800 {
+  background-color: #37474f;
+  color: #fff;
+}
+button[color=bluegrey-800]:hover,
+button.button-bluegrey-800:hover,
+a.button-bluegrey-800:hover,
+.button-bluegrey-800:hover,
+button[color=bluegrey-800]:focus,
+button.button-bluegrey-800:focus,
+a.button-bluegrey-800:focus,
+.button-bluegrey-800:focus,
+button[color=bluegrey-800].active,
+button.button-bluegrey-800.active,
+a.button-bluegrey-800.active,
+.button-bluegrey-800.active {
+  background-color: #37474f;
+}
+a.bg-bluegrey-900,
+.bg-bluegrey-900 {
+  background-color: #263238;
+  color: #fff;
+}
+button[color=bluegrey-900],
+button.button-bluegrey-900,
+a.button-bluegrey-900,
+.button-bluegrey-900 {
+  background-color: #263238;
+  color: #fff;
+}
+button[color=bluegrey-900]:hover,
+button.button-bluegrey-900:hover,
+a.button-bluegrey-900:hover,
+.button-bluegrey-900:hover,
+button[color=bluegrey-900]:focus,
+button.button-bluegrey-900:focus,
+a.button-bluegrey-900:focus,
+.button-bluegrey-900:focus,
+button[color=bluegrey-900].active,
+button.button-bluegrey-900.active,
+a.button-bluegrey-900.active,
+.button-bluegrey-900.active {
+  background-color: #263238;
+}
+a.bg-default,
+.bg-default {
+  background-color: #fff;
+  color: #9e9e9e;
+}

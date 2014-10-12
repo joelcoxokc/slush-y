@@ -12,7 +12,7 @@
               <label for="name" class="control-label">Name</label>
               <input  type="text"
                       id="name"
-                      name="name" class="form-control"
+                      name="name" class="form-control primary"
                       ng-model="vm.user.name"
                       required/>
 
@@ -29,7 +29,7 @@
               <input type="email"
                      id="email"
                      name="email"
-                     class="form-control"
+                     class="form-control primary"
                      ng-model="vm.user.email"
                      required
                      mongoose-error/>
@@ -50,7 +50,10 @@
                               'has-error': form.password.$invalid && vm.submitted }">
               <label for="password" class="control-label">Password</label>
 
-              <input type="password" name="password" class="form-control" ng-model="vm.user.password"
+              <input type="password"
+                     name="password"
+                     class="form-control primary"
+                     ng-model="vm.user.password"
                      id="password"
                      ng-minlength="3"
                      required

@@ -91,7 +91,9 @@ gulp
 gulp
   .task('server:dev', function (){
     process.env.NODE_ENV = 'development';
-    return g.nodemon('./server');
+    // return g.nodemon('./server');
+    require('./server');
+    return
 
   });
 

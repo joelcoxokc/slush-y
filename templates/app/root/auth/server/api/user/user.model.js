@@ -44,7 +44,12 @@ UserSchema
   .get(function() {
     return {
       'name': this.name,
-      'role': this.role
+      'role': this.role,
+      'email': this.email,
+      'firstName': this.firstName,
+      'lastName': this.lastName,
+      'username': this.username,
+      "_id":this._id
     };
   });
 

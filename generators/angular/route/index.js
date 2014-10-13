@@ -11,8 +11,9 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
     }
     var moduleName = this.args[0];
     var modulesFolder = process.cwd() + '/client/app/modules/';
+    var templateDir = __dirname + '/templates/';
 
-       var prompts = [{
+    var prompts = [{
       type: 'list',
       name: 'moduleName',
       default: 'core',
@@ -84,10 +85,10 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
 
 
 
-          var routesFilePath = process.cwd() + '/client/app/modules/' + answers.slugifiedModuleName + '/config/' + answers.slugifiedModuleName +  '.client.routes.js';
+          var routesFilePath = process.cwd() + '/client/app/modules/' + answers.slugifiedModuleName + '/config/' + answers.slugifiedModuleName +  '.routes.js';
 
           if (fs.existsSync(routesFilePath)) {
-             gulp.src(__dirname + '/../templates/angular-route/_.client.route.js')
+             gulp.src(templateDir + '_.route.js')
                   .pipe(template(answers))
                   .pipe(rename(function(file) {
                             if (file.basename.indexOf('_') == 0) {
@@ -98,9 +99,9 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                   .pipe(gulp.dest('./'))
                   .on('end', function () {
                         var routesFileContent = fs.readFileSync(routesFilePath, "utf8");
-                    var compiledTemplate = fs.readFileSync('temp.client.route.js', "utf8");
-                    fs.writeFile(routesFilePath,routesFileContent.replace('$stateProvider.', compiledTemplate),function(){
-                      fs.unlinkSync('./temp.client.route.js');
+                    var compiledTemplate = fs.readFileSync('temp.route.js', "utf8");
+                    fs.writeFile(routesFilePath,routesFileContent.replace('$stateProvider', compiledTemplate),function(){
+                      fs.unlinkSync('./temp.route.js');
                   });
                     });
                }
@@ -108,7 +109,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                {
                 //create the req folders
                 mkdirp('client/app/modules/' + answers.slugifiedModuleName + '/config');
-                gulp.src(__dirname + '/../templates/angular-route/_.client.routes.js')
+                gulp.src(templateDir+ '_.routes.js')
                   .pipe(template(answers))
                   .pipe(rename(function(file) {
                             if (file.basename.indexOf('_') == 0) {
@@ -119,7 +120,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                   .pipe(gulp.dest('client/app/modules/' + answers.slugifiedModuleName + '/config/'));
                }
 
-               gulp.src(__dirname + '/../templates/angular-route/_.client.controller.js')
+               gulp.src(templateDir + '_.controller.js')
                   .pipe(template(answers))
                   .pipe(rename(function(file) {
                             if (file.basename.indexOf('_') == 0) {
@@ -129,7 +130,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                   .pipe(conflict('client/app/modules/' + answers.slugifiedModuleName + '/controllers/'))
                   .pipe(gulp.dest('client/app/modules/' + answers.slugifiedModuleName + '/controllers/'));
 
-             gulp.src(__dirname + '/../templates/angular-route/_.client.controller.test.js')
+             gulp.src(templateDir + '_.controller.test.js')
                   .pipe(template(answers))
                   .pipe(rename(function(file) {
                             if (file.basename.indexOf('_') == 0) {
@@ -139,7 +140,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                   .pipe(conflict('client/app/modules/' + answers.slugifiedModuleName + '/tests/'))
                   .pipe(gulp.dest('client/app/modules/' + answers.slugifiedModuleName + '/tests/'));
 
-             gulp.src(__dirname + '/../templates/angular-route/_.client.view.html')
+             gulp.src(templateDir + '_.view.html')
                   .pipe(template(answers))
                   .pipe(rename(function(file) {
                             if (file.basename.indexOf('_') == 0) {

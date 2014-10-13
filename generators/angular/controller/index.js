@@ -10,7 +10,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
     }
     var moduleName = this.args[0];
     var modulesFolder = process.cwd() + '/client/app/modules/';
-
+    var templateDir = __dirname + '/templates/';
     var prompts = [{
       type: 'list',
       name: 'moduleName',
@@ -43,7 +43,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
         answers.classifiedControllerName = _.classify(answers.slugifiedControllerName);
         answers.humanizedControllerName = _.humanize(answers.slugifiedControllerName);
 
-        gulp.src(__dirname + '/../templates/angular-controller/**')
+        gulp.src(templateDir + '**')
               .pipe(template(answers))
               .pipe(rename(function(file) {
                     if (file.basename.indexOf('_') == 0) {

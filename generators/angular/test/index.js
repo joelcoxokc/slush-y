@@ -10,6 +10,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
     }
     var moduleName = this.args[0];
     var modulesFolder = process.cwd() + '/client/app/modules/';
+    var templateDir = __dirname + '/templates/';
 
     var prompts = [{
       type: 'list',
@@ -44,30 +45,30 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
         answers.classifiedControllerName = _.classify(answers.slugifiedControllerName);
         answers.humanizedControllerName = _.humanize(answers.slugifiedControllerName);
 
-            var controllerFilePath = process.cwd() + '/public/modules/' + this.slugifiedModuleName + '/controllers/' + this.slugifiedControllerName + '.client.controller.js';
+            var controllerFilePath = process.cwd() + '/client/app/modules/' + this.slugifiedModuleName + '/controllers/' + this.slugifiedControllerName + '.client.controller.js';
 
             // If controller file exists we create a test for it otherwise we will first create a controller
         if (!fs.existsSync(controllerFilePath)) {
-          gulp.src(__dirname + '/../templates/angular-test/_.client.controller.js')
+          gulp.src(templateDir + '_.controller.js')
                 .pipe(template(answers))
                 .pipe(rename(function(file) {
                       if (file.basename.indexOf('_') == 0) {
                               file.basename = file.basename.replace('_', answers.slugifiedControllerName);
                           }
                    }))
-                .pipe(conflict('public/modules/' + answers.slugifiedModuleName + '/controllers/'))
-                .pipe(gulp.dest('public/modules/' + answers.slugifiedModuleName + '/controllers/'));
+                .pipe(conflict('client/app/modules/' + answers.slugifiedModuleName + '/controllers/'))
+                .pipe(gulp.dest('client/app/modules/' + answers.slugifiedModuleName + '/controllers/'));
         }
 
-        gulp.src(__dirname + '/../templates/angular-test/_.client.controller.test.js')
+        gulp.src(templateDir + '_.controller.test.js')
               .pipe(template(answers))
               .pipe(rename(function(file) {
                     if (file.basename.indexOf('_') == 0) {
                             file.basename = file.basename.replace('_', answers.slugifiedControllerName);
                         }
                  }))
-              .pipe(conflict('public/modules/' + answers.slugifiedModuleName + '/tests/'))
-              .pipe(gulp.dest('public/modules/' + answers.slugifiedModuleName + '/tests/'))
+              .pipe(conflict('client/app/modules/' + answers.slugifiedModuleName + '/tests/'))
+              .pipe(gulp.dest('client/app/modules/' + answers.slugifiedModuleName + '/tests/'))
               .on('end', function () {
                    done();
                 });

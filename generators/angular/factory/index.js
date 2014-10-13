@@ -10,6 +10,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
     }
     var moduleName = this.args[0];
     var modulesFolder = process.cwd() + '/client/app/modules/';
+    var templateDir = __dirname + '/templates/';
 
     var prompts = [{
       type: 'list',
@@ -54,7 +55,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
           var destination = 'client/app/'
         }
 
-        gulp.src(__dirname + '/../templates/angular-factory/_.client.service.js')
+        gulp.src(templateDir + '*.js')
               .pipe(template(answers))
               .pipe(rename(function(file) {
                     if (file.basename.indexOf('_') == 0) {

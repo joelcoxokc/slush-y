@@ -74,26 +74,33 @@
 
 
     /* @inject */
-    function resolvedUsers(User){
-      return User.all()
-        .then( function ( response ){
-          return response.data;
+    function resolvedUsers(User){<% if(restangular){ %>
+      return User.getList()<% } %><% if(http){ %>
+      return User.all()<% } %>
+        .then( function ( response ){<% if(restangular){ %>
+          return response;<% } %><% if(http){ %>
+          return response.data;<% } %>
         });
     }
 
     /* @inject */
-    function Resolved(User){
-      return User.getMe()
-        .then(function ( response ){
-          return response.data;
+    function Resolved(User, $storage){<% if(restangular){ %>
+      var user = $storage.getObject('user');
+      return User.one(user._id).get()<% } %><% if(http){ %>
+      return User.getMe()<% } %>
+        .then(function ( response ){<% if(restangular){ %>
+          return response;<% } %><% if(http){ %>
+          return response.data;<% } %>
         });
     }
 
     /* @inject */
-    function ResolvedAccount(User, $stateParams){
-      return User.one($stateParams.id)
-        .then(function ( response ){
-          return response.data;
+    function ResolvedAccount(User, $stateParams){<% if(restangular){ %>
+      return User.one($stateParams.id).get()<% } %><% if(http){ %>
+      return User.one($stateParams.id)<% } %>
+        .then(function ( response ){<% if(restangular){ %>
+          return response;<% } %><% if(http){ %>
+          return response.data;<% } %>
         });
     }
 

@@ -1,0 +1,125 @@
+.main {
+  background-color: #fff;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+
+.main-header {
+  /*text-align: center;*/
+
+  height: 100%;
+  position: relative;
+  font-size: 50px;
+  margin: 10px 0;
+  float: none;
+  text-align: center;
+  transition: all 300ms ease;
+  -webkit-transition: all 300ms ease-in;
+}
+.main-intro {
+  color: white;
+  padding: 0;
+  text-align: center;
+}
+.main-intro > .intro {
+  font-size: 18px;
+}
+
+@media(min-width: 768px){
+  .main-header {
+    float: none;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-left: 20px;
+    font-size: 90px;
+  }
+  .main-intro {
+    text-align: left;
+    padding: 20px 20px 10px 0px;
+  }
+}
+/*@media(min-width: 990px){
+  .main-header {
+    float: none;
+    font-size: 100px;
+  }
+}*/
+
+.panel {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.equal .panel {
+  height: 100%;
+}
+
+
+.control-label {
+  display: block;
+  width:100%;
+}
+.form-control:focus {
+  border-width:3px;
+  border-color: #dddddd;
+  outline: 0;
+}
+.form-control.primary:focus {
+  border-color: #4d73ff;
+}
+.form-control.success:focus {
+  border-color: #42bd41;
+}
+.form-control.info:focus {
+  border-color: #00b0ff;
+}
+.form-control.warning:focus {
+  border-color: #ff9800;
+}
+.form-control.danger:focus {
+  border-color: #e84e40;
+}
+.btn {
+  transition:all 100ms ease-in;
+  -webkit-transition:all 100ms ease-in;
+}
+.btn:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.btn.btn-s-sm {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.btn.btn-s-md {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.btn.btn-s-lg {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.btn.btn-s-xl {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+  background-color: white;
+  color: #818181;
+}
+.colored:hover,
+.colored:active,
+.colored:focus,
+.colored.active {
+  color: #fff;
+}
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active,
+.btn-white.active, {
+  background-color: white;
+  color: #6c6c6c;
+}

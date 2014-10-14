@@ -1,0 +1,64 @@
+<section class="panel">
+  <h3 class="panel-heading bg-indigo-500">
+    Edit {{vm.account.name}}</h3>
+  <article class="panel-body">
+    <form data-ng-submit="vm.updateUser()" autocomplete="off">
+      <fieldset>
+        <div class="form-group">
+          <label for="firstName" class="control-label">First Name</label>
+          <input  type="text"
+                  id="firstName"
+                  name="firstName"
+                  class="form-control primary"
+                  data-ng-model="vm.account.firstName">
+
+        </div>
+        <div class="form-group">
+          <label for="lastName" class="control-label">Last Name</label>
+          <input type="text"
+                 id="lastName"
+                 name="lastName"
+                 class="form-control primary"
+                 data-ng-model="vm.account.lastName">
+        </div>
+        <div class="form-group">
+          <label for="username" class="control-label">Username</label>
+          <input type="text"
+                 id="username"
+                 name="username"
+                 class="form-control primary"
+                 data-ng-model="vm.account.username">
+        </div>
+        <div class="form-group">
+          <label for="email" class="control-label">Email</label>
+          <input type="text"
+                 id="email"
+                 name="email"
+                 class="form-control primary"
+                 data-ng-model="vm.account.email">
+        </div>
+        <div class="form-group">
+          <label for="role" class="control-label">Role</label>
+          <select class="form-control"
+                  id="role"
+                  name="role"
+                  data-ng-model="vm.account.role">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+            <option value="guest">Guest</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Done</button>
+        <a ui-sref="admin.profile" class="btn btn-white pull-right" y-icon="close"></a>
+        <div data-ng-show="success" class="text-center text-success">
+          <strong>Profile Saved Successfully</strong>
+        </div>
+        <div data-ng-show="error" class="text-center text-danger">
+          <strong>{{error}}</strong>
+        </div>
+      </fieldset>
+
+    </form>
+  </article>
+</section>

@@ -24,6 +24,7 @@ exports.ask = function( prompts ){
     if (!answers.appName) {
       return promised.reject()
     }
+    answers.auth = true;
     answers.slugifiedAppName = _.slugify(answers.appName);
     answers.humanizedAppName = _.humanize(answers.appName);
     answers.capitalizedAppAuthor = _.capitalize(answers.appAuthor);

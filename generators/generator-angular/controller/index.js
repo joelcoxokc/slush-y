@@ -2,6 +2,7 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
   var fs = require('fs');
   var controller = require('./controller.js');
 
+
   gulp.task('controller', function (done) {
 
     if (!this.args[0]) {

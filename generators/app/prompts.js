@@ -37,12 +37,14 @@ var prompts = [
       name: 'angular $http',
       default: false
     }]
-  },{
-    type: 'confirm',
-    name: 'auth',
-    message: 'Would you like authentication built in?',
-    default: true
-  },{
+  },
+  // {
+  //   type: 'confirm',
+  //   name: 'auth',
+  //   message: 'Would you like authentication built in?',
+  //   default: true
+  // },
+  {
     type: 'checkbox',
     name: 'modules',
     message: 'Which AngularJS modules would you like to include?',

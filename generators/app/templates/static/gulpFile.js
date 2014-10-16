@@ -100,7 +100,7 @@ gulp
 gulp
   .task('watch', function (){
 
-    gulp.watch(client.scripts, ['scripts:dev'], g.livereload.changed);
+    gulp.watch(client.scripts, ['scripts:dev']);
     gulp.watch(client.styles, g.livereload.changed);
     gulp.watch(client.templates, g.livereload.changed);
 
@@ -120,7 +120,8 @@ gulp
     return gulp.src( client.scripts )
       .pipe( g.jshint() )
       .pipe( g.jshint.reporter('jshint-stylish'))
-      .pipe( gulp.dest( tmp.app ) );
+      .pipe( gulp.dest( tmp.app ) )
+      .pipe( g.livereload() )
   });
 
 gulp

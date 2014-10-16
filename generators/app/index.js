@@ -26,7 +26,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
           }
 
           gulp
-            .src(templatePath + 'root/' + serverTemplatesDir + '/**/*')
+            .src(templatePath + 'servers/**/*')
               .pipe( g.rename( function ( file ) {
                   file = controller.proccessFile( file );
                }))
@@ -50,7 +50,7 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
                }))
               .pipe( g.template( values ))
               .pipe( g.conflict('./'))
-              .pipe( gulp.dest('./client'))
+              .pipe( gulp.dest('./client/app'))
 
           gulp
             .src(templatePath + 'clients/'+values.script+'/options/'+values.httpType+'/**/*')

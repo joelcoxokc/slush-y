@@ -48,8 +48,8 @@
 
           // var dest
 
-          mkdirp( templateDir + answers.slugifiedName )
-          answers.destination + answers.slugifiedModuleName + '/directives/' + ;
+
+          var destination = answers.destination + answers.slugifiedModuleName + '/directives/' + answers.slugifiedName;
           gulp.src( templates )
             .pipe( $.template( answers ))
             .pipe( $.rename(function ( file ) {
@@ -57,12 +57,13 @@
               file = controller.proccessFile( file, answers );
 
             }))
-            .pipe( $.conflict( ))
-            .pipe( gulp.dest( answers.destination + answers.slugifiedModuleName + '/directives/'))
+             .pipe( $.conflict( destination ))
+            .pipe( gulp.dest( destination ))
             .on('end', function () {
               // When finished, close the stream;
               done();
             });
+          //
         }
       });
       return gulp;

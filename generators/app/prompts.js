@@ -2,7 +2,7 @@ var prompts = [
   {
     name: 'appName',
     message: 'What would you like to call your application?',
-    default: 'Beast'
+    default: 'ASD'
   }, {
     name: 'appDescription',
     message: 'How would you describe your application?',

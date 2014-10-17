@@ -6,6 +6,8 @@
 
 var config = require('./environment');
 
+var globber = require('../components/globber');
+var path = require('path');
 // When the user disconnects.. perform this
 function onDisconnect(socket) {
 }
@@ -17,9 +19,12 @@ function onConnect(socket) {
     console.info('[%s] %s', socket.address, JSON.stringify(data, null, 2));
   });
 
+  globber('./server/api/**/*.socket.js').forEach(function( seedPath ) {
+    require(path.resolve( seedPath )).register(socket);
+  });
   // Insert sockets below
-  require('../api/thing/thing.socket').register(socket);
-  require('../api/generator/generator.socket').register(socket);
+  // require('../api/thing/thing.socket').register(socket);
+  // require('../api/generator/generator.socket').register(socket);
 }
 
 module.exports = function (socketio) {

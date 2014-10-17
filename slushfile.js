@@ -22,7 +22,7 @@ var gulp = require('gulp'),
 
 // load generators
 gulp = require('./generators/app/index.js')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
-gulp = require('./generators/crudModule')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
+gulp = require('./generators/generators-crud')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/generator-angular/module/')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/generator-angular/route/')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/generator-angular/controller/')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);

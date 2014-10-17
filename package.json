@@ -52,5 +52,7 @@
     "Node"
   ],
   "license": "ISC",
-  "devDependencies": {}
+  "devDependencies": {
+    "lodash": "^2.4.1"
+  }
 }

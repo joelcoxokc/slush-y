@@ -1,3 +1,5 @@
+
+
 /**
  * Populate DB with sample data on server start
  * to disable, edit config/environment/index.js, and set `seedDB: false`
@@ -9,22 +11,26 @@ var Thing = require('./thing.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
-    name : 'Development Tools',
-    info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
-  }, {
-    name : 'Server and Client integration',
-    info : 'Built with a powerful and fun stack: MongoDB, Express, AngularJS, and Node.'
-  }, {
-    name : 'Smart Build System',
-    info : 'Build system ignores `spec` files, allowing you to keep tests alongside code. Automatic injection of scripts and styles into your index.html'
-  },  {
-    name : 'Modular Structure',
-    info : 'Best practice client and server structures allow for more code reusability and maximum scalability'
-  },  {
-    name : 'Optimized Build',
-    info : 'Build process packs up your templates as a single JavaScript payload, minifies your scripts/css/images, and rewrites asset names for caching.'
+    name: 'Environment',
+    info: 'Awesome Environment set up using Gulp, Karma, Jasmin, inject, livereload, static server'
   },{
-    name : 'Deployment Ready',
-    info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
+    name: 'Architecture',
+    info: 'Beautiful and modular architecture helps avoid dependency injection, and makes it easy for new team members to jump right in.'
+  },{
+    name: 'Generators',
+    info: 'Sub Generators to help you scaffold your app.'
+  },{
+    name: 'Material Styles',
+    info: 'Awesome bower package "material-styles"! comes with all color styles from the Google Material Design palette'
+  },{
+    name: 'Authentication',
+    info: 'Full authentication system with user roles and user management.'
+  },{
+    name: 'Examples modules',
+    info: 'Comes with an \'THIS\' Features module, and the generators module.'
+  },{
+    name: 'Server',
+    info: 'Fully packed NodeJS and ExpressJS server, using MongoDB as the database.'
   });
 });
+

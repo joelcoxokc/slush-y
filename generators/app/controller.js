@@ -52,11 +52,3 @@ exports.ask = function( prompts ){
 
   return promised.promise;
 }
-
-
-
-
-
-
-
-

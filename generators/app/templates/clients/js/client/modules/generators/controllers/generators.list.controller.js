@@ -1,5 +1,5 @@
 ;(function(){
-'use strict';
+  'use strict';
 
   // Generators controller
   angular
@@ -9,7 +9,7 @@
   /* @inject */
   function GeneratorsController(resolvedList, $scope, $state, Generator) {
 
-    var vm
+    var vm;
 
     vm                = this;
     vm.shown          = {};
@@ -33,7 +33,6 @@
     }
 
     $scope.$on('childClosed', function () {
-      console.log('childClosed');
       vm.showDetail = false;
     });
 

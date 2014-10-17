@@ -10,8 +10,11 @@
   </div>
   <div collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
     <ul class="nav navbar-nav">
-      <li ng-repeat="item in nav.menu" ng-class="{active: nav.isActive(item.link)}">
-        <a ng-href="{{item.link}}" class="button-{{item.color}}">
+      <li ng-repeat="item in nav.menu">
+        <a ng-class="{'active': nav.isActive(item.link)}"
+           btn-color="{{item.color}}"
+           text-white
+           ng-href="{{item.link}}">
           {{item.title}}</a></li>
     </ul>
 
@@ -21,8 +24,8 @@
           <i class="fa fa-user"></i>
         </a>
         <ul class="dropdown-menu">
-          <li ng-class="{active: nav.isActive('/signup')}"><a ui-sref="signup"> Sign up</a></li>
-          <li ng-class="{active: nav.isActive('/signin')}"><a ui-sref="signin"> Signin</a></li>
+          <li ng-class="{active: nav.isActive('signup')}"><a ui-sref="signup"> Sign up</a></li>
+          <li ng-class="{active: nav.isActive('signin')}"><a ui-sref="signin"> Signin</a></li>
         </ul>
       </li>
     </ul>

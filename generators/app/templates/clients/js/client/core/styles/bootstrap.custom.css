@@ -4823,13 +4823,15 @@ a.list-group-item {
   color: #555555;
 }
 a.list-group-item .list-group-item-heading {
-  color: #333333;
+  /*CHANGE*/
+  /*color: #333333;*/
 }
 a.list-group-item:hover,
 a.list-group-item:focus {
   text-decoration: none;
   color: #555555;
-  background-color: #f6f6f6;
+  /*CHANGE*/
+  /*background-color: #f6f6f6;*/
 }
 .list-group-item.disabled,
 .list-group-item.disabled:hover,
@@ -4850,10 +4852,11 @@ a.list-group-item:focus {
 .list-group-item.active,
 .list-group-item.active:hover,
 .list-group-item.active:focus {
+  /*CHANGE*/
   z-index: 2;
   color: #ffffff;
-  background-color: #4d73ff;
-  border-color: #4d73ff;
+  /*background-color: #4d73ff;*/
+  /*border-color: #4d73ff;*/
 }
 .list-group-item.active .list-group-item-heading,
 .list-group-item.active:hover .list-group-item-heading,

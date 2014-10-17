@@ -47,6 +47,20 @@
     padding: 0.2em 0;
 }
 
+.btn.btn-clear,
+a.btn.btn-clear,
+button.btn.btn-clear {
+  background-color: none;
+  background: none;
+  color:inherit;
+}
+.btn.btn-clear:hover,
+.btn.btn-clear:focus,
+.btn.btn-clear:active,
+.btn.btn-clear:visited,
+.btn.btn-clear.active {
+  color:inherit;
+}
 
 .pointer {
   cursor: pointer;

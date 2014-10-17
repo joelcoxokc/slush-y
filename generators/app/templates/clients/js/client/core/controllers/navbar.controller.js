@@ -12,11 +12,11 @@ angular
       {
       'title': 'Home',
       'link': '/',
-      'color': 'deeporange-300'
+      'color': 'pink-400'
       },{
       'title': 'Generators',
       'link': '/generators',
-      'color': 'grey-300'
+      'color': 'blue-500'
       }
     ];
 
@@ -39,8 +39,8 @@ angular
       $location.path('/signout');
     }
 
-    function isActive(route) {
-      return route === $location.path();
+    function isActive(state) {
+      return $state.includes(state);
     }
   }
 }).call(this);

@@ -6,11 +6,11 @@
  * to disable, edit config/environment/index.js, and set `seedDB: false`
  */
   var User  = require('../user/user.model');
-  var Article = require('./article.model');
+  var <%= classifiedSingluarName %> = require('./<%= camelizedPluralName %>.model');
 
-  Article.find({}).remove(function() {
+  <%= classifiedSingluarName %>.find({}).remove(function() {
     User.find({username:'Admin'}, function (error, user){
-      Article.create({
+      <%= classifiedSingluarName %>.create({
         title: 'Environment',
         content: 'Awesome Environment set up using Gulp, Karma, Jasmin, inject, livereload, static server',
         user: user._id

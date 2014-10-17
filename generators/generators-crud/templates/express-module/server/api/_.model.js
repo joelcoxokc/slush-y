@@ -5,7 +5,7 @@
   var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
-  var ArticleSchema = new Schema({
+  var <%= ClassifiedSingularName %>Schema = new Schema({
     created: {
       type: Date,
       default: Date.now
@@ -27,5 +27,5 @@
     }
   });
 
-  module.exports = mongoose.model('Article', ArticleSchema);
+  module.exports = mongoose.model('<%= ClassifiedSingularName %>', <%= ClassifiedSingularName %>Schema);
 })();

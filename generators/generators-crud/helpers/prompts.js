@@ -27,3 +27,19 @@ var prompts = [{
 }];
 
 module.exports = prompts;
+
+
+
+      //   // Menu configuration
+      //     if (answers.addMenuItems) {
+      //       answers.menuId = 'topbar';
+      //         gulp.src( moduleDir + 'base/config/**' )
+      //       .pipe(template(answers))
+      //       .pipe(rename(function(file) {
+      //                 if (file.basename.indexOf('_') == 0) {
+      //                     file.basename = answers.slugifiedPluralName + '.'+file.basename.slice(2);
+      //                 }
+      //          }))
+      //       .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
+      //       .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'));
+      //     }

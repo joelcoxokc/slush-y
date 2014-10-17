@@ -9,10 +9,23 @@ exports.argsError = function(){
   console.log('******    Ex: slush y:crud-module article               ******');
 }
 
-exports.proccessFile = function( file ){
+exports.proccessFile = function( file, answers ){
+  if (file.basename.indexOf('_') == 0) {
+        file.basename = answers.slugifiedSingularName + '.'+file.basename.slice(2);
+  }
+}
+exports.processClientFiles = function( file, answers ){
   if (file.basename.indexOf('_') == 0) {
         file.basename = answers.slugifiedSingularName + '.'+file.basename.slice(2);
     }
+}
+exports.processServerFiles = function( file, answers ){
+  if (file.basename.indexOf('list') >= 0) {
+    file.basename = file.basename.replace('_', answers.slugifiedPluralName) ;
+  }
+  else {
+    file.basename = file.basename.replace('_', answers.slugifiedSingularName) ;
+  }
 }
 
 exports.ask = function( prompts ){

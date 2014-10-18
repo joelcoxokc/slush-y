@@ -4,13 +4,7 @@ function Config(path){
   this.path = path || './slush-y.json';
   var self = this;
 
-  fs.readJSON( this.path, function(err, data){
-
-    self.data = data;
-
-    // fs.writeJSONSync(self.path, self.data)
-  });
-
+  this.data = fs.readJSONSync(this.path)
 }
 
 Config.prototype.constructor = Object.create(Config);

@@ -9,22 +9,25 @@
   module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp, $, Config){
     var util = require('../../util.js');
     // var globals = new Config('./sulsh-y.json');
-    var moduleDir = __dirname + '/templates/client/**/*';
-    var serverDir = __dirname + '/templates/server/**/*';
-    var prompts = require('./helpers/prompts');
+    var prompts    = require('./helpers/prompts');
 
+    var templates = {
+      module: __dirname + '/templates/angular-module/module/**/*',
+      options: __dirname + '/templates/angular-module/options/**/*',
+      server: __dirname + '/templates/express-module/**/*'
+    }
 
-
+    var dest = {
+      module: './client/modules/',
+      options: './client/modules/',
+      server: './'
+    }
 
     gulp.task('crud', crudTask);
 
-
-
-    return gulp;
-
     function crudTask(done) {
       if(!this.args[0]){
-        util.argsError();
+        controller.argsError();
         return done();
       }
 
@@ -34,58 +37,49 @@
 
       //Ask
       controller.ask(prompts)
-        .then( stageTemplates )
-        .then( stageTemplates );
+        .then( GenerateTemplates )
+        .catch(done);
 
-      function stageTemplates( answers ){
-        answers = util.stringify( answers, moduleName );
+
+
+      function GenerateTemplates( answers ){
+        console.log('Staged tamplates')
+        answers = util.makeStrings( answers, moduleName );
         controller.prepareDirecories(answers);
-        return answers;
-      }
+        console.log(answers);
 
-      function stageTemplates(){
-
-        gulp.src( serverDir + 'server/thing/**')
-            .pipe( $.template(answers))
-            .pipe( $.rename(function (file) {
+        gulp.src( templates.server )
+            .pipe($.template( answers ))
+            .pipe($.rename(function ( file ) {
               file = controller.processFile( file, answers )
             }))
-            .pipe( $.conflict('./'))
+            .pipe($.conflict('./'))
+            .pipe(gulp.dest( dest.server, answers.slugifiedSingularName ))
 
-            .pipe(gulp.dest('./server/api/' + answers.slugifiedSingularName))
-
-            .pipe( template(answers))
-            .pipe(rename(function(file) {
-
-              file = controller.processServerFiles;
+        gulp.src( templates.module )
+            .pipe($.template( answers ))
+            .pipe($.rename(function(file) {
+              file = controller.processFile( file, answers )
             }))
-            .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
-            .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'));
+            .pipe($.conflict( dest.modeul + answers.slugifiedPluralName ))
+            .pipe(gulp.dest( dest.module + answers.slugifiedPluralName ))
 
 
-
-        gulp.src( moduleDir + 'base/client/**' )
-            .pipe(template(answers))
-            .pipe(rename(function(file) {
-              file = constroller.processFile( file )
-            }))
-            .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
-            .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'))
-
-            console.log(moduleDir + globals.data.httpType + '/client/**')
-
-        gulp.src( moduleDir + globals.data.httpType + '/client/**' )
-            .pipe(template(answers))
-            .pipe(rename(function(file) {
-                  file = constroller.processFile();
+        gulp.src(tamplates.options + globals.data.httpType )
+            .pipe($.template( answers ))
+            .pipe($.rename(function (file) {
+                  file = controller.processFile( file, answers );
                }))
-            .pipe(conflict('client/app/modules/' + answers.slugifiedPluralName+'/'))
-            .pipe(gulp.dest('client/app/modules/' + answers.slugifiedPluralName+'/'))
+            .pipe($.conflict(  dest.slugifiedPluralName ))
+            .pipe(gulp.dest( dest.module + answers.slugifiedPluralName ))
             .on('end', function () {
-                  done();
-              });
+                done();
+            });
+        return gulp
       }
     }
+
+    return gulp;
   }
 })();
 

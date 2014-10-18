@@ -3,13 +3,15 @@ var inquirer = require('inquirer');
 var Q = require('q');
 var _ = require('underscore.string');
 var util = require('../../../util')
+var mkdirp = require('mkdirp')
+
 exports.argsError = function(){
   console.log('******    Incorrect usage of the sub-generator!!        ******');
   console.log('******    Try slush y:crud-module <module-name>         ******');
   console.log('******    Ex: slush y:crud-module article               ******');
 }
 
-exports.proccessFile = function( file, answers ){
+exports.processFile = function( file, answers ){
   if (file.basename.indexOf('_') == 0) {
         file.basename = answers.slugifiedSingularName + '.'+file.basename.slice(2);
   }
@@ -33,10 +35,6 @@ exports.ask = function( prompts ){
   var promised = Q.defer();
 
   inquirer.prompt( prompts, function (answers) {
-    if (!answers.appName) {
-      return promised.reject()
-    }
-
     answers.addCSSFolder = _.contains(answers.folders, 'addCSSFolder');
     answers.addImagesFolder = _.contains(answers.folders, 'addImagesFolder');
     answers.addDirectivesFolder = _.contains(answers.folders, 'addDirectivesFolder');

@@ -5,8 +5,8 @@
   var path = require('path');
   var controller = require('./helpers/controller.js');
 
-
-  module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp, $, Config){
+// gulp, _, inflection, inquirer, mkdirp, g, config, Slushy
+  module.exports = function (gulp, _, inflections, inquirer, mkdirp, $, Slushy){
     var util = require('../../util.js');
     // var globals = new Config('./sulsh-y.json');
     var prompts    = require('./helpers/prompts');
@@ -23,6 +23,9 @@
       server: './'
     }
 
+    Slushy = new Slushy;
+    var config = Slushy.config;
+
     gulp.task('crud', crudTask);
 
     function crudTask(done) {
@@ -30,10 +33,7 @@
         controller.argsError();
         return done();
       }
-
-      var config = new Config();
       var moduleName = this.args[0];
-      console.log(config)
 
       //Ask
       controller.ask(prompts)
@@ -43,10 +43,14 @@
 
 
       function GenerateTemplates( answers ){
-        console.log('Staged tamplates')
+        // console.log('Staged tamplates')
         answers = util.makeStrings( answers, moduleName );
         controller.prepareDirecories(answers);
-        console.log(answers);
+
+        config.set(answers)
+        console.log(config.getAll())
+        answers = config.get();
+        // console.log(answers);
 
         gulp.src( templates.server )
             .pipe($.template( answers ))

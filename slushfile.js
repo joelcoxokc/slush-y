@@ -18,11 +18,21 @@ var gulp = require('gulp'),
     inquirer = require('inquirer'),
     mkdirp = require('mkdirp'),
     g    = require('gulp-load-plugins')({lazy:false}),
-    config = require('./config.js');
+    config = require('./config.js'),
+    Storage = require('./config/storage.js')
+
+
+function Slushy(){
+  this.prompt = inquirer.prompt;
+  this.config = new Storage('Demo', './slush-y.json');
+  // console.log(this);
+}
+
+
 
 // load generators
 gulp = require('./generators/app/index.js')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
-gulp = require('./generators/generators-crud')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
+gulp = require('./generators/generators-crud')(gulp, _, inflection, inquirer, mkdirp, g, Slushy);
 gulp = require('./generators/generator-angular/module/')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/generator-angular/route/')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);
 gulp = require('./generators/generator-angular/controller/')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g, config);

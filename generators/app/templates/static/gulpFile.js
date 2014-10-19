@@ -1,5 +1,6 @@
 var gulp        = require('gulp');
 var g           = require('gulp-load-plugins')({lazy: false});
+var $           = require('gulp-load-plugins')({lazy: false});
 var noop        = g.util.noop;
 var es          = require('event-stream');
 var bowerFiles  = require('main-bower-files');
@@ -33,6 +34,7 @@ var AUTOPREFIXER_BROWSERS = [
   'bb >= 10'
 ];
 
+
 /*
  | ###################################
  |
@@ -45,7 +47,7 @@ var AUTOPREFIXER_BROWSERS = [
  */
 
 var client = {
-  moduleName: '<%= slugifiedAppName %>',
+  moduleName: 'beast',
   root: './client',
   index: './client/index.html',
   app: './client/app',
@@ -70,89 +72,48 @@ var dist = {
   images: './dist/images',
   bower: './dist/bower_components'
 }
+
+tasks = {
+  dev: require('./gulp/dev.tasks.js')($, client, tmp, gulp)
+}
+
 /*
  | default
  */
-
 gulp
   .task('default', ['dev']);
 
-/*
- | dev = build:dev then server:dev & watch -> develompent mode;
+/**
+ * dev: = all tasks for development env
  */
 
- gulp
-  .task('dev', ['build:dev'], function ( done ){
-
-    g.runSequence( ['server:dev', 'watch'], done);
-
-  });
-
 gulp
-  .task('server:dev', function (){
-    process.env.NODE_ENV = 'development';
-    // return g.nodemon('./server');
-    require('./server');
-    return
-
-  });
-
-gulp
-  .task('watch', function (){
-
-    gulp.watch(client.scripts, ['scripts:dev']);
-    gulp.watch(client.styles, g.livereload.changed);
-    gulp.watch(client.templates, g.livereload.changed);
-
-  })
+  .task('dev', $.sequence('build:dev', 'server:dev', 'watch'));
 
 /*
  | build: = build:dev, scripts:dev, inject,
  */
+gulp
+  .task('build:dev', $.sequence('scripts:dev', 'inject:dev', 'bower:dev'));
+
+
+// ============================ dev tasks
 
 gulp
-  .task('build:dev', ['scripts:dev'], function ( done ){
-    g.runSequence('inject:dev',['bower:dev'], done);
-  });
+  .task('server:dev', tasks.dev.server)
 
 gulp
-  .task('scripts:dev', function(){
-    return gulp.src( client.scripts )
-      .pipe( g.jshint() )
-      .pipe( g.jshint.reporter('jshint-stylish'))
-      .pipe( gulp.dest( tmp.app ) )
-      .pipe( g.livereload() )
-  });
+  .task('watch', tasks.dev.watch);
+
 
 gulp
-  .task('inject:dev', function (){
-    var core_options = { addRootSlash:false, name: 'core', relative: true }
-    var modules_options = { addRootSlash:false, name: 'modules', relative: true }
-    var styles_options = { addRootSlash:false, name: 'styles', relative: true }
-
-    var core = gulp.src( client.core, {read:false} );
-    var modules = gulp.src( client.modules, {read:false} );
-    var styles = gulp.src( client.styles, {read:false} );
-
-    return gulp.src( client.index )
-      .pipe( g.inject( core, core_options ) )
-      .pipe( g.inject( modules, modules_options ) )
-      .pipe( g.inject( styles, styles_options ) )
-      .pipe( gulp.dest( client.root ) )
-  })
+  .task('scripts:dev', tasks.dev.scripts);
 
 gulp
-  .task('bower:dev', function () {
+  .task('inject:dev', tasks.dev.inject)
 
-    var wire = wiredep.stream;
-
-    return gulp.src( client.index )
-      .pipe( wire({
-        directory: client.bower,
-        exclude: ['bootstrap-sass-official']
-      }))
-      .pipe( gulp.dest( client.root ) );
-  });
+gulp
+  .task('bower:dev', tasks.dev.bower);
 
 
 /*

@@ -24,6 +24,8 @@ var util = require('util');
  */
 var Storage = module.exports = function Storage(name, configPath) {
   EventEmitter.call(this);
+  // var name = name || '.slush-y.json'
+  // var configPath = configPath || './'
   assert(name, 'A name parameter is required to create a storage');
   this.path = configPath || path.join(process.cwd(), '.slush-y.json');
   this.name = name;

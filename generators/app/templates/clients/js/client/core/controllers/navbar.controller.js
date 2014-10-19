@@ -6,7 +6,7 @@ angular
   .controller('NavbarCtrl', NavbarCtrl);
 
   /* @inject */
-  function NavbarCtrl($scope, $location, Auth, Menus) {
+  function NavbarCtrl($scope, $location, Auth, Menus, $state) {
     var vm = this;
     vm.menu = [
       {

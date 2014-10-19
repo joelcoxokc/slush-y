@@ -1,38 +1,55 @@
-var fs = require('fs-extra');
-module.exports = function(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, $, config){
-  gulp.task('default', function (done) {
+(function(){
+  'use strict';
+
+  var fs = require('fs-extra');
+  var _ = require('lodash');
+  var gulp = require('gulp');
+  var $ = require('gulp-load-plugins')({lazy:false});
 
 
+  /**
+   * Function is bound the Slushy Prototype
+   * @return {Function} [the callback function for gulp to call]
+   */
+  module.exports = function(){
+
+      var y = this;
+      var done
       var values = {};
       var controller = require('./controller.js');
       var templatePath = __dirname + '/templates/';
 
-      var prompts = require('./prompts.js');
-      console.log(templatePath)
-      //Ask
-      controller
-        .ask( prompts )
-        .then( GenerateTemplates )
-        .catch( done );
 
 
+      return gulpRunner;
+
+
+
+      /**
+       * [gulpRunner Gulp will call this as a call back, and pass in a done method]
+       * @param  {Function} done [call done() in order to stop the gulp stre]
+       * @return {Promise} [Returns a promise that the gulprunner when the gulp runner is complere]
+       */
+      function gulpRunner (done){
+
+        console.log(_.functions(y))
+        return y.default()
+          .then(function (options){
+            return y.createFilters(options);
+          })
+          .then(GenerateTemplates)
+      }
+
+
+      /**
+       * [GenerateTemplates Generates all primary templates]
+       * @param {[type]} values [description]
+       */
       function GenerateTemplates( values ){
-          console.log(values)
-          var serverTemplatesDir;
-          if( values.auth ){
-            serverTemplatesDir = 'auth';
-          }
-          if( values.base ){
-            serverTemplatesDir = 'base';
-          }
 
-          gulp
-            .src( templatePath + 'slush-y.json')
-              .pipe($.jsonEditor( function (json){
-                return values;
-              }))
-              .pipe( gulp.dest('./') )
-
+          /**
+           * Generator the server
+           */
           gulp
             .src(templatePath + 'servers/**/*')
               .pipe($.rename( function ( file ) {
@@ -42,6 +59,9 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               .pipe($.conflict('./'))
               .pipe(gulp.dest('./'));
 
+          /**
+           * Generate all static assets, and root level files
+           */
           gulp
             .src(templatePath + 'static/**/*')
               .pipe($.rename(function (file) {
@@ -51,6 +71,9 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               .pipe($.conflict('./'))
               .pipe( gulp.dest('./'));
 
+          /**
+           * Generate client from chosen script directory type!
+           */
           gulp
             .src(templatePath + 'clients/'+values.script+'/client/**/*')
               .pipe($.rename(function ( file ) {
@@ -60,6 +83,13 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               .pipe($.conflict('./'))
               .pipe( gulp.dest('./client/app'))
 
+
+          /**
+           * Generate client scritps from chosen HTTPrequest handler type
+           */
+          console.log("Start===============")
+          console.log(values.httpType)
+          console.log("Stop===============")
           gulp
             .src(templatePath + 'clients/'+values.script+'/options/'+values.httpType+'/**/*')
               .pipe($.rename(function ( file ) {
@@ -69,12 +99,6 @@ module.exports = function(gulp, install, conflict, template, rename, _, inflecti
               .pipe($.conflict('./'))
               .pipe( gulp.dest('./client/app'))
               .pipe($.install())
-              .on('end', function () {
-                  done();
-              });
       }
-
-
-  });
-  return gulp;
-}
+  }
+})();

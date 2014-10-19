@@ -1,6 +1,7 @@
 (function(){
 'use strict';
   var wiredep = require('wiredep');
+
   module.exports = function($, client, tmp, gulp){
 
     var tasks = {
@@ -19,15 +20,12 @@
       }
     };
 
-    var server = $.livereload();
-    $.livereload.listen()
-
-
 
     return tasks;
 
 
     /////////////////////
+
 
     function server(){
       process.env.NODE_ENV = 'development';
@@ -37,6 +35,10 @@
     }
 
     function watch(){
+      var server = $.livereload();
+      $.livereload.listen()
+
+
       gulp.watch('../client/app/**/*.js').on('change', function(file) {
         console.log('Changed', file)
         server.changed(file.path);
@@ -55,8 +57,6 @@
        return gulp.src( client.scripts )
         .pipe( $.jshint() )
         .pipe( $.jshint.reporter('jshint-stylish'))
-        .pipe( $.concat('app.min.js') )
-        .pipe( gulp.dest( './tmp' ) );
     }
 
     function inject(){

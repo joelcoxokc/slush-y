@@ -8,6 +8,7 @@
       server:   server,
       watch:    watch,
       scripts:  scripts,
+      stylus:   stylus,
       inject:   inject,
       bower:    bower
     };
@@ -43,6 +44,9 @@
         console.log('Changed', file)
         server.changed(file.path);
       });
+
+      gulp.watch('./client/app/core/**/*.styl', ['stylus:dev'], server.changed)
+
       gulp.watch(['../client/app/**/*.html', './client/index.html']).on('change', function(file) {
         console.log('Changed', file)
         server.changed(file.path);
@@ -54,9 +58,16 @@
     }
 
     function scripts(){
+
        return gulp.src( client.scripts )
         .pipe( $.jshint() )
         .pipe( $.jshint.reporter('jshint-stylish'))
+    }
+    function stylus(){
+      return gulp.src(client.stylus)
+        .pipe($.stylus())
+        .pipe($.rename('material-styles.css'))
+        .pipe(gulp.dest(client.stylusDest))
     }
 
     function inject(){

@@ -113,8 +113,9 @@
      */
 
     gulp
-      .task('build:dist', $.sequence(['scripts:dist', 'styles:dist', 'templates:dist', 'assets:dist'],'inject:dist'))
+      .task('build:dist', $.sequence(['scripts:dist', 'stylus:dist', 'styles:dist', 'templates:dist', 'assets:dist'],'inject:dist'))
       .task('scripts:dist', tasks.dist.scripts)
+      .task('stylus:dist', tasks.dist.stylus)
       .task('styles:dist', tasks.dist.styles)
       .task('templates:dist', tasks.dist.templates)
 

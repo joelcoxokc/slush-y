@@ -1,72 +1,48 @@
 (function(){
   'use strict';
 
-  var fs = require('fs');
-  var controller = require('./controller.js');
 
-    module.exports = function (gulp, _, inflection, $, config) {
-      gulp.task('directive', function (done) {
+    module.exports = function () {
 
-        if (!this.args[0]) {
-          controller.argsError();
-          return done();
-        }
+        var gulp = require('gulp');
+        var fs            = require('fs');
         var moduleName    = this.args[0];
-        var modulesFolder = process.cwd() + '/client/app/modules';
-        var templateDir   = __dirname + '/templates/';
+        var modulesDir    = y.get('modulesDir')
+        var path          = require('path');
+        var prompts       = require('./prompts.js')
         var templates     = templateDir + '**/*';
-
-        var prompts = [{
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this directive belongs to?',
-          choices: [{
-            name: 'core',
-            value: 'core'
-          }]
-        }];
-        // var prompts = [{
-        //   type: 'list',
-        //   name: 'moduleName',
-        //   default: 'core',
-        //   message: 'Which module does this controller belongs to?',
-        //   choices: []
-        // }];
-
-        // Add module choices
-        prompts = controller.getCurrentModules( prompts, modulesFolder );
-
-        //Ask
-
-        controller
-          .ask( prompts, moduleName )
-          .then( GenerateTemplates )
-          .catch( done );
-
-        function GenerateTemplates( answers ){
-
-          // var dest
+        var controller    = require('./controller.js');
+        var temaplets     = __dirname + '/templates/';
 
 
-          var destination = answers.destination + answers.slugifiedModuleName + '/directives/' + answers.slugifiedName;
+        return Directive;
+
+
+        function Directive( done ){
+
+          return controller
+            .handleErrors( this.args )
+            .then( controller.getModules )
+            .then( controller.ask )
+            .then( Generate );
+
+        }
+
+
+
+        function Generate( options ){
+
+          var dest = path.join(options.destination, options.slugifiedModuleName, '/directives/', options.slugifiedName);
           gulp.src( templates )
-            .pipe( $.template( answers ))
+            .pipe( $.template( options ))
             .pipe( $.rename(function ( file ) {
 
-              file = controller.proccessFile( file, answers );
+              file = controller.proccessFile( file, options );
 
             }))
-             .pipe( $.conflict( destination ))
+            .pipe( $.conflict( destination ))
             .pipe( gulp.dest( destination ))
-            .on('end', function () {
-              // When finished, close the stream;
-              done();
-            });
-          //
         }
-      });
-      return gulp;
     };
 
 })();

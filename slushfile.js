@@ -8,24 +8,24 @@
 
 'use strict';
 
-var gulp = require('gulp'),
-    install = require('gulp-install'),
-    conflict = require('gulp-conflict'),
-    template = require('gulp-template'),
-    rename = require('gulp-rename'),
-    _ = require('underscore.string'),
-    inflection = require('inflection'),
-    inquirer = require('inquirer'),
-    mkdirp = require('mkdirp'),
-    g    = require('gulp-load-plugins')({lazy:false}),
-    Slushy = require('./Slushy.js')
+var gulp      = require('gulp'),
+    install   = require('gulp-install'),
+    conflict  = require('gulp-conflict'),
+    template  = require('gulp-template'),
+    rename    = require('gulp-rename'),
+    inquirer  = require('inquirer'),
+    plugins   = require('gulp-load-plugins')({lazy:false}),
+    Slushy    = require('./Slushy.js'),
+    _         = require('lodash'),
+    Slushy    = require('./Slushy.js');
 
 
-gulp = Slushy.start({
-  default: 'generators/app/index.js',
+    var slushy = new Slushy(gulp, inquirer, plugins, _);
 
-});
 
+    slushy.register({
+      default: './generators/app/index.js'
+    })
 
 // gulp = require('./generators/app/index.js')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);
 // gulp = require('./generators/generators-crud')(gulp, _, inflection, inquirer, mkdirp, g, Slushy);
@@ -43,3 +43,39 @@ gulp = Slushy.start({
 // gulp = require('./generators/expressController')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);
 // gulp = require('./generators/expressRoute')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);
 // gulp = require('./generators/expressTest')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);
+
+
+
+
+
+
+
+
+    // Slushy    = new Slushy
+
+    // slushy = new Slushy({
+    //   default: './generators/app/index.js',
+    //   factory: './generators/generator-angular/factory/index.js',
+    //   // config: 'generators/generator-angular/config/index.js',
+    //   // module: 'generators/generator-angular/module/index.js',
+    //   // directive: 'generators/generator-angular/directive/index.js'
+    // })
+
+
+    // gulp.task('default', function(){
+
+    //   // $.util.log(this)
+    //   console.log(this);
+    // })
+    // console.log('functions from slushfile.js', _.functions($.util))
+
+
+
+
+// gulp = slushy.start({
+//   default: 'generators/app/index.js',
+//   config: 'generators/generator-angular/config/index.js',
+//   module: 'generators/generator-angular/module/index.js',
+//   directive: 'generators/generator-angular/module/index.js'
+
+// });

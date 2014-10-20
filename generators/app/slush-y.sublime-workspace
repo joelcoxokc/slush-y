@@ -1,0 +1,1007 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"template",
+				"templatePath"
+			],
+			[
+				"promp",
+				"prompts"
+			],
+			[
+				"modules",
+				"modulesFolder"
+			],
+			[
+				"__",
+				"__dirname"
+			],
+			[
+				"prop",
+				"prototype"
+			],
+			[
+				"proto",
+				"prototype"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"res",
+				"reset"
+			],
+			[
+				"beginner",
+				"beginner_dir"
+			],
+			[
+				"top",
+				"top-header-default"
+			],
+			[
+				"right-tol",
+				"right-toolbar-meida"
+			],
+			[
+				"screen",
+				"screen-size-sm"
+			],
+			[
+				"medi",
+				"media-toolbar-left"
+			],
+			[
+				"left",
+				"left-toolbar-size-xs"
+			],
+			[
+				"dashboard-",
+				"dashboard-nav"
+			],
+			[
+				"curr",
+				"current_user"
+			],
+			[
+				"auth",
+				"authInterceptor"
+			],
+			[
+				"new",
+				"newThing"
+			],
+			[
+				"igno",
+				"ignorePath"
+			],
+			[
+				"vendor",
+				"vendor_files"
+			],
+			[
+				"style",
+				"style_files"
+			],
+			[
+				"bowe",
+				"bower_components"
+			],
+			[
+				"image",
+				"imagemin"
+			],
+			[
+				"pro",
+				"provider	Angular.js"
+			],
+			[
+				"check",
+				"checkUserBookmarks"
+			],
+			[
+				"$state",
+				"$stateParams"
+			],
+			[
+				"getMenu",
+				"getMenuItems"
+			],
+			[
+				"colle",
+				"collect"
+			],
+			[
+				"reque",
+				"require"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"requ",
+				"require"
+			],
+			[
+				"likeabl",
+				"likeableSchema"
+			],
+			[
+				"bisness",
+				"businessId"
+			],
+			[
+				"business",
+				"businessId"
+			],
+			[
+				"clurtch",
+				"clurtch-data-test"
+			],
+			[
+				"isDivi",
+				"isDivisibleByThree"
+			],
+			[
+				"link",
+				"link	link - stylesheet"
+			],
+			[
+				"in",
+				"input	input - button"
+			],
+			[
+				"initial",
+				"initialize"
+			],
+			[
+				"found",
+				"foundUser"
+			],
+			[
+				"compare",
+				"compareSync"
+			],
+			[
+				"mo",
+				"angular.module"
+			],
+			[
+				"ng-repeat",
+				"ng-repeat-end	AngularJS"
+			],
+			[
+				"mod",
+				"mod	Angular Module run"
+			],
+			[
+				"con",
+				"controller	Angular.js"
+			],
+			[
+				"mode",
+				"angular.module"
+			],
+			[
+				"but",
+				"bs3-button	bs3-button"
+			],
+			[
+				"col-md-",
+				"col-md-offset-2"
+			],
+			[
+				"dealer",
+				"dealerHand"
+			],
+			[
+				"player",
+				"playerHand"
+			],
+			[
+				"Libr",
+				"library"
+			],
+			[
+				"SongQueue",
+				"SongQueueView"
+			],
+			[
+				"play",
+				"playCount"
+			],
+			[
+				"Ex",
+				"extend"
+			],
+			[
+				"select",
+				"selectedRoom"
+			],
+			[
+				"make",
+				"makeForm"
+			],
+			[
+				"$crea",
+				"$createRoomInput"
+			],
+			[
+				"button",
+				"bs3-button:info	bs3-button-info"
+			],
+			[
+				"$creta",
+				"$createMsgBtn"
+			],
+			[
+				"messages",
+				"messagesList"
+			],
+			[
+				"$mess",
+				"$messages"
+			],
+			[
+				"$message",
+				"$messageList"
+			],
+			[
+				"create",
+				"createMsgBtn"
+			],
+			[
+				"high",
+				"highScore"
+			],
+			[
+				"colli",
+				"collisions"
+			],
+			[
+				"collision",
+				"collisionTween"
+			],
+			[
+				"cur",
+				"currentCombination"
+			],
+			[
+				"ng-mouse",
+				"ng-mouseleave	AngularJS"
+			],
+			[
+				"i",
+				"i	Tag"
+			],
+			[
+				"Users",
+				"UsersController"
+			],
+			[
+				"rooms",
+				"roomsList"
+			],
+			[
+				"creat",
+				"createMessage"
+			],
+			[
+				"_",
+				"_size"
+			],
+			[
+				"typ",
+				"assert.typeOf"
+			],
+			[
+				"storage",
+				"_storage"
+			],
+			[
+				"_s",
+				"_storage"
+			],
+			[
+				"Orders",
+				"OrdersService"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"ng-mo",
+				"ng-model	AngularJS"
+			],
+			[
+				"ng-cl",
+				"ng-click	AngularJS"
+			],
+			[
+				"panel",
+				"panel-heading"
+			],
+			[
+				"firebase",
+				"firebase-simple-login"
+			],
+			[
+				"$route",
+				"angular: $routeParams"
+			],
+			[
+				"$routP",
+				"angular: $routeParams"
+			],
+			[
+				"ng-mou",
+				"ng-mouseleave	AngularJS"
+			],
+			[
+				"ng-m",
+				"ng-mouseenter	AngularJS"
+			],
+			[
+				"text",
+				"textarea	Tag"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/test.js",
+			"settings":
+			{
+				"buffer_size": 184,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/CHANGELOG",
+			"settings":
+			{
+				"buffer_size": 59,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 3106,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 367.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Contr",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"htm",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"gut",
+				"Git: Checkout"
+			],
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"pack",
+				"Preferences: Browse Packages"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"INST",
+				"Package Control: Install Package"
+			],
+			[
+				"bs3",
+				"Snippet: bs3-select"
+			],
+			[
+				"htlml",
+				"Snippet: bs3-html5-template"
+			],
+			[
+				"git push",
+				"Git: Push"
+			],
+			[
+				"git",
+				"Git: Status"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"git s",
+				"Git: Status"
+			],
+			[
+				"angul",
+				"AngularJS: Toggle - Enable data- Prefix"
+			],
+			[
+				"angula",
+				"AngularJS: Toggle - Disable JS Completions"
+			],
+			[
+				"insl",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 593.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"git config --global user.email \"joel.design@icloud.com\"",
+			"git config --global user.name \"hisimagination\"",
+			"git config --global user.name hisimagination",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/generators-express/express-controller"
+	],
+	"file_history":
+	[
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/node_modules/yeoman-generator/node_modules/cheerio/node_modules/htmlparser2/node_modules/domhandler/test/cases/23-dom-lvl1.json",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/node_modules/yeoman-generator/node_modules/iconv-lite/encodings/dbcs-data.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/src/defaults.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/slushfile.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y-demo/client/app/modulesgenerators/config/.config.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y-demo/slush-y.json",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y-demo/client/app/modules/generators/config/.config.js",
+		"/Users/joelcox/.zshrc",
+		"/Users/joelcox/dev/projects/slush/slush-core/slushfile.js",
+		"/Users/joelcox/Desktop/runner/client/app/app.js",
+		"/Users/joelcox/Desktop/runner/client/app/app.css",
+		"/Users/joelcox/dev/projects/slush/slush-core/.gitignore",
+		"/Users/joelcox/dev/projects/slush/slush-core/templates/client/index.html",
+		"/Users/joelcox/dev/projects/slush/slush-core/demo/client/index.html",
+		"/Users/joelcox/dev/projects/slush/slush-core/README.md",
+		"/Users/joelcox/dev/projects/slush/slush-core/demo/package.json",
+		"/Users/joelcox/dev/projects/slush/slush-core/demo/client/app/app.js",
+		"/Users/joelcox/dev/projects/slush/slush-core/templates/client/app/app.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/config.js",
+		"/Users/joelcox/dev/projects/slush/slush-builder/slush-builder/config.js",
+		"/Users/joelcox/dev/projects/slush/slush-builder/slush-builder/slush-y.js",
+		"/Users/joelcox/dev/projects/slush/slush-builder/slush-builder/slushfile.js",
+		"/Users/joelcox/dev/projects/slush/slush-builder/slush-builder/generators/app/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-builder/slush-builder/__package.json",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y-demo/client/app/modules/tester/directives/do-tester.directive.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y-demo/client/app/modules/generators/views/generators.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y-demo/client/robots.txt",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y-demo/gulpFile.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y-demo/client/index.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y-demo/server/config/express.js",
+		"/Users/joelcox/zshrc",
+		"/Users/joelcox/Desktop/zsh",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/core/styles/navbar.css",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/generators/views/generators.detail.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/generators/controllers/generators.detail.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/Authentication/tests/login.controller.test.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/Authentication/tests/signup.controller.test.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/static/gulpFile.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/generators/config/generators.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/core/controllers/navbar.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/generators/config/generators.config.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/generators/controllers/generators.list.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/Authentication/config/auth.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/Administration/directives/admin-nav/admin-nav.directive.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/Administration/config/administration.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/options/http/modules/generators/api/generators.api.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/modules/generators/services/generators.service.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/options/restangular/modules/generators/api/generators.api.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/core/controllers/navbar.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/__htaccess",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/Authentication/views/login.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/Administration/directives/admin-nav/admin-nav.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/Administration/directives/admin-nav/admin-nav.directive.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/core/views/navbar.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/generators/views/view-generator.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/Authentication/views/signup.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/Authentication/config/auth.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/Administration/config/administration.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/core/styles/bootstrap.custom.css",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/modules/app.modules.module.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/__app.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/templates/clients/js/client/app/core/config/restangular.config.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app/prompts.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/controller/controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/controller/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/view/templates/_.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/view/templates/_.route.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/config/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/config/controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/package.json",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/view/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/filter/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/test/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/service/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/route/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/route/templates/_.route.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/route/templates/_.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/module/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/factory/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/directive/index.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/service/templates/_.service.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/module/templates/_.module.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/filter/templates/_.filter.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/factory/templates/_.factory.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular/directive/templates/_.directive.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angular-generators/controller/angularController.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/angularController.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/client/app/modules/Authentication/views/signup.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/options/http/modules/Authentication/services/auth.factory.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/generators/app.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/client/app/modules/Administration/directives/admin-nav/admin-nav.directive.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/root/auth/server/api/user/user.model.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/root/base/server/api/user/user.model.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/static/gulpFile.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/slush/clients/js/client/app/modules/Administration/config/administration.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/slush/clients/js/client/app/modules/Administration/controllers/settings.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/slush/clients/js/client/app/modules/Administration/directives/adminNav/admin-nav.directive.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/slush/clients/js/options/http/modules/Administration/directives/adminNav/adminNav.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/slush/clients/js/options/http/modules/Administration/controllers/accounts.list.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/app/core/views/navbar.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/app/modules/Authentication/config/auth.routes.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/app/modules/Authentication/services/users.client.service.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/app/modules/Authentication/controllers/settings.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/versions/y-1.0.2/client/app/modules/Authentication/controllers/profile.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/client/app/modules/app.modules.module.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/app.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/__htaccess",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/core/views/home.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/choice/restangular/core/views/home.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/choice/restangular/core/controllers/home.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/choice/http/core/views/home.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/core/styles/core.css",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/choice/http/core/controllers/home.controller.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/choice/http/core/api/thing/thing.model.js",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/index.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/static/bower.json",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/core/navbar.css",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/core/styles/bootstrap.custom.css",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/core/views/header.view.html",
+		"/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/templates/app/clients/js/app/authentication/views/signup.view.html",
+		"/Users/joelcox/dev/projects/slush-soa/slush-soa/templates/app/clients/choice/restangular/app/authentication/services/auth.factory.js",
+		"/Users/joelcox/dev/projects/slush-soa/slush-soa/templates/app/static/server/auth/local/index.js",
+		"/Users/joelcox/dev/projects/slush-soa/slush-soa/templates/app/clients/js/app/core/core.module.js",
+		"/Users/joelcox/dev/projects/slush-soa/slush-soa/generators/app.js",
+		"/Users/joelcox/dev/projects/slush-soa/slush-soa/templates/app/clients/js/app/authentication/controllers/settings.controller.js",
+		"/Users/joelcox/dev/projects/slush-soa/slush-soa/templates/app/static/server/api/user/user.controller.js"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"",
+			"/Users/joelcox/plateful/master/app",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"console",
+			"$stateParams",
+			"listGenerators",
+			"Authentication",
+			"Administration",
+			"href",
+			"templatePath",
+			"values",
+			"angular",
+			"config",
+			"results",
+			"slugifiedRoutePath",
+			"public",
+			"app",
+			".navbar-default",
+			"\"",
+			"public",
+			"slugifiedPluralName",
+			"camelizedSingluarName",
+			"things",
+			"thing",
+			"things",
+			"thing",
+			"Thing",
+			"states",
+			"four",
+			"three",
+			"two",
+			"FourCtrl",
+			"OneCtrl",
+			"TwoCtrl",
+			"FourCtrl",
+			"steps",
+			"setup",
+			"steps",
+			"top",
+			"left",
+			"toolbar-defaults",
+			"left",
+			"col ",
+			"col-",
+			"col ",
+			"col-",
+			".col",
+			"col",
+			"calc",
+			"socket",
+			"copy",
+			"copy:styles",
+			"concurrent",
+			"concurrent:server",
+			"UserResource",
+			" User.",
+			"User.",
+			"User",
+			"$provide",
+			"$scope.",
+			"this",
+			"watch",
+			"   ",
+			"styles",
+			"gulp-m",
+			"main",
+			"main.css",
+			"trans",
+			"tran",
+			"transform",
+			" transform",
+			"submitted",
+			"err",
+			"error",
+			".when(",
+			"DaftMonk/generator-ng-component",
+			"generator-ng-component/",
+			"generator-ng-component",
+			"angular-fullstack",
+			"UserStorage",
+			"underscore",
+			"isSignedIn",
+			"white",
+			"stable",
+			"Auth",
+			"$scope",
+			"build:server",
+			"config",
+			"livereloadServer",
+			"tracom",
+			"User",
+			"findDistance",
+			"map",
+			"glyphicon",
+			"db",
+			"click",
+			"*",
+			"factory 'profileCreator', [\n  'firebaseRef'\n  '$timeout'",
+			"serve",
+			"\"",
+			"makeForm",
+			"Message",
+			"roomInput",
+			".btn ",
+			"list-group-item",
+			"border-radius: 4px",
+			"border-radius: 6px",
+			"tab",
+			"var",
+			"dequeue",
+			"stackSize",
+			"storage",
+			"stackSize",
+			"setClick",
+			"contain",
+			"contau",
+			"each",
+			"copiedEventObject",
+			"batch"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"administration",
+			"'",
+			"app",
+			"vm.",
+			"vm.submitted",
+			".state(",
+			"joelcoxokc/generator-ng-components",
+			"generator-ng-components/",
+			"soa",
+			"stable",
+			"fa",
+			"",
+			"'",
+			"border-radius: 0px",
+			"_size",
+			"_storage",
+			"_size",
+			"},",
+			"CEO"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/test.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 184,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								184
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/joelcox/dev/projects/slush/slush-y/slush-y/slush-y/CHANGELOG",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 59,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "index.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3106,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								292,
+								292
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git-commit":
+	{
+		"height": 100.0
+	},
+	"output.git-push":
+	{
+		"height": 100.0
+	},
+	"project": "slush-y.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"main",
+				"2014-06-chatterbox-client/client/styles/main.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+		],
+		"width": 467.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 281.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

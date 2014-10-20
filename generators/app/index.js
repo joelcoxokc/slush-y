@@ -1,9 +1,13 @@
+
+
+
 (function(){
   'use strict';
 
   var fs = require('fs-extra');
   var _ = require('lodash');
   var gulp = require('gulp');
+  var chalk = require('chalk');
   var $ = require('gulp-load-plugins')({lazy:false});
 
 
@@ -11,17 +15,21 @@
    * Function is bound the Slushy Prototype
    * @return {Function} [the callback function for gulp to call]
    */
-  module.exports = function(){
+  module.exports = function(slushy){
 
-      var y = this;
+      console.log(':-->enter Default index.js', _.functions(slushy))
+
+      var slushy = this;
       var done
       var values = {};
-      var controller = require('./controller.js');
-      var templatePath = __dirname + '/templates/';
+      var prompts       = require('./prompts')
+      var controller    = require('./controller.js');
+      var templatePath  = __dirname + '/templates/';
 
+      // console.log('------', y.config)
+      console.log(slushy)
 
-
-      return gulpRunner;
+      return gulp.task('default', gulpRunner)
 
 
 
@@ -32,12 +40,16 @@
        */
       function gulpRunner (done){
 
-        console.log(_.functions(y))
-        return y.default()
-          .then(function (options){
-            return y.createFilters(options);
+        // console.log(_.functions(y))
+        return controller.ask(prompts)
+          .then( function (answers){
+            console.log(answers,"inside the gernerator")
+            return answers;
           })
-          .then(GenerateTemplates)
+          .then( controller.initConfig )
+          .then( GenerateTemplates )
+          .catch( done )
+          // .then(GenerateTemplates)
       }
 
 
@@ -46,6 +58,7 @@
        * @param {[type]} values [description]
        */
       function GenerateTemplates( values ){
+          console.log(':--> Entering Generate Templates.')
 
           /**
            * Generator the server
@@ -87,9 +100,9 @@
           /**
            * Generate client scritps from chosen HTTPrequest handler type
            */
-          console.log("Start===============")
-          console.log(values.httpType)
-          console.log("Stop===============")
+          // console.log("Start===============")
+          // console.log(values.httpType)
+          // console.log("Stop===============")
           gulp
             .src(templatePath + 'clients/'+values.script+'/options/'+values.httpType+'/**/*')
               .pipe($.rename(function ( file ) {

@@ -3,10 +3,22 @@ var inquirer = require('inquirer');
 var Q = require('q');
 var _ = require('underscore.string');
 
-exports.argsError = function(){
-  console.log('******    Incorrect usage of the sub-generator!!      ******');
-  console.log('******    Try slush y:directive <controller-name>     ******');
-  console.log('******    Ex: slush y:directive article               ******');
+exports.handleErrors = function(args){
+
+  var q = Q.defer();
+
+  if (!args[0]) {
+    console.log('******    Incorrect usage of the sub-generator!!      ******');
+    console.log('******    Try slush y:directive <controller-name>     ******');
+    console.log('******    Ex: slush y:directive article               ******');
+    q.reject();
+  } else {
+
+    q.resolve();
+
+  }
+
+  return q.promise;
 }
 
 exports.proccessFile = function(file, answers){
@@ -16,25 +28,24 @@ exports.proccessFile = function(file, answers){
   return file;
 }
 
-
 exports.getCurrentModules = function(prompts, modulesFolder){
+  var promised = Q.defer();
 
   readModules();
-
-  return prompts;
+  promised.resolve( prompts, modulesFolder);
+  return promised.promise;
 
   function readModules(){
 
-    fs.readdirSync(modulesFolder)
-      .forEach(function (folder) {
-        var stat = fs.statSync(modulesFolder + '/' + folder);
-        if (stat.isDirectory()) {
-          prompts[0].choices.push({
-            value: folder,
-            name: folder
-          });
-        }
-      });
+    fs.readdirSync(modulesFolder).forEach(function(folder) {
+      var stat = fs.statSync(modulesFolder + '/' + folder);
+      if (stat.isDirectory()) {
+        prompts[0].choices.push({
+          value: folder,
+          name: folder
+        });
+      }
+    });
   }
 };
 
@@ -62,10 +73,6 @@ exports.ask = function( prompts, moduleName ){
 
   return promised.promise;
 }
-
-
-
-
 
 
 

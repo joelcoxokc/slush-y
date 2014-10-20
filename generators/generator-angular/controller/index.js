@@ -1,49 +1,49 @@
-module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp, g, config) {
-  var fs = require('fs');
-  var controller = require('./controller.js');
+(function(){
+  'use strict';
+
+    /**
+     * Controller Bound to the Slushy Prototype;
+     * @return {Function} Callback function for the Controller Task to Call
+     */
+    module.exports = function(){
+
+        var y = this;
+        var fs = require('fs');
+        var moduleName = this.args[0];
+        var modulesDir = y.get('modulesDir');
+        var prompts = require('/prompts.js');
+        var templateDir = __dirname + '/templates/';
+        var controller = require('./controller.js');
 
 
-  gulp.task('controller', function (done) {
+        return Controller;
 
-    if (!this.args[0]) {
-      console.log('******    Incorrect usage of the sub-generator!!                     ******');
-      console.log('******    Try slush meanjs:angular-controller <controller-name>      ******');
-      console.log('******    Ex: slush meanjs:angular-controller article                ******');
-      return done();
+        /////////////////////////////
+
+        function Controller( done ){
+          if (!this.args[0]) {
+            return done();
+          }
+
+          return controller.getCurrentModules( prompts, modulesDir)
+            .then( controller.ask )
+            .then( GenerateTemplates )
+            .catch( done )
+
+        }
+
+
+        function GenerateTemplates( answers ){
+
+          gulp.src(templateDir + '**')
+            .pipe( g.template( answers ) )
+            .pipe( g.rename( function ( file ) {
+                file = controller.proccessFile( file, answers )
+            }))
+            .pipe( g.conflict('client/app/modules/' + answers.slugifiedModuleName ) )
+            .pipe( gulp.dest('client/app/modules/' + answers.slugifiedModuleName ) )
+
+        }
     }
-    var moduleName = this.args[0];
-    var modulesFolder = process.cwd() + '/client/app/modules/';
-    var templateDir = __dirname + '/templates/';
-    var prompts = [{
-      type: 'list',
-      name: 'moduleName',
-      default: 'core',
-      message: 'Which module does this controller belongs to?',
-      choices: []
-    }];
 
-    // Add module choices
-    prompts = controller.getCurrentModules( prompts, modulesFolder );
-
-    //Ask
-    controller
-      .ask( prompts, moduleName )
-      .then( GenerateTemplates )
-      .catch( done );
-
-    function GenerateTemplates( answers ){
-
-      gulp.src(templateDir + '**')
-        .pipe( g.template( answers ) )
-        .pipe( g.rename( function ( file ) {
-            file = controller.proccessFile( file, answers )
-        }))
-        .pipe( g.conflict('client/app/modules/' + answers.slugifiedModuleName ) )
-        .pipe( gulp.dest('client/app/modules/' + answers.slugifiedModuleName ) )
-        .on('end', function () {
-          done();
-        });
-    }
-  });
-  return gulp;
-};
+})();

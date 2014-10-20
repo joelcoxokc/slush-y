@@ -1,5 +1,5 @@
 module.exports = function(options){
-
+  options = options || null;
   prompts = {
 
     default: [{
@@ -28,7 +28,20 @@ module.exports = function(options){
         type: 'confirm',
         name: 'moveon',
         message: 'Continue?'
-      }]
+      }],
+
+    configuration: [
+      {
+        type: 'list',
+        name: 'moduleName',
+        default: 'core',
+        message: 'Which module does this controller belongs to?',
+        choices: [{
+          name:'core',
+          value: 'core'
+        }]
+      }
+    ]
   }
   return prompts;
 }

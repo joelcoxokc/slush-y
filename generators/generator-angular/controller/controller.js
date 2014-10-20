@@ -18,9 +18,11 @@ exports.proccessFile = function(file, answers){
 
 
 exports.getCurrentModules = function(prompts, modulesFolder){
+  var promised = Q.defer();
 
   readModules();
-  return prompts;
+  promised.resolve( prompts, modulesFolder);
+  return promised.promise;
 
   function readModules(){
 

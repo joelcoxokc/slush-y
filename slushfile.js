@@ -14,17 +14,20 @@ var gulp      = require('gulp'),
     template  = require('gulp-template'),
     rename    = require('gulp-rename'),
     inquirer  = require('inquirer'),
+    path      = require('path'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
-    Slushy    = require('./Slushy.js'),
-    _         = require('lodash'),
-    Slushy    = require('./Slushy.js');
+    Slushy    = require('./src/Slushy.js'),
+    _         = require('lodash')
 
 
-    var slushy = new Slushy(gulp, inquirer, plugins, _);
+    var slushy = new Slushy;
+
+    slushy.registerPlugins(gulp, inquirer, plugins, _, path);
 
 
-    slushy.register({
-      default: './generators/app/index.js'
+    slushy.registerGenerators({
+      default: './generators/app/index.js',
+
     })
 
 // gulp = require('./generators/app/index.js')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);

@@ -5,13 +5,11 @@
       var path      = require('path');
       var Utility   = require('./util');
       var Q         = require('q');
-      var _         = require('lodash');
       var Storage   = require('./storage.js');
       var gulp      = require('gulp');
       var inquirer  = require('inquirer');
       var $         = require('gulp-load-plugins')({lazy:false});
       var prompts   = require('../config/prompts');
-      var GulpProto = require('gulp').Gulp;
       var defaults  = require('./defaults');
       var chalk     = require('chalk');
       var _         = require('lodash');
@@ -21,18 +19,14 @@
       function BaseController(){
 
         Utility.apply(this, arguments);
+        this.clientDir      = path.join('./', 'client');
+        this.appDir         = path.join('./', 'client', 'app');
+        this.coreDir        = path.join('./', 'client','app', 'core');
+        this.moduleDir      = path.join('./', 'client','app', 'modules');
+        this.util           = Utility;
+        this.appName        = 'Slush-y';
+        this.generators     = {};
 
-
-        this.config          = new Storage('S-Y.JSON',  '.sl-y.json')
-        this._templateDir    = path.join(__dirname, '/templates');
-        this._templates      = this.templatesDir + '/**/*';
-        this._clientDir      = path.join('./', 'client');
-        this._appDir         = path.join('./', 'client', 'app');
-        this._coreDir        = path.join('./', 'client','app', 'core');
-        this._moduleDir      = path.join('./', 'client','app', 'modules');
-        this.util            = Utility;
-        this.appName         = 'Slush-y';
-        this.generators      = {};
 
       }
 
@@ -40,7 +34,6 @@
       util.inherits(BaseController, Utility)
 
       BaseController.prototype.findModules      = function (){
-
         var promised = Q.defer();
         readModules();
         promised.resolve( prompts, modulesFolder);
@@ -72,27 +65,38 @@
         if(key){
           return this.config.get(key);
         }
-        return this.confing.getAll();
+        return this.config.getAll();
       }
 
 
       BaseController.prototype.store = function(options){
         var self = this;
-        _(options).forEach(function (key, value){
+        _(options).forEach(function (value, key){
 
           self.config.set(key, value);
 
         })
       }
 
+      BaseController.prototype.use = function(functionToUse){
+        var args = Array.prototype.slice.call(arguments);
+        args.shift()
+        functionToUse.apply(this, args);
+      }
 
       BaseController.prototype.initConfig = function( options ){
-
+          this.config         = new Storage(options.appName,  '.sl-y.json');
           var $q = Q.defer();
 
+          /**
+           * Store defaults into configuration before retrieval;
+           */
+          this.store(defaults);
 
           var config = this.get();
-          config = this.makeStrings(condig, config.appName);
+          this.info('Initializing Configuration from BaseController')
+          config = this.makeStrings(config, config.appName);
+          console.log('Your Current Configurations = ', defaults);
 
 
           config.clientDir = './client'; config.serverDir = './server';
@@ -116,12 +120,35 @@
           return $q.promise;
       }
 
+      BaseController.prototype.ask = function(prompts) {
+        var $ = this;
+        this.info('Prompting from BaseController')
+        var promised = Q.defer();
+        inquirer.prompt(prompts, function (answers){
+            console.log('Answers from inside BasController============================', answers)
+
+            $.initConfig(answers)
+              .then(function (options){
+                promised.resolve(options)
+              });
+        })
+        return promised.promise;
+
+      };
+
       BaseController.prototype.register = function(){
 
       }
 
-      BaseController.prototype.processTemplate  = function (){};
-
+      BaseController.prototype.processFile  = function (bool, file){
+        if(!bool){
+          if (file.basename.indexOf('__') == 0) {
+            file.basename = '.' + file.basename.slice(2);
+          }
+        }
+        return file;
+      };
+      BaseController.prototype.processTemplate  = function (bool, file){}
       //////////////
 
       module.exports = BaseController

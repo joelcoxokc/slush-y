@@ -34,6 +34,7 @@ var gulp      = require('gulp'),
       directive: './generators/generator-angular/directive/',
       factory: './generators/generator-angular/factory/',
       filter: './generators/generator-angular/filter/',
+      service: './generators/generator-angular/service/',
 
 
     })

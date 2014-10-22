@@ -1,73 +1,48 @@
-module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp) {
-  var fs = require('fs');
-  gulp.task('service', function (done) {
+;(function(){
 
-    if (!this.args[0]) {
-      console.log('******    Incorrect usage of the sub-generator!!                ******');
-      console.log('******    Try slush meanjs:angular-service <service-name>       ******');
-      console.log('******    Ex: slush meanjs:angular-service article              ******');
-      return done();
+  'use strict';
+
+    module.exports = function(gulp, inquirer, $, _, path, _str){
+
+      /**
+       * Reveal the Slushy Class endpoint.
+       * @type {Class}
+       */
+      var slushy = this;
+
+      var prompts = require('./prompts.js')(slushy);
+
+      /**
+       * Expose the gulp endpoint.
+       * slushy.use() will return a callback function for gulp to call.
+       * this is so we can expose the gulp callback parameters to Slushy's configurations.
+       * Slushy will call the Filter function and pass a new parameter called options.
+       */
+      return gulp.task('service', slushy.use( Service ) )
+
+      function Service( done, options ){
+
+        return slushy.ask(prompts, options)
+
+          .then( slushy.generate( GenerateTemplates ) )
+
+          .catch( done )
+
+      }
+
+
+      function GenerateTemplates( options ){
+        console.log(options)
+        gulp.src( options.src().scripts() )
+          .pipe($.template( options ))
+          .pipe($.rename(function (file){
+            file = slushy.processFile(true, file, options);
+          }))
+          .pipe( $.conflict( options.dest().final('services') ) )
+          .pipe( gulp.dest( options.dest().final('services') ) )
+
+      }
+
     }
-    var moduleName = this.args[0];
-    var modulesFolder = process.cwd() + '/client/app/modules/';
-    var templateDir = __dirname + '/templates/';
 
-    var prompts = [{
-      type: 'list',
-      name: 'moduleName',
-      default: 'core',
-      message: 'Which module does this service belongs to?',
-      choices: [{
-        name: 'core',
-        value: 'core'
-      },{
-        name: 'authentication',
-        value: 'authentication'
-      }]
-    }];
-
-    // Add module choices
-        fs.readdirSync(modulesFolder).forEach(function(folder) {
-            var stat = fs.statSync(modulesFolder + '/' + folder);
-
-            if (stat.isDirectory()) {
-                prompts[0].choices.push({
-                  value: folder,
-                  name: folder
-                });
-            }
-        });
-
-    //Ask
-    inquirer.prompt(prompts,
-      function (answers) {
-        if (!answers) {
-          return done();
-        }
-
-        answers.slugifiedModuleName = _.slugify(_.humanize(moduleName));
-        answers.slugifiedName = _.slugify(moduleName);
-        answers.classifiedName = _.classify(answers.slugifiedName);
-        answers.humanizedName = _.humanize(answers.slugifiedName);
-
-        var destination = 'client/app/modules/'
-        if( answers.moduleName === 'core' || answers.moduleName === 'authentication' ){
-          var destination = 'client/app/'
-        }
-        console.log(destination + answers.moduleName + '/services/')
-        gulp.src(templateDir + '_.service.js')
-              .pipe(template(answers))
-              .pipe(rename(function(file) {
-                    if (file.basename.indexOf('_') == 0) {
-                            file.basename = file.basename.replace('_', answers.slugifiedName);
-                        }
-                 }))
-              .pipe(conflict( destination + answers.moduleName + '/services/'))
-              .pipe(gulp.dest( destination + answers.moduleName + '/services/'))
-              .on('end', function () {
-                   done();
-                });
-      });
-  });
-  return gulp;
-};
+}).call(this);

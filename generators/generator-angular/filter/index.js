@@ -32,7 +32,6 @@
 
 
       function GenerateTemplates( options ){
-
         gulp.src( options.src().scripts() )
           .pipe($.template( options ))
           .pipe($.rename(function (file){

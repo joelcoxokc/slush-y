@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('<%= slugified_Module_Name %>')
-    .factory('<%= classifiedName %>', <%= classifiedName %>);
+    .module('<%= moduleName %>')
+    .factory('<%= classSingleName %>', <%= classSingleName %>);
 
   /* @inject */
-  function <%= classifiedName %>() {
+  function <%= classSingleName %>() {
     this._storage = {};
 
-    // <%= humanizedName %> service logic
+    // <%= humanizedSingleName %> service logic
     // ...
     this.set = function(key, val) {
       return this._storage[key] = val;

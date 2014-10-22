@@ -23,8 +23,6 @@ var gulp      = require('gulp'),
 
     var slushy = new Slushy;
 
-    gulp.task('default', function(){console.log('ylol')})
-
     slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
 
 

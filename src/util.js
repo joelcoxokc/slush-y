@@ -52,8 +52,8 @@
   Utility.prototype.log = function(){
     console.log('['+this.pinkB('Slushy')+'] -',  _.toArray(arguments).join(' '))
   }
-  Utility.prototype.show = function(){
-    console.log('['+this.pinkB('============================')+'] - ', _.values(arguments))
+  Utility.prototype.show = function(p1,p2,p3,p4,p5,p6){
+    console.log('['+this.pinkB('============================slushy')+']', p1,p2,p3,p4,p5,p6)
   }
 
 

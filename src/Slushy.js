@@ -12,6 +12,9 @@
       var Promise        = require("bluebird");
       var log            = console.log
 
+      var __           = require('underscore.string');
+
+
       Promise.promisifyAll(_);
 
 
@@ -97,6 +100,11 @@
             } else {
               options.moduleDir = $.path(options.modulesDir, options.slugName);
             }
+
+              options.moduleDir = options.moduleDir + './js'
+              options = $.generatePaths(options);
+
+              // console.log(options)
             callback.apply($, [options]);
           }
         }
@@ -112,6 +120,71 @@
           var generator = _(args).filter(function (value){ return value.running && value.running !== undefined }).value()[0];
           this.log('Running  ['+this.blueB('sub-generator')+']:' + this.blueB( generator.name ));
           return generator;
+        }
+
+        Slushy.prototype.generatePaths = function(options){
+          var $ = this;
+          var taskName    = $.tasks[options.task.name];
+          var modulesDir  = $.get('modulesDir');
+          var rootPath    = process.cwd();
+          var appDir      = $.get('appDir')
+          var correctPath = modulesDir;
+          if(options.moduleName === 'core'){ correctPath = appDir;};
+          options.src  = source;
+          options.dest = dest;
+
+
+
+          return options;
+
+          //////////////////
+          function source(){
+            return {
+                any: any,
+                views:views,
+                styles:styles,
+                scripts:scripts}
+          }
+          function any(){
+            return [taskName, 'templates', '/', '**/*'].join('');
+          }
+          function scripts(pattern){
+            var pattern = pattern || '**/*.js'
+            return [taskName, 'templates', '/', pattern].join('');
+          }
+          function views(patter){
+            var pattern = pattern || '**/*.html'
+            return [taskName, 'templates', '/', pattern].join('');
+          }
+          function styles(patter){
+            var pattern = pattern || '**/*.css'
+            return [taskName, 'templates', '/', pattern].join('');
+          }
+          function dest(){
+            return {
+              core:     core,
+              final:    final,
+              modules:  modules
+            }
+          }
+          function final(name){
+            if(!name) {$.error('You need to pass the last path into the dest().final( <here> )')}
+            return [rootPath, '/', correctPath,'/', options.moduleName, '/', name].join('');
+          }
+          function modules(module, pattern){
+            var pattern = pattern || '**/*';
+            var module = module || null;
+            var arrayPath = [rootPath, '/', modulesDir, '/'];
+            if(module){ arrayPath.push(module); arrayPath.push('/'); }
+            arrayPath.push(pattern);
+            return arrayPath.join('');
+          }
+          function core(pattern){
+            var pattern = pattern || '**/*';
+            var arrayPath = [rootPath, '/', appDir, '/core/'];
+            arrayPath.push(pattern);
+            return arrayPath;
+          }
         }
 
         return Slushy;

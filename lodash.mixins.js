@@ -8,12 +8,17 @@
   var path = require('path');
 
 
+
+  // _.str.inlcude()
   // console.log(_)
   _.mixin({
     'build':  build,
     '$build': $build,
-    'dir': dir
+    'dir': dir,
+
   })
+
+
 
   module.exports = _;
 

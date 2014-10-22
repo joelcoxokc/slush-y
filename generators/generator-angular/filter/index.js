@@ -1,71 +1,48 @@
-module.exports = function (gulp, install, conflict, template, rename, _, inflections, inquirer, mkdirp) {
-  var fs = require('fs');
-  gulp.task('filter', function (done) {
+;(function(){
 
-    // if (!this.args[0]) {
-      console.log('******    FILTER IS TEMPORARILY NOT WORKING                       ******');
+  'use strict';
 
-      return done();
-    // }
-    var moduleName = this.args[0];
-    var modulesFolder = process.cwd() + '/client/app/modules/';
-    var templateDir = __dirname + '/templates/';
+    module.exports = function(gulp, inquirer, $, _, path, _str){
 
-    var prompts = [{
-      type: 'list',
-      name: 'moduleName',
-      default: 'core',
-      message: 'Which module does this filter belongs to?',
-      choices: [{
-        name: 'core',
-        value: 'core'
-      },{
-        name: 'authentication',
-        value: 'authentication'
-      }]
-    }];
+      /**
+       * Reveal the Slushy Class endpoint.
+       * @type {Class}
+       */
+      var slushy = this;
 
-    // Add module choices
-        fs.readdirSync(modulesFolder).forEach(function(folder) {
-            var stat = fs.statSync(modulesFolder + '/' + folder);
+      var prompts = require('./prompts.js')(slushy);
 
-            if (stat.isDirectory()) {
-                prompts[0].choices.push({
-                  value: folder,
-                  name: folder
-                });
-            }
-        });
+      /**
+       * Expose the gulp endpoint.
+       * slushy.use() will return a callback function for gulp to call.
+       * this is so we can expose the gulp callback parameters to Slushy's configurations.
+       * Slushy will call the Filter function and pass a new parameter called options.
+       */
+      return gulp.task('filter', slushy.use( Filter ) )
 
-    //Ask
-    inquirer.prompt(prompts,
-      function (answers) {
-        if (!answers) {
-          return done();
-        }
+      function Filter( done, options ){
 
-        answers.slugifiedModuleName = _.slugify(answers.moduleName);
-        answers.slugifiedName = _.slugify(_.humanize(moduleName));
-        answers.camelizedName = _.camelize(answers.slugifiedName);
-        answers.humanizedName = _.humanize(answers.slugifiedName);
+        return slushy.ask(prompts, options)
 
-        var destination = 'client/app/modules/'
-        if( answers.moduleName === 'core' || answers.moduleName === 'authentication' ){
-          var destination = 'client/app/'
-        }
-        gulp.src(templateDir + '*.js')
-              .pipe(template(answers))
-              .pipe(rename(function(file) {
-                    if (file.basename.indexOf('_') == 0) {
-                            file.basename = file.basename.replace('_', answers.slugifiedName);
-                        }
-                 }))
-              .pipe(conflict( destination + answers.slugifiedModuleName + '/filters/'))
-              .pipe(gulp.dest( destination + answers.slugifiedModuleName + '/filters/'))
-              .on('end', function () {
-                   done();
-                });
-      });
-  });
-  return gulp;
-};
+          .then( slushy.generate( GenerateTemplates ) )
+
+          .catch( done )
+
+      }
+
+
+      function GenerateTemplates( options ){
+
+        gulp.src( options.src().scripts() )
+          .pipe($.template( options ))
+          .pipe($.rename(function (file){
+            file = slushy.processFile(true, file, options);
+          }))
+          .pipe( $.conflict( options.dest().final('filters') ) )
+          .pipe( gulp.dest( options.dest().final('filters') ) )
+
+      }
+
+    }
+
+}).call(this);

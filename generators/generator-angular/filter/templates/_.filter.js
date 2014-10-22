@@ -2,16 +2,16 @@
   'use strict';
 
   angular
-    .module('<%= slugifiedModuleName %>')
-    .filter('<%= camelizedName %>', <%= camelizedName %>);
+    .module('<%= moduleName %>')
+    .filter('<%= camelSingleName %>', <%= camelSingleName %>);
 
   /* @inject */
-  function <%= camelizedName %>() {
+  function <%= camelSingleName %>() {
     return function(input) {
-      // <%= humanizedName %> directive logic
+      // <%= humanizedSingleName %> directive logic
       // ...
 
-      return '<%= camelizedName %> filter: ' + input;
+      return '<%= camelSingleName %> filter: ' + input;
     };
   }
 }).call(this);

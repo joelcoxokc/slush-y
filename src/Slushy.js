@@ -97,7 +97,7 @@
             } else {
               options.moduleDir = $.path(options.modulesDir, options.slugName);
             }
-            callback.apply($, [options])
+            callback.apply($, [options]);
           }
         }
 

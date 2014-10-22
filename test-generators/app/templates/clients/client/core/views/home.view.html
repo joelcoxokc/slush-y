@@ -1,0 +1,102 @@
+<div class="top">
+  <section class="panel bg-blue-600">
+    <div ng-include="'app/core/views/header.view.html'" class=""></div>
+  </section>
+</div>
+<div class="container container-sm-height equal">
+  <div class="row row-sm-height">
+    <section class="col-md-12 col-sm-height panel" data-ng-class="{'col-md-6': vm.showDetail}">
+      <h1 class="panel-heading">
+        Features:
+        <button
+          type="button"
+          class="btn btn-white pull-right"
+          ng-click="vm.createNewThing()"
+          y-icon="plus"></button>
+        </h1>
+      <ul class="list-group">
+        <li point class="list-group-item" ng-repeat="thing in vm.awesomeThings" data-ng-click="vm.showThing(thing)">
+            {{thing.name}}
+            <button type="button"
+                    class="btn btn-sm btn-white pull-right"
+                    data-ng-hide="vm.showDetail"
+                    y-icon="arrow-right"></button>
+
+        </li>
+      </ul>
+    </section>
+
+    <section class="col-md-6 col-sm-height panel" data-ng-show="vm.showDetail">
+      <h1 ng-hide="vm.creating" class="panel-heading">
+        {{vm.shown.name}}</h1>
+      <article data-ng-hide="vm.creating || vm.editing" class="panel-body">
+        <p>
+          {{vm.shown.info}}</p>
+        <hr>
+        <button type="button"
+                class="btn btn-white pull-right"
+                y-icon="trash-o"
+                data-ng-click="vm.deleteThing(vm.shown)"></button>
+
+        <button type="button"
+                class="btn btn-white pull-right"
+                y-icon="pencil"
+                data-ng-click="vm.editing=true"></button>
+
+
+      </article>
+      <article data-ng-show="vm.editing" class="panel-body">
+        <form ng-submit="vm.updateThing(vm.shown)">
+          <label for="name">Name</label>
+          <input type="text"
+                 id="name"
+                 class="form-control primary"
+                 data-ng-model="vm.shown.name">
+
+          <label for="info">Info</label>
+          <textarea id="info"
+                    class="form-control primary"
+                    style="min-height:100px"
+                    data-ng-model="vm.shown.info"></textarea>
+
+          <br>
+          <button type="submit"
+                  class="btn btn-primary">Done</button>
+        </form>
+      </article>
+
+
+      <h1 ng-show="vm.creating" class="panel-heading">
+        Create a new Thing</h1>
+      <article ng-show="vm.creating" class="panel-body">
+        <form data-ng-show="vm.creating" data-ng-submit="vm.addThing()">
+          <p>Syncs in realtime across clients</p>
+          <label  for="newThing"
+                  class="control-label">
+                Create</label>
+
+          <input  type="text"
+                  id="newThing"
+                  class="form-control primary"
+                  ng-model="vm.newThing">
+          <br>
+          <button type="submit"
+                  class="btn btn-primary"
+                  ng-click="vm.addThing()">
+                Add New</button>
+
+          <button type="button"
+                  class="btn btn-danger pull-right"
+                  ng-click="vm.creating = false; vm.showDetail = false"
+                  y-icon="close">
+                  </button>
+
+        </form>
+      </article>
+    </section>
+  </div>
+</div>
+<div class="container">
+    <form class="thing-form">
+    </form>
+</div>

@@ -36,60 +36,8 @@
 
       util.inherits(Base, Utility)
 
-      Base.prototype.findModules      = function (prompts, modulesDir){
-        var modulesDir = modulesDir || this.get('modulesDir');
-        // var promised = Q.defer();
-        readModules();
-        // promised.resolve( prompts );
-
-        // return promised.promise;
-        return prompts;
-
-        function readModules(){
-          fs.readdirSync(modulesDir).forEach(function (folder) {
-
-            var stat = fs.statSync(modulesDir + '/' + folder);
-
-            if (stat.isDirectory()) {
-              prompts[0].choices.push({
-                value: folder,
-                name: folder
-              });
-            }
-          });
-        }
-      };
-
-
-      Base.prototype.set = function(key, value){
-
-        this.config.set(key, value);
-      }
-
-
-      Base.prototype.get = function(key){
-
-        if(key){
-          return this.config.get(key);
-        }
-        return this.config.getAll();
-      }
-
-
-      Base.prototype.store = function(options){
-        var self = this;
-        _(options).forEach(function (value, key){
-
-          self.config.set(key, value);
-
-        })
-      }
-
-      // Base.prototype.use = function(functionToUse){
-      //   var args = Array.prototype.slice.call(arguments);
-      //   args.shift()
-      //   functionToUse.apply(this, args);
-      // }
+      _.extend(Base.prototype, require('./lib/base.config'));
+      _.extend(Base.prototype, require('./lib/actions'));
 
       Base.prototype.initConfig = function( options ){
 
@@ -160,17 +108,14 @@
             // console.log('Answers from inside BasController============================', answers)
             if(options.name){
               _.assign(options, answers);
+
               options = _.build(options)
             }
+          console.log(answers)
+
             promised.resolve(options);
         })
         return promised.promise;
-
-      }
-
-
-
-      Base.prototype.register = function(){
 
       }
 

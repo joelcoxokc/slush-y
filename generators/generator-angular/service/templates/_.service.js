@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('<%= slugifiedModuleName %>')
+    .module('<%= slugified_Module_Name %>')
     .factory('<%= classifiedName %>', <%= classifiedName %>);
 
   /* @inject */

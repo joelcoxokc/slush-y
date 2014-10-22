@@ -2,7 +2,7 @@
   'use strict';
   // <%= humanizedModuleName %> module config
   angular
-    .module('<%= slugifiedModuleName %>')
+    .module('<%= moduleName %>')
     .config( Configuration );
 
   /* @inject */

@@ -16,33 +16,39 @@
       var ___       = require('underscore.string');
       var fs        = require('fs');
 
-      function BaseController(){
+      function Base(){
 
         Utility.apply(this, arguments);
+        this.config         = new Storage('.sl-y.json');
         this.clientDir      = path.join('./', 'client');
+        this.serverDir      = path.join('./', 'server');
         this.appDir         = path.join('./', 'client', 'app');
         this.coreDir        = path.join('./', 'client','app', 'core');
         this.moduleDir      = path.join('./', 'client','app', 'modules');
         this.util           = Utility;
         this.appName        = 'Slush-y';
         this.generators     = {};
+        this.config.set('appName', this.appName);
 
 
       }
 
 
-      util.inherits(BaseController, Utility)
+      util.inherits(Base, Utility)
 
-      BaseController.prototype.findModules      = function (){
-        var promised = Q.defer();
+      Base.prototype.findModules      = function (prompts, modulesDir){
+        var modulesDir = modulesDir || this.get('modulesDir');
+        // var promised = Q.defer();
         readModules();
-        promised.resolve( prompts, modulesFolder);
+        // promised.resolve( prompts );
 
-        return promised.promise;
+        // return promised.promise;
+        return prompts;
 
         function readModules(){
+          fs.readdirSync(modulesDir).forEach(function (folder) {
 
-            var stat = fs.statSync(modulesFolder + '/' + folder);
+            var stat = fs.statSync(modulesDir + '/' + folder);
 
             if (stat.isDirectory()) {
               prompts[0].choices.push({
@@ -50,17 +56,18 @@
                 name: folder
               });
             }
+          });
         }
       };
 
 
-      BaseController.prototype.set = function(key, value){
+      Base.prototype.set = function(key, value){
 
         this.config.set(key, value);
       }
 
 
-      BaseController.prototype.get = function(key){
+      Base.prototype.get = function(key){
 
         if(key){
           return this.config.get(key);
@@ -69,7 +76,7 @@
       }
 
 
-      BaseController.prototype.store = function(options){
+      Base.prototype.store = function(options){
         var self = this;
         _(options).forEach(function (value, key){
 
@@ -78,30 +85,39 @@
         })
       }
 
-      BaseController.prototype.use = function(functionToUse){
-        var args = Array.prototype.slice.call(arguments);
-        args.shift()
-        functionToUse.apply(this, args);
-      }
+      // Base.prototype.use = function(functionToUse){
+      //   var args = Array.prototype.slice.call(arguments);
+      //   args.shift()
+      //   functionToUse.apply(this, args);
+      // }
 
-      BaseController.prototype.initConfig = function( options ){
-          this.config         = new Storage(options.appName,  '.sl-y.json');
+      Base.prototype.initConfig = function( options ){
+
           var $q = Q.defer();
 
           /**
            * Store defaults into configuration before retrieval;
            */
-          this.store(defaults);
+          // this.store(defaults);
+
 
           var config = this.get();
-          this.info('Initializing Configuration from BaseController')
+          config.appName = options.appName;
+          this.info('Initializing Configuration from Base')
           config = this.makeStrings(config, config.appName);
           console.log('Your Current Configurations = ', defaults);
 
 
-          config.clientDir = './client'; config.serverDir = './server';
-          config.appDir = './server'; config.js = true; config.script = 'js'; config.auth = true; config.http = true; config.restangular = false; config.httpType = 'http';
-          config.modulesDir = './client/app/modules';
+          config.clientDir = this.clientDir
+          config.serverDir = this.serverDir
+          config.appDir = this.appDir;
+          config.modulesDir = this.moduleDir;
+          config.js = true;
+          config.script = 'js';
+          config.auth = true;
+          config.http = true;
+          config.restangular = false;
+          config.httpType = 'http';
           config.modules = [
             'core',
             'authentication',
@@ -120,12 +136,12 @@
           return $q.promise;
       }
 
-      BaseController.prototype.ask = function(prompts) {
+      Base.prototype.askDefault = function(prompts) {
         var $ = this;
-        this.info('Prompting from BaseController')
+        this.info('Prompting Default')
         var promised = Q.defer();
         inquirer.prompt(prompts, function (answers){
-            console.log('Answers from inside BasController============================', answers)
+            // console.log('Answers from inside BasController============================', answers)
 
             $.initConfig(answers)
               .then(function (options){
@@ -136,22 +152,47 @@
 
       };
 
-      BaseController.prototype.register = function(){
+      Base.prototype.ask = function(prompts, options){
+        var $ = this;
+        var promised = Q.defer();
+        this.info('Prompting', _.functions(inquirer))
+        inquirer.prompt(prompts, function (answers){
+            // console.log('Answers from inside BasController============================', answers)
+            if(options.name){
+              _.assign(options, answers);
+              options = _.build(options)
+            }
+            promised.resolve(options);
+        })
+        return promised.promise;
 
       }
 
-      BaseController.prototype.processFile  = function (bool, file){
+
+
+      Base.prototype.register = function(){
+
+      }
+
+      Base.prototype.processFile  = function (bool, file, options){
         if(!bool){
           if (file.basename.indexOf('__') == 0) {
             file.basename = '.' + file.basename.slice(2);
           }
+        } else {
+          if (file.basename.indexOf('_') == 0) {
+            file.basename = file.basename.replace('_', options.slugName);
+          }
         }
         return file;
       };
-      BaseController.prototype.processTemplate  = function (bool, file){}
+
+
+
+      Base.prototype.processTemplate  = function (bool, file){}
       //////////////
 
-      module.exports = BaseController
+      module.exports = Base
 
 
 

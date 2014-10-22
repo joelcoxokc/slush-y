@@ -2,12 +2,11 @@ module.exports = function (gulp, install, conflict, template, rename, _, inflect
   var fs = require('fs');
   gulp.task('filter', function (done) {
 
-    if (!this.args[0]) {
-      console.log('******    Incorrect usage of the sub-generator!!                  ******');
-      console.log('******    Try slush meanjs:angular-filter <filter-name>           ******');
-      console.log('******    Ex: slush meanjs:angular-filter article                 ******');
+    // if (!this.args[0]) {
+      console.log('******    FILTER IS TEMPORARILY NOT WORKING                       ******');
+
       return done();
-    }
+    // }
     var moduleName = this.args[0];
     var modulesFolder = process.cwd() + '/client/app/modules/';
     var templateDir = __dirname + '/templates/';

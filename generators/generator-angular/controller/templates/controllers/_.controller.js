@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('<%= slugifiedModuleName %>')
-    .controller('<%= classifiedControllerName %>Controller', <%= classifiedControllerName %>Controller);
+    .module('<%= moduleName %>')
+    .controller('<%= classControllerName %>Controller', <%= classControllerName %>Controller);
 
   /* @inject */
-  function <%= classifiedControllerName %>Controller($scope) {
+  function <%= classControllerName %>Controller($scope) {
     // <%= humanizedControllerName %> controller logic
     // ...
   }

@@ -5,44 +5,42 @@
      * Controller Bound to the Slushy Prototype;
      * @return {Function} Callback function for the Controller Task to Call
      */
-    module.exports = function(){
+    module.exports = function(gulp, inquirer, $, _, path){
 
         var y = this;
-        var fs = require('fs');
-        var moduleName = this.args[0];
-        var modulesDir = y.get('modulesDir');
-        var prompts = require('/prompts.js');
-        var templateDir = __dirname + '/templates/';
-        var controller = require('./controller.js');
-
-
-        return Controller;
+        var prompts = require('./prompts.js');
+        return gulp.task('controller', this.use(Controller));
 
         /////////////////////////////
 
-        function Controller( done ){
-          if (!this.args[0]) {
-            return done();
-          }
+        function Controller( done, options ){
 
-          return controller.getCurrentModules( prompts, modulesDir)
-            .then( controller.ask )
-            .then( GenerateTemplates )
-            .catch( done )
-
+          prompts = this.findModules(prompts);
+          return this.ask(prompts, options)
+            .then(this.generate(GenerateTemplates))
+            .catch(done);
         }
 
 
-        function GenerateTemplates( answers ){
-
-          gulp.src(templateDir + '**')
-            .pipe( g.template( answers ) )
-            .pipe( g.rename( function ( file ) {
-                file = controller.proccessFile( file, answers )
+        function GenerateTemplates( options ){
+          options = generateControllerName(options);
+          gulp.src(options.templateDir + '/**/*')
+            .pipe( $.template( options ) )
+            .pipe( $.rename( function ( file ) {
+                file = y.processFile(true, file, options )
             }))
-            .pipe( g.conflict('client/app/modules/' + answers.slugifiedModuleName ) )
-            .pipe( gulp.dest('client/app/modules/' + answers.slugifiedModuleName ) )
+            .pipe( $.conflict( options.moduleDir ) )
+            .pipe( gulp.dest( options.moduleDir ) )
 
+        }
+
+        function generateControllerName(options){
+          options.slugModuleName = _str.slugify(options.moduleName);
+          console.log(options)
+          options.slugControllerName = _str.slugify(_str.humanize(options.name));
+          options.classControllerName = _str.classify(options.slugControllerName);
+          options.humanizedControllerName = _str.humanize(options.slugControllerName);
+          return options;
         }
     }
 

@@ -1,43 +1,7 @@
 // (function (){
         'use strict';
 
-        var Q               = require('q');
-        var util            = require('util');
-        var _               = require('lodash');
-        var prompts         = require('./prompts.js');
-        var Utility         = require('../../../util.js');
-        var Slushy          = require('../../../Slushy.js');
-        var BaseController  = require('../../../config/BaseController.js');
 
-      function Controller(args){
-        BaseController.apply(this, arguments);
-        this.module = 'module'
-        this.prompts      = prompts;
-
-        _.assign(this,  this.util.makeStrings({}, 'Joel Thomas Cox') );
-
-        console.log(this)
-      }
-
-      util.inherits(Controller, BaseController);
-
-      Controller.prototype.handleErrors = function(args){
-
-          var promised = Q.defer();
-          if(!args[0]){
-              Utility.argsError('module');
-              return promised.reject();
-          }
-          this.moduleName  = args[0];
-          promised.resolve(this.moduleName);
-          return promised.promise;
-      }
-
-      Controller.prototype.getModules = function(){
-
-      }
-
-      module.exports = new Controller;
 
 // })();
 

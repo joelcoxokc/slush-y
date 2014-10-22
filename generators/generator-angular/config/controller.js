@@ -46,9 +46,7 @@ exports.ask = function( prompts, moduleName ){
     if (!answers) {
       return promised.reject()
     }
-    answers.slugifiedModuleName = _.slugify(_.humanize(answers.moduleName));
-    answers.humanizedModuleName = _.humanize(answers.moduleName);
-    answers.slugifiedName = _.slugify(moduleName);
+
 
     promised.resolve( answers );
 

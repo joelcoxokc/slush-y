@@ -1,12 +1,13 @@
 (function(){
   'use strict';
 
-  module.exports = function(){
+  module.exports = function(gulp, inquirer, $, _, path, _str){
 
-    var controller = require('./controller');
+    var y = this;
+    var prompts = require('./prompts.js');
 
-    return Factory;
 
+    return gulp.task('factory', this.use(Factory));
 
     //////////////////
 
@@ -19,12 +20,23 @@
      *
      * @param {Function} done [description]
      */
-    function Factory( done ){
-      controller
-        .argsError(this.args)
-        .then(function (data){
+    function Factory( done, options ){
+      prompts = this.findModules(prompts);
 
-        })
+      return this.ask(prompts, options)
+        .then(this.generate(GenerateTemplates))
+        .catch(done);
+    }
+
+    function GenerateTemplates( options ){
+
+      gulp.src(options.templateDir + '/*.js')
+        .pipe( $.template( options ) )
+        .pipe( $.rename( function (file){
+          file = y.processFile(true, file, options);
+        }))
+        .pipe( $.conflict( options.moduleDir + '/services' ))
+        .pipe( gulp.dest( options.moduleDir + '/services' ));
     }
   }
 

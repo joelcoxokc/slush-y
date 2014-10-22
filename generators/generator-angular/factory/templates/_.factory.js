@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('<%= slugifiedModuleName %>')
-    .factory('<%= classifiedName %>', <%= classifiedName %>);
+    .module('<%= moduleName %>')
+    .factory('<%= classSingleName %>', <%= classSingleName %>);
 
   /* @inject */
-  function <%= classifiedName %>() {
+  function <%= classSingleName %>() {
 
     // Define private variables here . . .
 
@@ -17,7 +17,7 @@
 
     return instance;
 
-    // <%= humanizedName %> service logic
+    // <%= humanizedSingleName %> service logic
     // ...
     function someMethod() {
       return true;

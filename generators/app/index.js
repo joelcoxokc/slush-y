@@ -10,7 +10,7 @@
 
   module.exports = function(gulp, inquirer, $, _, path){
 
-      this.success('THIS is == an instance of Slushy')
+      this.log('Registered  ['+this.green('sub-generator')+']:' + this.green( 'default' ))
 
       var slushy        = this;
       var prompts       = require('./prompts');
@@ -26,10 +26,10 @@
        * @return {Promise} [Returns a promise that the gulprunner when the gulp runner is complere]
        */
       function gulpRunner (){
-        slushy.info('Running Application Generator')
-        return slushy.ask(prompts)
+        slushy.log('Running  ['+slushy.blueB('sub-generator')+']:' + slushy.blueB( 'default' ))
+        return slushy.askDefault(prompts)
           .then( function (options){
-            slushy.use(GenerateTemplates, options);
+            slushy.context(GenerateTemplates, options);
           });
           // .then(GenerateTemplates)
       }

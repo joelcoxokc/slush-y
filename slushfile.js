@@ -15,6 +15,7 @@ var gulp      = require('gulp'),
     rename    = require('gulp-rename'),
     inquirer  = require('inquirer'),
     path      = require('path'),
+    _str      = require('underscore.string'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     Slushy    = require('./src/Slushy.js'),
     _         = require('lodash')
@@ -22,11 +23,17 @@ var gulp      = require('gulp'),
 
     var slushy = new Slushy;
 
-    slushy.registerPlugins(gulp, inquirer, plugins, _, path);
+    slushy.registerPlugins(gulp, inquirer, plugins, _, path, _str);
 
 
     slushy.registerGenerators({
       default: './generators/app/index.js',
+      config: './generators/generator-angular/config/',
+      module: './generators/generator-angular/module/',
+      controller: './generators/generator-angular/controller/',
+      directive: './generators/generator-angular/directive/',
+      factory: './generators/generator-angular/factory/',
+
 
     })
 

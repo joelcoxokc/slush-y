@@ -5,7 +5,7 @@
       var path           = require('path');
       var Utility        = require('./util');
       var Q              = require('q');
-      var _              = require('lodash');
+      var _              = require('../lodash.mixins.js');
       var Storage        = require('./storage.js');
       var BaseController = require('./BaseController.js');
       var gulp           = require('gulp');
@@ -34,10 +34,12 @@
           }
           this.log('using an instance of - [' + this.blue('Slushy')+']');
           this.root = '../'
+          this.tasks = {};
 
           this.normalize = function(dest){
-            return path.join(this.root, dest);
+            return path.join(__dirname+'', this.root, dest);
           }
+
         }
 
         util.inherits(Slushy, BaseController);
@@ -49,7 +51,8 @@
         Slushy.prototype.registerGenerators = function(tasks) {
           var $ = this;
           _(tasks).forEach(function (destination, key){
-            $.log('Incoming tasks ' + $.blue( key ))
+            $.tasks[key] = $.normalize(destination);
+            $.log('Registering ['+$.blue('sub-generator')+']:' + $.blue( key ))
             require( $.normalize(destination) ).apply($, $.args);
           })
         };
@@ -57,6 +60,59 @@
         Slushy.prototype.initialize = function(options) {
           return this.initConfig(options);
         };
+
+
+        Slushy.prototype.use = function(callback){
+
+          var $ = this;
+
+
+          return function(done){
+            var task = $.isRunning(this.tasks);
+            task.path = $.tasks[task.name];
+            // task.path =
+            if(!this.args[0]){
+              $.nameError(this.seq[0]);
+              return done();
+            }
+            var options = { ref: 'name', name: this.args[0], task:task };
+
+            callback.apply($, [done, options]);
+          }
+        }
+
+        Slushy.prototype.generate = function(callback){
+          var $ = this;
+          return function(options){
+
+            options.templateDir = $.tasks[options.task.name]+'templates';
+            if(options.moduleName === 'core'){
+              options.modulesDir  = $.config.get('appDir');
+            } else {
+              options.modulesDir  = $.config.get('modulesDir');
+            }
+
+            if(options.task.name !== 'module' && options.task.name !== 'crud'){
+              options.moduleDir = $.path(options.modulesDir, options.moduleName);
+            } else {
+              options.moduleDir = $.path(options.modulesDir, options.slugName);
+            }
+            callback.apply($, [options])
+          }
+        }
+
+        Slushy.prototype.named = function(callback){
+
+          return function(done){
+            console.log(this.args);
+          }
+        }
+
+        Slushy.prototype.isRunning = function(args){
+          var generator = _(args).filter(function (value){ return value.running && value.running !== undefined }).value()[0];
+          this.log('Running  ['+this.blueB('sub-generator')+']:' + this.blueB( generator.name ));
+          return generator;
+        }
 
         return Slushy;
 

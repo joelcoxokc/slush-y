@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('<%= slugifiedName %>');
+    .module('<%= slugName %>', []);
 
 }).call(this);

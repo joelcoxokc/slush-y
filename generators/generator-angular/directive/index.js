@@ -2,46 +2,44 @@
   'use strict';
 
 
-    module.exports = function () {
+    module.exports = function (gulp, inquirer, $, _, path, _str) {
 
-        var gulp = require('gulp');
-        var fs            = require('fs');
-        var moduleName    = this.args[0];
-        var modulesDir    = y.get('modulesDir')
-        var path          = require('path');
-        var prompts       = require('./prompts.js')
-        var templates     = templateDir + '**/*';
-        var controller    = require('./controller.js');
-        var temaplets     = __dirname + '/templates/';
-
-
-        return Directive;
+        // var gulp = require('gulp');
+        // var fs            = require('fs');
+        // var moduleName    = this.args[0];
+        // var modulesDir    = y.get('modulesDir')
+        // var path          = require('path');
+        // var templates     = templateDir + '**/*';
+        // var controller    = require('./controller.js');
+        // var temaplets     = __dirname + '/templates/';
+        var y         = this;
+        var prompts   = require('./prompts.js');
 
 
-        function Directive( done ){
+        return gulp.task('directive', this.use(Directive));
 
-          return controller
-            .handleErrors( this.args )
-            .then( controller.getModules )
-            .then( controller.ask )
-            .then( Generate );
+
+        function Directive( done, options ){
+
+          prompts = this.findModules(prompts)
+          return this.ask(prompts, options)
+            .then(this.generate(GenerateTemplates))
+            .catch(done);
 
         }
 
 
 
-        function Generate( options ){
-
-          var dest = path.join(options.destination, options.slugifiedModuleName, '/directives/', options.slugifiedName);
-          gulp.src( templates )
+        function GenerateTemplates( options ){
+          gulp.src( options.templateDir + '/*.js' )
             .pipe( $.template( options ))
             .pipe( $.rename(function ( file ) {
 
-              file = controller.proccessFile( file, options );
+              file = y.processFile(true, file, options );
 
             }))
-            .pipe( $.conflict( destination ))
-            .pipe( gulp.dest( destination ))
+            .pipe( $.conflict( options.moduleDir + '/directives'))
+            .pipe( gulp.dest( options.moduleDir + '/directives'));
         }
     };
 

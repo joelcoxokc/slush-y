@@ -4,7 +4,7 @@
 	// <%= humanizedControllerName %> Controller Spec
 	describe('<%= humanizedControllerName %> Controller Tests', function() {
 		// Initialize global variables
-		var <%= classifiedControllerName %>Controller,
+		var <%= classControllerName %>Controller,
 			scope,
 			$httpBackend,
 			$stateParams,
@@ -45,13 +45,13 @@
 			$location = _$location_;
 
 			// Initialize the <%= humanizedControllerName %> controller.
-			<%= classifiedControllerName %>Controller = $controller('<%= classifiedControllerName %>Controller', {
+			<%= classControllerName %>Controller = $controller('<%= classControllerName %>Controller', {
 				$scope: scope
 			});
 		}));
 
 		it('Should do some controller test', inject(function() {
-			// The test logic 
+			// The test logic
 			// ...
 		}));
 	});

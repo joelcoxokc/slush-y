@@ -1,4 +1,4 @@
-module.exports = var prompts = [{
+module.exports = [{
           type: 'list',
           name: 'moduleName',
           default: 'core',

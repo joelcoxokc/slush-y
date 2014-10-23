@@ -1,24 +1,24 @@
 ;(function(){
     'use strict';
 
-      var Slushy  = require('./Slushy.js');
+      // var Slushy  = require('./Slushy.js');
       var util    = require('util');
 
 
       var Slush_y = module.exports =  function Slush_y (){
 
-        Slushy.apply( this, arguments );
+        // Slushy.apply( this, arguments );
       };
 
-      util.inherits( Slush_y, Slushy );
+      // util.inherits( Slush_y, Slushy );
 
 
       /*
        * Initialize the promise chain and pass in the initial options
        */
-      Slush_y.prototype.flow         = function ( options ) {
+      Slush_y.prototype.startFlow         = function ( options ) {
 
-        return options;
+        return options.flow = ' -- start flow endpoint reached';
       }
 
       /**
@@ -26,9 +26,9 @@
        * @param  {Object}   options   [options object, this object is modified every step until the end.]
        * @return {Promise}            [returns a promise to pick up on the next chain]
        */
-      Slush_y.prototype.defaults      = function ( options ) {
+      Slush_y.prototype.startDefaults      = function ( options ) {
 
-        return options;
+        return options.defaults = ' -- start defaults endpoint reached';
       }
 
       /**
@@ -36,18 +36,18 @@
        * @param  {Object}   options   [options should contain a property {prompts} a list of prompts to pass into inquire]
        * @return {Promise}            [Return a promise for the next chain]
        */
-      Slush_y.prototype.prompts       = function ( options ) {
+      Slush_y.prototype.startPrompts       = function ( options ) {
 
-        return options;
+        return options.prompts = ' -- start prompts endpoint reached';
       }
       /**
        * [Configuration Initialize the config store if this is a new instance, otherwise, ignore and pass throguh]
        * @param  {Object}   options   [options should now contain a property call {answers} a list of all the users choices]
        * @return {Promise}            [return a promise for the next chain]
        */
-      Slush_y.prototype.configuration = function ( options ) {
+      Slush_y.prototype.startConfiguration = function ( options ) {
 
-        return options;
+        return options.configuration = ' -- start configuration endpoint reached';
       }
 
       /**
@@ -55,9 +55,9 @@
        * @param  {Object}   options   [Options should contain the same informatino as before, as we did not modify it in configuration]
        * @return {Promise}            [Return a promise for the next chain]
        */
-      Slush_y.prototype.source        = function ( options ) {
+      Slush_y.prototype.startSource        = function ( options ) {
 
-        return options;
+        return options.source = ' -- start source endpoint reached';
       }
 
       Slush_y.prototype.registration = function ( ) {

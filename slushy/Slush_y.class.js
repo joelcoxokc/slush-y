@@ -1,7 +1,7 @@
 ;(function(){
     'use strict';
 
-      var Slushy  = require('./Slushy.js');
+      var Slushy  = require('./Slush_y.prototype.js');
       var util    = require('util');
 
 
@@ -46,12 +46,17 @@
         return callback.apply( this, arguments );
       }
 
+      Slush_y.prototype.validate = function ( options ) {
+
+        return this.
+      }
+
       /*
        * Initialize the promise chain and pass in the initial options
        */
       Slush_y.prototype.flow         = function ( options ) {
-
-        return options;
+        return this.startFlow( options );
+        // return options;
       }
 
       /**
@@ -61,7 +66,7 @@
        */
       Slush_y.prototype.defaults      = function ( options ) {
 
-        return options;
+        return this.startDefaults( options );
       }
 
       /**
@@ -71,7 +76,7 @@
        */
       Slush_y.prototype.prompts       = function ( options ) {
 
-        return options;
+        return this.startPrompts( options );
       }
       /**
        * [Configuration Initialize the config store if this is a new instance, otherwise, ignore and pass throguh]
@@ -80,7 +85,7 @@
        */
       Slush_y.prototype.configuration = function ( options ) {
 
-        return options;
+        return this.startConfiguration( options );
       }
 
       /**
@@ -90,7 +95,7 @@
        */
       Slush_y.prototype.source        = function ( options ) {
 
-        return options;
+        return this.startSource( options );
       }
 
       Slush_y.prototype.registration = function ( ) {

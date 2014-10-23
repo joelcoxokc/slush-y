@@ -18,17 +18,30 @@ var gulp      = require('gulp'),
     _str      = require('underscore.string'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     // Slushy    = require('./slushy/Slushy.js'),
-    _         = require('lodash')
-    // runner    = require('runner.js');
+    _         = require('lodash'),
+    runner    = require('./runner.js');
 
 
-    var slushy = require('./runner.js')
+    // var slushy = require('./runner.js')
 
-    slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
+    // slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
 
-    slushy.register().Generators({
-      default: './test-generators/app/',
-    })
+    // slushy.register().Generators({
+    //   default: './test-generators/app/',
+    // })
+
+    gulp.task( 'default', runner.siphon( {}, gulprunner ) );
+
+    function gulprunner(options){
+
+      console.log('gulprunner', options)
+    }
+
+
+
+
+
+
 
     // var slushy = new Slushy;
 

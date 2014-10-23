@@ -39,7 +39,6 @@
           __this.prompt = inquirer.prompt;
     }
 
-
     // _.extend(Utility.prototype, require('../controllers/Utility.controller'))
 
     Utility.prototype.info = function(p1, p2, p3, p4, p5){
@@ -137,50 +136,6 @@
       this.log('******   '+this.blueB('Ex: slush y:'+module+' article'));
       this.log('**************************************************************************');
     }
-    // var ut = new Utility
-
-
-
-    // var options = ut.str('Joel Thomas Cox', 'moduleName', {}).multi()
-    // console.log(options.moduleName.slugPlural)
-
-    // _.capitalize
-    // _.join
-    // _.endsWith
-    // _.humanize
-
-
-/*
-
-_.slugify("Un éléphant à l'orée du bois")
-=> 'un-elephant-a-loree-du-bois';
-
- */
-
-/*
-
-  _('moz-transform').camelize()
-  => 'mozTransform'
-  _('-moz-transform').camelize()
-  => 'MozTransform'
-*/
-
-/*
-
-_('some_class_name').classify()
-=> 'SomeClassName'
-
- */
-
-    // _.classify
-
-/*
-
-_.pad("1", 8)
--> "       1";
-
- */
-
 
 
 }).call(this);

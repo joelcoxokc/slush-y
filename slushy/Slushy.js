@@ -1,18 +1,20 @@
 (function(){
   'use strict';
 
-      var util           = require('util');
-      var path           = require('path');
-      var Utility        = require('./util');
-      var Q              = require('q');
-      var _              = require('../lodash.mixins.js');
-      var Base           = require('./classes/Base.class');
-      var NameBase       = require('./classes/NameBase.class.js');
       var ArgsBace       = require('./classes/ArgsBase.class.js');
-      var gulp           = require('gulp');
+      var NameBase       = require('./classes/NameBase.class.js');
       var Promise        = require("bluebird");
+      var Utility        = require('./util');
+      var gulp           = require('gulp');
+      var path           = require('path');
+      var Base           = require('./classes/Base.class');
+      var util           = require('util');
       var log            = console.log
+      var Q              = require('q');
       var __           = require('underscore.string');
+      var _              = require('../lodash.mixins.js');
+
+
 
       var Slushy = module.exports = (function() {
         'use strict';
@@ -33,14 +35,10 @@
           }
           this.log('using an instance of - [' + this._blue('Slushy')+']');
 
-          // Slushy.prototype.normalize = function(dest){
-          //   return path.join(this.__rootDir, dest);
-          // }
         }
 
         util.inherits(Slushy, Base);
 
-        // Slushy.prototype.run = function(prompts){
           /**
            * Reseave the initial stream from gulp.
            * Create a new direction for the stream to take.
@@ -50,30 +48,12 @@
            * Finally once we get downstream, we pass the stream back to it's original
            * path, and let it take it's course.
            *
-           * @param  {[Function]} __end_of_stream  [Gulp's callback to end the stream]
+           * @param  {[Function]} Stop_Gulp  [Gulp's callback to end the stream]
            * @return {[Function]}      [Gulp Callback]
            */
-        //   return function ( __end_of_stream ){
-        //     var __gulp_stream = this;
-        //     /*
-        //      * (This) is referes to the instanc of gulp.
-        //      */
-
-        //      var __slushy_stream = { prompts:{} }
-
-        //      _.assign(__slushy_stream.prompts, prompts);
-
-        //       __original_stream.apply(__this, [done, __slushy_stream]);
-
-        //   }
-        // }
-
-        Slushy.prototype.flow = function(__original_stream, prompts){
+        Slushy.prototype.flow = function(gulp_callback, prompts){
           var __this = this;
 
-          // console.log('original prompts', prompts)
-
-
           /**
            * Reseave the initial stream from gulp.
            * Create a new direction for the stream to take.
@@ -83,11 +63,11 @@
            * Finally once we get downstream, we pass the stream back to it's original
            * path, and let it take it's course.
            *
-           * @param  {[Function]} __end_of_stream  [Gulp's callback to end the stream]
+           * @param  {[Function]} Stop_Gulp  [Gulp's callback to end the stream]
            * @return {[Function]}      [Gulp Callback]
            */
-          return function ( __end_of_stream ){
-            var __gulp_stream = this;
+          return function ( Stop_Gulp ){
+            var gulp_stream = this;
             /*
              * (This) is referes to the instanc of gulp.
              */
@@ -96,7 +76,7 @@
               __slushy_stream.prompts = prompts;
 
               return __this
-                  .initialize( __gulp_stream, __slushy_stream )
+                  .initialize( gulp_stream, __slushy_stream )
 
                   .then(function (__slushy_stream){
                     console.log('initialize resolved')
@@ -127,15 +107,13 @@
                      * @param  {Object}  __slushy_stream.Application
                      *
                      * Send the stream back into it's orgiginal stream, with all the added properties
-                     * Alos the __end_of_stream has yet to be exposed to the public, so we will do this here.
+                     * Alos the Stop_Gulp has yet to be exposed to the public, so we will do this here.
                      * usually gulp will call this method below, but we are calling it with a new stream coming in, before gulp
                      * begins to flow.
                      */
-                    __original_stream.apply(__this, [__end_of_stream, __slushy_stream]);
+                    gulp_callback.apply(__this, [Stop_Gulp, __slushy_stream]);
 
                   })
-
-
 
             /**
              * Run the callback, binding this to it's context,
@@ -160,26 +138,12 @@
           var __this = this
 
           return function(__slushy_stream){
-            // console.log(__slushy_stream )
-
-
             __GenerateTemplates.call(__slushy_stream);
-            // callback.apply($, [options]);
           }
         }
-
-
-        // Slushy.prototype.registerPlugins = function(){
-        // }
-        // Slushy.prototype.registerGenerators = function(tasks) {
-        // };
-
-
         Slushy.prototype.task = function(callback){
 
           var $ = this;
-
-
           return function(done){
             var task = $.isRunning(this.tasks);
             task.path = $.tasks[task.name];
@@ -194,14 +158,11 @@
           }
         }
 
-
         Slushy.prototype.named = function(callback){
           return function(done){
             console.log(this.args);
           }
         }
-
-
         return Slushy;
 
       }());

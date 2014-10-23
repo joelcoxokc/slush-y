@@ -1,6 +1,6 @@
 /*
  * slush-meanjs
- * https://github.com/arvindr21/slush-meanjs
+ * https://github.com/JoelCoxOKC/slush-y
  *
  * Copyright (c) 2014, Arvind Ravulavaru
  * Licensed under the MIT license.
@@ -19,6 +19,7 @@ var gulp      = require('gulp'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash')
+    // runner    = require('runner.js');
 
 
     var slushy = new Slushy;

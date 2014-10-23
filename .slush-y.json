@@ -1,0 +1,14 @@
+{
+  ".sl-y.json": {
+    "__rootDir": "/Users/joelcox/dev/projects/slush-y/slush-y/",
+    "__serverDir": "server",
+    "__clientDir": "client",
+    "__modulesDir": "client/app/modules",
+    "__coreDir": "client/app/core",
+    "__appDir": "client/app",
+    "__appName": "Slush-y",
+    "appName": "slush-y",
+    "userName": "joelcoxokc",
+    "authorEmail": "joelcox@hisimagination.com"
+  }
+}

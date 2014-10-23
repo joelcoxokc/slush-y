@@ -4,6 +4,9 @@
   "version": "1.0.8",
   "homepage": "https://github.com/joelcoxokc/slush-y",
   "author": "Joel Cox <joel.cox@hackreactor.com>",
+  "bin": {
+    "slurp": "./bin/slurp"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/joelcoxokc/slush-y.git"
@@ -28,6 +31,7 @@
   "dependencies": {
     "bluebird": "^2.3.6",
     "chalk": "^0.5.1",
+    "commander": "^2.4.0",
     "del": "^0.1.3",
     "fs-extra": "^0.12.0",
     "gulp": "^3.6.2",

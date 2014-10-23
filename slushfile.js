@@ -17,18 +17,26 @@ var gulp      = require('gulp'),
     path      = require('path'),
     _str      = require('underscore.string'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
-    Slushy    = require('./slushy/Slushy.js'),
+    // Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash')
     // runner    = require('runner.js');
 
 
-    var slushy = new Slushy;
+    var slushy = require('./runner.js')
 
     slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
 
-
-    slushy.register(__dirname).Generators({
+    slushy.register().Generators({
       default: './test-generators/app/',
+    })
+
+    // var slushy = new Slushy;
+
+    // slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
+
+
+    // slushy.register(__dirname).Generators({
+      // default: './test-generators/app/',
       // config:     './generators/generator-angular/config/',
       // module:     './generators/generator-angular/module/',
       // controller: './generators/generator-angular/controller/',
@@ -36,7 +44,7 @@ var gulp      = require('gulp'),
       // factory:    './generators/generator-angular/factory/',
       // filter:     './generators/generator-angular/filter/',
       // service:    './generators/generator-angular/service/',
-    })
+    // })
 
 // gulp = require('./generators/app/index.js')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);
 // gulp = require('./generators/generators-crud')(gulp, _, inflection, inquirer, mkdirp, g, Slushy);

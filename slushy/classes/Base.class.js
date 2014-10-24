@@ -97,7 +97,7 @@
          *
          */
         __slushy_stream.generator = {};
-        var generator = __this.isRunning(__gulp_stream.tasks)
+        var generator = __this.isRunning(__gulp_stream.tasks);
         generator.path = __this.generators[generator.name];
         var options = {ref: 'name', name: __gulp_stream.args[0], generator:generator};
 

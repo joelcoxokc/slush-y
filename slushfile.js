@@ -19,7 +19,7 @@ var gulp      = require('gulp'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     // Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash'),
-    runner    = require('./runner.js');
+    sip    = require('./runner.js');
 
 
     // var slushy = require('./runner.js')
@@ -30,12 +30,10 @@ var gulp      = require('gulp'),
     //   default: './test-generators/app/',
     // })
 
-    gulp.task( 'default', runner.siphon( {}, gulprunner ) );
 
-    function gulprunner(options){
 
-      console.log('gulprunner', options)
-    }
+    gulp.task( 'default', sip.siphon() );
+    gulp.task( 'test', sip.siphon() );
 
 
 

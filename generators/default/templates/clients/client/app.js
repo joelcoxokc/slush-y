@@ -1,7 +1,7 @@
 ;(function(){
 'use strict';
 angular
-  .module('<%= slugifiedAppName %>', [
+  .module('<%= applicationName.slug %>', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

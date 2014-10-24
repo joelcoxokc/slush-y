@@ -1,18 +1,21 @@
 ;(function(){
     'use strict';
 
-    var Slush_y = require('./slushy/Slush_y.class.js');
+    var Slush_y = require('./src/class/Slush_y.class.js');
     var _       = require('lodash');
+    var inquirer     = require('inquirer');
     var Q       = require('q');
 
     var slush_y = new Slush_y;
     var Slushy = module.exports = (function() {
 
       'use strict';
+
         var __this = this;
-        var __instance = {
+        var __stream = {
           configuration: configuration,
           defaults:      defaults,
+          validate:      validate,
           register:      register,
           prompts:       prompts,
           siphon:        siphon,
@@ -21,76 +24,76 @@
           use:           use
         };
 
-        return __instance;
+        return __stream;
 
         ////////////////////////
 
-        function siphon(options, __Generator){
+        function siphon(__Generator, options){
+          var __Generator = __Generator || function(){};
+          var options = options || {};
 
           return function (done){
+            /**
+             * Set options.generator equal to the context of the current gulp taks;
+             * @type {Object};
+             */
+            options.generator = this;
 
-            __instance
+            return __stream
                 .flow( options )
-                .then( __instance.defaults( options ))
-                .then( __instance.prompts( options ))
-                .then( __instance.configuration( options ))
-                .then( __instance.source( options ))
-                .then( __instance.use(  __Generator, options ))
+                .then( __stream.validate )
+                .then( __stream.defaults )
+                .then( __stream.prompts )
+                .then( __stream.configuration )
+                .then( __stream.source )
+                .then( __stream.use )
                 .catch( done )
           }
         }
-        function use ( callback, options ) {
-          // console.log('using ', callback, options)
-          return callback.call(__this, options); // Calls Slush_y.use( options )
-        }
+        function use ( options ) {
 
-        function validate () {
-          var $promised = Q.defer();
-          // Calls Slush_y.defaults( options )
-          $promised.resolve(__this.validate( options ))
-          return $promised.promise;
+          // Calls Slush_y.use( options )
+          return options.__Generator(options);
         }
 
         function flow ( options ) {
+
+          // Calls Slush_y.flow( options ); and promises it's return value;
           var $promised = Q.defer();
-          // Calls Slush_y.defaults( options )
-          $promised.resolve(__this.flow( options ))
+          $promised.resolve( __this.flow(options) );
           return $promised.promise;
         }
-        function defaults ( options ) {
-          // Calls Slush_y.defaults( options )
+
+        function validate ( options ) {
+          return __this.validate( options );
+        }
+        function defaults (options) {
+
+          // Calls Slush_y.defaults( options );
           return __this.defaults( options );
         }
         function prompts ( options ) {
+
           // Calls Slush_y.prompts( options )
           return __this.prompts( options );
         }
         function configuration ( options ) {
+
           // if(default) Slush_y.initConfig( options ) else Slush_y.setConfig( options )
           return __this.configuration( options );
         }
         function source( options ) {
+
           // Calls Slush_y.use( options )
           return __this.source( options );
         }
 
         function register(){
+
           return __this.register(__dirname);
         }
 
     }).call(slush_y);
-
-
-
-  // console.log(Slushy.flow('starting flow'));
-  // console.log(Slushy.defaults('starting defaults'));
-  // console.log(Slushy.prompts('starting prompts'));
-  // console.log(Slushy.configuration('starting configuration'));
-  // console.log(Slushy.source('starting source'));
-
-
-
-
 
 
 }).call(this);

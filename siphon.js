@@ -8,7 +8,7 @@
     var plugins   = require('gulp-load-plugins')({lazy: false});
 
     var slush_y = new Slush_y;
-    var Slushy = module.exports = (function() {
+    var Sip = module.exports = (function() {
 
       'use strict';
 

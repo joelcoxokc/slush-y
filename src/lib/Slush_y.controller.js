@@ -21,7 +21,6 @@
 
       }
 
-      Controller.prototype.publicMethod = function() {};
 
       Controller.prototype.isRunning = function(args){
         var generator = _(args).filter(function (value){ return value.running && value.running !== undefined }).value()[0];
@@ -37,16 +36,14 @@
           require(path).apply(__this, args)
         }
       };
-      Controller.prototype.ask = function (prompts) {
-        var __this = this;
-        var $promised = Q.defer();
-        __this.prompt(prompts, function (answers){
-          // if(!answers)
-          console.log('============================= answers', answers);
-          $promised.resolve( answers )
-        })
-        return $promised.promise;
-      }
+
+      /**
+       * [str description]
+       * @param  {[type]} string  [description]
+       * @param  {[type]} ref     [description]
+       * @param  {[type]} options [description]
+       * @return {[type]}         [description]
+       */
       Controller.prototype.str = function(string, ref, options){
           var options   = options || {};
           var ref       = ref     || 'values';
@@ -81,6 +78,11 @@
           }
       }
 
+      /**
+       * [askToReset description]
+       * @param  {[type]} options [description]
+       * @return {[type]}         [description]
+       */
       Controller.prototype.askToReset = function( options ) {
 
         var __this = this;
@@ -100,6 +102,13 @@
         return $promised.promise;
       };
 
+      /**
+       * [processFile description]
+       * @param  {[type]} bool    [description]
+       * @param  {[type]} file    [description]
+       * @param  {[type]} options [description]
+       * @return {[type]}         [description]
+       */
       Controller.prototype.processFile  = function (bool, file, options){
           if(!bool){
             if (file.basename.indexOf('__') == 0) {

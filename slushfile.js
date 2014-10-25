@@ -19,7 +19,7 @@ var gulp      = require('gulp'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     // Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash'),
-    sip    = require('./runner.js');
+    sip    = require('./siphon.js');
 
 
     // var slushy = require('./runner.js')

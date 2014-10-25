@@ -17,7 +17,7 @@
        */
       var Storage     = require('../lib/storage.service');
       var defaults    = require('../lib/defaults.service');
-      var Controller  = require('../lib/Slush_y.controller');
+      var Controller  = require('../controllers/Slush_y.controller');
 
       var Slush_y = module.exports =  function Slush_y (){
 

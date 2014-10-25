@@ -71,7 +71,7 @@
               return options[key] = {}
             }
             return options[key] = options[key];
-          })
+          });
 
           options.__Generator      = function(){};
           return options;
@@ -103,6 +103,9 @@
             return options;
 
           }
+        } else if( !options.generator.args[0] ){
+          __this.nameError( options.generator.seq[0] );
+          return options.doneCallback();
         }
 
         return options;

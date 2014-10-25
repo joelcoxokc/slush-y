@@ -131,11 +131,11 @@
       }
     }
     Utility.prototype.nameError = function(module){
-      this.log('**************************************************************************');
-      this.log('******   '+this.redB('Incorrect usage of the sub-generator!!'));
-      this.log('******   '+this.blueB('Try slush y:'+module+' <'+module+'-name>'));
-      this.log('******   '+this.blueB('Ex: slush y:'+module+' article'));
-      this.log('**************************************************************************');
+      console.log('**************************************************************************');
+      console.log('******   '+this._redB('Incorrect usage of the sub-generator!!'));
+      console.log('******   '+this._blueB('Try slush y:'+module+' <'+module+'-name>'));
+      console.log('******   '+this._blueB('Ex: slush y:'+module+' article'));
+      console.log('**************************************************************************');
     }
 
     Utility.prototype.consoleLogger = function( args ) {

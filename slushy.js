@@ -40,6 +40,7 @@
              * @type {Object};
              */
             options.generator = this;
+            options.doneCallback = done;
 
             return __stream.validate( options )
 

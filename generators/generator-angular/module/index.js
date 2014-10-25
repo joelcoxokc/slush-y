@@ -13,7 +13,7 @@
       //   slushy.info('creating', slushy.path(options.moduleDir, item))
       //   slushy.mkdir(path.join( options.moduleDir, item));
       // })
-      console.log(paths)
+      console.log(slushy)
 
       // gulp
       //   .src(  )

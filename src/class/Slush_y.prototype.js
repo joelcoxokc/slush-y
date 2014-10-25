@@ -10,7 +10,6 @@
       var path        = require('path');
       var util        = require('util');
       var inquirer    = require('inquirer');
-      var Craller     = require('./craller.class');
       var Files       = require('../controllers/file.controller');
       /**
        * Helers
@@ -18,10 +17,12 @@
       var Storage     = require('../lib/storage.service');
       var defaults    = require('../lib/defaults.service');
       var Controller  = require('../controllers/Slush_y.controller');
+      var Utility     = require('../Utility/Utility.class');
 
       var Slush_y = module.exports =  function Slush_y (){
 
-        Controller.apply( this, arguments );
+        Utility.apply( this, arguments );
+        // Utility.apply( this, arguments );
 
         var __this = this;
 
@@ -36,18 +37,23 @@
         __this.__clientDir      = path.join('./client');
         __this.__appName        = defaults.appName;
         __this.__defaults       = defaults;
+
+        __this.__opts           = ['templates', 'prompts', 'answers', 'settings', '__Generator', 'generator'];
       };
 
       /**
        * Inherit helper.prototype from ../lib/helper.controller
        */
-      util.inherits( Slush_y, Controller );
+      util.inherits( Slush_y, Utility );
+      // util.inherits( Slush_y, Utility );
 
       /**
        * Extend any required prototypes
        */
       _.extend(Slush_y.prototype, require('inquirer'));
       _.extend(Slush_y.prototype, require('../lib/config.service'));
+      // _.extend(Slush_y.prototype, require('../utility/Utility.class'));
+      _.extend(Slush_y.prototype, require('../controllers/Slush_y.controller'));
       // _.extend(Slush_y.prototype, require('./craller.class'));
 
       /*
@@ -60,13 +66,14 @@
       Slush_y.prototype.startFlow         = function ( options ) {
           var __this = this;
 
-          options.prompts          = [];
-          options.answers          = {};
-          options.settings         = {};
-          options.templates        = {};
-          options.settings.current = options.generator.seq[0];
-          options.__Generator      = function(){};
+          _.forEach(__this.__opts, function ( key, item){
+            if (_.isEmpty(key) || options[key] === undefined){
+              return options[key] = {}
+            }
+            return options[key] = options[key];
+          })
 
+          options.__Generator      = function(){};
           return options;
       };
 
@@ -80,16 +87,24 @@
       Slush_y.prototype.startValidation   = function ( options ) {
         var __this = this;
 
-        if(options.settings.current === 'default'){
+        if(options.generator.seq[0] === 'default'){
+          if(!_.size( options.settings )) { options.settings = {}; }
           options.settings.default = true;
+          options.settings.reset = true;
+
+          if(__this.get('appName')){
+
+            return __this.requestReset(options)
+              .then(function (options) {
+                return options;
+              })
+          } else {
+
+            return options;
+
+          }
         }
-        options.settings.reset = true;
-        if(__this.get('appName')){
-          return __this.askToReset(options)
-            .then(function (options) {
-              return options;
-            })
-        }
+
         return options;
       };
 
@@ -101,8 +116,10 @@
       Slush_y.prototype.startDefaults      = function ( options ) {
         var __this = this;
 
+
         options.generator.name  = options.generator.seq[0];
-        options.generator.path  = __this.__generatorsPath + options.generator.name;
+        options.generator.path  = options.templates.root || __this.__generatorsPath + options.generator.name;
+
         options.prompts         = require(options.generator.path + '/prompts');
         options.__Generator     = __this.bindGenerator(options.generator.path);
         options.templates.root  = options.generator.path + '/templates';

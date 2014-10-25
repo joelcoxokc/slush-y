@@ -2,54 +2,26 @@
   'use strict';
 
 
-  module.exports = function (gulp, inquirer, $, _, path) {
+  module.exports = function ( $, paths, filters, templates, slushy) {
 
-    var slushy    = this;
-    var prompts   = require('./prompts.js')
-
-    return gulp.task('module', slushy.task(Module));
+    var __this    = this;
 
 
     ////////////////////////////////////
 
-    function Module( done, options ){
+      // _(options.folders).forEach(function (item){
+      //   slushy.info('creating', slushy.path(options.moduleDir, item))
+      //   slushy.mkdir(path.join( options.moduleDir, item));
+      // })
+      console.log(paths)
 
-      prompts = prompts(options);
-
-      return slushy.ask( prompts, options )
-        .then( setModuleName )
-        .then(slushy.generate( GenerateTemplates ) )
-        .catch( done )
-
-    }
+      // gulp
+      //   .src(  )
+      //   .pipe($.template(options))
+      //   .pipe($.rename( __this.files().rename(filters.app_names) )
+      //   .pipe(gulp.dest(  ));
 
 
-    /**
-     * Generate Templates
-     * @param {Object} options Contains the moduleName with multiple string versions
-     *                         Also contains an array of chosen foders the user has selected
-     */
-    function GenerateTemplates(options){
-      /**
-       * Generate Directories based on users selection
-       * @param  {String} moduleDir ./client/app/modules
-       * @param  {String} options.slugifiedName example = 'Testing' = testing
-       */
-      _(options.folders).forEach(function (item){
-        slushy.info('creating', slushy.path(options.moduleDir, item))
-        slushy.mkdir(path.join( options.moduleDir, item));
-      })
-
-      gulp
-        .src( options.src().scripts() )
-        .pipe($.template(options))
-        .pipe($.rename(function (file){
-          slushy.info(file)
-          file = slushy.processFile(true, file, options );
-        }))
-        .pipe(gulp.dest( options.dest().modules( options.moduleName ) ));
-
-    }
 
     function setModuleName( options ){
       options.moduleName = options.name;

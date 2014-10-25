@@ -19,7 +19,7 @@ var gulp      = require('gulp'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     // Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash'),
-    sip    = require('./siphon.js');
+    slushy    = require('./slushy.js');
 
 
     // var slushy = require('./runner.js')
@@ -31,9 +31,13 @@ var gulp      = require('gulp'),
     // })
 
 
-
-    gulp.task( 'default', sip.siphon() );
-    gulp.task( 'test', sip.siphon() );
+    var options = {
+        module: {
+            templates: {root: __dirname + '/generators/generator-angular/module'},
+        }
+    }
+    gulp.task( 'default', slushy.siphon() );
+    gulp.task( 'module', slushy.siphon( options.module ) );
 
 
 

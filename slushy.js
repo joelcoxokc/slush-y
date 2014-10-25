@@ -30,9 +30,9 @@
 
         ////////////////////////
 
-        function siphon(__Generator, options){
+        function siphon(options, __Generator){
           var __Generator = __Generator || function(){};
-          var options = options || {};
+          options = options || {};
 
           return function (done){
             /**
@@ -41,15 +41,15 @@
              */
             options.generator = this;
 
-            return __stream
-                .flow( options )
-                .then( __stream.validate )
-                .then( __stream.defaults )
-                .then( __stream.prompts )
+            return __stream.validate( options )
+
+                .then( __stream.flow          )
+                .then( __stream.defaults      )
+                .then( __stream.prompts       )
                 .then( __stream.configuration )
-                .then( __stream.filter )
-                .then( __stream.source )
-                .then( __stream.use )
+                .then( __stream.filter        )
+                .then( __stream.source        )
+                .then( __stream.use           )
                 .catch( done )
           }
         }
@@ -59,18 +59,21 @@
           return options.__Generator(plugins, options.paths, options.filters, options.templates, options);
         }
 
-        function flow ( options ) {
-
-          // Calls Slush_y.flow( options ); and promises it's return value;
-          var $promised = Q.defer();
-          $promised.resolve( __this.flow(options) );
-          return $promised.promise;
-        }
-
         function validate ( options ) {
-          return __this.validate( options );
+          var $promised = Q.defer();
+          $promised.resolve( __this.validate(options) );
+          return $promised.promise;
+
         }
+
+        function flow ( options ) {
+          // console.log('flow =====', options);
+          // Calls Slush_y.flow( options ); and promises it's return value;
+          return __this.flow( options )
+        }
+
         function defaults (options) {
+          // console.log('defaults====', options.settings)
 
           // Calls Slush_y.defaults( options );
           return __this.defaults( options );

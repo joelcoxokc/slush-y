@@ -7,27 +7,27 @@
       var path      = require('path');
       var inflect   = require('inflection');
 
-      module.exports = Controller;
+      var Controller = module.exports;
 
       /////////////////////
 
-      function Controller (param) {
+      // function Controller (param) {
 
-        var __this = this;
+      //   var __this = this;
 
-        function privateMethod(){}
+      //   function privateMethod(){}
 
-        this.privilegedMethod = function(){}
+      //   this.privilegedMethod = function(){}
 
-      }
+      // }
 
 
-      Controller.prototype.isRunning = function(args){
+      Controller.isRunning = function(args){
         var generator = _(args).filter(function (value){ return value.running && value.running !== undefined }).value()[0];
         return generator;
       };
 
-      Controller.prototype.bindGenerator = function(path) {
+      Controller.bindGenerator = function(path) {
         var __this = this;
 
         return function (){
@@ -37,53 +37,13 @@
         }
       };
 
-      /**
-       * [str description]
-       * @param  {[type]} string  [description]
-       * @param  {[type]} ref     [description]
-       * @param  {[type]} options [description]
-       * @return {[type]}         [description]
-       */
-      Controller.prototype.str = function(string, ref, options){
-          var options   = options || {};
-          var ref       = ref     || 'values';
-          options[ref]  = {};
-          options[ref].name = string;
-          options = base(options);
-
-          return {
-            values: options,
-            multi:multi
-          }
-
-          function base(options){
-            options[ref].slug      = _str.slugify(_str.humanize(options[ref].name));
-            options[ref].classed   = _str.classify(options[ref].slug);
-            options[ref].humanized = _str.humanize(options[ref].slug);
-            options[ref].camelized = _str.camelize(options[ref].slug);
-            options[ref].humanized = _str.humanize(options[ref].name);
-            return options;
-
-          }
-          function multi(){
-            options[ref].slugPlural       = inflect.pluralize(options[ref].slug);
-            options[ref].slugSingle       = inflect.singularize(options[ref].slug);
-            options[ref].camelPlural      = _str.camelize(options[ref].slugPlural);
-            options[ref].camelSingle      = _str.camelize(options[ref].slugSingle);
-            options[ref].classedPlural    = _str.classify(options[ref].slugPlural);
-            options[ref].classedSingle    = _str.classify(options[ref].slugSingle);
-            options[ref].humanizedPlural  = _str.humanize(options[ref].slugPlural);
-            options[ref].humanizedSingle  = _str.humanize(options[ref].slugSingle);
-            return options;
-          }
-      }
 
       /**
        * [askToReset description]
        * @param  {[type]} options [description]
        * @return {[type]}         [description]
        */
-      Controller.prototype.askToReset = function( options ) {
+      Controller.requestReset = function( options ) {
 
         var __this = this;
         var $promised = Q.defer();
@@ -102,25 +62,6 @@
         return $promised.promise;
       };
 
-      /**
-       * [processFile description]
-       * @param  {[type]} bool    [description]
-       * @param  {[type]} file    [description]
-       * @param  {[type]} options [description]
-       * @return {[type]}         [description]
-       */
-      Controller.prototype.processFile  = function (bool, file, options){
-          if(!bool){
-            if (file.basename.indexOf('__') == 0) {
-              file.basename = '.' + file.basename.slice(2);
-            }
-          } else {
-            if (file.basename.indexOf('_') == 0) {
-              file.basename = file.basename.replace('_', options.slugName);
-            }
-          }
-          return file;
-      };
 
       /**
        * Controller.generatePaths grabs all the default paths, and Templates, and stores them on config,
@@ -128,7 +69,7 @@
        * @param  {Object} options [Initial streamed options]
        * @return {Object}         [return the streamed options]
        */
-      Controller.prototype.generatePaths = function ( __options ) {
+      Controller.generatePaths = function ( __options ) {
 
           var __this       = this;
           var paths        = {};
@@ -152,7 +93,7 @@
        * @param  {[type]} __options [description]
        * @return {[type]}           [description]
        */
-      Controller.prototype.generateFilters = function ( __options ) {
+      Controller.generateFilters = function ( __options ) {
 
           var __this           = this;
           var filters          = {};
@@ -194,7 +135,7 @@
           return __options;
       };
 
-      Controller.prototype.generateTemplates = function ( __options ) {
+      Controller.generateTemplates = function ( __options ) {
 
           var __this    = this;
           var templates = __options.templates;

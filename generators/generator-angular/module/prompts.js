@@ -1,13 +1,4 @@
-module.exports = function(defaults){
-
-
-
-  var prompts = [
-    {
-      name: 'name',
-      message: 'Module Name??',
-      default: defaults.name
-    },
+var prompts = module.exports = [
     {
       type: 'checkbox',
       name: 'folders',
@@ -54,6 +45,5 @@ module.exports = function(defaults){
         checked: true
       }]
     }];
-    return prompts;
 
-}
+

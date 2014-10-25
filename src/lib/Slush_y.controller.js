@@ -15,10 +15,6 @@
 
         var __this = this;
 
-        function privateMethod(){}
-
-        this.privilegedMethod = function(){}
-
       }
 
 

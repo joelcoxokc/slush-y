@@ -4,9 +4,6 @@
   "version": "1.0.8",
   "homepage": "https://github.com/joelcoxokc/slush-y",
   "author": "Joel Cox <joel.cox@hackreactor.com>",
-  "bin": {
-    "slap": "./bin/slap.js"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/joelcoxokc/slush-y.git"

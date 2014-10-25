@@ -11,6 +11,7 @@
       var util        = require('util');
       var inquirer    = require('inquirer');
       var Craller     = require('./craller.class');
+      var Files       = require('../controllers/file.controller');
       /**
        * Helers
        */
@@ -49,7 +50,25 @@
       _.extend(Slush_y.prototype, require('../lib/config.service'));
       // _.extend(Slush_y.prototype, require('./craller.class'));
 
+      /*
+       * Initialize the promise chain and pass in the initial options.
+       * set options.name === to the current running generator's' name.
+       * set the path to the generator === relative path from the root to generators/<generator.name>/index.js
+       * set the stream_callback === to a function that will apply the context of slushy to the call back, and pass in the options object;
+       * set the templatPath = the generators path + './templates/'
+       */
+      Slush_y.prototype.startFlow         = function ( options ) {
+          var __this = this;
 
+          options.prompts          = [];
+          options.answers          = {};
+          options.settings         = {};
+          options.templates        = {};
+          options.settings.current = options.generator.seq[0];
+          options.__Generator      = function(){};
+
+          return options;
+      };
 
       /**
        * Slush_y.startValidationi:  sets options.current to the current tasks name.
@@ -61,10 +80,10 @@
       Slush_y.prototype.startValidation   = function ( options ) {
         var __this = this;
 
-        if(options.current === 'default'){
-          options.default = true;
+        if(options.settings.current === 'default'){
+          options.settings.default = true;
         }
-        options.reset = true;
+        options.settings.reset = true;
         if(__this.get('appName')){
           return __this.askToReset(options)
             .then(function (options) {
@@ -72,26 +91,6 @@
             })
         }
         return options;
-      };
-
-      /*
-       * Initialize the promise chain and pass in the initial options.
-       * set options.name === to the current running generator's' name.
-       * set the path to the generator === relative path from the root to generators/<generator.name>/index.js
-       * set the stream_callback === to a function that will apply the context of slushy to the call back, and pass in the options object;
-       * set the templatPath = the generators path + './templates/'
-       */
-      Slush_y.prototype.startFlow         = function ( options ) {
-          var __this = this;
-
-          options.application     = {};
-          options.answers         = {};
-          options.prompts         = [];
-          options.config          = {};
-          options.__Generator     = function(){};
-          options.current         = options.generator.seq[0];
-          console.log('optoijsdifl')
-          return options;
       };
 
       /**
@@ -105,11 +104,8 @@
         options.generator.name  = options.generator.seq[0];
         options.generator.path  = __this.__generatorsPath + options.generator.name;
         options.prompts         = require(options.generator.path + '/prompts');
-
         options.__Generator     = __this.bindGenerator(options.generator.path);
-        // console.log()
-        options.templates       = options.generator.path + '/templates';
-
+        options.templates.root  = options.generator.path + '/templates';
 
         return options;
       };
@@ -140,21 +136,25 @@
        */
       Slush_y.prototype.startConfiguration = function ( options ) {
         var __this = this;
-
-        if( options.default && options.reset){
-          __this.__config         =  new Storage('.sl-y.json');
-          __this.__config.set('__appName',    __this.__appName);
-          __this.__config.set('__appDir',     __this.__appDir);
-          __this.__config.set('__rootDir',    __this.__rootDir);
-          __this.__config.set('__coreDir',    __this.__coreDir);
-          __this.__config.set('__clientDir',  __this.__clientDir);
-          __this.__config.set('__serverDir',  __this.__serverDir);
-          __this.__config.set('__modulesDir', __this.__modulesDir);
-          __this.__config.set('defaults', __this.__defaults);
+        if( options.settings.default && options.settings.reset){
           options = __this.initConfig( options );
         }
-        return options
+        return options;
       };
+
+      /**
+       * Slush_y.createFilters will generate filters and paths for the developer to use while building out the generator.
+       * @param  {Object} options [Initial Streamed options object]
+       * @return {Object}         [return Initial Streamed options object]
+       */
+      Slush_y.prototype.createFilters = function( options ){
+
+          var __this = this;
+
+          options = __this.generatePaths( options );
+          options = __this.generateFilters( options );
+          return options;
+      }
 
       /**
        * [source this will create ans add all source and destinatino path selectios for the generator to do it's job.]
@@ -164,14 +164,9 @@
       Slush_y.prototype.startSource        = function ( options ) {
         var __this = this;
 
-        options.src = src;
+        options = __this.generateTemplates( options );
 
         return options;
-
-        function src(pattern){
-          return path.join(options.templates, pattern );
-        }
-
       };
 
       Slush_y.prototype.registration = function ( ) {

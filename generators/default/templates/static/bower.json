@@ -1,5 +1,5 @@
 {
-  "name": "yo-soa",
+  "name": "<%= app_names.slug %>",
   "version": "0.0.0",
   "dependencies": {
     "angular": "*",

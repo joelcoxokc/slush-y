@@ -1,10 +1,11 @@
 ;(function(){
     'use strict';
 
-    var Slush_y = require('./src/class/Slush_y.class.js');
-    var _       = require('lodash');
-    var inquirer     = require('inquirer');
-    var Q       = require('q');
+    var Slush_y   = require('./src/class/Slush_y.class.js');
+    var _         = require('lodash');
+    var inquirer  = require('inquirer');
+    var Q         = require('q');
+    var plugins   = require('gulp-load-plugins')({lazy: false});
 
     var slush_y = new Slush_y;
     var Slushy = module.exports = (function() {
@@ -19,6 +20,7 @@
           register:      register,
           prompts:       prompts,
           siphon:        siphon,
+          filter:        filter,
           source:        source,
           flow:          flow,
           use:           use
@@ -45,6 +47,7 @@
                 .then( __stream.defaults )
                 .then( __stream.prompts )
                 .then( __stream.configuration )
+                .then( __stream.filter )
                 .then( __stream.source )
                 .then( __stream.use )
                 .catch( done )
@@ -53,7 +56,7 @@
         function use ( options ) {
 
           // Calls Slush_y.use( options )
-          return options.__Generator(options);
+          return options.__Generator(plugins, options.paths, options.filters, options.templates, options);
         }
 
         function flow ( options ) {
@@ -82,12 +85,15 @@
           // if(default) Slush_y.initConfig( options ) else Slush_y.setConfig( options )
           return __this.configuration( options );
         }
+        function filter( options ) {
+          // Calls Slush_y.filter to generator filters for templates
+          return __this.filter( options );
+        }
         function source( options ) {
 
           // Calls Slush_y.use( options )
           return __this.source( options );
         }
-
         function register(){
 
           return __this.register(__dirname);

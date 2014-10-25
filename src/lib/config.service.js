@@ -2,9 +2,10 @@
 
   'use strict';
 
-  var _     = require('lodash');
-  var Q     = require('Q');
-  var _str  = require('underscore.string');
+  var _       = require('lodash');
+  var Q       = require('Q');
+  var _str    = require('underscore.string');
+  var Storage = require('./storage.service');
 
 
   /**
@@ -43,70 +44,25 @@
   }
 
   function initConfig( __options ){
-    var __this = this;
 
-    // var $promised = Q.defer();
+    var __this       = this;
+    var config       =   {};
+    __this.__config  =  new Storage('.sl-y.json');
 
-    /**
-     * Store defaults into configuration before retrieval;
-     */
-    var config = __this.get();
-
-
+    config.appName   = __this.__appName;
+    config.defaults  = __this.__defaults;
 
     if(__options.answers.appName){
+
       config.appName = __options.answers.appName;
       config.defaults.appName = __options.answers.appName;
 
     }
 
-    // __this.info('Initializing Configuration from Base')
-
-
-    __this.str(__options.answers.appName, 'applicationName', config).value;
-
-    config.appDir       = __this.get('__appDir');
-    config.coreDir      = __this.get('__coreDir');
-    config.clientDir    = __this.get('__clientDir');
-    config.serverDir    = __this.get('__serverDir');
-    config.modulesDir   = __this.get('__modulesDir');
-
-    config.auth         = true;
-    // Defaults
-    config.httpType     = 'http';
-    config.script       = 'js';
-    config.styles       = 'css';
-
-    // Defaults
-    config.http         = true;
-    config.restangular  = false;
-
-    // Defaults
-    config.js           = true;
-    config.coffee       = false;
-
-    // Defaults
-    config.css          = true;
-    config.stylus       = false;
-    config.sass         = false;
-    config.less         = false;
-    config.modules = [
-      'core',
-      'authentication',
-      'administration',
-      'generators'
-    ];
-
-    _(config.modules).forEach(function (item, key){
-      config[key] = _str.contains(config.modules, key);
-    })
+    __this.str(__options.answers.appName, 'app_names', config).value;
 
     __this.store(config);
 
-    __options.application = __this.get();
-    // console.log(__options)
-    // $promised.resolve(__this.get())
-    // return $promised.promise;
     return __options;
   }
 

@@ -12,7 +12,6 @@
 
       util.inherits( Slush_y, Slushy );
 
-
       /**
        * Used as a middleware helper for the .then() promises, inorder to pass params in. Also allows us to call it with a specific context
        *
@@ -27,7 +26,6 @@
 
       Slush_y.prototype.validate = function ( options ) {
 
-        // return this.startValidation( options )
         return this.startValidation( options );
       };
 
@@ -35,8 +33,8 @@
        * Initialize the promise chain and pass in the initial options
        */
       Slush_y.prototype.flow         = function ( options ) {
+
         return this.startFlow( options );
-        // return options;
       };
 
       /**
@@ -55,7 +53,7 @@
        * @return {Promise}            [Return a promise for the next chain]
        */
       Slush_y.prototype.prompts       = function ( options ) {
-        // console.log('prompts================', options )
+
         return this.startPrompts( options );
       };
       /**
@@ -67,6 +65,11 @@
 
         return this.startConfiguration( options );
       };
+
+      Slush_y.prototype.filter        = function ( options ) {
+
+        return this.createFilters( options );
+      }
 
       /**
        * [source this will create ans add all source and destinatino path selectios for the generator to do it's job.]

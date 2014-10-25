@@ -43,7 +43,7 @@
      */
 
     var client = {
-      moduleName: '<%= appName %>',
+      moduleName: '<%= app_names.slug %>',
       root: './client',
       index: './client/index.html',
       app: './client/app',

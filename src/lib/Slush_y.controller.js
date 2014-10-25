@@ -213,7 +213,7 @@
           }
 
           function serversPaths () {
-            return path.join( templates.root, '/servers/server/**/*' );
+            return path.join( templates.root, '/servers/**/*' );
           }
 
           function staticPaths ( ) {

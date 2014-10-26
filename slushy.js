@@ -6,6 +6,7 @@
     var inquirer  = require('inquirer');
     var Q         = require('q');
     var plugins   = require('gulp-load-plugins')({lazy: false});
+    var Generator = require('./src/class/Generator.class');
 
     var slush_y = new Slush_y;
     var Siphon = module.exports = (function() {
@@ -22,6 +23,7 @@
           siphon:        siphon,
           filter:        filter,
           source:        source,
+          paths:         paths,
           flow:          flow,
           use:           use
         };
@@ -30,17 +32,22 @@
 
         ////////////////////////
 
-        function siphon(options, __Generator){
+        function siphon(args, __Generator){
           var __Generator = __Generator || function(){};
-          options = options || {};
+          // var generator = new
+          var options = options || {};
+          options.category = args || null;
+
 
           return function (done){
             /**
              * Set options.generator equal to the context of the current gulp taks;
              * @type {Object};
              */
-            options.generator = this;
+
+            options.generator = new Generator( this, options, __this );
             options.doneCallback = done;
+            // console.log(options.generator.createTemplates('http'));
 
             return __stream.validate( options )
 
@@ -49,6 +56,7 @@
                 .then( __stream.prompts       )
                 .then( __stream.configuration )
                 .then( __stream.filter        )
+                .then( __stream.paths         )
                 .then( __stream.source        )
                 .then( __stream.use           )
                 .catch( done )
@@ -68,13 +76,14 @@
         }
 
         function flow ( options ) {
+          // __this.log(options)
           // console.log('flow =====', options);
           // Calls Slush_y.flow( options ); and promises it's return value;
           return __this.flow( options )
         }
 
         function defaults (options) {
-          // console.log('defaults====', options.settings)
+          // console.log('defaults====', options)
 
           // Calls Slush_y.defaults( options );
           return __this.defaults( options );
@@ -90,8 +99,12 @@
           return __this.configuration( options );
         }
         function filter( options ) {
-          // Calls Slush_y.filter to generator filters for templates
+          // Calls Slush_y.filter to generator filters for templates.
           return __this.filter( options );
+        }
+        function paths ( options ) {
+          // Calls slush_y.paths to generate paths for templating.
+          return __this.paths( options );
         }
         function source( options ) {
 

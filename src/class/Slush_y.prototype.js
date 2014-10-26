@@ -17,7 +17,10 @@
       var Storage     = require('../lib/storage.service');
       var defaults    = require('../lib/defaults.service');
       var Controller  = require('../controllers/Slush_y.controller');
-      var Utility     = require('../Utility/Utility.class');
+      var Utility     = require('../utility/Utility.class');
+
+      var templateGenerator = require('../utility/templateGenerator.js');
+      var subGenerators = require('../utility/subGenerators.js');
 
       var Slush_y = module.exports =  function Slush_y (){
 
@@ -39,6 +42,7 @@
         __this.__defaults       = defaults;
 
         __this.__opts           = ['templates', 'prompts', 'answers', 'settings', '__Generator', 'generator'];
+        __this.__subGeneratos   = subGenerators;
       };
 
       /**
@@ -54,6 +58,7 @@
       _.extend(Slush_y.prototype, require('../lib/config.service'));
       // _.extend(Slush_y.prototype, require('../utility/Utility.class'));
       _.extend(Slush_y.prototype, require('../controllers/Slush_y.controller'));
+      _.extend(Slush_y.prototype, require('../controllers/file.controller.js') )
       // _.extend(Slush_y.prototype, require('./craller.class'));
 
       /*
@@ -85,30 +90,31 @@
        * @return {Object}   options The streamed object;
        */
       Slush_y.prototype.startValidation   = function ( options ) {
-        var __this = this;
+          var __this = this;
 
-        if(options.generator.seq[0] === 'default'){
-          if(!_.size( options.settings )) { options.settings = {}; }
-          options.settings.default = true;
-          options.settings.reset = true;
 
-          if(__this.get('appName')){
+          if(options.generator.seq[0] === 'default'){
+            if(!_.size( options.settings )) { options.settings = {}; }
+            options.settings.default = true;
+            options.settings.reset = true;
 
-            return __this.requestReset(options)
-              .then(function (options) {
-                return options;
-              })
-          } else {
+            if(__this.get('appName')){
 
-            return options;
+              return __this.requestReset(options)
+                .then(function (options) {
+                  return options;
+                })
+            } else {
 
+              return options;
+
+            }
+          } else if( !options.generator.args[0] ){
+            __this.nameError( options.generator.seq[0] );
+            return options.doneCallback();
           }
-        } else if( !options.generator.args[0] ){
-          __this.nameError( options.generator.seq[0] );
-          return options.doneCallback();
-        }
 
-        return options;
+          return options;
       };
 
       /**
@@ -117,17 +123,17 @@
        * @return {Promise}            [returns a promise to pick up on the next chain]
        */
       Slush_y.prototype.startDefaults      = function ( options ) {
-        var __this = this;
+          var __this = this;
 
 
-        options.generator.name  = options.generator.seq[0];
-        options.generator.path  = options.templates.root || __this.__generatorsPath + options.generator.name;
+          options.generator.name  = options.generator.seq[0];
+          // console.log(__this.templateGn)
 
-        options.prompts         = require(options.generator.path + '/prompts');
-        options.__Generator     = __this.bindGenerator(options.generator.path);
-        options.templates.root  = options.generator.path + '/templates';
 
-        return options;
+          options.__Generator     = __this.bindGenerator(options.generator.path);
+          options.templates.root  = options.generator.path + '/templates';
+
+          return options;
       };
 
       /**
@@ -136,18 +142,18 @@
        * @return {Promise}            [Return a promise for the next chain]
        */
       Slush_y.prototype.startPrompts       = function ( options ) {
-        var __this = this;
+          var __this = this;
 
-        var $promised = Q.defer();
+          var $promised = Q.defer();
 
-        __this.prompt(options.prompts, function (answers){
+          __this.prompt(options.generator.prompts, function (answers){
 
-            _.assign(options.answers, answers);
-            $promised.resolve(options);
-        });
+              _.assign(options.answers, answers);
+              $promised.resolve(options);
+          });
 
-        return $promised.promise;
-        // return options.prompts = ' -- start prompts endpoint reached';
+          return $promised.promise;
+          // return options.prompts = ' -- start prompts endpoint reached';
       };
       /**
        * [Configuration Initialize the config store if this is a new instance, otherwise, ignore and pass throguh]
@@ -155,12 +161,14 @@
        * @return {Promise}            [return a promise for the next chain]
        */
       Slush_y.prototype.startConfiguration = function ( options ) {
-        var __this = this;
-        if( options.settings.default && options.settings.reset){
-          options = __this.initConfig( options );
-        }
-        return options;
+          var __this = this;
+
+          if( options.settings.default && options.settings.reset){
+            options = __this.initConfig( options );
+          }
+          return options;
       };
+
 
       /**
        * Slush_y.createFilters will generate filters and paths for the developer to use while building out the generator.
@@ -170,11 +178,25 @@
       Slush_y.prototype.createFilters = function( options ){
 
           var __this = this;
-
-          options = __this.generatePaths( options );
-          options = __this.generateFilters( options );
+          if( options.settings.default ){
+           options = __this.generateDefaultFilters( options );
+          } else {
+           options = __this.generateFilters( options );
+          }
           return options;
       }
+
+      /**
+       * createPaths Create paths for source and destinations
+       * @param  {Object} options Original Steam options.
+       * @return {Object}         return a modified version of the options with the appropriate paths.
+       */
+      Slush_y.prototype.createPaths  = function ( options ) {
+          var __this = this;
+          options.templates = options.generator.createTemplates( options.filters.httpType );
+          options = __this.generatePaths( options );
+          return options;
+      };
 
       /**
        * [source this will create ans add all source and destinatino path selectios for the generator to do it's job.]
@@ -182,16 +204,17 @@
        * @return {Promise}            [Return a promise for the next chain]
        */
       Slush_y.prototype.startSource        = function ( options ) {
-        var __this = this;
+          var __this = this;
+          if( options.settings.default ) {
+            options = __this.generateTemplates( options );
+          }
 
-        options = __this.generateTemplates( options );
-
-        return options;
+          return options;
       };
 
       Slush_y.prototype.registration = function ( ) {
 
-        return this.register;
+          return this.register;
       };
 
 }).call(this);

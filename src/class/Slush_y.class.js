@@ -66,10 +66,26 @@
         return this.startConfiguration( options );
       };
 
+      /**
+       * filter generate filters for templating
+       * @param  {Object} options Streamed options object
+       * @return {Object}         Return modified form of options
+       */
       Slush_y.prototype.filter        = function ( options ) {
 
         return this.createFilters( options );
-      }
+      };
+
+      /**
+       * paths generate paths or selecting templates for source and destination.
+       * @param  {Object} options Original streamed options.
+       * @return {Object}         Return modified verision of the options object
+       */
+      Slush_y.prototype.paths = function ( options ) {
+
+        return this.createPaths( options );
+      };
+
 
       /**
        * [source this will create ans add all source and destinatino path selectios for the generator to do it's job.]

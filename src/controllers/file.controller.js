@@ -6,9 +6,9 @@
 
 
   var Actions               = module.exports;
-      Actions.use           = use;
       Actions.findModules   = findModules;
       Actions.Dirs          = Dirs;
+      // Actions.use           = use;
 
   /**
    * Actions.use() is used as Slushy.use()

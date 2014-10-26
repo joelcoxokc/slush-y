@@ -89,11 +89,29 @@
       };
 
       /**
-       * Controller.generateFilters will set all the answers chosen from prompts on options.filters, and config.filters;
+       * Generate Filters for templating;
        * @param  {[type]} __options [description]
        * @return {[type]}           [description]
        */
       Controller.generateFilters = function ( __options ) {
+        var __this = this;
+
+        var filters = __this.get('filters');
+
+        if(__options.generator.name === 'module'){
+          __this.str(__options.generator.args[0], 'moduleNames', filters).value;
+        }
+        __options.filters = filters;
+        return __options;
+
+      }
+
+      /**
+       * Controller.generateFilters will set all the answers chosen from prompts on options.filters, and config.filters;
+       * @param  {[type]} __options [description]
+       * @return {[type]}           [description]
+       */
+      Controller.generateDefaultFilters = function ( __options ) {
 
           var __this           = this;
           var filters          = {};
@@ -129,7 +147,7 @@
 
           filters.app_names       = config.app_names;
 
-          config.filers     = filters;
+          config.filters     = filters;
           __options.filters = filters;
           __this.store( config );
           return __options;

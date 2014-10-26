@@ -33,11 +33,12 @@ var gulp      = require('gulp'),
 
     var options = {
         module: {
-            templates: {root: __dirname + '/generators/generator-angular/module'},
+            templates: {root: __dirname + '/generators/client/module'},
         }
     }
     gulp.task( 'default', slushy.siphon() );
-    gulp.task( 'module', slushy.siphon( options.module ) );
+    gulp.task( 'controller', slushy.siphon('client') );
+    gulp.task( 'module', slushy.siphon( 'client' ) );
 
 
 

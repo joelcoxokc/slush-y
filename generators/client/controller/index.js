@@ -5,16 +5,16 @@
      * Controller Bound to the Slushy Prototype;
      * @return {Function} Callback function for the Controller Task to Call
      */
-    module.exports = function(gulp, inquirer, $, _, path, _str){
+    module.exports = function ( $, paths, filters, templates, slushy) {
 
         var slushy  = this;
-        var prompts = require('./prompts.js')(slushy);
+        // var prompts = require('./prompts.js')(slushy);
+        console.log(this);
 
         /**
          *  Expose Gulp Task Endpoint, and pass slush.use()
          *  slushy.use() will return a call back to invoke, with the correct context;
          */
-        return gulp.task('controller', slushy.task( Controller ));
 
         /////////////////////////////
 

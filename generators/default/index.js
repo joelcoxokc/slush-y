@@ -13,7 +13,7 @@
 
     module.exports = function( $, paths, filters, templates, slushy){
       // console.log('From Generator', $)
-      console.log('From Generator', slushy.src().static())
+      // console.log('From Generator', slushy)
     // };
     // function runGenerator(opts){
 
@@ -47,7 +47,7 @@
             .pipe($.rename( __this.files().replace ) )
             .pipe($.template( slushy.filters ))
             .pipe($.conflict('./'))
-            .pipe( gulp.dest( './client' ))
+            .pipe( gulp.dest( './client/app' ))
         /**
          * Generate client scritps from chosen HTTPrequest handler type
          */

@@ -2,6 +2,6 @@
   'use strict';
 
   angular
-    .module('<%= slugName %>', []);
+    .module('<%= moduleNames.slug %>', []);
 
 }).call(this);

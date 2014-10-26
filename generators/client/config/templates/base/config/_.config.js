@@ -1,8 +1,8 @@
 ;(function(){
   'use strict';
-  // <%= humanizedModuleName %> module config
+  // <%= moduleNames.humanized %> module config
   angular
-    .module('<%= moduleName %>')
+    .module('<%= moduleNames.slug %>')
     .config( Configuration );
 
   /* @inject */

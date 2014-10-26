@@ -11,15 +11,6 @@
 
       /////////////////////
 
-      // function Controller (param) {
-
-      //   var __this = this;
-
-      //   function privateMethod(){}
-
-      //   this.privilegedMethod = function(){}
-
-      // }
 
 
       Controller.isRunning = function(args){
@@ -85,6 +76,11 @@
           config.paths     = paths;
           __options.paths  = paths;
           __this.store( config );
+
+          if(__options.generator.type === 'angular') {
+            __options.paths.dest = path.join( paths.modulesDir,  __options.filters.moduleNames.slug);
+          }
+
           return __options;
       };
 
@@ -98,9 +94,14 @@
 
         var filters = __this.get('filters');
 
-        if(__options.generator.name === 'module'){
-          __this.str(__options.generator.args[0], 'moduleNames', filters).value;
+        if( __options.generator.category === 'client'){
+          filters = __this.str(__options.generator.args[0], 'moduleNames', filters).simple();
         }
+        if( __options.generator.title){
+          filters = __this.str( __options.generator.title, 'names', filters ).multi();
+        }
+        filters.answers = __options.answers;
+
         __options.filters = filters;
         return __options;
 

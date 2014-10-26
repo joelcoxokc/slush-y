@@ -5,7 +5,6 @@
 
     module.exports = prompts;
 
-
     function prompts(slushy){
 
       var questions = [

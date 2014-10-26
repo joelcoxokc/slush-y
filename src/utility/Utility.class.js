@@ -74,19 +74,17 @@
     }
 
     Utility.prototype.str = function(string, ref, options){
-      var options   = options || {};
       var ref       = ref     || 'values';
       options[ref]  = {};
       options[ref].name = string;
-      options[ref].slug      = _str.slugify(_str.humanize(options[ref].name));
-      options = base(options);
 
       return {
-        values: options,
+        simple: simple,
         multi:multi
       }
 
-      function base(options){
+      function simple(){
+        options[ref].slug   = _str.classify(options[ref].name);
         options[ref].classed   = _str.classify(options[ref].slug);
         options[ref].humanized = _str.humanize(options[ref].slug);
         options[ref].camelized = _str.camelize(options[ref].slug);
@@ -95,18 +93,17 @@
 
       }
       function multi(){
-        options[ref].single = {
-          slug:       inflect.singularize(options[ref].slug),
-          camel:      _str.camelize(options[ref].single.slug),
-          classed:    _str.classify(options[ref].single.slug),
-          humanized:  _str.humanize(options[ref].single.slug)
-        };
-        options[ref].plural = {
-          slug:       inflect.pluralize(options[ref].slug),
-          camel:      _str.camelize(options[ref].plural.slug),
-          classed:    _str.classify(options[ref].plural.slug),
-          humanized:  _str.humanize(options[ref].plural.slug),
-        };
+
+        options[ref].single = {};
+        options[ref].plural = {};
+        options[ref].single.slug       =  inflect.singularize(options[ref].name);
+        options[ref].single.camel      =  _str.camelize(options[ref].single.slug);
+        options[ref].single.classed    =  _str.classify(options[ref].single.slug);
+        options[ref].single.humanized  =  _str.humanize(options[ref].single.slug)
+        options[ref].plural.slug       =  inflect.pluralize(options[ref].single.slug);
+        options[ref].plural.camel      =  _str.camelize(options[ref].plural.slug);
+        options[ref].plural.classed    =  _str.classify(options[ref].plural.slug);
+        options[ref].plural.humanized  =  _str.humanize(options[ref].plural.slug);
 
         return options;
       }
@@ -127,11 +124,11 @@
         }
       }
     }
-    Utility.prototype.rename = function(options){
+    Utility.prototype.rename = function(name){
 
       return function (file){
         if (file.basename.indexOf('_') == 0) {
-          file.basename = file.basename.replace('_', options.slug);
+          file.basename = file.basename.replace('_', name);
         }
       }
     }

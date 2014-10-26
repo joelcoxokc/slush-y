@@ -7,14 +7,14 @@
   module.exports = function ( $, paths, filters, templates, slushy) {
 
     var __this    = this;
-
+    console.log(templates);
 
     ////////////////////////////////////
 
     var modulePath = path.join( paths.modulesDir, filters.moduleNames.slug );
     __this.mkdirp( modulePath )
     // console.log(modulePath);
-    _(slushy.answers.folders).forEach(function (item){
+    _(filters.answers.folders).forEach(function (item){
       __this.mkdirp(path.join( modulePath, item));
     })
     // console.log(slushy)

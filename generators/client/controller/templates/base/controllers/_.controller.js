@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-    .module('<%= moduleName %>')
-    .controller('<%= names.classed %>Controller', <%= names.classed %>Controller);
+    .module('<%= moduleNames.slug %>')
+    .controller('<%= names.single.classed %>Controller', <%= names.single.classed %>Controller);
 
   /* @inject */
-  function <%= names.classed %>Controller($scope) {
-    // <%= names.humanized %> controller logic
+  function <%= names.single.classed %>Controller($scope) {
+    // <%= names.single.humanized %> controller logic
     // ...
   }
 }).call(this);

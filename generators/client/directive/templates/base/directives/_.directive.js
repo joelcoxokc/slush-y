@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('<%= moduleName %>')
+    .module('<%= moduleNames.slug %>')
     .directive('<%= names.single.camel %>', <%= names.single.camel %>);
 
   /* @inject */

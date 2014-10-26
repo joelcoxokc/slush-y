@@ -4,6 +4,7 @@
 
     var _    = require('lodash'),
         path = require('path'),
+        inflect   = require('inflection'),
         templator = require('../utility/templateGenerator');
 
 
@@ -22,9 +23,11 @@
         __this.name       = generator.seq[0];
         __this.type       = getType();
         __this.path       = createPath();
+        __this.title      = createTitle();
         __this.default    = isDefault();
         __this.prompts    = fetchPrompts();
         __this.category   = options.category || 'default';
+        __this.component  = fetchComponentName();
         __this.templator  = templator[__this.category]( __this.path, __this.name );
 
         //////////////////////////////////
@@ -60,6 +63,15 @@
         }
 
         /**
+         * createDest create the destinatino route based on the current generators component and moduleName
+         * @return {[type]} [description]
+         */
+        function createTitle () {
+          if ( generator.args[0] ){ return generator.args[0]; }
+          return false;
+        }
+
+        /**
          * [getType Set the type of generator, used lator for filtering generator options]
          * @return {String} Client || angularModule || default
          */
@@ -81,6 +93,22 @@
             prompts = __slushy.findModules( prompts, __slushy.__modulesDir );
           }
           return prompts
+        }
+
+        /**
+         * [fetchComponentName Retrieve the first argument passed to the generator... this is considered the name arg]
+         *                     Set the __this.component === the name arg;
+         * @return {String}    generator.args[0] or false
+         */
+        function fetchComponentName () {
+          if( __this.type === 'angular' && generator.args[0] ){
+
+            if( __this.name !== 'api' || __this.name !== 'config' ){
+              return inflect.pluralize( __this.name );
+            }
+            return __this.name;
+
+          } else { return false; }
         }
     }
 

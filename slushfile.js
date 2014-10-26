@@ -17,6 +17,7 @@ var gulp      = require('gulp'),
     path      = require('path'),
     _str      = require('underscore.string'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
+    del       = require('del'),
     // Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash'),
     slushy    = require('./slushy.js');
@@ -44,6 +45,7 @@ var gulp      = require('gulp'),
 
 
 
+    gulp.task('clear', del.bind(null, ['./client/**/*', './gulp', './server', '**', '!./client',  '!./node_modules', '!./client/bower_components']));
 
 
     // var slushy = new Slushy;

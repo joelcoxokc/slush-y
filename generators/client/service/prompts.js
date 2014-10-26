@@ -7,7 +7,7 @@
     module.exports = prompts;
 
 
-    function prompts(slushy){
+    function prompts(){
 
       var questions = [{
 
@@ -21,7 +21,6 @@
             }]
         }];
 
-      questions = slushy.findModules( questions );
 
       return questions;
 

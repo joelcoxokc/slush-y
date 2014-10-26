@@ -2,14 +2,14 @@
   'use strict';
 
   angular
-    .module('<%= moduleName %>')
-    .factory('<%= classSingleName %>', <%= classSingleName %>);
+    .module('<%= moduleNames.slug %>')
+    .factory('<%= names.single.classed %>', <%= names.single.classed %>);
 
   /* @inject */
-  function <%= classSingleName %>() {
+  function <%= names.single.classed %>() {
     this._storage = {};
 
-    // <%= humanizedSingleName %> service logic
+    // <%= names.single.humanized %> service logic
     // ...
     this.set = function(key, val) {
       return this._storage[key] = val;

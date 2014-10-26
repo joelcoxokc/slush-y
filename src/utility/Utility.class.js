@@ -78,6 +78,7 @@
       var ref       = ref     || 'values';
       options[ref]  = {};
       options[ref].name = string;
+      options[ref].slug      = _str.slugify(_str.humanize(options[ref].name));
       options = base(options);
 
       return {
@@ -86,7 +87,6 @@
       }
 
       function base(options){
-        options[ref].slug      = _str.slugify(_str.humanize(options[ref].name));
         options[ref].classed   = _str.classify(options[ref].slug);
         options[ref].humanized = _str.humanize(options[ref].slug);
         options[ref].camelized = _str.camelize(options[ref].slug);
@@ -95,14 +95,19 @@
 
       }
       function multi(){
-        options[ref].slugPlural       = inflect.pluralize(options[ref].slug);
-        options[ref].slugSingle       = inflect.singularize(options[ref].slug);
-        options[ref].camelPlural      = _str.camelize(options[ref].slugPlural);
-        options[ref].camelSingle      = _str.camelize(options[ref].slugSingle);
-        options[ref].classedPlural    = _str.classify(options[ref].slugPlural);
-        options[ref].classedSingle    = _str.classify(options[ref].slugSingle);
-        options[ref].humanizedPlural  = _str.humanize(options[ref].slugPlural);
-        options[ref].humanizedSingle  = _str.humanize(options[ref].slugSingle);
+        options[ref].single = {
+          slug:       inflect.singularize(options[ref].slug),
+          camel:      _str.camelize(options[ref].single.slug),
+          classed:    _str.classify(options[ref].single.slug),
+          humanized:  _str.humanize(options[ref].single.slug)
+        };
+        options[ref].plural = {
+          slug:       inflect.pluralize(options[ref].slug),
+          camel:      _str.camelize(options[ref].plural.slug),
+          classed:    _str.classify(options[ref].plural.slug),
+          humanized:  _str.humanize(options[ref].plural.slug),
+        };
+
         return options;
       }
     }

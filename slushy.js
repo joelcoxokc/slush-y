@@ -65,7 +65,7 @@
         function use ( options ) {
 
           // Calls Slush_y.use( options )
-          return options.__Generator(plugins, options.paths, options.filters, options.templates, options);
+          return options.__Generator(plugins, options.paths, options.filters, options.templates, options.generator);
         }
 
         function validate ( options ) {

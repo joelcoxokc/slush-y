@@ -32,16 +32,21 @@ var gulp      = require('gulp'),
     // })
 
 
-    var options = {
-        module: {
-            templates: {root: __dirname + '/generators/client/module'},
-        }
-    }
     gulp.task( 'default', slushy.siphon() );
-    gulp.task( 'controller', slushy.siphon('client') );
-    gulp.task( 'module', slushy.siphon( 'client' ) );
 
-
+    /**
+     * Client Generators
+     */
+    gulp.task( 'controller', slushy.siphon( 'client' ) );
+    gulp.task( 'directive',  slushy.siphon( 'client' ) );
+    gulp.task( 'factory',    slushy.siphon( 'client' ) );
+    gulp.task( 'service',    slushy.siphon( 'client' ) );
+    gulp.task( 'module',     slushy.siphon( 'client' ) );
+    gulp.task( 'config',     slushy.siphon( 'client' ) );
+    gulp.task( 'filter',     slushy.siphon( 'client' ) );
+    gulp.task( 'route',      slushy.siphon( 'client' ) );
+    gulp.task( 'view',       slushy.siphon( 'client' ) );
+    gulp.task( 'test',       slushy.siphon( 'client' ) );
 
 
 

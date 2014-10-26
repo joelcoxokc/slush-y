@@ -95,7 +95,7 @@
         var filters = __this.get('filters');
 
         if( __options.generator.category === 'client'){
-          filters = __this.str(__options.generator.args[0], 'moduleNames', filters).simple();
+          filters = __this.str(__options.answers.moduleName, 'moduleNames', filters).simple();
         }
         if( __options.generator.title){
           filters = __this.str( __options.generator.title, 'names', filters ).multi();

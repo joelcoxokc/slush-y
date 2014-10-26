@@ -195,7 +195,6 @@
           var __this = this;
           options.templates = options.generator.createTemplates( options.filters.httpType );
           options = __this.generatePaths( options );
-          console.log(options);
           return options;
       };
 

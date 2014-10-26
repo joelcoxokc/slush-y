@@ -1,41 +1,27 @@
 (function(){
   'use strict';
 
+    var _    = require('lodash');
+    var path = require('path');
+    var gulp = require('gulp');
+    /**
+     * Directive Bound to the Slushy Prototype;
+     * @return {Function} Callback function for the Controller Task to Call
+     */
 
-  module.exports = function (gulp, inquirer, $, _, path, _str) {
+    module.exports = function ( $, paths, filters, templates, slushy) {
 
-    // var gulp = require('gulp');
-    // var fs            = require('fs');
-    // var moduleName    = slushy.args[0];
-    // var modulesDir    = slushy.get('modulesDir')
-    // var path          = require('path');
-    // var templates     = templateDir + '**/*';
-    // var controller    = require('./controller.js');
-    // var temaplets     = __dirname + '/templates/';
-    var slushy    = this;
-    var prompts   = require('./prompts.js')(slushy);
 
-    return gulp.task('directive', slushy.task(Directive));
+        var __this = this;
 
-    function Directive( done, options ){
 
-      return slushy.ask( prompts, options )
-      .then( slushy.generate( GenerateTemplates ) )
-      .catch( done );
+        console.log(filters);
+        gulp.src( templates.base.all )
+          .pipe( $.template( filters ))
+          .pipe( $.rename( __this.files().rename(filters.names.single.slug) ))
+          .pipe( $.conflict( paths.dest ))
+          .pipe( gulp.dest( paths.dest ));
 
-    }
-
-    function GenerateTemplates( options ){
-      gulp.src( options.src().scripts() )
-        .pipe( $.template( options ))
-        .pipe( $.rename(function ( file ) {
-
-          file = slushy.processFile(true, file, options );
-
-        }))
-        .pipe( $.conflict( options.dest().final('directives') ))
-        .pipe( gulp.dest( options.dest().final('directives') ));
-    }
-  };
+    };
 
 })();

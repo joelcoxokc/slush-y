@@ -114,7 +114,7 @@
 
       return {
         replace: this.replaceDot(),
-        rename: this.rename(options)
+        rename: this.rename
       }
     }
     Utility.prototype.replaceDot = function(file){

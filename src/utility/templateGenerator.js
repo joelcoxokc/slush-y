@@ -1,7 +1,8 @@
 ;(function(){
 
   'use strict';
-  var path = require('path');
+  var _    = require('lodash'),
+      path = require('path');
 
   var Generators               = module.exports;
     Generators.crud          = crud;
@@ -35,7 +36,7 @@
         var templates  = {};
         templates.root = path.join( root, 'templates' )
         templates      = createBase( templates );
-        templates      = createOptions( templates, option )
+        templates      = createOptions( templates )
         return templates;
       }
     }
@@ -49,7 +50,7 @@
 
     function defaults ( root ) {
 
-      return function(option){
+      return function (option){
 
           var templates     = {};
           templates.root    = path.join( root, 'templates' );
@@ -77,6 +78,7 @@
       temp.path = path.join( root, directory  );
       temp.all = pattern( temp.path)('**/*');
       temp.pattern = pattern( temp.path );
+      temp.any     = any(temp.path);
       return temp;
 
     }
@@ -86,6 +88,8 @@
       temp.path = path.join( root, 'options', option);
       temp.all = pattern( temp.path)('**/*');
       temp.pattern = pattern( temp.path );
+      temp.any     = any( temp.path );
+
       return temp;
 
     }
@@ -96,22 +100,58 @@
       templates.base.path = path.join( templates.root, 'base' );
       templates.base.all  = pattern( templates.base.path )( '**/*' );
       templates.base.pattern = pattern( templates.base.path );
+      templates.base.any     = any( templates.base.path );
       return templates;
     }
 
-    function createOptions ( templates, option ) {
+    function createOptions ( templates ) {
 
       templates.options          = {};
-      templates.options.path     = path.join( templates.root, 'options', option );
+      templates.options.path     = path.join( templates.root, 'options' );
       templates.options.all      = path.join( templates.options.path, '**/*'    );
       templates.options.pattern  = pattern( templates.options.path );
+      templates.options.any         = any( templates.options.path );
       return templates;
     }
 
     function pattern ( root ){
+
       return function ( glob ){
+
+        if ( Array.isArray( glob ) ){
+
+          // return
+           var globs = _.map( glob, function (value, key) {
+            return path.join( root, value );
+          });
+           // console.log(globs);
+           return globs;
+
+        }
+        // Else
         return path.join( root, glob );
       }
+
+    }
+
+    function any ( root ){
+
+      return function ( glob ){
+
+        if ( Array.isArray( glob ) ){
+
+          // return
+           var globs = _.map( glob, function (value, key) {
+            return path.join( root, value, '/*' );
+          });
+           // console.log(globs);
+           return globs;
+
+        }
+        // Else
+        return path.join( root, glob, '/*' );
+      }
+
     }
 
 }).call(this);

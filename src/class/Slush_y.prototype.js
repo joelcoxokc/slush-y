@@ -146,14 +146,11 @@
 
           var $promised = Q.defer();
 
-          __this.prompt(options.generator.prompts, function (answers){
-
+          options.generator.prompts.call(__this, options.generator, function ( answers ){
               _.assign(options.answers, answers);
               $promised.resolve(options);
-          });
-
+          })
           return $promised.promise;
-          // return options.prompts = ' -- start prompts endpoint reached';
       };
       /**
        * [Configuration Initialize the config store if this is a new instance, otherwise, ignore and pass throguh]
@@ -162,7 +159,6 @@
        */
       Slush_y.prototype.startConfiguration = function ( options ) {
           var __this = this;
-
           if( options.settings.default && options.settings.reset){
             options = __this.initConfig( options );
           }

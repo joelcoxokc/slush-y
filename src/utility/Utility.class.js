@@ -14,7 +14,7 @@
 
     var Utility = module.exports = function Utility (param) {
 
-      var __this      = this;
+      var __this          = this;
           __this._red     = chalk.red;
           __this._redB    = chalk.bold.red;
           __this._blue    = chalk.blue;
@@ -73,39 +73,42 @@
       return _.toArray(arguments).join('/');
     }
 
-    Utility.prototype.str = function(string, ref, options){
-      var ref       = ref     || 'values';
-      options[ref]  = {};
-      options[ref].name = string;
+    Utility.prototype.str = function(){
+      // var ref       = ref     || 'values';
+      // options[ref]  = {};
+      // options[ref].name = string;
+      // console.log('string', string)
 
       return {
         simple: simple,
         multi:multi
       }
 
-      function simple(){
-        options[ref].slug   = _str.classify(options[ref].name);
-        options[ref].classed   = _str.classify(options[ref].slug);
-        options[ref].humanized = _str.humanize(options[ref].slug);
-        options[ref].camelized = _str.camelize(options[ref].slug);
-        options[ref].humanized = _str.humanize(options[ref].name);
-        return options;
+      function simple(name){
+        var names = {};
+        names.slug   = _str.slugify(name);
+        names.classed   = _str.classify(names.slug);
+        names.humanized = _str.humanize(names.slug);
+        names.camelized = _str.camelize(names.slug);
+        names.humanized = _str.humanize(name);
+        return names;
 
       }
-      function multi(){
+      function multi(name){
+        var names = {};
+        names.single = {};
+        names.plural = {};
+        names.slug              = _str.slugify(name);
+        names.single.slug       =  inflect.singularize(names.slug);
+        names.single.camel      =  _str.camelize(names.slug);
+        names.single.classed    =  _str.classify(names.slug);
+        names.single.humanized  =  _str.humanize(names.slug)
+        names.plural.slug       =  inflect.pluralize(names.single.slug);
+        names.plural.camel      =  _str.camelize(names.plural.slug);
+        names.plural.classed    =  _str.classify(names.plural.slug);
+        names.plural.humanized  =  _str.humanize(names.plural.slug);
 
-        options[ref].single = {};
-        options[ref].plural = {};
-        options[ref].single.slug       =  inflect.singularize(options[ref].name);
-        options[ref].single.camel      =  _str.camelize(options[ref].single.slug);
-        options[ref].single.classed    =  _str.classify(options[ref].single.slug);
-        options[ref].single.humanized  =  _str.humanize(options[ref].single.slug)
-        options[ref].plural.slug       =  inflect.pluralize(options[ref].single.slug);
-        options[ref].plural.camel      =  _str.camelize(options[ref].plural.slug);
-        options[ref].plural.classed    =  _str.classify(options[ref].plural.slug);
-        options[ref].plural.humanized  =  _str.humanize(options[ref].plural.slug);
-
-        return options;
+        return names;
       }
     }
 

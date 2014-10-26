@@ -4,10 +4,33 @@
   'use strict';
 
 
-    module.exports = prompts;
+    module.exports = defaultPrompts;
 
 
-    function prompts(){
+    function defaultPrompts (generator, done) {
+
+      var __this = this;
+      var prompts = defaultQuestions();
+
+      __this
+        .prompt(prompts, promptCallback);
+
+
+      /**
+       * [promptCallback Callback invoked when prompt is finished]
+       * @param  {Object} answers [A list of answers]
+       */
+      function promptCallback ( answers ) {
+
+        done( answers )
+
+      }
+
+    }
+
+
+
+    function defaultQuestions(){
 
       var questions = [
         {

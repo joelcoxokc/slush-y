@@ -1,10 +1,10 @@
 'use strict';
 
 (function() {
-	// <%= humanizedControllerName %> Controller Spec
-	describe('<%= humanizedControllerName %> Controller Tests', function() {
+	// <%= answers.controllerNames.humanized %> Controller Spec
+	describe('<%= answers.controllerNames.humanized %> Controller Tests', function() {
 		// Initialize global variables
-		var <%= classifiedControllerName %>Controller,
+		var <%= answers.controllerNames.classed %>Controller,
 			scope,
 			$httpBackend,
 			$stateParams,
@@ -44,14 +44,14 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the <%= humanizedControllerName %> controller.
-			<%= classifiedControllerName %>Controller = $controller('<%= classifiedControllerName %>Controller', {
+			// Initialize the <%= answers.controllerNames.humanized %> controller.
+			<%= answers.controllerNames.classed %>Controller = $controller('<%= answers.controllerNames.classed %>Controller', {
 				$scope: scope
 			});
 		}));
 
 		it('Should do some controller test', inject(function() {
-			// The test logic 
+			// The test logic
 			// ...
 		}));
 	});

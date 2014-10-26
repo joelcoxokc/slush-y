@@ -4,13 +4,13 @@
   'use strict';
 
 
-    module.exports = configPrompts;
+    module.exports = viewPrompts;
 
 
-    function configPrompts (generator, done) {
+    function viewPrompts (generator, done) {
 
       var __this = this;
-      var prompts = configQuestions();
+      var prompts = viewQuestions();
 
       /**
        * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
@@ -39,14 +39,14 @@
 
 
 
-    function configQuestions(){
+    function viewQuestions(){
 
       var questions = [{
 
           type: 'list',
           name: 'moduleName',
           default: 'core',
-          message: 'Which module does this config belongs to?',
+          message: 'Which module does this view belongs to?',
           choices: [{
               name: 'core',
               value: 'core'

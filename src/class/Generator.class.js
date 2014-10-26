@@ -87,11 +87,8 @@
          */
         function fetchPrompts () {
           var promptsPath = path.resolve( __this.path, 'prompts' );
-          var prompts = require( promptsPath ).call(__slushy);
+          var prompts = require( promptsPath );
 
-          if( __this.type === 'angular' ){
-            prompts = __slushy.findModules( prompts, __slushy.__modulesDir );
-          }
           return prompts
         }
 

@@ -59,7 +59,7 @@
 
     }
 
-    __this.str(__options.answers.appName, 'app_names', config).value;
+    config.app_names = __this.str().simple(__options.answers.appName);
 
     __this.store(config);
 

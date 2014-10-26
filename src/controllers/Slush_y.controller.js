@@ -95,10 +95,10 @@
         var filters = __this.get('filters');
 
         if( __options.generator.category === 'client'){
-          filters = __this.str(__options.answers.moduleName, 'moduleNames', filters).simple();
+          filters.moduleNames = __this.str().simple(__options.answers.moduleName);
         }
         if( __options.generator.title){
-          filters = __this.str( __options.generator.title, 'names', filters ).multi();
+          filters.names = __this.str().multi(__options.generator.title);
         }
         filters.answers = __options.answers;
 
@@ -147,6 +147,7 @@
           filters.appDescription  = __options.answers.appDescription;
 
           filters.app_names       = config.app_names;
+          console.log(config)
 
           config.filters     = filters;
           __options.filters = filters;

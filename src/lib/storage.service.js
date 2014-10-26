@@ -96,6 +96,15 @@ Storage.prototype.delete = function (key) {
   this.save();
 };
 /**
+ * Delete a key from the store and schedule a save.
+ * @param  {String} key  The key under which the value is stored.
+ * @return {null}
+ */
+Storage.prototype.forceDeleteAll = function () {
+  this._store = {}
+  this.save();
+};
+/**
  * Setup the store with defaults value and schedule a save.
  * If keys already exist, the initial value is kept.
  * @param  {Object} defaults  Key-value object to store.

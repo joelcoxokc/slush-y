@@ -18,18 +18,10 @@ var gulp      = require('gulp'),
     _str      = require('underscore.string'),
     plugins   = require('gulp-load-plugins')({lazy:false}),
     del       = require('del'),
-    // Slushy    = require('./slushy/Slushy.js'),
     _         = require('lodash'),
     slushy    = require('./slushy.js');
 
 
-    // var slushy = require('./runner.js')
-
-    // slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
-
-    // slushy.register().Generators({
-    //   default: './test-generators/app/',
-    // })
 
 
     gulp.task( 'default', slushy.siphon() );
@@ -46,28 +38,11 @@ var gulp      = require('gulp'),
     gulp.task( 'filter',     slushy.siphon( 'client' ) );
     gulp.task( 'route',      slushy.siphon( 'client' ) );
     gulp.task( 'view',       slushy.siphon( 'client' ) );
-    gulp.task( 'test',       slushy.siphon( 'client' ) );
+    // gulp.task( 'test',       slushy.siphon( 'client' ) );
 
 
 
     gulp.task('clear', del.bind(null, ['./client/**/*', './gulp', './server', '**', '!./client',  '!./node_modules', '!./client/bower_components']));
-
-
-    // var slushy = new Slushy;
-
-    // slushy.register().Plugins(gulp, inquirer, plugins, _, path, _str);
-
-
-    // slushy.register(__dirname).Generators({
-      // default: './test-generators/app/',
-      // config:     './generators/generator-angular/config/',
-      // module:     './generators/generator-angular/module/',
-      // controller: './generators/generator-angular/controller/',
-      // directive:  './generators/generator-angular/directive/',
-      // factory:    './generators/generator-angular/factory/',
-      // filter:     './generators/generator-angular/filter/',
-      // service:    './generators/generator-angular/service/',
-    // })
 
 // gulp = require('./generators/app/index.js')(gulp, install, conflict, template, rename, _, inflection, inquirer, mkdirp, g);
 // gulp = require('./generators/generators-crud')(gulp, _, inflection, inquirer, mkdirp, g, Slushy);

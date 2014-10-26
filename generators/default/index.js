@@ -12,7 +12,6 @@
     module.exports = function( $, paths, filters, templates, slushy){
 
         var __this = this;
-
         /**
          * Generator the server
          */
@@ -51,9 +50,9 @@
             .pipe($.conflict('./'))
             .pipe( gulp.dest( './client/app' ));
 
-        gulp
-          .src('./bower.json')
-          .pipe($.install());
+        // gulp
+        //   .src('./bower.json')
+        //   .pipe($.install());
 
     }
 })();

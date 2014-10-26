@@ -1,46 +1,23 @@
-;(function(){
-
+(function(){
   'use strict';
 
-    module.exports = function(gulp, inquirer, $, _, path, _str){
+    var _    = require('lodash');
+    var path = require('path');
+    var gulp = require('gulp');
+    /**
+     * Filter Bound to the Slushy Prototype;
+     * @return {Function} Callback function for the Controller Task to Call
+     */
 
-      /**
-       * Reveal the Slushy Class endpoint.
-       * @type {Class}
-       */
-      var slushy = this;
+    module.exports = function ( $, paths, filters, templates, slushy) {
 
-      var prompts = require('./prompts.js')(slushy);
+        var __this = this;
 
-      /**
-       * Expose the gulp endpoint.
-       * slushy.use() will return a callback function for gulp to call.
-       * this is so we can expose the gulp callback parameters to Slushy's configurations.
-       * Slushy will call the Filter function and pass a new parameter called options.
-       */
-      return gulp.task('filter', slushy.task( Filter ) )
-
-      function Filter( done, options ){
-
-        return slushy.ask(prompts, options)
-
-          .then( slushy.generate( GenerateTemplates ) )
-
-          .catch( done )
-
-      }
-
-
-      function GenerateTemplates( options ){
-        gulp.src( options.src().scripts() )
-          .pipe($.template( options ))
-          .pipe($.rename(function (file){
-            file = slushy.processFile(true, file, options);
-          }))
-          .pipe( $.conflict( options.dest().final('filters') ) )
-          .pipe( gulp.dest( options.dest().final('filters') ) )
-
-      }
+        gulp.src( templates.base.all )
+          .pipe($.template( filters ))
+          .pipe($.rename( __this.files().rename(filters.names.single.slug ) ))
+          .pipe( $.conflict( paths.dest ) )
+          .pipe( gulp.dest( paths.dest ) );
 
     }
 

@@ -1,43 +1,23 @@
 (function(){
   'use strict';
 
-  module.exports = function(gulp, inquirer, $, _, path, _str){
-
-    var y = this;
-    var prompts = require('./prompts.js');
-
-
-    return gulp.task('factory', this.task(Factory));
-
-    //////////////////
-
-
+    var _    = require('lodash');
+    var path = require('path');
+    var gulp = require('gulp');
     /**
-     * 1. Checkout for name argument ... else call done
-     * 2. Retrieve all Prompts,
-     * 3. bind the prompts to the modules before submitting to inquire submission... before people ask questions
-     * 4.
-     *
-     * @param {Function} done [description]
+     * Factory Bound to the Slushy Prototype;
+     * @return {Function} Callback function for the Controller Task to Call
      */
-    function Factory( done, options ){
-      prompts = this.findModules(prompts);
 
-      return this.ask(prompts, options)
-        .then(this.generate(GenerateTemplates))
-        .catch(done);
-    }
+    module.exports = function ( $, paths, filters, templates, slushy) {
 
-    function GenerateTemplates( options ){
+        var __this = this;
 
-      gulp.src(options.templateDir + '/*.js')
-        .pipe( $.template( options ) )
-        .pipe( $.rename( function (file){
-          file = y.processFile(true, file, options);
-        }))
-        .pipe( $.conflict( options.moduleDir + '/services' ))
-        .pipe( gulp.dest( options.moduleDir + '/services' ));
-    }
-  }
+        gulp.src( templates.base.all )
+          .pipe( $.template( filters ) )
+          .pipe( $.rename( __this.files().rename( filters.names.single.slug ) ))
+          .pipe( $.conflict( paths.dest ))
+          .pipe( gulp.dest( paths.dest ));
+    };
 
 })();

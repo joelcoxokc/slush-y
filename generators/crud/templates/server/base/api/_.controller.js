@@ -12,7 +12,7 @@
 
 
     var _ = require('lodash');
-    var <%= names.single.classed %> = require('./<%= names.single.camel %>.model');
+    var <%= names.single.classed %> = require('./<%= names.single.slug %>.model');
 
     // Get list of <%= names.plural.camel %>
     exports.index = function(req, res) {

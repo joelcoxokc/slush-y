@@ -6,7 +6,7 @@
  * to disable, edit config/environment/index.js, and set `seedDB: false`
  */
   var User  = require('../user/user.model');
-  var <%= names.single.classed %> = require('./<%= names.plural.camel %>.model');
+  var <%= names.single.classed %> = require('./<%= names.single.slug %>.model');
 
   <%= names.single.classed %>.find({}).remove(function() {
     User.find({username:'Admin'}, function (error, user){

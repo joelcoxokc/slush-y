@@ -7,16 +7,11 @@
     .controller('<%= names.plural.classed %>Controller', <%= names.plural.classed %>Controller);
 
   /* @inject */
-  function <%= names.plural.classed %>Controller(resolvedList, $scope, $stateParams, $state, <%= names.plural.classed %>, logger) {
-
-    $scope.find = find;
-    $scope.findOne = findOne;
-    $scope.<%= names.plural.camel %> = resolvedList;
+  function <%= names.plural.classed %>Controller(resolvedList, $scope, $stateParams, $state, <%= names.plural.classed %>, logger, socket) {
 
 
     var vm = this;
     vm.<%= names.plural.camel %> = resolvedList;
-    vm.show<%= names.plural.camel %> = show<%= names.plural.camel %>;
     vm.isActive = isActive;
     vm.shown = {};
 

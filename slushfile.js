@@ -9,13 +9,8 @@
 'use strict';
 
 var gulp      = require('gulp'),
-    inquirer  = require('inquirer'),
-    path      = require('path'),
-    _str      = require('underscore.string'),
-    plugins   = require('gulp-load-plugins')({lazy:false}),
-    del       = require('del'),
-    _         = require('lodash'),
     slushy    = require('./slushy');
+
 
 
     gulp.task( 'default', slushy.siphon() );

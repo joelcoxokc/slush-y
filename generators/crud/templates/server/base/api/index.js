@@ -2,7 +2,7 @@
   'use strict';
 
   var express = require('express');
-  var controller = require('./article.controller.js');
+  var controller = require('./<%= names.single.slug %>.controller.js');
 
   module.exports = function(app){
 
@@ -11,18 +11,18 @@
     var router = express.Router();
 
 
-    // GET: /api/articles
+    // GET: /api/<%= names.plural.camel %>
     router.get('/', controller.index);
-    // GET: /api/articles/:id
+    // GET: /api/<%= names.plural.camel %>/:id
     router.get('/:id', controller.show);
-    // POST: /api/articles
+    // POST: /api/<%= names.plural.camel %>
     router.post('/', controller.create);
-    // PUT: /api/articles/:id
+    // PUT: /api/<%= names.plural.camel %>/:id
     router.put('/:id', controller.update);
-    // DELETE: /api/articles/:id
+    // DELETE: /api/<%= names.plural.camel %>/:id
     router.delete('/:id', controller.destroy);
-    router.param('id', controller.articleByID);
-    app.use('/api/articles', router);
+    router.param('id', controller.<%= names.single.camel %>ByID);
+    app.use('/api/<%= names.plural.camel %>', router);
 
   }
 

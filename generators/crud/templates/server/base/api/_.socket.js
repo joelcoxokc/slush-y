@@ -5,7 +5,7 @@
      * Broadcast updates to client when the model changes
      */
 
-    var <%= names.single.camel %> = require('./<%= names.single.camel %>.model');
+    var <%= names.single.camel %> = require('./<%= names.single.slug %>.model');
     exports.register = function(socket) {
       <%= names.single.camel %>.schema.post('save', function (doc) {
         onSave(socket, doc);

@@ -8,7 +8,8 @@
     /* @inject */
     function <%= names.plural.classed %>($http, serverUrl, $q, logger) {
       // Define Private Variables
-      var api = createUrl(serverUrl, '<% names.plural.camel %>');
+      var api = createUrl(serverUrl, '<%= names.plural.camel %>');
+
       // Define the public api
       var instance = {
         all: all,

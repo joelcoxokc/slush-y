@@ -34,6 +34,7 @@
         __this.__coreDir        = path.join('./client/app/core');
         __this.__appDir         = path.join('./client/app');
         __this.__serverDir      = path.join('./server');
+        __this.__serverApi      = path.join('./server/api');
         __this.__clientDir      = path.join('./client');
         __this.__appName        = defaults.appName;
         __this.__defaults       = defaults;
@@ -121,11 +122,6 @@
       Slush_y.prototype.startDefaults      = function ( options ) {
           var __this = this;
 
-
-          options.generator.name  = options.generator.seq[0];
-          // console.log(__this.templateGn)
-
-
           options.__Generator     = __this.bindGenerator(options.generator.path);
           options.templates.root  = options.generator.path + '/templates';
 
@@ -143,8 +139,11 @@
           var $promised = Q.defer();
 
           options.generator.prompts.call(__this, options.generator, function ( answers ){
+            if(answers){
               _.assign(options.answers, answers);
-              $promised.resolve(options);
+            }
+
+            $promised.resolve(options);
           })
           return $promised.promise;
       };

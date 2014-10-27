@@ -75,6 +75,7 @@
           paths.coreDir    = __this.__coreDir;
           paths.clientDir  = __this.__clientDir;
           paths.serverDir  = __this.__serverDir;
+          paths.serverApi  = __this.__serverApi;
           paths.modulesDir = __this.__modulesDir;
 
           config.paths     = paths;
@@ -86,6 +87,10 @@
           }
           if(__options.generator.name === 'crud') {
             __options.paths.dest = path.join( paths.modulesDir,  __options.filters.moduleNames.slug);
+          }
+          if(__options.generator.category === 'server'){
+
+            __options.paths.dest = path.join( paths.serverApi,  __options.filters.names.single.camel);
           }
 
           return __options;
@@ -110,7 +115,9 @@
         if( __options.generator.title){
           filters.names = __this.str().multi(__options.generator.title);
         }
-        filters.answers = __options.answers;
+        if(__options.answers){
+          filters.answers = __options.answers;
+        }
 
         __options.filters = filters;
         return __options;

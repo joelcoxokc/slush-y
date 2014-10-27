@@ -9,10 +9,6 @@
 'use strict';
 
 var gulp      = require('gulp'),
-    install   = require('gulp-install'),
-    conflict  = require('gulp-conflict'),
-    template  = require('gulp-template'),
-    rename    = require('gulp-rename'),
     inquirer  = require('inquirer'),
     path      = require('path'),
     _str      = require('underscore.string'),
@@ -40,5 +36,10 @@ var gulp      = require('gulp'),
 
     /**
      * Server Generators
+
      */
-    gulp.task( 'crud',       slushy.siphon( ) );
+    gulp.task( 'crud',              slushy.siphon( ) );
+    gulp.task( 'server-model',      slushy.siphon( 'server' ) );
+    gulp.task( 'server-controller', slushy.siphon( 'server' ) );
+    gulp.task( 'server-route',      slushy.siphon( 'server' ) );
+    gulp.task( 'server-test',       slushy.siphon( 'server' ) );

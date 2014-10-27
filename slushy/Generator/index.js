@@ -28,7 +28,7 @@
         __this.prompts    = fetchPrompts();
         __this.category   = options.category || 'default';
         __this.component  = fetchComponentName();
-        __this.templator  = templator[__this.category]( __this.path, __this.name );
+        // __this.templator  = templator[__this.category]( __this.path, __this.name );
         __this.templates  = builder.buildTemplates( __this.path +'/templates' );
 
 
@@ -61,6 +61,9 @@
         function createPath () {
           var temp = __slushy.__generatorsPath;
           if ( options.category ){ temp = path.join( __slushy.__generatorsPath, options.category ); }
+          if( options.category === 'server' ){
+            return path.resolve( temp, generator.seq[0].split('-')[1] );
+          }
           return path.resolve( temp, generator.seq[0] );
         }
 
@@ -81,6 +84,9 @@
           if( options.category === 'client' && generator.seq[0] !== 'module') { return 'angular'; }
           if( generator.seq[0] === 'module' ){ return 'angularModule'; }
           if( generator.name === 'crud' ){ return 'crud'; }
+          if( options.category === 'server'){
+            return 'server';
+          }
         }
 
         /**

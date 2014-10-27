@@ -19,7 +19,6 @@
         options           = checkOptions();
         _.assign(__this, generator);
 
-        __this.storage    = new generator.storage('me', 'me.json');
 
         __this.name       = generator.seq[0];
         __this.type       = getType();

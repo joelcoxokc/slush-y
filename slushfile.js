@@ -13,9 +13,13 @@
     var helper = require('gulp-help');
     var config = require('gulp-config')(gulp)
     var _ = require('lodash')
-    var gulp = require('./default.js')(gulp)
+    // var gulp = require('./default.js')(gulp)
 
-    // gulp.storage.set('me', 'joel')
+
+
+
+
+
 
 
     gulp.task( 'default', slushy.siphon() );

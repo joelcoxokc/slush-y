@@ -9,10 +9,23 @@
      * @return {Function} Callback function for the Controller Task to Call
      */
 
+
     module.exports = function ( $, paths, filters, templates, slushy) {
 
-      var __this = this;
+      console.log(templates)
       console.log(filters);
+
+      var core = templates.client.base.core
+
+
+      core.path
+      all() // **/*
+      core.any('')
+      core.dirs('**')
+      core.dirs()
+
+
+      var __this = this;
       gulp.src( templates.base.all() )
         .pipe( $.template( filters ) )
         .pipe( $.rename( __this.files().rename(filters.names.single.slug) ) )

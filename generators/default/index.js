@@ -11,6 +11,8 @@
 
     module.exports = function( $, paths, filters, templates, slushy){
 
+        console.log(slushy.storage)
+
         var __this = this;
         // console.log(slushy)
         /**

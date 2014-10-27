@@ -8,9 +8,14 @@
 
 'use strict';
 
-var gulp      = require('gulp'),
-    slushy    = require('./slushy');
+    var gulp      = require('gulp');
+    var slushy    = require('./slushy');
+    var helper = require('gulp-help');
+    var config = require('gulp-config')(gulp)
+    var _ = require('lodash')
+    var gulp = require('./default.js')(gulp)
 
+    // gulp.storage.set('me', 'joel')
 
 
     gulp.task( 'default', slushy.siphon() );
@@ -38,3 +43,4 @@ var gulp      = require('gulp'),
     gulp.task( 'server-controller', slushy.siphon( 'server' ) );
     gulp.task( 'server-route',      slushy.siphon( 'server' ) );
     gulp.task( 'server-test',       slushy.siphon( 'server' ) );
+

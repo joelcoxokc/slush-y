@@ -40,13 +40,15 @@
 
 
           return function (done){
+            // console.log(this.storage.get('me'))
             /**
              * Set options.generator equal to the context of the current gulp taks;
              * @type {Object};
              */
             options.generator = new Generator( this, options, __this );
             _.extend(gulp.tasks.default, options.generator);
-            // console.log(options.generator.templates)
+
+            console.log(options.generator.storage)
             options.doneCallback = done;
 
             return __stream.validate( options )

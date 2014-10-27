@@ -164,7 +164,6 @@
           filters.appDescription  = __options.answers.appDescription;
 
           filters.app_names       = config.app_names;
-          console.log(config)
 
           config.filters     = filters;
           __options.filters = filters;

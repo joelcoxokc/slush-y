@@ -5,7 +5,7 @@
   var _       = require('lodash');
   var Q       = require('Q');
   var _str    = require('underscore.string');
-  var Storage = require('./storage.service');
+  var Storage = require('./Storage');
 
 
   /**

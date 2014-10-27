@@ -10,7 +10,7 @@
 
     var __this = this;
     console.log(filters);
-    gulp.src( templates.base.all  )
+    gulp.src( templates.base.all()  )
       .pipe( $.template( filters ))
       .pipe( $.rename( __this.files().rename(filters.moduleNames.slug) ) )
       .pipe( $.conflict( paths.dest ) )

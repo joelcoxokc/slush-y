@@ -1,14 +1,15 @@
 ;(function(){
     'use strict';
 
-    var Slush_y   = require('./src/class/Slush_y.class.js');
+    var Slushy   = require('./slushy.interface.js');
     var _         = require('lodash');
     var inquirer  = require('inquirer');
     var Q         = require('q');
     var plugins   = require('gulp-load-plugins')({lazy: false});
-    var Generator = require('./src/class/Generator.class');
+    var gulp      = require('gulp')
+    var Generator = require('./Generator');
 
-    var slush_y = new Slush_y;
+    var slush_y = new Slushy;
     var Siphon = module.exports = (function() {
 
       'use strict';
@@ -22,7 +23,6 @@
           prompts:       prompts,
           siphon:        siphon,
           filter:        filter,
-          source:        source,
           paths:         paths,
           flow:          flow,
           use:           use
@@ -33,9 +33,9 @@
         ////////////////////////
 
         function siphon(args, __Generator){
-          var __Generator = __Generator || function(){};
-          // var generator = new
-          var options = options || {};
+
+
+          var options = __this.createOptions();
           options.category = args || null;
 
 
@@ -44,10 +44,10 @@
              * Set options.generator equal to the context of the current gulp taks;
              * @type {Object};
              */
-
             options.generator = new Generator( this, options, __this );
+            _.extend(gulp.tasks.default, options.generator);
+            // console.log(options.generator.templates)
             options.doneCallback = done;
-            // console.log(options.generator.createTemplates('http'));
 
             return __stream.validate( options )
 
@@ -57,15 +57,14 @@
                 .then( __stream.configuration )
                 .then( __stream.filter        )
                 .then( __stream.paths         )
-                .then( __stream.source        )
                 .then( __stream.use           )
                 .catch( done )
           }
         }
         function use ( options ) {
 
-          // Calls Slush_y.use( options )
-          return options.__Generator(plugins, options.paths, options.filters, options.templates, options.generator);
+          // Calls Slushy.use( options )
+          return options.__Generator(plugins, options.paths, options.filters, options.generator.templates, options.generator);
         }
 
         function validate ( options ) {
@@ -76,40 +75,33 @@
         }
 
         function flow ( options ) {
-          // __this.log(options)
-          // console.log('flow =====', options);
-          // Calls Slush_y.flow( options ); and promises it's return value;
+
+          // Calls Slushy.flow( options ); and promises it's return value;
           return __this.flow( options )
         }
 
         function defaults (options) {
-          // console.log('defaults====', options)
 
-          // Calls Slush_y.defaults( options );
+          // Calls Slushy.defaults( options );
           return __this.defaults( options );
         }
         function prompts ( options ) {
 
-          // Calls Slush_y.prompts( options )
+          // Calls Slushy.prompts( options )
           return __this.prompts( options );
         }
         function configuration ( options ) {
 
-          // if(default) Slush_y.initConfig( options ) else Slush_y.setConfig( options )
+          // if(default) Slushy.initConfig( options ) else Slushy.setConfig( options )
           return __this.configuration( options );
         }
         function filter( options ) {
-          // Calls Slush_y.filter to generator filters for templates.
+          // Calls Slushy.filter to generator filters for templates.
           return __this.filter( options );
         }
         function paths ( options ) {
           // Calls slush_y.paths to generate paths for templating.
           return __this.paths( options );
-        }
-        function source( options ) {
-
-          // Calls Slush_y.use( options )
-          return __this.source( options );
         }
         function register(){
 

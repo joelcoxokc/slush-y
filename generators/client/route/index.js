@@ -14,7 +14,7 @@
         var __this = this;
 
 
-        gulp.src( templates.base.all )
+        gulp.src( templates.base.all() )
           .pipe( $.template( filters ) )
           .pipe( $.rename( __this.files().rename( filters.names.single.slug ) ))
           .pipe( $.conflict( paths.dest ))
@@ -26,11 +26,11 @@
         function complex () {
 
           gulp
-            .src( templates.options.pattern('complex/**/*') )
+            .src( templates.options.complex.all() )
             .pipe( $.template( filters ) )
             .pipe( $.rename( __this.files().rename( filters.names.single.slug ) ))
-            .pipe( $.conflict( paths.dest + '/**/*' ))
-            .pipe( gulp.dest( paths.dest ));
+            .pipe( $.conflict( paths.dest ))
+            .pipe( gulp.dest( paths.dest  ));
           //--------------------------------------
         }
 

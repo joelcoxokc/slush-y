@@ -8,19 +8,16 @@
       var Q           = require('q');
       var _           = require('lodash');
       var path        = require('path');
+
       var util        = require('util');
-      var inquirer    = require('inquirer');
-      var Files       = require('../controllers/file.controller');
       /**
        * Helers
        */
-      var Storage     = require('../lib/storage.service');
-      var defaults    = require('../lib/defaults.service');
-      var Controller  = require('../controllers/Slush_y.controller');
-      var Utility     = require('../utility/Utility.class');
+      var Storage     = require('./config/Storage');
+      var defaults    = require('./lib/defaults');
+      var Utility     = require('../Utility');
 
-      var templateGenerator = require('../utility/templateGenerator.js');
-      var subGenerators = require('../utility/subGenerators.js');
+      var templateGenerator = require('./lib/templates');
 
       var Slush_y = module.exports =  function Slush_y (){
 
@@ -42,23 +39,20 @@
         __this.__defaults       = defaults;
 
         __this.__opts           = ['templates', 'prompts', 'answers', 'settings', '__Generator', 'generator'];
-        __this.__subGeneratos   = subGenerators;
       };
 
       /**
        * Inherit helper.prototype from ../lib/helper.controller
        */
       util.inherits( Slush_y, Utility );
-      // util.inherits( Slush_y, Utility );
 
       /**
        * Extend any required prototypes
        */
       _.extend(Slush_y.prototype, require('inquirer'));
-      _.extend(Slush_y.prototype, require('../lib/config.service'));
-      // _.extend(Slush_y.prototype, require('../utility/Utility.class'));
-      _.extend(Slush_y.prototype, require('../controllers/Slush_y.controller'));
-      _.extend(Slush_y.prototype, require('../controllers/file.controller.js') )
+      _.extend(Slush_y.prototype, require('./config'));
+      _.extend(Slush_y.prototype, require('./controller'));
+      _.extend(Slush_y.prototype, require('./tools/files.js') );
       // _.extend(Slush_y.prototype, require('./craller.class'));
 
       /*
@@ -69,6 +63,8 @@
        * set the templatPath = the generators path + './templates/'
        */
       Slush_y.prototype.startFlow         = function ( options ) {
+
+
           var __this = this;
 
           _.forEach(__this.__opts, function ( key, item){
@@ -152,6 +148,7 @@
           })
           return $promised.promise;
       };
+
       /**
        * [Configuration Initialize the config store if this is a new instance, otherwise, ignore and pass throguh]
        * @param  {Object}   options   [options should now contain a property call {answers} a list of all the users choices]
@@ -189,22 +186,7 @@
        */
       Slush_y.prototype.createPaths  = function ( options ) {
           var __this = this;
-          options.templates = options.generator.createTemplates( options.filters.httpType );
           options = __this.generatePaths( options );
-          return options;
-      };
-
-      /**
-       * [source this will create ans add all source and destinatino path selectios for the generator to do it's job.]
-       * @param  {Object}   options   [Options should contain the same informatino as before, as we did not modify it in configuration]
-       * @return {Promise}            [Return a promise for the next chain]
-       */
-      Slush_y.prototype.startSource        = function ( options ) {
-          var __this = this;
-          if( options.settings.default ) {
-            options = __this.generateTemplates( options );
-          }
-
           return options;
       };
 

@@ -5,7 +5,7 @@
     var path = require('path');
     var gulp = require('gulp');
     /**
-     * Service Bound to the Slushy Prototype;
+     * View Bound to the Slushy Prototype;
      * @return {Function} Callback function for the Controller Task to Call
      */
 
@@ -13,7 +13,7 @@
 
         var __this    = this;
 
-        gulp.src( templates.base.all )
+        gulp.src( templates.base.all() )
           .pipe($.template( filters ))
           .pipe($.rename( __this.files().rename( filters.names.single.slug ) ))
           .pipe( $.conflict( paths.dest ) )

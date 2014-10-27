@@ -16,7 +16,7 @@
 
 
         console.log(filters);
-        gulp.src( templates.base.all )
+        gulp.src( templates.base.all() )
           .pipe( $.template( filters ))
           .pipe( $.rename( __this.files().rename(filters.names.single.slug) ))
           .pipe( $.conflict( paths.dest ))

@@ -5,14 +5,14 @@
     var _    = require('lodash'),
         path = require('path'),
         inflect   = require('inflection'),
-        templator = require('../utility/templateGenerator');
+        templator = require('./util/templates'),
+        builder   = require('./util/builder');
 
+    var Generator;
 
+    Generator = module.exports = Generator
 
-
-    var Generator
-
-    Generator = module.exports = function Generator (generator, options, __slushy) {
+    function Generator (generator, options, __slushy) {
         var __this;
 
         __this            = this;
@@ -29,6 +29,8 @@
         __this.category   = options.category || 'default';
         __this.component  = fetchComponentName();
         __this.templator  = templator[__this.category]( __this.path, __this.name );
+        __this.templates  = builder.buildTemplates( __this.path +'/templates' );
+
 
         //////////////////////////////////
 
@@ -78,6 +80,7 @@
         function getType () {
           if( options.category === 'client' && generator.seq[0] !== 'module') { return 'angular'; }
           if( generator.seq[0] === 'module' ){ return 'angularModule'; }
+          if( generator.name === 'crud' ){ return 'crud'; }
         }
 
         /**
@@ -109,10 +112,5 @@
         }
     }
 
-
-    Generator.prototype.createTemplates = function(option) {
-      var __this = this;
-      return __this.templator(option)
-    };
 
 }).call(this);

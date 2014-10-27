@@ -12,11 +12,12 @@
     module.exports = function( $, paths, filters, templates, slushy){
 
         var __this = this;
+        // console.log(slushy)
         /**
          * Generator the server
          */
         gulp
-          .src( templates.server.base.all )
+          .src( templates.server.base.all() )
             .pipe($.template( filters ))
             .pipe($.conflict('./server') )
             .pipe( gulp.dest('./server') )
@@ -25,7 +26,7 @@
          * Generate all static assets, and root level files
          */
         gulp
-          .src( templates.static.base.all )
+          .src( templates.static.base.all() )
             .pipe($.rename( __this.files().replace ) )
             .pipe($.template( filters ))
             .pipe($.conflict('./') )
@@ -35,7 +36,7 @@
          * Generate client from chosen script directory type!
          */
         gulp
-          .src( templates.client.base.all )
+          .src( templates.client.base.all() )
             .pipe($.rename( __this.files().replace ) )
             .pipe($.template( filters ))
             .pipe($.conflict('./'))
@@ -44,7 +45,7 @@
          * Generate client scritps from chosen HTTPrequest handler type
          */
         gulp
-          .src( templates.client.options.all )
+          .src( templates.client.options[filters.httpType].all() )
             .pipe($.rename( __this.files().replace ) )
             .pipe($.template( filters ))
             .pipe($.conflict('./'))

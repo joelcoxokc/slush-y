@@ -20,7 +20,7 @@
           type: 'list',
           name: 'moduleName',
           default: 'core',
-          message: 'Which module does this factory belongs to?',
+          message: 'Which module does this route belongs to?',
           choices: [{
               name: 'core',
               value: 'core'
@@ -35,7 +35,7 @@
             default: true
           },{
             value: 'simple',
-            name: '(simple)  --- comes just a route & view'
+            name: '(simple)  --- comes with just a route & view'
           }]
         }];
 

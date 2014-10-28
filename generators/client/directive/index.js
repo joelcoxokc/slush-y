@@ -1,26 +1,36 @@
 (function(){
   'use strict';
+  var _    = require('lodash');
+  var path = require('path');
+  var gulp = require('gulp');
 
-    var _    = require('lodash');
-    var path = require('path');
-    var gulp = require('gulp');
-    /**
-     * Directive Bound to the Slushy Prototype;
-     * @return {Function} Callback function for the Controller Task to Call
-     */
+  module.exports = function ( $, paths, filters, templates, slushy) {
 
-    module.exports = function ( $, paths, filters, templates, slushy) {
+    var __this    = this;
 
+    var modulePath    = path.join( paths.modulesDir, slushy.title, 'directives' );
+    var directivePath = path.join( modulePath, filters.names.single.camel );
+    filters.directive_view_path = path.join( directivePath, filters.names.single.camel + '.directive.view.html' );
 
-        var __this = this;
+    if(filters.answers.simple)  { simple();  }
+    if(filters.answers.complex) { complex(); }
+    ////////////////////////////////////
 
+    function simple(){
+      gulp
+        .src( templates.options.simple.all() )
+        .pipe( $.template( filters ) )
+        .pipe( $.rename( __this.files().rename(filters.names.single.camel) ) )
+        .pipe( gulp.dest( directivePath ) );
+    }
 
-        gulp.src( templates.base.all() )
-          .pipe( $.template( filters ))
-          .pipe( $.rename( __this.files().rename(filters.names.single.slug) ))
-          .pipe( $.conflict( paths.dest ))
-          .pipe( gulp.dest( paths.dest ));
+    function complex(){
+      gulp
+        .src( templates.options.complex.all() )
+        .pipe($.template(filters) )
+        .pipe($.rename( __this.files().rename(filters.names.single.camel) ))
+        .pipe(gulp.dest( directivePath ));
+    }
 
-    };
-
+  }
 })();

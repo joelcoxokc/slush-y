@@ -20,14 +20,14 @@
 
     // Create new <%= names.single.humanized %>
     function create() {
-      <%= names.plural.classed %>.create({name:this.name})
+      <%= names.plural.classed %>.create( vm.<%= names.single.camel %> )
         .then( function (response){
           // Redirect after save
-          $state.go('<%= names.single.camel %>', {<%= names.single.camel %>Id: response.data._id});
+          $state.go('<%= names.plural.camel %>', {<%= names.single.camel %>Id: response._id});
 
         })
         .catch( function (error){
-          $scope.error = error.data.message;
+          $scope.error = error.message;
         })
       // Clear form fields
       this.name = '';

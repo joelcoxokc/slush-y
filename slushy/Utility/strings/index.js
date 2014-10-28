@@ -33,9 +33,9 @@
         names.plural = {};
         names.slug              = _str.slugify(name);
         names.single.slug       =  inflect.singularize(names.slug);
-        names.single.camel      =  _str.camelize(names.slug);
-        names.single.classed    =  _str.classify(names.slug);
-        names.single.humanized  =  _str.humanize(names.slug)
+        names.single.camel      =  _str.camelize(names.single.slug);
+        names.single.classed    =  _str.classify(names.single.slug);
+        names.single.humanized  =  _str.humanize(names.single.slug)
         names.plural.slug       =  inflect.pluralize(names.single.slug);
         names.plural.camel      =  _str.camelize(names.plural.slug);
         names.plural.classed    =  _str.classify(names.plural.slug);

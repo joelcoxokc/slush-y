@@ -14,7 +14,7 @@
                 </label>
                   <input
                         type="text"
-                        data-ng-model="vm.new<%= names.single.camel %>.title"
+                        data-ng-model="vm.<%= names.single.camel %>.title"
                         id="title"
                         class="form-control primary"
                         placeholder="Title"
@@ -38,7 +38,7 @@
                 <a
                   class="btn btn-white pull-right"
                   y-icon='close'
-                  data-ui-sref="<%= names.single.camel %>"
+                  data-ui-sref="<%= names.plural.camel %>"
                   ></a>
               </div>
               <div data-ng-show="error" class="text-danger">

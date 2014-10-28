@@ -20,7 +20,7 @@
 
     // Remove existing <%= names.single.humanized %>
     function remove(<%= names.single.camel %>) {
-      var <%= names.single.camel %> = <%= names.single.camel %> || $scope.<%= names.single.camel %>;
+      var <%= names.single.camel %> = <%= names.single.camel %> || vm.<%= names.single.camel %>;
       <%= names.plural.classed %>.destroy(<%= names.single.camel %>._id)
         .then( function(){
           $state.go('<%= names.plural.camel %>');
@@ -30,10 +30,10 @@
 
     // Update existing <%= names.single.humanized %>
     function update() {
-      var <%= names.single.camel %> = $scope.<%= names.single.camel %>;
+      var <%= names.single.camel %> = vm.<%= names.single.camel %>;
       <%= names.plural.classed %>.update(<%= names.single.camel %>._id, <%= names.single.camel %>)
         .then( function ( data ){
-          $state.go('<%= names.single.camel %>-detail', {<%= names.single.camel %>Id: <%= names.single.camel %>._id});
+          $state.go('<%= names.plural.camel %>-detail', {<%= names.single.camel %>Id: <%= names.single.camel %>._id});
         })
         .catch( function (error){
           $scope.error = error.data.message;

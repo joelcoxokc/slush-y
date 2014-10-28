@@ -23,17 +23,17 @@
         templateUrl: 'app/modules/<%= names.plural.camel %>/views/<%= names.plural.camel %>.create.view.html',
         controller: '<%= names.plural.classed %>CreateController as vm'
       })
-      .state('<%= names.single.slug %>-detail', {
+      .state('<%= names.plural.slug %>-detail', {
         url: '/<%= names.single.slug %>/:<%= names.single.slug %>Id',
-        templateUrl: 'app/modules/<%= names.plural.camel %>/views/<%= names.single.slug %>.detail.view.html',
-        controller: '<%= names.plural.classed %>Controller as vm',
+        templateUrl: 'app/modules/<%= names.plural.camel %>/views/<%= names.plural.slug %>.detail.view.html',
+        controller: '<%= names.plural.classed %>DetailController as vm',
         resolve: {
           resolvedDetail: resolvedDetail
         }
       })
-      .state('article-edit', {
+      .state('<%= names.plural.slug %>-edit', {
         url: '/<%= names.single.slug %>/:<%= names.single.slug %>Id/edit',
-        templateUrl: 'app/modules/<%= names.plural.camel %>/views/<%= names.single.slug %>.edit.view.html',
+        templateUrl: 'app/modules/<%= names.plural.camel %>/views/<%= names.plural.slug %>.edit.view.html',
         controller: '<%= names.plural.classed %>DetailController as vm',
         resolve: {
           resolvedDetail: resolvedDetail

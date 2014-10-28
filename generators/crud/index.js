@@ -8,7 +8,7 @@
   // var builder = require('../../slushy/Generator/util/builder.js');
 
   module.exports = function ( $, paths, filters, templates, slushy) {
-
+    console.log(filters)
       var __this = this;
 
       // var templates  = generator.buildTemplates();

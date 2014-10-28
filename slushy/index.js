@@ -48,7 +48,6 @@
             options.generator = new Generator( this, options, __this );
             _.extend(gulp.tasks.default, options.generator);
 
-            console.log(options.generator.storage)
             options.doneCallback = done;
 
             return __stream.validate( options )

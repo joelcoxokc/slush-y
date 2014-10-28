@@ -1,25 +1,34 @@
-'use strict';
+;(function(){
+    'use strict';
 
-var express = require('express');
+    var express = require('express');
 
-/*
- * Require Some Controller
- */
-// var controller = require()
+    /*
+     * Require Some Controller
+     */
 
-module.exports = function(app) {
+    // var controller = require()
 
-  var router = express.Router()
+    /**
+     * [exports description]
+     * @param  {[type]} app [description]
+     * @return {[type]}     [description]
+     */
+    module.exports = function(app) {
 
-/*
- * Routing logic
- */
+      var router = express.Router()
 
-  // router.get('/', controller.index )
-  // router.post('/', controller.create )
-  // router.get('/:param', controller.show )
-  // router.put('/:param', controller.update )
-  // router.delete('/:param', controller.delete )
+      /*
+       * Routing logic
+       */
 
-  app.use('/api/<%= names.slug %>', router)
-};
+      // router.get('/', controller.index )
+      // router.post('/', controller.create )
+      // router.get('/:param', controller.show )
+      // router.put('/:param', controller.update )
+      // router.delete('/:param', controller.delete )
+
+      app.use('/api/<%= names.slug %>', router)
+    };
+
+}).call(this);

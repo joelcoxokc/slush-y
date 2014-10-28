@@ -12,19 +12,6 @@
 
     module.exports = function ( $, paths, filters, templates, slushy) {
 
-      console.log(templates)
-      console.log(filters);
-
-      var core = templates.client.base.core
-
-
-      core.path
-      all() // **/*
-      core.any('')
-      core.dirs('**')
-      core.dirs()
-
-
       var __this = this;
       gulp.src( templates.base.all() )
         .pipe( $.template( filters ) )

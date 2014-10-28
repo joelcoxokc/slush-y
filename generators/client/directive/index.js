@@ -15,7 +15,6 @@
         var __this = this;
 
 
-        console.log(filters);
         gulp.src( templates.base.all() )
           .pipe( $.template( filters ))
           .pipe( $.rename( __this.files().rename(filters.names.single.slug) ))

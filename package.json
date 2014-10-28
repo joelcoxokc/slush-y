@@ -1,7 +1,7 @@
 {
   "name": "slush-y",
   "description": "A slush generator for Best Practices with AngularJS Fullstack applications.",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/joelcoxokc/slush-y",
   "author": "Joel Cox <joel.cox@hackreactor.com>",
   "repository": {
@@ -74,7 +74,6 @@
   ],
   "license": "ISC",
   "devDependencies": {
-    "gulp-storage": "^1.0.6",
     "lodash": "^2.4.1",
     "yeoman-generator": "^0.17.7"
   }

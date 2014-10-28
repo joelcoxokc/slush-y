@@ -12,16 +12,33 @@
 
     // Define Public API
     var instance = {
-      someMethod: someMethod
+      one: one,
+      two: two,
+      three: three
     };
 
     return instance;
 
     // <%= names.single.humanized %> service logic
-    // ...
-    function someMethod() {
-      return true;
-    }
+    ///////////////////
+
+    /**
+     * [someMethod description]
+     * @return {[type]} [description]
+     */
+    function one() { return 1; }
+
+    /**
+     * [two description]
+     * @return {[type]} [description]
+     */
+    function two() { return 2; }
+
+    /**
+     * [three description]
+     * @return {[type]} [description]
+     */
+    function three() { return 3; }
 
   }
 }).call(this);

@@ -1,43 +1,62 @@
-'use strict';
+;(function(){
+    'use strict';
 
-/**
- * Module dependencies.
- */
-var mongoose = require('mongoose'),
-  _ = require('lodash');
+    /**
+     * Module dependencies.
+     */
+    var mongoose = require('mongoose'),
+      _ = require('lodash');
 
-/**
- * List of <%= names.plural.humanized %>
- */
-exports.index = function(req, res) {
+    /**
+     * index List of <%= names.plural.humanized %>
+     * @param  {[type]} req [description]
+     * @param  {[type]} res [description]
+     * @return {[type]}     [description]
+     */
+    exports.index = function(req, res) {
 
-};
+    };
 
-/**
- * Create a <%= names.single.humanized %>
- */
-exports.create = function(req, res) {
+    /**
+     * create Create a <%= names.single.humanized %>
+     * @param  {[type]} req [description]
+     * @param  {[type]} res [description]
+     * @return {[type]}     [description]
+     */
+    exports.create = function(req, res) {
 
-};
+    };
 
-/**
- * Show the current <%= names.single.humanized %>
- */
-exports.read = function(req, res) {
+    /**
+     * read Show the current <%= names.single.humanized %>
+     * @param  {[type]} req [description]
+     * @param  {[type]} res [description]
+     * @return {[type]}     [description]
+     */
+    exports.read = function(req, res) {
 
-};
+    };
 
-/**
- * Update a <%= names.single.humanized %>
- */
-exports.update = function(req, res) {
+    /**
+     * update Update a <%= names.single.humanized %>
+     * @param  {[type]} req [description]
+     * @param  {[type]} res [description]
+     * @return {[type]}     [description]
+     */
+    exports.update = function(req, res) {
 
-};
+    };
 
-/**
- * Delete an <%= names.single.humanized %>
- */
-exports.delete = function(req, res) {
+    /**
+     * delete Delete an <%= names.single.humanized %>
+     * @param  {[type]} req [description]
+     * @param  {[type]} res [description]
+     * @return {[type]}     [description]
+     */
+    exports.delete = function(req, res) {
 
-};
+    };
 
+
+
+}).call(this);

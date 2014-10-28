@@ -44,9 +44,7 @@
 
     /**
      * [resolvedDetail description]
-     * @param  {[type]} $stateParams [description]
-     * @param  {[type]} <%=          names.plural.classed %>){<% if(restangular [description]
-     * @return {[type]}              [description]
+     * @return {[type]}    [description]
      */
     function resolvedDetail($stateParams, <%= names.plural.classed %>){<% if(restangular){ %>
       return <%= names.plural.classed %>.one($stateParams.<%= names.single.camel %>Id).get()<% } %><% if(http){ %>
@@ -59,7 +57,6 @@
 
     /**
      * [resolvedList description]
-     * @param  {[type]} <%= names.plural.classed %>){<% if(restangular [description]
      * @return {[type]}     [description]
      */
     function resolvedList(<%= names.plural.classed %>){<% if(restangular){ %>

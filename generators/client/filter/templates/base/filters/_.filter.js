@@ -7,11 +7,16 @@
 
   /* @inject */
   function <%= names.single.camel %>() {
-    return function(input) {
+
+    return filter;
+
+    //////////////
+
+    function filter(input) {
       // <%= names.single.humanized %> directive logic
       // ...
 
       return '<%= names.single.camel %> filter: ' + input;
-    };
+    }
   }
 }).call(this);

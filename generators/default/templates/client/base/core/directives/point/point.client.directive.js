@@ -1,6 +1,10 @@
 ;(function(){
   'use strict';
 
+  /**
+   * point. add the point attribute to any element and the cursor will be a pointer on hover.
+   */
+
   angular
     .module('core')
     .directive('point', point);
@@ -17,11 +21,11 @@
 
     //////////
 
+
     function postLink(scope, element, attrs) {
       // Point directive logic
       // ...
 
-      // element.text('this is the point directive');
     }
   }
 }).call(this);

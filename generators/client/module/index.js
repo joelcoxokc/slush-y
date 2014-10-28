@@ -8,6 +8,8 @@
 
     var __this    = this;
 
+    console.log(templates)
+
     ////////////////////////////////////
 
     var modulePath = path.join( paths.modulesDir, slushy.title );

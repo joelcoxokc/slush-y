@@ -21,7 +21,6 @@
       // Icon directive logic
       // ...
 
-      // element.text('this is the icon directive');
     }
   }
 }).call(this);

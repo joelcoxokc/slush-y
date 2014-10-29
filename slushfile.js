@@ -12,14 +12,16 @@
     var slushy    = require('./slushy');
     var helper = require('gulp-help');
     var config = require('gulp-config')(gulp)
+    // gulp = require('./default.js')(gulp)
     var _ = require('lodash')
 
+    var path = require('path');
 
+    // console.log(temps);
 
+    // gulp.task('default', function(){
 
-
-
-
+    // })
 
     gulp.task( 'default', slushy.siphon() );
 

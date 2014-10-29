@@ -17,14 +17,15 @@
 
     var path = require('path');
 
-    // console.log(temps);
 
-    // gulp.task('default', function(){
 
-    // })
+
+
+
 
     gulp.task( 'default', slushy.siphon() );
 
+    // console.log(process.mainModule.children[process.mainModule.children.length-1])
     /**
      * Client Generators
      */

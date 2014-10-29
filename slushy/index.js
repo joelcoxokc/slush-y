@@ -88,7 +88,7 @@
         }
         function prompts ( options ) {
 
-          // Calls Slushy.prompts( options )
+          // Calls Slushy.prompts( options ) runs inquirer.prompt
           return __this.prompts( options );
         }
         function configuration ( options ) {

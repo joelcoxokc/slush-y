@@ -13,6 +13,14 @@
     module.exports = function ( $, paths, filters, templates, slushy) {
 
       var __this = this;
+
+
+
+
+
+      var deps = slushy.util.env.p.split(',')
+      filters.deps = _.filter(deps, function(val){ if(val !== '$scope'){return val;} });
+
       gulp.src( templates.base.all() )
         .pipe( $.template( filters ) )
         .pipe( $.rename( __this.files().rename(filters.names.single.slug) ) )
@@ -20,5 +28,6 @@
         .pipe( gulp.dest( paths.dest  ))
 
     };
+
 
 })();

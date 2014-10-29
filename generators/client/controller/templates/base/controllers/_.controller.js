@@ -6,7 +6,7 @@
     .controller('<%= names.single.classed %>Controller', <%= names.single.classed %>Controller);
 
   /* @inject */
-  function <%= names.single.classed %>Controller($scope) {
+  function <%= names.single.classed %>Controller($scope<% if(deps.length){  %>,<%= deps %><% } %>) {
     // <%= names.single.humanized %> controller logic
 
 

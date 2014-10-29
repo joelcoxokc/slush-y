@@ -15,7 +15,7 @@
       /**
        * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
        */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
+      prompts = __this.findModules( prompts, __this.__modulesDir );
 
       /**
        * Ask the first round of questions

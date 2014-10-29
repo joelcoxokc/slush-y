@@ -54,7 +54,6 @@
       _.extend(Slush_y.prototype, require('./config'));
       _.extend(Slush_y.prototype, require('./controller'));
       _.extend(Slush_y.prototype, require('./tools/files.js') );
-      // _.extend(Slush_y.prototype, require('./craller.class'));
 
       /*
        * Initialize the promise chain and pass in the initial options.

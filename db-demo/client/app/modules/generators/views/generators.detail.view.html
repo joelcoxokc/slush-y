@@ -1,0 +1,27 @@
+<h1 class="panel-heading">
+  {{vm.generator.title}}</h1>
+<article class="panel-body">
+  <p data-ng-repeat="info in vm.generator.info">
+    {{info}}</p>
+  <pre>{{vm.generator.command}}</pre>
+  | Example
+  <pre>{{vm.generator.example}}</pre>
+  <ul class="">
+    <li data-ng-repeat="child in vm.generator.client_files"
+        popover="{{child.info}}"
+        popover-trigger="mouseenter" point>
+
+        <div ng-if="child.dir">
+          <strong>{{child.title}}/</strong>
+          <ul>
+            <li data-ng-repeat="(index, child) in child.children">
+              {{child.name}}
+            </li>
+          </ul>
+        </div>
+        <div ng-if="!child.dir">
+          <strong>{{child.name}}</strong>
+        </div>
+    </li>
+  </ul>
+</article>

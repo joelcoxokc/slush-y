@@ -3,7 +3,7 @@
 
   'use strict';
 
-
+    var inquirer = require('inquirer');
     module.exports = configPrompts;
 
 

@@ -1,0 +1,9 @@
+h1.panel-heading,
+h2.panel-heading,
+h3.panel-heading,
+h4.panel-heading,
+h5.panel-heading,
+h6.panel-heading {
+  margin-top: 0px;
+  width: 100%;
+}

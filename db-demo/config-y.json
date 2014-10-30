@@ -1,19 +1,25 @@
 {
   "config-y": {
-    "me": "joel Cox",
-    "answers": {
-      "appName": "ASD",
-      "appDescription": "",
-      "appKeywords": "",
-      "appAuthor": "",
-      "script": "js",
-      "httpType": "http",
-      "modules": [
-        "angularCookies",
-        "angularAnimate",
-        "angularTouch",
-        "angularSanitize"
-      ]
-    }
+    "js": true,
+    "http": true,
+    "appName": "ASD",
+    "appDescription": "",
+    "appKeywords": "",
+    "appAuthor": "",
+    "script": "js",
+    "httpType": "http",
+    "modules": [
+      "angularCookies",
+      "angularAnimate",
+      "angularTouch",
+      "angularSanitize"
+    ],
+    "app_names": {
+      "slug": "asd",
+      "classed": "Asd",
+      "humanized": "Asd",
+      "camelized": "asd"
+    },
+    "restangular": false
   }
 }

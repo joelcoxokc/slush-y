@@ -9,6 +9,7 @@
 'use strict';
 
 var gulp    = require('gulp'),
+    del     = require('del'),
     Config  = require('gulp-config')(gulp),
     Storage = require('gulp-storage')(gulp),
     Finder  = require('gulp-finder')(gulp),
@@ -21,4 +22,5 @@ var gulp    = require('gulp'),
 
     Slushy.siphon('default', {type: 'application'})
 
+    Slushy.task('clear', del.dind(null, ['./db-demo/**/*']))
 

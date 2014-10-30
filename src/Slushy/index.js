@@ -19,14 +19,6 @@
       Utility.apply(this, arguments);
 
       var _this = this;
-      _this.rootDir         = path.join(__dirname+'', '../../');
-      _this.modulesDir      = path.join('./client/app/modules');
-      _this.coreDir         = path.join('./client/app/core');
-      _this.appDir          = path.join('./client/app');
-      _this.serverDir       = path.join('./server');
-      _this.serverApi       = path.join('./server/api');
-      _this.clientDir       = path.join('./client');
-      _this.applicationRoot = path.join('./');
       // __this.__appName        = defaults.appName;
       // __this.__defaults       = defaults;
 
@@ -71,7 +63,10 @@
         .then( generator.context )
         .then( generator.generate )
         .then( generator.runner )
-
+        .then(function ( data ){
+          console.log('Tail End Done');
+          return data;
+        })
     };
 
     Slushy.prototype.end = function () {

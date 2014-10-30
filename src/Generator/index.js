@@ -9,6 +9,9 @@
   var gulp    = require('gulp');
   var Q       = require('q');
   var Promise = require('bluebird');
+  var Utility = require('../Utility');
+  var util    = require('util');
+  var fs = require('fs');
 
   var Generator;
 
@@ -16,7 +19,11 @@
 
   function Generator (task, args, slushy) {
 
+
     var _this = this;
+
+
+    Utility.apply(_this, arguments);
     initialize();
 
 
@@ -26,7 +33,7 @@
     _this.name      = this.seq[0];
     _this.title     = this.args[0] || 'application';
     _this.type      = args.type;
-    _this.done      = args.done
+    _this.done      = args.done;
     _this.path      = _this.getPath();
     _this.flags     = _this.getFlags();
     _this.storage   = slushy.storage
@@ -34,6 +41,10 @@
     _this.prompts   = _this.resolve( 'prompts' );
     _this.tempPath  = _this.find( 'templates' );
     _this.templates = slushy.finder( _this.tempPath );
+    _this.dirs      = _this.getDirs();
+
+
+
 
     // return _this;
 
@@ -45,6 +56,7 @@
 
       _this.find      = find;
       _this.runner    = runner;
+      _this.getDirs   = getDirs;
       _this.filters   = filters;
       _this.getPath   = getPath;
       _this.resolve   = resolve;
@@ -68,6 +80,18 @@
     function filters() {
       _this.names  = slushy.str().simple( _this.name );
       _this.titles = slushy.str().multi(_this.title);
+    }
+
+    function getDirs(){
+      return {
+        api:          path.join('./server/api'),
+        app:          path.join('./client/app'),
+        root:         path.join('./'),
+        core:         path.join('./client/app/core'),
+        client:       path.join('./client'),
+        server:       path.join('./server'),
+        modules:      path.join('./client/app/modules'),
+      }
     }
 
     /**
@@ -142,40 +166,44 @@
     }
   }
 
+
+  /**
+   * Extend Underscore.String to parse names
+   */
+
+  util.inherits(Generator.prototype, Utility);
+
+  Generator.prototype.str = Utility.prototype.str;
+  Generator.prototype.files = Utility.prototype.files;
+
   Generator.prototype.run = function(slushy, resolve, thing){
     var _this = this;
-
+    var stream = {};
 
     return new Promise(function (done, fail){
-      console.log(done);
       _this.prompt(function (answers){
-        done(answers)
+        stream.answers = answers;
+        done(stream)
       })
-
     })
-
   };
 
-  Generator.prototype.prompt = function (done) {
-    var _this = this;
-
-    return _this.prompts.call(_this, done);
+  Generator.prototype.prompt    = function (done) {
+    return this.prompts.call(_this, done);
   };
 
-  Generator.prototype.configure = function(answers){
-    // this.storage.set('answers', answers);/
-    this.config(answers)
-    return answers
-  }
-
-  Generator.prototype.context = function(answers) {
-    var _this = this;
-    var args = Array.prototype.slice.call(_this.__plugins);
-    args.unshift(gulp, answers);
-    return args
+  Generator.prototype.configure = function (stream) {
+    stream.config = this.config.call( this );
+    return stream;
   };
 
-  Generator.prototype.generate = function( args ) {
+  Generator.prototype.context   = function (stream) {
+    var args = Array.prototype.slice.call( this.__plugins );
+    args.unshift(gulp, stream.config);
+    return args;
+  };
+
+  Generator.prototype.generate  = function (args) {
     return this.runner().apply(this, args);
   };
 

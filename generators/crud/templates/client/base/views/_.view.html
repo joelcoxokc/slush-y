@@ -1,0 +1,27 @@
+<div class="container top">
+  <div class="row">
+    <section class="col-md-12 panel">
+      <div class="row">
+        <h1 class="panel-heading color-blue-400" text-white>
+          <%= names.plural.humanized %>
+          <a
+             class="btn btn-clear pull-right"
+             ui-sref="<%= names.plural.camel %>-create"
+             y-icon='plus'></a>
+        </h1>
+        <ul class="list-group">
+          <li
+              ng-repeat="<%= names.single.camel %> in vm.<%= names.plural.camel %>"
+              ui-sref="<%= names.plural.camel %>-detail({<%= names.single.slug %>Id: <%= names.single.camel %>._id})"
+              point
+              class="list-group-item">
+              <p>
+                {{<%= names.single.camel %>.title}}
+              </p>
+
+          </li>
+        </ul>
+        </div>
+    </section>
+  </div>
+</div>

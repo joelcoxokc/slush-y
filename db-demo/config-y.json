@@ -1,0 +1,19 @@
+{
+  "config-y": {
+    "me": "joel Cox",
+    "answers": {
+      "appName": "ASD",
+      "appDescription": "",
+      "appKeywords": "",
+      "appAuthor": "",
+      "script": "js",
+      "httpType": "http",
+      "modules": [
+        "angularCookies",
+        "angularAnimate",
+        "angularTouch",
+        "angularSanitize"
+      ]
+    }
+  }
+}

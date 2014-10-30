@@ -1,0 +1,535 @@
+.main {
+  background-color: #fff;
+  height: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,.3);
+  -webkit-box-shadow: 0 2px 4px rgba(0,0,0,.3);
+}
+
+.main-header {
+  /*text-align: center;*/
+
+  height: 100%;
+  position: relative;
+  font-size: 50px;
+  margin: 10px 0;
+  float: none;
+  text-align: center;
+  transition: all 300ms ease;
+  -webkit-transition: all 300ms ease-in;
+}
+.main-intro {
+  color: white;
+  padding: 0;
+  text-align: center;
+}
+.main-intro > .intro {
+  font-size: 18px;
+}
+
+@media(min-width: 768px){
+  .main-header {
+    float: none;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    margin-left: 20px;
+    font-size: 90px;
+  }
+  .main-intro {
+    text-align: left;
+    padding: 20px 20px 10px 0px;
+  }
+}
+/*@media(min-width: 990px){
+  .main-header {
+    float: none;
+    font-size: 100px;
+  }
+}*/
+
+.panel {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.equal .panel {
+  height: 100%;
+}
+
+
+.control-label {
+  display: block;
+  width:100%;
+}
+.form-control:focus {
+  border-width:3px;
+  border-color: #dddddd;
+  outline: 0;
+}
+.form-control.primary:focus {
+  border-color: #4d73ff;
+}
+.form-control.success:focus {
+  border-color: #42bd41;
+}
+.form-control.info:focus {
+  border-color: #00b0ff;
+}
+.form-control.warning:focus {
+  border-color: #ff9800;
+}
+.form-control.danger:focus {
+  border-color: #e84e40;
+}
+.btn {
+  transition:all 100ms ease-in;
+  -webkit-transition:all 100ms ease-in;
+}
+.btn:hover {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.btn.btn-s-sm {
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+.btn.btn-s-md {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+.btn.btn-s-lg {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+.btn.btn-s-xl {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.btn-white {
+  background-color: white;
+  color: #818181;
+}
+.colored:hover,
+.colored:active,
+.colored:focus,
+.colored.active {
+  color: #fff;
+}
+.btn-white:hover,
+.btn-white:focus,
+.btn-white:active,
+.btn-white.active, {
+  background-color: white;
+  color: #6c6c6c;
+}
+
+[color*='red'],
+[color*='pink'],
+[color*='purple'],
+[color*='deep-purple'],
+[color*='indigo'],
+[color*='blue'],
+[color*='light-blue'],
+[color*='cyan'],
+[color*='teal'],
+[color*='green'],
+[color*='light-green'],
+[color*='lime'],
+[color*='yellow'],
+[color*='amber'],
+[color*='orange'],
+[color*='deep-orange'],
+[color*='brown'],
+[color*='grey'],
+[color*='blue-grey'] {
+  color:white;
+}
+
+
+/*Reds*/
+[color~='red-50'],
+[color~='red-100'],
+[color~='red-200'],
+[color~='red-300'],
+[color~='red-A100'],
+
+/*pink*/
+[color~='pink-50'],
+[color~='pink-100'],
+[color~='pink-200'],
+[color~='pink-300'],
+[color~='pink-A100'],
+
+/*purple*/
+[color~='purple-50'],
+[color~='purple-100'],
+[color~='purple-200'],
+[color~='purple-A100'],
+
+/*deep-purple*/
+[color~='deep-purple-50'],
+[color~='deep-purple-100'],
+[color~='deep-purple-200'],
+[color~='deep-purple-A100'],
+
+/*indigo*/
+[color~='indigo-50'],
+[color~='indigo-100'],
+[color~='indigo-200'],
+[color~='indigo-A100'],
+
+/*blue*/
+[color~='blue-50'],
+[color~='blue-100'],
+[color~='blue-200'],
+[color~='blue-300'],
+[color~='blue-400'],
+[color~='blue-A100'],
+
+/*light-blue*/
+[color~='light-blue-50'],
+[color~='light-blue-100'],
+[color~='light-blue-200'],
+[color~='light-blue-300'],
+[color~='light-blue-400'],
+[color~='light-blue-A100'],
+[color~='light-blue-A200'],
+[color~='light-blue-A300'],
+
+/*cyan*/
+[color~='cyan-50'],
+[color~='cyan-100'],
+[color~='cyan-200'],
+[color~='cyan-300'],
+[color~='cyan-400'],
+[color~='cyan-A100'],
+[color~='cyan-A200'],
+[color~='cyan-A400'],
+[color~='cyan-A700'],
+
+/*teal*/
+[color~='teal-50'],
+[color~='teal-100'],
+[color~='teal-200'],
+[color~='teal-300'],
+[color~='teal-400'],
+[color~='teal-A100'],
+[color~='teal-A200'],
+[color~='teal-A400'],
+[color~='teal-A700'],
+
+/*green*/
+[color~='green-50'],
+[color~='green-100'],
+[color~='green-200'],
+[color~='green-300'],
+[color~='green-400'],
+[color~='green-A100'],
+[color~='green-A200'],
+[color~='green-A400'],
+[color~='green-A700'],
+/*light-green*/
+[color~='light-green-50'],
+[color~='light-green-100'],
+[color~='light-green-200'],
+[color~='light-green-300'],
+[color~='light-green-400'],
+[color~='light-green-500'],
+[color~='light-green-600'],
+[color~='light-green-700'],
+[color~='light-green-A100'],
+[color~='light-green-A200'],
+[color~='light-green-A400'],
+[color~='light-green-A700'],
+
+/*lime*/
+[color~='lime-50'],
+[color~='lime-100'],
+[color~='lime-200'],
+[color~='lime-300'],
+[color~='lime-400'],
+[color~='lime-500'],
+[color~='lime-600'],
+[color~='lime-700'],
+[color~='lime-800'],
+[color~='lime-A100'],
+[color~='lime-A200'],
+[color~='lime-A400'],
+[color~='lime-A700'],
+
+/*yellow*/
+[color~='yellow-50'],
+[color~='yellow-100'],
+[color~='yellow-200'],
+[color~='yellow-300'],
+[color~='yellow-400'],
+[color~='yellow-500'],
+[color~='yellow-600'],
+[color~='yellow-700'],
+[color~='yellow-800'],
+[color~='yellow-900'],
+[color~='yellow-A100'],
+[color~='yellow-A200'],
+[color~='yellow-A400'],
+[color~='yellow-A700'],
+
+
+/*amber*/
+[color~='amber-50'],
+[color~='amber-100'],
+[color~='amber-200'],
+[color~='amber-300'],
+[color~='amber-400'],
+[color~='amber-500'],
+[color~='amber-600'],
+[color~='amber-700'],
+[color~='amber-800'],
+[color~='amber-900'],
+[color~='amber-A100'],
+[color~='amber-A200'],
+[color~='amber-A400'],
+[color~='amber-A700'],
+
+/*orange*/
+[color~='orange-50'],
+[color~='orange-100'],
+[color~='orange-200'],
+[color~='orange-300'],
+[color~='orange-400'],
+[color~='orange-500'],
+[color~='orange-600'],
+[color~='orange-700'],
+/*[color~='orange-800'],*/
+/*[color~='orange-900'],*/
+[color~='orange-A100'],
+[color~='orange-A200'],
+[color~='orange-A400'],
+[color~='orange-A700'],
+
+/*deep-orange*/
+[color~='deep-orange-50'],
+[color~='deep-orange-100'],
+[color~='deep-orange-200'],
+[color~='deep-orange-300'],
+[color~='deep-orange-400'],
+[color~='deep-orange-A100'],
+[color~='deep-orange-A200'],
+
+/*brown*/
+[color~='brown-50'],
+[color~='brown-100'],
+[color~='brown-200'],
+
+/*grey*/
+[color~='grey-50'],
+[color~='grey-100'],
+[color~='grey-200']{
+  color: #333;
+}
+
+
+[btn-color*='red'],
+[btn-color*='pink'],
+[btn-color*='purple'],
+[btn-color*='deep-purple'],
+[btn-color*='indigo'],
+[btn-color*='blue'],
+[btn-color*='light-blue'],
+[btn-color*='cyan'],
+[btn-color*='teal'],
+[btn-color*='green'],
+[btn-color*='light-green'],
+[btn-color*='lime'],
+[btn-color*='yellow'],
+[btn-color*='amber'],
+[btn-color*='orange'],
+[btn-color*='deep-orange'],
+[btn-color*='brown'],
+[btn-color*='grey'],
+[btn-color*='blue-grey'] {
+  color:white;
+}
+
+
+/*Reds*/
+[btn-color~='red-50'],
+[btn-color~='red-100'],
+[btn-color~='red-200'],
+[btn-color~='red-300'],
+[btn-color~='red-A100'],
+
+/*pink*/
+[btn-color~='pink-50'],
+[btn-color~='pink-100'],
+[btn-color~='pink-200'],
+[btn-color~='pink-300'],
+[btn-color~='pink-A100'],
+
+/*purple*/
+[btn-color~='purple-50'],
+[btn-color~='purple-100'],
+[btn-color~='purple-200'],
+[btn-color~='purple-A100'],
+
+/*deep-purple*/
+[btn-color~='deep-purple-50'],
+[btn-color~='deep-purple-100'],
+[btn-color~='deep-purple-200'],
+[btn-color~='deep-purple-A100'],
+
+/*indigo*/
+[btn-color~='indigo-50'],
+[btn-color~='indigo-100'],
+[btn-color~='indigo-200'],
+[btn-color~='indigo-A100'],
+
+/*blue*/
+[btn-color~='blue-50'],
+[btn-color~='blue-100'],
+[btn-color~='blue-200'],
+[btn-color~='blue-300'],
+[btn-color~='blue-400'],
+[btn-color~='blue-A100'],
+
+/*light-blue*/
+[btn-color~='light-blue-50'],
+[btn-color~='light-blue-100'],
+[btn-color~='light-blue-200'],
+[btn-color~='light-blue-300'],
+[btn-color~='light-blue-400'],
+[btn-color~='light-blue-A100'],
+[btn-color~='light-blue-A200'],
+[btn-color~='light-blue-A300'],
+
+/*cyan*/
+[btn-color~='cyan-50'],
+[btn-color~='cyan-100'],
+[btn-color~='cyan-200'],
+[btn-color~='cyan-300'],
+[btn-color~='cyan-400'],
+[btn-color~='cyan-A100'],
+[btn-color~='cyan-A200'],
+[btn-color~='cyan-A400'],
+[btn-color~='cyan-A700'],
+
+/*teal*/
+[btn-color~='teal-50'],
+[btn-color~='teal-100'],
+[btn-color~='teal-200'],
+[btn-color~='teal-300'],
+[btn-color~='teal-400'],
+[btn-color~='teal-A100'],
+[btn-color~='teal-A200'],
+[btn-color~='teal-A400'],
+[btn-color~='teal-A700'],
+
+/*green*/
+[btn-color~='green-50'],
+[btn-color~='green-100'],
+[btn-color~='green-200'],
+[btn-color~='green-300'],
+[btn-color~='green-400'],
+[btn-color~='green-A100'],
+[btn-color~='green-A200'],
+[btn-color~='green-A400'],
+[btn-color~='green-A700'],
+/*light-green*/
+[btn-color~='light-green-50'],
+[btn-color~='light-green-100'],
+[btn-color~='light-green-200'],
+[btn-color~='light-green-300'],
+[btn-color~='light-green-400'],
+[btn-color~='light-green-500'],
+[btn-color~='light-green-600'],
+[btn-color~='light-green-700'],
+[btn-color~='light-green-A100'],
+[btn-color~='light-green-A200'],
+[btn-color~='light-green-A400'],
+[btn-color~='light-green-A700'],
+
+/*lime*/
+[btn-color~='lime-50'],
+[btn-color~='lime-100'],
+[btn-color~='lime-200'],
+[btn-color~='lime-300'],
+[btn-color~='lime-400'],
+[btn-color~='lime-500'],
+[btn-color~='lime-600'],
+[btn-color~='lime-700'],
+[btn-color~='lime-800'],
+[btn-color~='lime-A100'],
+[btn-color~='lime-A200'],
+[btn-color~='lime-A400'],
+[btn-color~='lime-A700'],
+
+/*yellow*/
+[btn-color~='yellow-50'],
+[btn-color~='yellow-100'],
+[btn-color~='yellow-200'],
+[btn-color~='yellow-300'],
+[btn-color~='yellow-400'],
+[btn-color~='yellow-500'],
+[btn-color~='yellow-600'],
+[btn-color~='yellow-700'],
+[btn-color~='yellow-800'],
+[btn-color~='yellow-900'],
+[btn-color~='yellow-A100'],
+[btn-color~='yellow-A200'],
+[btn-color~='yellow-A400'],
+[btn-color~='yellow-A700'],
+
+
+/*amber*/
+[btn-color~='amber-50'],
+[btn-color~='amber-100'],
+[btn-color~='amber-200'],
+[btn-color~='amber-300'],
+[btn-color~='amber-400'],
+[btn-color~='amber-500'],
+[btn-color~='amber-600'],
+[btn-color~='amber-700'],
+[btn-color~='amber-800'],
+[btn-color~='amber-900'],
+[btn-color~='amber-A100'],
+[btn-color~='amber-A200'],
+[btn-color~='amber-A400'],
+[btn-color~='amber-A700'],
+
+/*orange*/
+[btn-color~='orange-50'],
+[btn-color~='orange-100'],
+[btn-color~='orange-200'],
+[btn-color~='orange-300'],
+[btn-color~='orange-400'],
+[btn-color~='orange-500'],
+[btn-color~='orange-600'],
+[btn-color~='orange-700'],
+/*[btn-color~='orange-800'],*/
+/*[btn-color~='orange-900'],*/
+[btn-color~='orange-A100'],
+[btn-color~='orange-A200'],
+[btn-color~='orange-A400'],
+[btn-color~='orange-A700'],
+
+/*deep-orange*/
+[btn-color~='deep-orange-50'],
+[btn-color~='deep-orange-100'],
+[btn-color~='deep-orange-200'],
+[btn-color~='deep-orange-300'],
+[btn-color~='deep-orange-400'],
+[btn-color~='deep-orange-A100'],
+[btn-color~='deep-orange-A200'],
+
+/*brown*/
+[btn-color~='brown-50'],
+[btn-color~='brown-100'],
+[btn-color~='brown-200'],
+
+/*grey*/
+[btn-color~='grey-50'],
+[btn-color~='grey-100'],
+[btn-color~='grey-200']{
+  color: #333;
+}
+

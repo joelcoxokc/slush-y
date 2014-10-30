@@ -1,0 +1,16 @@
+<div class="sidebar-module" ng-show="isLoggedIn()">
+  <h4>Steps to ng-guide</h4>
+  <ol class="list-unstyled">
+    <li data-ng-repeat="item in menu.items" ui-route="{{item.uiRoute}}" ng-class="{active: $uiRoute}">
+      <a href="#/{{item.link}}">{{item.title}}</a>
+    </li>
+  </ol>
+</div>
+<div class="sidebar-module" ng-show="isLoggedIn()">
+  <h4>References</h4>
+  <ol class="list-unstyled">
+    <li ng-repeat="ref in references">
+      <a href="{{rec.link}}">{{ref.title}}</a>
+    </li>
+  </ol>
+</div>

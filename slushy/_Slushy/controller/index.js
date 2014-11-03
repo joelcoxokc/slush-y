@@ -107,7 +107,7 @@
         var filters = __this.get('filters');
 
         if( __options.generator.category === 'client'){
-          filters.moduleNames = __this.str().simple(__options.answers.moduleName);
+          filters.moduleNames = __this.str().simple(__options.generator.filters.module);
         }
         if( __options.generator.name === 'crud'){
           filters.moduleNames = __this.str().simple(__options.generator.title );
@@ -118,6 +118,8 @@
         if(__options.answers){
           filters.answers = __options.answers;
         }
+
+        _.assign(filters, __options.generator.filters)
 
         __options.filters = filters;
         return __options;

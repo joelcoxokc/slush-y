@@ -1,8 +1,8 @@
 /*
- * slush-meanjs
+ * slush-y
  * https://github.com/JoelCoxOKC/slush-y
  *
- * Copyright (c) 2014, Arvind Ravulavaru
+ * Copyright (c) 2014, Joel Cox
  * Licensed under the MIT license.
  */
 

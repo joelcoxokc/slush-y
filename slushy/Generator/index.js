@@ -4,9 +4,12 @@
 
     var _    = require('lodash'),
         path = require('path'),
+        util = require('./util'),
         inflect   = require('inflection'),
         templator = require('./util/templates'),
-        builder   = require('./util/builder');
+        builder   = require('./util/builder'),
+        defaultPrompts = require('./util/prompts'),
+        Q = require('q');
 
     var Generator;
 
@@ -25,9 +28,12 @@
         __this.path       = createPath();
         __this.title      = createTitle();
         __this.default    = isDefault();
-        __this.prompts    = fetchPrompts();
+        __this.promptRunner= getPromptRunner();
         __this.category   = options.category || 'default';
         __this.component  = fetchComponentName();
+        __this.flags      = generator.util.env;
+        __this.filters    = generateFilters();
+        __this.prompts    = fetchDefaultPrompts();
         // __this.templator  = templator[__this.category]( __this.path, __this.name );
         __this.templates  = builder.buildTemplates( __this.path +'/templates' );
 
@@ -94,12 +100,26 @@
          *                     If __this.type === angular, then we need to read all the modules and and add them to the prompt choices.
          * @return {Object}    [Prompts for the gnerator];
          */
-        function fetchPrompts () {
+        function getPromptRunner () {
           var promptsPath = path.resolve( __this.path, 'prompts' );
           var prompts = require( promptsPath );
-
           return prompts
         }
+
+        function fetchDefaultPrompts(){
+          var prompts = [];
+          _.forEach( __this.filters , function (val, key){
+            if(_.isEmpty( val )){
+              console.log(key + ' is empty');
+              prompts.push( defaultPrompts(key) );
+            }
+          });
+          if(prompts.length && prompts[0].name === 'module'){
+            prompts = util.findModules(prompts);
+          }
+          return prompts;
+        }
+
 
         /**
          * [fetchComponentName Retrieve the first argument passed to the generator... this is considered the name arg]
@@ -116,7 +136,39 @@
 
           } else { return false; }
         }
+
+        function generateFilters() {
+          var filters = {};
+          filters.module    = __this.flags.module    || __this.flags.m || null;
+          filters.providers = __this.flags.providers || __this.flags.p || [];
+          filters.functions = __this.flags.functions || __this.flags.f || [];
+          _.forEach(filters, function (val, key){
+
+            if(_.isString( filters[key]) ){
+              filters[key] = val.split(',');
+            }
+
+          })
+          console.log(filters);
+          return filters;
+        }
     }
 
+    _.extend(Generator.prototype, require('./util/flags'));
+
+    Generator.prototype.prompt = function(callback){
+      var __this = this;
+      // var q = Q.defer();
+      __this.promptRunner.call(this, function ( answers ){
+        var filtered = [];
+        _.forEach(answers, function (val, key){
+          if(_.isEmpty(val)) return filtered[key] = [];
+          filtered[key] = val;
+        });
+        _.assign(__this.filters, filtered);
+        callback(filtered);
+      })
+      // return q.promise;
+    }
 
 }).call(this);

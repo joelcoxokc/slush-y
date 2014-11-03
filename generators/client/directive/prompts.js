@@ -2,25 +2,21 @@
 ;(function(){
 
   'use strict';
-
+    var _ = require('lodash');
+    var inquirer = require('inquirer')
 
     module.exports = directivePrompts;
 
 
-    function directivePrompts (generator, done) {
+    function directivePrompts (done) {
 
       var __this = this;
-      var prompts = directiveQuestions();
-
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
+      var prompts = __this.prompts.concat( directiveQuestions() );
 
       /**
        * Ask the first round of questions
        */
-      __this
+       inquirer
         .prompt(prompts, promptCallback);
 
 
@@ -43,16 +39,6 @@
     function directiveQuestions(){
 
       var questions = [{
-
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this directive belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        },{
           type: 'list',
           name: 'directiveType',
           message: 'What type of directive would you like to generate?',

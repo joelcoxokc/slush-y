@@ -13,11 +13,17 @@
 
         var __this    = this;
 
-        gulp.src( templates.base.all() )
-          .pipe($.template( filters ))
-          .pipe($.rename( __this.files().rename( filters.names.single.slug ) ))
-          .pipe( $.conflict( paths.dest ) )
-          .pipe( gulp.dest( paths.dest ) );
+        generate()
+        /////////////////////////
+
+        function generate(){
+          gulp.src( templates.base.all() )
+            .pipe($.template( filters ))
+            .pipe($.rename( __this.files().rename( filters.names.single.slug ) ))
+            .pipe( $.conflict( paths.dest ) )
+            .pipe( gulp.dest( paths.dest ) );
+        }
+
 
     };
 

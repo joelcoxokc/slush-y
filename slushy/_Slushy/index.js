@@ -137,8 +137,9 @@
 
           var $promised = Q.defer();
 
-          options.generator.prompts.call(__this, options.generator, function ( answers ){
+          options.generator.prompt(function ( answers ){
             if(answers){
+              _.assign(options.generator.filters, answers);
               _.assign(options.answers, answers);
             }
 

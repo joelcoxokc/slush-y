@@ -2,27 +2,24 @@
 ;(function(){
 
   'use strict';
-
+    var inquirer = require('inquirer')
+    var _ = require('lodash')
 
     module.exports = servicePrompts;
 
 
-    function servicePrompts (generator, done) {
+    function servicePrompts (done) {
 
       var __this = this;
-      var prompts = serviceQuestions();
-
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
+      if(!_.size(serviceQuestions())){
+        __this.prompts = __this.prompts.concat(serviceQuestions());
+      }
 
       /**
        * Ask the first round of questions
        */
-      __this
-        .prompt(prompts, promptCallback);
-
+      inquirer
+        .prompt(__this.prompts, promptCallback);
 
       /**
        * [promptCallback Callback invoked when prompt is finished]
@@ -41,18 +38,7 @@
 
     function serviceQuestions(){
 
-      var questions = [{
-
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this service belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        }];
-
+      var questions = [];
 
       return questions;
 

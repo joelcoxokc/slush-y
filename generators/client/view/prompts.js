@@ -2,6 +2,8 @@
 ;(function(){
 
   'use strict';
+    var inquirer = require('inquirer')
+    var _ = require('lodash')
 
 
     module.exports = viewPrompts;
@@ -10,18 +12,17 @@
     function viewPrompts (generator, done) {
 
       var __this = this;
-      var prompts = viewQuestions();
+      var questions = viewQuestions();
 
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
+      if( _.size(questions) ){
+        __this.prompts = __this.prompts.concat( questions )
+      }
 
       /**
        * Ask the first round of questions
        */
-      __this
-        .prompt(prompts, promptCallback);
+      inquirer
+        .prompt(__this.prompts, promptCallback);
 
 
       /**
@@ -41,17 +42,7 @@
 
     function viewQuestions(){
 
-      var questions = [{
-
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this view belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        }];
+      var questions = [];
 
 
       return questions;

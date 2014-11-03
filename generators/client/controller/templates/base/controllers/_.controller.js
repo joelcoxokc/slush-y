@@ -6,34 +6,22 @@
     .controller('<%= names.single.classed %>Controller', <%= names.single.classed %>Controller);
 
   /* @inject */
-  function <%= names.single.classed %>Controller($scope<% if(deps.length){  %>,<%= deps %><% } %>) {
+  function <%= names.single.classed %>Controller(<%=providers%>) {
     // <%= names.single.humanized %> controller logic
 
-
-    $scope.val             = 0;
-    $scope.one             = one;
-    $scope.two             = two;
-    $scope.three           = three;
+    $scope.val = 0;
+    <% _.forEach( functions, function(func){ %>
+    $scope.<%=func%> = <%=func%>;<% }) %>
 
     //////////////////
-
-    /**
-     * [one description]
-     * @return {[type]} [description]
+    <% _.forEach(functions, function(func){ %>
+    /*
+     * <%= func %>      description
+     * @return {[type]} description
+     *
      */
-    function one(){}
-
-    /**
-     * [two description]
-     * @return {[type]} [description]
-     */
-    function two(){}
-
-    /**
-     * [three description]
-     * @return {[type]} [description]
-     */
-    function three(){}
+    function <%= func %>() {}
+    <% }) %>
 
   }
 }).call(this);

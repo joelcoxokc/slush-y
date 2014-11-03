@@ -16,16 +16,6 @@
 
 
       var questions1   = [{
-
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this route belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        },{
           type: 'list',
           name: 'routeType',
           message: 'What type of route would you like to generate?',

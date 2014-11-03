@@ -2,26 +2,24 @@
 ;(function(){
 
   'use strict';
-
-
+    var inquirer = require('inquirer')
+    var _ = require('lodash')
     module.exports = filterPrompts;
 
 
-    function filterPrompts (generator, done) {
+    function filterPrompts (done) {
 
       var __this = this;
-      var prompts = filterQuestions();
 
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
+      if( _.size(filterQuestions() )){
+        __this.prompts = __this.prompts.concat(filterQuestions());
+      }
 
       /**
        * Ask the first round of questions
        */
-      __this
-        .prompt(prompts, promptCallback);
+      inquirer
+        .prompt(__this.prompts, promptCallback);
 
 
       /**
@@ -41,17 +39,7 @@
 
     function filterQuestions(){
 
-      var questions = [{
-
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this filter belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        }];
+      var questions = [];
 
       return questions;
 

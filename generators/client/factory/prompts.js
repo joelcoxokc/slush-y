@@ -2,26 +2,26 @@
 ;(function(){
 
   'use strict';
-
+    var _ = require('lodash');
+    var inquirer = require('inquirer')
 
     module.exports = factoryPrompts;
 
 
-    function factoryPrompts (generator, done) {
+    function factoryPrompts (done) {
 
       var __this = this;
-      var prompts = factoryQuestions();
+      var questions = factoryQuestions();
 
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts = __this.findModules( prompts, __this.__modulesDir );
+      if(_.size(questions)){
+        __this.prompts.concat();
+      }
 
       /**
        * Ask the first round of questions
        */
-      __this
-        .prompt(prompts, promptCallback);
+      inquirer
+        .prompt(__this.prompts, promptCallback);
 
 
       /**
@@ -41,17 +41,7 @@
 
     function factoryQuestions(){
 
-      var questions = [{
-
-          type: 'list',
-          name: 'moduleName',
-          default: 'core',
-          message: 'Which module does this factory belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        }];
+      var questions = [];
 
       return questions;
 

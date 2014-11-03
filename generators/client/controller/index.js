@@ -14,18 +14,29 @@
 
       var __this = this;
 
+      setDefaults();
+      generate();
 
+      /////////////////////
 
+      function generate(){
+        gulp.src( templates.base.all() )
+          .pipe( $.template( filters ) )
+          .pipe( $.rename( __this.files().rename(filters.names.single.slug) ) )
+          .pipe( $.conflict( paths.dest ))
+          .pipe( gulp.dest( paths.dest  ))
+      }
 
+      function setDefaults(){
 
-      var deps = slushy.util.env.p.split(',')
-      filters.deps = _.filter(deps, function(val){ if(val !== '$scope'){return val;} });
+        if(!_.contains(filters.providers, '$scope') ){
+          filters.providers.push('$scope');
+        }
 
-      gulp.src( templates.base.all() )
-        .pipe( $.template( filters ) )
-        .pipe( $.rename( __this.files().rename(filters.names.single.slug) ) )
-        .pipe( $.conflict( paths.dest ))
-        .pipe( gulp.dest( paths.dest  ))
+        if( _.isEmpty( filters.functions ) ){
+          filters.functions = ['create', 'update', 'destroy'];
+        }
+      }
 
     };
 

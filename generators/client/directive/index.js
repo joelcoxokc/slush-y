@@ -8,12 +8,14 @@
 
     var __this    = this;
 
-    var modulePath    = path.join( paths.modulesDir, slushy.title, 'directives' );
-    var directivePath = path.join( modulePath, filters.names.single.camel );
+
+    var directivePath = path.join( paths.dest, 'directives', filters.names.single.camel );
     filters.directive_view_path = path.join( directivePath, filters.names.single.camel + '.directive.view.html' );
 
-    if(filters.answers.simple)  { simple();  }
-    if(filters.answers.complex) { complex(); }
+    console.log(filters);
+    if(filters.simple)  { simple();  }
+    if(filters.complex) { complex(); }
+
     ////////////////////////////////////
 
     function simple(){
@@ -33,4 +35,4 @@
     }
 
   }
-})();
+})();;

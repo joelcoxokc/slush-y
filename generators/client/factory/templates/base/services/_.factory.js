@@ -6,39 +6,24 @@
     .factory('<%= names.single.classed %>', <%= names.single.classed %>);
 
   /* @inject */
-  function <%= names.single.classed %>() {
-
-    // Define private variables here . . .
+  function <%= names.single.classed %>(<%=providers%>) {
 
     // Define Public API
-    var instance = {
-      one: one,
-      two: two,
-      three: three
+    var instance = {<% _.forEach( functions, function(func){ %>
+      <%=func%>: <%=func%>,<% }) %>
     };
 
     return instance;
 
     // <%= names.single.humanized %> service logic
-    ///////////////////
-
+    ////////////////////////////////
+    <% _.forEach( functions, function(func){ %>
     /**
-     * [someMethod description]
-     * @return {[type]} [description]
+     * <%=func%> description
+     * @return {[type]} description
      */
-    function one() { return 1; }
-
-    /**
-     * [two description]
-     * @return {[type]} [description]
-     */
-    function two() { return 2; }
-
-    /**
-     * [three description]
-     * @return {[type]} [description]
-     */
-    function three() { return 3; }
+    function <%=func%> (){}
+    <% }) %>
 
   }
 }).call(this);

@@ -37,8 +37,6 @@
       }
     }
 
-
-
     function configQuestions(){
 
       var questions = [{

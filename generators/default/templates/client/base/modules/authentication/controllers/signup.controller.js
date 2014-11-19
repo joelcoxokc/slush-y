@@ -42,7 +42,7 @@
       }
 
       function loginOauth(provider) {
-        $window.location.href = '/auth/' + provider;
+        $window.location.href = '/api/auth/' + provider;
       }
     }
 

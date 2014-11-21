@@ -2,33 +2,30 @@
 ;(function(){
 
   'use strict';
-    var _ = require('lodash');
-    var inquirer = require('inquirer')
 
     module.exports = controllerPrompts;
 
 
-    function controllerPrompts (done) {
+    function controllerPrompts () {
 
-      var __this = this;
-
-      /**
-       * Ask the first round of questions
-       */
-      inquirer
-        .prompt(__this.prompts, promptCallback);
-
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
-
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
+      var pendingPrompts = {
+        module : {
+          type: 'list',
+          name: 'module',
+          default: 'core',
+          message: 'Which module does this controller belongs to?'
+        },
+        providers: {
+          name: 'providers',
+          message: 'inject any providers? (please camma separate each)',
+        },
+        functions: {
+          name: 'functions',
+          message: 'add fucntions to $scope? (please camma separate each)',
+        }
       }
+      return pendingPrompts;
+
     }
 
 

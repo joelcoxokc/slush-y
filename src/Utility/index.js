@@ -11,7 +11,7 @@
 
 
 
-    var Utility =
+    var Utility;
     Utility = module.exports = Utility;
 
     function Utility (param) {

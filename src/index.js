@@ -13,6 +13,7 @@
     gulpInst.Gulp.prototype.plugins = Slushy.plugins;
     gulpInst.Gulp.prototype.stream = Slushy.stream;
     gulpInst.Gulp.prototype.end = Slushy.end;
+    gulpInst.Gulp.prototype.forward = Slushy.forward;
 
     return gulpInst
   }

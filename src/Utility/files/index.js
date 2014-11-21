@@ -1,5 +1,5 @@
 ;(function(){
-
+  var fs = require('fs');
   'use strict';
 
     var Files    = module.exports;

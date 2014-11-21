@@ -12,6 +12,7 @@
   var Utility = require('../Utility');
   var util    = require('util');
   var fs = require('fs');
+  var defaultPrompts = require('./lib/prompts')
 
   var Generator;
 
@@ -39,6 +40,7 @@
     _this.storage   = slushy.storage
     _this.config    = _this.resolve( 'config' );
     _this.prompts   = _this.resolve( 'prompts' );
+
     _this.tempPath  = _this.find( 'templates' );
     _this.templates = slushy.finder( _this.tempPath );
     _this.dirs      = _this.getDirs();
@@ -90,7 +92,7 @@
         core:         path.join('./client/app/core'),
         client:       path.join('./client'),
         server:       path.join('./server'),
-        modules:      path.join('./client/app/modules'),
+        modules:      path.join(process.cwd(),  './client/app/modules'),
       }
     }
 
@@ -124,9 +126,12 @@
      * @return {String} [return a normalized path]
      */
     function getPath() {
+
       var dir = __dirname +'';
       var name = _this.name;
       if(name === 'default') name = 'application';
+      if(_this.type ==='client') name = path.join(_this.type, name)
+
       return path.join( dir, '../../generators', name );
     }
 
@@ -139,9 +144,25 @@
       var f   = _this.util.env.f;
       var m   = _this.util.env.m;
       var p   = _this.util.env.p;
-      flags.providers = _this.util.env.functions || f || [];
-      flags.module    = _this.util.env.module    || m || 'no-name';
-      flags.providers = _this.util.env.module    || p || [];
+      flags.functions  = _this.util.env.functions  || f || [];
+      flags.module     = _this.util.env.module     || m || 'no-name';
+      flags.moduleName = _this.util.env.moduleName || m || 'no-name';
+      flags.providers  = _this.util.env.providers  || p || [];
+      flags = splitFlags(flags);
+      return flags;
+    }
+
+    function splitFlags(flags){
+      var providers = [];
+      var functions = [];
+      if(_.isString(flags.providers)){
+        providers = flags.providers.split(",");
+        flags.providers = providers;
+      }
+      if(_.isString(flags.functions)){
+        functions = flags.functions.split(",");
+        flags.functions = functions;
+      }
       return flags;
     }
 
@@ -173,8 +194,11 @@
 
   util.inherits(Generator.prototype, Utility);
 
+  _.extend()
+
   Generator.prototype.str = Utility.prototype.str;
   Generator.prototype.files = Utility.prototype.files;
+  Generator.prototype.findModules = Utility.prototype.findModules;
 
   Generator.prototype.run = function(slushy, resolve, thing){
     var _this = this;
@@ -182,6 +206,7 @@
 
     return new Promise(function (done, fail){
       _this.prompt(function (answers){
+        _.assign(answers, _this.flags);
         stream.answers = answers;
         done(stream)
       })
@@ -189,23 +214,46 @@
   };
 
   Generator.prototype.prompt    = function (done) {
-    return this.prompts.call(_this, done);
+    var _this = this;
+    _this.questions = [];
+    if(_this.type === 'client'){
+      if(_this.flags.module === 'no-name'){
+        _this.questions.push( _this.addPrompt('module') )
+      }
+      _.forEach(_this.flags, function (value, key){
+        if(_.isEmpty(value)){
+          _this.questions.push(_this.addPrompt(key))
+        }
+      })
+    }
+    return this.prompts.call(this, done);
   };
 
   Generator.prototype.configure = function (stream) {
-    stream.config = this.config.call( this );
+    var _this = this;
+    var config = {};
+    _.forEach(this.config, function (val, key){
+      config[key] = val.call(_this, stream)
+    })
+    stream.config = config;
     return stream;
   };
 
   Generator.prototype.context   = function (stream) {
     var args = Array.prototype.slice.call( this.__plugins );
-    args.unshift(gulp, stream.config);
+    args.unshift(gulp, stream.config, stream.filters, this.templates);
     return args;
+  };
+
+  Generator.prototype.addPrompt = function(type){
+    return defaultPrompts(type);
   };
 
   Generator.prototype.generate  = function (args) {
     return this.runner().apply(this, args);
   };
+
+
 
 }).call(this);
 

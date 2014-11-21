@@ -18,9 +18,21 @@ var gulp    = require('gulp'),
     var plugins  = require('gulp-load-plugins')({lazy:false})
     var lodash   = require('lodash');
 
-    Slushy.plugins(plugins, lodash)
 
-    Slushy.siphon('default', {type: 'application'})
+    gulp.task('controller', require('./generators/client/controller'));
 
-    Slushy.task('clear', del.dind(null, ['./db-demo/**/*']))
+    // Slushy.plugins(plugins, lodash)
+
+    // Slushy.siphon('default', {type: 'application'})
+    // Slushy.siphon('module', {type: 'client'})
+    // Slushy.siphon('config', {type: 'client'})
+    // Slushy.siphon('controller', {type: 'client'})
+    // Slushy.siphon('directive', {type: 'client'})
+    // Slushy.siphon('factory', {type: 'client'})
+    // Slushy.siphon('filter', {type: 'client'})
+    // // Slushy.siphon('route', {type: 'client'})
+    // Slushy.siphon('service', {type: 'client'})
+    // Slushy.siphon('view', {type: 'client'})
+
+    Slushy.task('clear', del.bind(null, ['./db-demo/**/*']))
 

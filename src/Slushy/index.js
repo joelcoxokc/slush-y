@@ -69,19 +69,6 @@
         })
     };
 
-    Slushy.prototype.end = function () {
-      var _this = this;
-      return {
-        myRoot : _this.rootDir,
-        modules : _this.modulesDir,
-        core : _this.coreDir,
-        app : _this.appDir,
-        server : _this.serverDir,
-        api : _this.serverApi,
-        client : _this.clientDir,
-        root: _this.applicationRoot
-      }
-    }
 
     Slushy.prototype.plugins = function(){
       this.__plugins = arguments;

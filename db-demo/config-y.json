@@ -14,6 +14,10 @@
       "angularTouch",
       "angularSanitize"
     ],
+    "functions": [],
+    "module": "no-name",
+    "moduleName": "no-name",
+    "providers": [],
     "app_names": {
       "slug": "asd",
       "classed": "Asd",

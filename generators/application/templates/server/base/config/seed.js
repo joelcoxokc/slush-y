@@ -3,13 +3,17 @@
  * to disable, edit config/environment/index.js, and set `seedDB: false`
  */
 
-var globber = require('../components/globber');
+var indexer = require('../components/indexer');
 var path = require('path');
 
 module.exports = function(){
 
-  globber('./server/api/**/*.seed.js').forEach(function( seedPath ) {
-    require(path.resolve( seedPath ));
-  });
+  var seeds = indexer.all('./server/api')
+  seeds.forEach(function (seed){
+    require( path.join(seed.path, seed.name+'.seed') )
+  })
+  // globber('./server/api/**/*.seed.js').forEach(function( seedPath ) {
+  //   require(path.resolve( seedPath ));
+  // });
 
 }

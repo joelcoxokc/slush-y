@@ -6,7 +6,7 @@
 
 var config = require('./environment');
 
-var globber = require('../components/globber');
+var indexer = require('../components/indexer');
 var path = require('path');
 // When the user disconnects.. perform this
 function onDisconnect(socket) {
@@ -18,10 +18,14 @@ function onConnect(socket) {
   socket.on('info', function (data) {
     console.info('[%s] %s', socket.address, JSON.stringify(data, null, 2));
   });
+  var routes = indexer.all('server/api')
+  routes.forEach(function (item){
+    require( path.join(item.path, item.name+'.socket')  ).register(socket);
+  })
 
-  globber('./server/api/**/*.socket.js').forEach(function( seedPath ) {
-    require(path.resolve( seedPath )).register(socket);
-  });
+  // globber('./server/api/**/*.socket.js').forEach(function( seedPath ) {
+  //   require(path.resolve( seedPath )).register(socket);
+  // });
   // Insert sockets below
   // require('../api/thing/thing.socket').register(socket);
   // require('../api/generator/generator.socket').register(socket);

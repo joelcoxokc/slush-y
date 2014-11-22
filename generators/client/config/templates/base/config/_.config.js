@@ -6,7 +6,7 @@
     .config( Configuration );
 
   /* @inject */
-  function Configuration() {
+  function Configuration(<%=providers%>) {
     // Config logic
     // ...
   }

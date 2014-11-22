@@ -20,11 +20,14 @@ var gulp    = require('gulp'),
 
 
     gulp.task('controller', require('./generators/client/controller'));
+    gulp.task('config', require('./generators/client/config'));
+    gulp.task('directive', require('./generators/client/directive'));
+    gulp.task('crud', require('./generators/crud'));
 
-    // Slushy.plugins(plugins, lodash)
+    Slushy.plugins(plugins, lodash)
 
-    // Slushy.siphon('default', {type: 'application'})
-    // Slushy.siphon('module', {type: 'client'})
+    Slushy.siphon('default', {type: 'application'})
+    Slushy.siphon('module', {type: 'client'})
     // Slushy.siphon('config', {type: 'client'})
     // Slushy.siphon('controller', {type: 'client'})
     // Slushy.siphon('directive', {type: 'client'})

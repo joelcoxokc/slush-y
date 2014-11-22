@@ -71,19 +71,19 @@
       function init(cb){
         _this.name = args[0];
         _this.names = _str.str().multi(_this.name);
+
         _.forEach( flags, function (flag, key){
           if(_.isEmpty(flag)){
             _this.prompts.push( prompts[key] )
           } else if(_.isString( flag )) {
             if(key === 'module'){
-
               filters[key] = flag;
             } else {
               filters[key] = flag.split(',');
+
             }
           }
         })
-        console.log(filters);
         if(_.size( _this.prompts )){
 
           if(_this.prompts[0].name === 'module'){
@@ -99,15 +99,17 @@
         }
 
         function next(answers){
+          // console.log(filters);
+
+          filters.moduleNames = _str.str().simple( filters.module );
           _.assign(filters, config);
           _.assign(filters, answers);
           filters.names = _this.names;
-          filters.moduleNames = _str.str().simple( filters.module );
 
           if(_.isEmpty(filters.functions)){
             filters.functions = defaults.functions;
           }
-
+          // console.log(filters.providers)
           if(_.isEmpty(filters.providers)){
             filters.providers = defaults.providers;
           } else if(!_.contains( filters.providers, '$scope' )){
@@ -137,6 +139,7 @@
 
 
       function generate(){
+
         gulp.src( templates.all )
           .pipe( $.template( filters ) )
           .pipe( $.rename(function (file){

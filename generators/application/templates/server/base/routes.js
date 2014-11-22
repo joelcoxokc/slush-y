@@ -7,7 +7,7 @@
 
   var errors = require('./components/errors');
   var cors = require('cors');
-  var globber = require('./components/globber');
+  var indexer = require('./components/indexer');
   var path = require('path');
 
 
@@ -16,9 +16,13 @@
     // Insert routes below
     // app.use('/api/things', require('./api/thing'));
     // app.use('/api/users', require('./api/user'));
-    globber('./server/api/*').forEach(function(routePath) {
-      require(path.resolve(routePath))(app);
-    });
+    // globber('./server/api/*').forEach(function(routePath) {
+    //   require(path.resolve(routePath))(app);
+    // });
+    var routes = indexer.all('server/api')
+    routes.forEach(function (item){
+      require(item.path)(app);
+    })
 
     app.use('/api/auth', require('./auth'));
 

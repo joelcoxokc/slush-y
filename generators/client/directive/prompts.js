@@ -2,43 +2,28 @@
 ;(function(){
 
   'use strict';
-    var _ = require('lodash');
-    var inquirer = require('inquirer')
 
     module.exports = directivePrompts;
 
 
-    function directivePrompts (done) {
+    function directivePrompts () {
 
-      var _this = this;
-      _this.questions = _this.questions.concat( directiveQuestions() );
-
-      /**
-       * Ask the first round of questions
-       */
-       inquirer
-        .prompt(_this.questions, promptCallback);
-
-
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
-        answers[answers.directiveType] = true;
-
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
-      }
-    }
-
-
-
-    function directiveQuestions(){
-
-      var questions = [{
+      var pendingPrompts = {
+        module : {
+          type: 'list',
+          name: 'module',
+          default: 'core',
+          message: 'Which module does this directive belongs to?'
+        },
+        providers: {
+          name: 'providers',
+          message: 'inject any providers? (please camma separate each)',
+        },
+        functions: {
+          name: 'functions',
+          message: 'add fucntions to the directive? (please camma separate each)',
+        },
+        type: {
           type: 'list',
           name: 'directiveType',
           message: 'What type of directive would you like to generate?',
@@ -50,9 +35,10 @@
             value: 'simple',
             name: '(simple)  --- comes with just a directive file'
           }]
-        }];
+        }
+      }
 
-      return questions;
+      return pendingPrompts;
 
     }
 

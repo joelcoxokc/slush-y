@@ -12,7 +12,6 @@
     module.exports = function( slushy, config, filters, templates, $, _ ){
 
         var _this = this;
-        // console.log(this.config);
 
         // Application Generator Tasks
         ////////////////////////////////

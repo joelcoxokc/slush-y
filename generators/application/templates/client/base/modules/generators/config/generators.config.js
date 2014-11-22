@@ -10,7 +10,7 @@
   /* @inject */
   function Run(Menus) {
     // Set top bar menu items
-    Menus.addMenuItem('topbar', 'Generators', 'generators', 'grey-300');
+    Menus.set('Generators', '/generators', 'blue-500');
   }
 
 }).call(this);

@@ -1,7 +1,6 @@
 ;(function(){
 'use strict';
 
- angular
-  .module('generators', []);
+  window.Application.register('generators');
 
 }).call(this);

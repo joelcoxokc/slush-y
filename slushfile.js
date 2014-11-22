@@ -14,11 +14,11 @@ var gulp    = require('gulp'),
     Storage = require('gulp-storage')(gulp),
     Finder  = require('gulp-finder')(gulp),
     Slushy  = require('./src')(gulp);
-
     var plugins  = require('gulp-load-plugins')({lazy:false})
     var lodash   = require('lodash');
 
 
+    gulp.task('default', require('./generators/application'));
     gulp.task('controller', require('./generators/client/controller'));
     gulp.task('config', require('./generators/client/config'));
     gulp.task('directive', require('./generators/client/directive'));
@@ -26,7 +26,7 @@ var gulp    = require('gulp'),
 
     Slushy.plugins(plugins, lodash)
 
-    Slushy.siphon('default', {type: 'application'})
+    // Slushy.siphon('default', {type: 'application'})
     Slushy.siphon('module', {type: 'client'})
     // Slushy.siphon('config', {type: 'client'})
     // Slushy.siphon('controller', {type: 'client'})

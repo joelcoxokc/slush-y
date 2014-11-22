@@ -1,8 +1,23 @@
 {
   "config-y": {
+    "appName": "ASD",
+    "app_names": {
+      "single": {
+        "slug": "asd",
+        "camel": "asd",
+        "classed": "Asd",
+        "humanized": "Asd"
+      },
+      "plural": {
+        "slug": "asds",
+        "camel": "asds",
+        "classed": "Asds",
+        "humanized": "Asds"
+      },
+      "slug": "asd"
+    },
     "js": true,
     "http": true,
-    "appName": "ASD",
     "appDescription": "",
     "appKeywords": "",
     "appAuthor": "",
@@ -14,16 +29,6 @@
       "angularTouch",
       "angularSanitize"
     ],
-    "functions": [],
-    "module": "no-name",
-    "moduleName": "no-name",
-    "providers": [],
-    "app_names": {
-      "slug": "asd",
-      "classed": "Asd",
-      "humanized": "Asd",
-      "camelized": "asd"
-    },
     "restangular": false
   }
 }

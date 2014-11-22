@@ -2,11 +2,35 @@
 ;(function(){
 
   'use strict';
+    var inquirer = require('inquirer');
 
-    module.exports = controllerPrompts;
+    module.exports = defaultPrompts;
 
 
-    function controllerPrompts () {
+    function defaultPrompts (done) {
+
+      var _this = this;
+      var prompts = defaultQuestions();
+
+      inquirer
+        .prompt(prompts, promptCallback);
+
+
+      /**
+       * [promptCallback Callback invoked when prompt is finished]
+       * @param  {Object} answers [A list of answers]
+       */
+      function promptCallback ( answers ) {
+
+        done( answers )
+
+      }
+
+    }
+
+
+
+    function defaultQuestions(){
 
       var questions = [
         {
@@ -75,7 +99,8 @@
             name: 'ngSanitize',
             checked: true
           }]
-        }]
+        }];
+
       return questions;
 
     }

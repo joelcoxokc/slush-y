@@ -4,13 +4,13 @@
 
   // Configuring the Articles module
   angular
-    .module('generators')
+    .module('<%= moduleNames.slug %>')
     .run( Run );
 
   /* @inject */
   function Run(Menus) {
     // Set top bar menu items
-    Menus.set('Generators', '/generators', 'blue-500');
+    Menus.set('<%= names.plural.classed %>', '/<%=names.slug%>', 'grey-500');
   }
 
 }).call(this);

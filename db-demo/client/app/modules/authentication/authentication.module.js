@@ -1,7 +1,7 @@
 ;(function(){
   'use strict';
 
-  angular
-    .module( 'authentication', []);
+ window.Application.register('authentication');
+
 
 }).call(this);

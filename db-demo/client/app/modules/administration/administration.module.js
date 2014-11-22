@@ -1,12 +1,6 @@
 ;(function(){
   'use strict';
 
-  angular
-    .module('administration', []);
+  window.Application.register('administration');
 
 }).call(this);
-/*
-
-  TODO: Fix the y-route
-
- */

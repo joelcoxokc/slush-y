@@ -14,6 +14,12 @@
 
     // Define the menus object
     this.menus = {};
+    this.menuItems = [];
+    this.menuItems.push({
+      'title': 'Home',
+      'link': '/',
+      'color': 'pink-400'
+      });
 
     // A private function for rendering decision
     var shouldRender = function(user) {
@@ -79,6 +85,18 @@
       delete this.menus[menuId];
     };
 
+    this.set = function(title, link, color){
+      var item = {
+        title:title,
+        link:link,
+        color:color
+      }
+      this.menuItems.push(item);
+    }
+
+    this.get = function(){
+      return this.menuItems;
+    }
     // Add menu item object
     this.addMenuItem = function(menuId, menuItemTitle, menuItemURL, menuItemUIRoute, isPublic, roles) {
       // Validate that the menu exists

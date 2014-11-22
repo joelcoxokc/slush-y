@@ -8,18 +8,18 @@ angular
   /* @inject */
   function NavbarCtrl($scope, $location, Auth, Menus, $state) {
     var vm = this;
-    vm.menu = [
-      {
-      'title': 'Home',
-      'link': '/',
-      'color': 'pink-400'
-      },{
-      'title': 'Generators',
-      'link': '/generators',
-      'color': 'blue-500'
-      }
-    ];
-
+    // vm.menu = [
+    //   {
+    //   'title': 'Home',
+    //   'link': '/',
+    //   'color': 'pink-400'
+    //   },{
+    //   'title': 'Generators',
+    //   'link': '/generators',
+    //   'color': 'blue-500'
+    //   }
+    // ];
+    vm.menu = Menus.get();
     vm.toggle = function(){
       $('#dr3').dropdown('toggle')
     }

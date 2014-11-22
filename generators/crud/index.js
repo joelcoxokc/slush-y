@@ -25,6 +25,8 @@
       _this.storage.create('config-y','config-y.json');
 
       _this.prompts = [];
+      _this.name = _this.args[0];
+      _this.names = _str.str().multi(_this.name);
       /////////////////////
 
       var templates = _this.finder(__dirname+'/templates')
@@ -50,8 +52,8 @@
       var args = _this.args;
 
       var dest = {};
-          dest.module = path.join(process.cwd(), 'client/app/modules', _this.args[0] );
-          dest.api = path.join(process.cwd(), 'server/api/', _this.args[0] )
+          dest.module = path.join(process.cwd(), 'client/app/modules', _this.names.plural.slug );
+          dest.api = path.join(process.cwd(), 'server/api/', _this.names.single.slug )
 
       /////////////////////
 
@@ -62,8 +64,7 @@
       /////////////////////
 
       function init(cb){
-        _this.name = args[0];
-        _this.names = _str.str().multi(_this.name);
+
         _.forEach( flags, function (flag, key){
           if(!_.isEmpty(flag) ){
              if(!Array.isArray(flag) ) {
@@ -87,7 +88,7 @@
         function next(answers){
               console.log(filters.folders)
 
-          filters.moduleNames = _str.str().simple( filters.module );
+          filters.moduleNames = _str.str().simple( _this.name );
           _.assign(filters, config);
 
           filters.names = _this.names;

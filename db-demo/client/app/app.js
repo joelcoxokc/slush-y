@@ -16,7 +16,7 @@ angular
   .run( run );
 
   /* @inject */
-  function run($rootScope, $location, Auth) {
+  function run($rootScope, $location, Auth, $state) {
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$stateChangeStart', function (event, next) {
       Auth.isLoggedInAsync(function(loggedIn) {
@@ -24,6 +24,9 @@ angular
           $location.path('/signin');
         }
       });
+      if(next.name === 'home'){
+        $rootScope.$broadcast('y:changed', next);
+      }
     });
   }
 

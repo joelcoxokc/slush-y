@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container"> -->
   <div class="navbar-header">
     <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
       <span class="sr-only">Toggle navigation</span>
@@ -10,6 +10,9 @@
   </div>
   <div collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
     <ul class="nav navbar-nav">
+      <li>
+        <a href="" text-white y-toggle-side-nav> <i class="mdi-navigation-menu"></i> </a>
+      </li>
       <li ng-repeat="item in nav.menu">
         <a ng-class="{'active': nav.isActive(item.link)}"
            btn-color="{{item.color}}"
@@ -56,4 +59,4 @@
       </li>
     </ul>
   </div>
-</div>
+<!-- </div> -->

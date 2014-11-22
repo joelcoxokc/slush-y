@@ -1,0 +1,91 @@
+.y-side-nav {
+  width: 256px;
+  height: 100%;
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  background-color: #fff;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.3);
+  -webkit-box-shadow: 2px 0 4px rgba(0,0,0,0.3);
+  transition: left 100ms ease-in-out;
+  -webkit-transition: left 100ms ease-in-out;
+}
+.y-overlay {
+  z-index: 2999;
+  display: none;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.3);
+  transition: display 400ms ease-in-out 0;
+  -webkit-transition: display 400ms ease-in-out 0;
+}
+body.y-closed .y-overlay {
+  display: none;
+}
+body.y-closed .y-side-nav {
+  left: -256px;
+}
+body.y-open .y-overlay {
+  display: block;
+}
+body.y-open .y-side-nav {
+  left: 0px;
+}
+.y-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 1.3em;
+  min-height: 64px;
+  width: 100%;
+}
+.y-toolbar.y-tall {
+  height: 192px;
+}
+.y-toolbar.y-medium-tall {
+  height: 88px;
+}
+.y-toolbar.y-medium-tall .y-toolbar-tools {
+  height: 48px;
+}
+.y-toolbar .y-indent {
+  margin-left: 64px;
+}
+.y-tool {
+  height: 64px;
+  font-weight: normal;
+  padding: 0 10px;
+  margin: 0;
+  line-height: 30px;
+  font-size: 1.3em;
+  text-decoration: none;
+}
+.y-tool:hover,
+.y-tool:active,
+.y-tool:focus,
+.y-tool.active {
+  text-decoration: none;
+}
+.y-tool.btn {
+  background-color: inherit;
+}
+.y-tool.btn:hover {
+  background-color: inherit;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+}
+.y-tool > * {
+  margin: 0 8px;
+}
+.y-tool h2,
+.y-tool h3 {
+  font-weight: normal;
+}
+.y-tool a {
+  color: inherit;
+  text-decoration: none;
+}

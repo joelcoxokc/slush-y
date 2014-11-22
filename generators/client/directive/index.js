@@ -130,7 +130,7 @@
           }
 
 
-          dest.final = path.join(dest.modules, _this.names.slug, 'directives', _this.names.single.camel);
+          dest.final = path.join(dest.modules, filters.moduleNames.slug, 'directives', _this.names.single.camel);
 
           var directivePath = path.join( 'app/modules',  filters.names.slug, 'directives', filters.names.single.camel );
           filters.directive_view_path = path.join( directivePath, filters.names.single.camel + '.directive.view.html' );

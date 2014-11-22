@@ -45,7 +45,11 @@
         server.changed(file.path);
       });
 
-      gulp.watch('./client/app/core/**/*.styl', ['stylus:dev'], server.changed)
+      gulp.watch('./client/app/**/*.styl', ['stylus:dev'])
+      // gulp.watch('../client/app/**/*.styl').on('change', function(file) {
+      //   console.log('Changed', file)
+      //   server.changed(file.path);
+      // });
 
       gulp.watch(['../client/app/**/*.html', './client/index.html']).on('change', function(file) {
         console.log('Changed', file)
@@ -55,6 +59,8 @@
         console.log('Changed', file)
         server.changed(file.path);
       });
+
+
     }
 
     function scripts(){
@@ -66,8 +72,9 @@
     function stylus(){
       return gulp.src(client.stylus)
         .pipe($.stylus())
-        .pipe($.rename('material-styles.css'))
-        .pipe(gulp.dest(client.stylusDest))
+        .pipe($.rename('stylus.css'))
+        .pipe(gulp.dest('client/app/core/styles'))
+        .pipe($.livereload())
     }
 
     function inject(){

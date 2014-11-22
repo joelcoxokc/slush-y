@@ -8,6 +8,14 @@ angular
   /* @inject */
   function NavbarCtrl($scope, $location, Auth, Menus, $state) {
     var vm = this;
+    var body = angular.element( document.querySelector('body') );
+    $scope.$on('isHome', function (next){
+      if(next.name === 'home'){
+        body.addClass('y-nav-isHome')
+      } else {
+        body.removeClass('y-nav-isHome')
+      }
+    });
     // vm.menu = [
     //   {
     //   'title': 'Home',
@@ -19,7 +27,7 @@ angular
     //   'color': 'blue-500'
     //   }
     // ];
-    vm.menu = Menus.get();
+    // vm.menu = Menus.get();
     vm.toggle = function(){
       $('#dr3').dropdown('toggle')
     }

@@ -54,7 +54,8 @@
       bower: './client/bower_components',
       templates: ['./client/**/*.html','!./client/index.html'],
       images: ['./client/app/**/*.png', './client/app/**/*.gif', './client/app/**/*.jpeg','./client/app/**/*.jpg'],
-      specs: ['./client/app/app.js', './client/app/**/*.js', './client/app/**/*.html']
+      specs: ['./client/app/app.js', './client/app/**/*.js', './client/app/**/*.html'],
+      stylus: ['./client/app/**/*.main.styl']
 
     };
     var tmp = {
@@ -97,10 +98,11 @@
       .task('watch', tasks.dev.watch)
 
     gulp
-      .task('build:dev', $.sequence('scripts:dev', 'inject:dev', 'bower:dev'))
+      .task('build:dev', $.sequence('scripts:dev', 'stylus:dev', 'inject:dev', 'bower:dev'))
       .task('scripts:dev', tasks.dev.scripts)
       .task('inject:dev', tasks.dev.inject)
       .task('bower:dev', tasks.dev.bower)
+      .task('stylus:dev', tasks.dev.stylus)
 
     /*
      | static = build:production, run static production server

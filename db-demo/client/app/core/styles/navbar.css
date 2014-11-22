@@ -7,3 +7,12 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+.navbar .navbar-btn {
+  font-size: 16px;
+  padding: 0 10px;
+}
+body.y-nav-isHome .navbar {
+  box-shadow: 0 0 0 rgba(0,0,0,0);
+  -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+}
+

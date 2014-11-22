@@ -8,7 +8,7 @@
   /* @inject */
   function <%= names.single.camel %>(<%=providers%>) {
     return {
-      templateUrl: '<%= directive_view_path %>'
+      templateUrl: '<%= directive_view_path %>',
       restrict: 'E',
       scope: true,
       transclude: true,

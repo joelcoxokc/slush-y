@@ -24,8 +24,10 @@
 <link rel="stylesheet" href="app/core/styles/colors.css">
 <link rel="stylesheet" href="app/core/styles/core.css">
 <link rel="stylesheet" href="app/core/styles/main.css">
+<link rel="stylesheet" href="app/core/styles/material-wfont.css">
 <link rel="stylesheet" href="app/core/styles/navbar.css">
 <link rel="stylesheet" href="app/core/styles/panel.css">
+<link rel="stylesheet" href="app/core/styles/stylus.css">
 <link rel="stylesheet" href="app/modules/authentication/styles/auth.styles.css">
 <!-- endinject -->
 
@@ -33,16 +35,18 @@
 <!-- END:HEAD -->
 
   </head>
-  <body ng-app="asd">
+  <body ng-app="asd" class="y-closed y-nav-isHome">
+    <div class="y-overlay"></div>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <!-- Add your site or application content here -->
     <!-- <div ng-include="'app/core/views/navbar.html'"></div> -->
-    <div ng-include="'app/core/views/navbar.view.html'" class="navbar navbar-default navbar-fixed-top" ng-controller="NavbarCtrl as nav"></div>
+    <!-- <div ng-include="'app/core/views/navbar.view.html'" class="navbar color-blue-500 navbar-fixed-top" ng-controller="NavbarCtrl as nav"></div> -->
+    <y-toolbar></y-toolbar>
 
-
+    <y-side-nav></y-side-nav>
 
     <ui-view></ui-view>
 
@@ -121,6 +125,7 @@
 <script src="app/modules/authentication/authentication.module.js"></script>
 <script src="app/modules/generators/generators.module.js"></script>
 <script src="app/modules/people/people.module.js"></script>
+<script src="app/modules/y-modules/y-modules.module.js"></script>
 <script src="app/modules/administration/config/administration.routes.js"></script>
 <script src="app/modules/administration/controllers/account.detail.controller.js"></script>
 <script src="app/modules/administration/controllers/accounts.list.controller.js"></script>
@@ -142,6 +147,9 @@
 <script src="app/modules/people/config/person.run.js"></script>
 <script src="app/modules/people/controllers/person.controller.js"></script>
 <script src="app/modules/administration/directives/admin-nav/admin-nav.directive.js"></script>
+<script src="app/modules/y-modules/directives/ySideNav/ySideNav.directive.js"></script>
+<script src="app/modules/y-modules/directives/yToggleSideNav/yToggleSideNav.directive.js"></script>
+<script src="app/modules/y-modules/directives/yToolbar/y-toolbar.directive.js"></script>
 <!-- endinject -->
 
 <!-- templates:js -->

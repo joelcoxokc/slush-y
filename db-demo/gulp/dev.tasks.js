@@ -40,7 +40,7 @@
       $.livereload.listen()
 
 
-      gulp.watch('../client/app/**/*.js').on('change', function(file) {
+      gulp.watch('./client/app/**/*.js').on('change', function(file) {
         console.log('Changed', file)
         server.changed(file.path);
       });
@@ -51,11 +51,11 @@
       //   server.changed(file.path);
       // });
 
-      gulp.watch(['../client/app/**/*.html', './client/index.html']).on('change', function(file) {
+      gulp.watch(['./client/app/**/*.html', './client/index.html']).on('change', function(file) {
         console.log('Changed', file)
         server.changed(file.path);
       });
-      gulp.watch('../client/app/**/*.css').on('change', function(file) {
+      gulp.watch('./client/app/**/*.css').on('change', function(file) {
         console.log('Changed', file)
         server.changed(file.path);
       });

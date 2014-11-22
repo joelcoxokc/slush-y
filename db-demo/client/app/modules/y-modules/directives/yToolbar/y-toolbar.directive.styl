@@ -7,6 +7,8 @@ toolbar-indent-margin = 64px
 baseline-grid = 8px !default
 
 
+
+
 .y-toolbar
   position fixed
   top 0
@@ -14,6 +16,15 @@ baseline-grid = 8px !default
   font-size 1.3em
   min-height baseline-grid * 8
   width 100%
+
+  .y-toolbar-header
+    float left
+    height 64px
+    font-size 1.3em
+    line-height 2.6em
+
+
+
 
   &.y-tall
     height toolbar-tall-height
@@ -30,21 +41,37 @@ baseline-grid = 8px !default
   .y-indent
     margin-left toolbar-indent-margin
 
+.y-tools
+
+  &.y-tools-left
+    float left
+    &.y-toggle-tools
+      width 80px
+      height 64px
+
+  &.y-tools-right
+    float right
+
+
 
 .y-tool
+
   height toolbar-tool-height
   font-weight normal
   padding 0 10px
   margin 0
   line-height 30px
-  font-size 1.3em
+  font-size 1.6em
   text-decoration none
 
   &:hover,
   &:active,
   &:focus,
   &.active
+    color inherit
     text-decoration none
+
+
 
   &.btn
     background-color inherit

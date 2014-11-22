@@ -43,6 +43,12 @@ body.y-open .y-side-nav {
   min-height: 64px;
   width: 100%;
 }
+.y-toolbar .y-toolbar-header {
+  float: left;
+  height: 64px;
+  font-size: 1.3em;
+  line-height: 2.6em;
+}
 .y-toolbar.y-tall {
   height: 192px;
 }
@@ -55,19 +61,30 @@ body.y-open .y-side-nav {
 .y-toolbar .y-indent {
   margin-left: 64px;
 }
+.y-tools.y-tools-left {
+  float: left;
+}
+.y-tools.y-tools-left.y-toggle-tools {
+  width: 80px;
+  height: 64px;
+}
+.y-tools.y-tools-right {
+  float: right;
+}
 .y-tool {
   height: 64px;
   font-weight: normal;
   padding: 0 10px;
   margin: 0;
   line-height: 30px;
-  font-size: 1.3em;
+  font-size: 1.6em;
   text-decoration: none;
 }
 .y-tool:hover,
 .y-tool:active,
 .y-tool:focus,
 .y-tool.active {
+  color: inherit;
   text-decoration: none;
 }
 .y-tool.btn {

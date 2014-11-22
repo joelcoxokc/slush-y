@@ -1,10 +1,10 @@
 'use strict';
 
 (function() {
-	// <%= controllerNames.humanized %> Controller Spec
-	describe('<%= controllerNames.humanized %> Controller Tests', function() {
+	// People Controller Spec
+	describe('People Controller Tests', function() {
 		// Initialize global variables
-		var <%= controllerNames.classed %>Controller,
+		var PeopleController,
 			scope,
 			$httpBackend,
 			$stateParams,
@@ -44,8 +44,8 @@
 			$httpBackend = _$httpBackend_;
 			$location = _$location_;
 
-			// Initialize the <%= controllerNames.humanized %> controller.
-			<%= controllerNames.classed %>Controller = $controller('<%= controllerNames.classed %>Controller', {
+			// Initialize the People controller.
+			PeopleController = $controller('PeopleController', {
 				$scope: scope
 			});
 		}));

@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('<%= moduleNames.slug %>')
+    .module('<%= names.slug %>')
     .filter('<%= names.single.camel %>', <%= names.single.camel %>);
 
   /* @inject */

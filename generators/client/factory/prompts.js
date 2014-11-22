@@ -2,43 +2,30 @@
 ;(function(){
 
   'use strict';
-    var _ = require('lodash');
-    var inquirer = require('inquirer')
 
-    module.exports = factoryPrompts;
+    module.exports = prompts;
 
 
-    function factoryPrompts (done) {
+    function prompts () {
 
-      var _this = this;
-
-      /**
-       * Ask the first round of questions
-       */
-      inquirer
-        .prompt(_this.questions, promptCallback);
-
-
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
-
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
+      var pendingPrompts = {
+        module : {
+          type: 'list',
+          name: 'module',
+          default: 'core',
+          message: 'Which module does this factory belongs to?'
+        },
+        providers: {
+          name: 'providers',
+          message: 'inject any providers? (please camma separate each)',
+        },
+        functions: {
+          name: 'functions',
+          message: 'add fucntions to the factory? (please camma separate each)',
+        }
       }
-    }
 
-
-
-    function factoryQuestions(){
-
-      var questions = [];
-
-      return questions;
+      return pendingPrompts;
 
     }
 

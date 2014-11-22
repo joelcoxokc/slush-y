@@ -9,9 +9,9 @@
   function <%= names.single.classed %>($stateProvider) {
     // <%= moduleNames.slug %> state routing
     $stateProvider
-      .state('<%= names.single.slug %>', {
-        url: '/<%= names.single.slug %>',
-        templateUrl: 'app/modules/<%= moduleNames.slug %>/views/<%= names.single.slug %>.view.html'
+      .state('<%= names.plural.slug %>', {
+        url: '/<%= names.plural.slug %>',
+        templateUrl: 'app/modules/<%= moduleNames.slug %>/views/<%= names.plural.slug %>.view.html'
       });
   }
 

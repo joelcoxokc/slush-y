@@ -3,13 +3,46 @@
 
   'use strict';
 
-    module.exports = prompts;
+    var inquirer = require('inquirer');
+    module.exports = modulePrompts;
 
 
-    function prompts () {
+    function modulePrompts (done) {
 
-      var pendingPrompts = {
+      var _this = this;
+      var prompts = [];
+      var questions = moduleQuestions();
+      if(!_this.title){ prompts.push(questions[0]); }
+      prompts.push(questions[1]);
 
+      /**
+       * Ask the first round of questions
+       */
+      inquirer
+        .prompt(prompts, promptCallback);
+
+
+      /**
+       * [promptCallback Callback invoked when prompt is finished]
+       * @param  {Object} answers [A list of answers]
+       */
+      function promptCallback ( answers ) {
+        answers.moduleName = answers.moduleName || _this.title;
+        /**
+         * Complete the prompt;
+         */
+        done( answers )
+      }
+
+      function moduleQuestions(){
+
+        var questions = [
+          {
+            name: 'moduleName',
+            message: 'What would you like to name this module?',
+            default: _this.title
+
+          },{
             type: 'checkbox',
             name: 'folders',
             message: 'Which folders would you like your module to include?',
@@ -54,11 +87,11 @@
               name: 'views',
               checked: true
             }]
-          }
+          }];
 
-      return pendingPrompts;
+        return questions;
 
+      }
     }
-
 
 }).call(this);

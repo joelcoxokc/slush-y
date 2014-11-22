@@ -1,7 +1,6 @@
 ;(function(){
   'use strict';
 
-  angular
-    .module('<%= moduleNames.slug %>', []);
+  window.Application.register('<%= names.slug %>');
 
 }).call(this);

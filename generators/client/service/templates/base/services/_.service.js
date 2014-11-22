@@ -9,8 +9,6 @@
   function <%= names.single.classed %>(<%=providers%>) {
 
     this._storage = {};
-    <% _.forEach( functions, function(func){ %>
-    this.<%=func%>   = <%=func%>;<% }) %>
 
     // <%= names.single.humanized %> service logic
     ////////////////////////////////
@@ -19,7 +17,7 @@
      * <%=func%> description
      * @return {[type]} description
      */
-    function <%=func%> (){}
+    this.<%=func%> = function(){}
     <% }) %>
 
   }

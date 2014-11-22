@@ -2,45 +2,30 @@
 ;(function(){
 
   'use strict';
-    var inquirer = require('inquirer')
-    var _ = require('lodash')
 
-    module.exports = servicePrompts;
+    module.exports = prompts;
 
 
-    function servicePrompts (done) {
+    function prompts () {
 
-      var _this = this;
-      if(!_.size(serviceQuestions())){
-        _this.questions = _this.questions.concat(serviceQuestions());
+      var pendingPrompts = {
+        module : {
+          type: 'list',
+          name: 'module',
+          default: 'core',
+          message: 'Which module does this service belongs to?'
+        },
+        providers: {
+          name: 'providers',
+          message: 'inject any providers? (please camma separate each)',
+        },
+        functions: {
+          name: 'functions',
+          message: 'add fucntions to the service? (please camma separate each)',
+        }
       }
 
-      /**
-       * Ask the first round of questions
-       */
-      inquirer
-        .prompt(_this.questions, promptCallback);
-
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
-
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
-      }
-    }
-
-
-
-    function serviceQuestions(){
-
-      var questions = [];
-
-      return questions;
+      return pendingPrompts;
 
     }
 

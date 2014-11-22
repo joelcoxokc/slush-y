@@ -2,10 +2,10 @@
   'use strict';
   angular
     .module('<%= moduleNames.slug %>')
-    .controller('<%= answers.controllerNames.classed %>Controller', <%= answers.controllerNames.classed %>Controller);
+    .controller('<%= controllerNames.classed %>Controller', <%= controllerNames.classed %>Controller);
 
   /* @inject */
-  function <%= answers.controllerNames.classed %>Controller($scope) {
+  function <%= controllerNames.classed %>Controller($scope) {
       // Controller Logic
       // ...
 

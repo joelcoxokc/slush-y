@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('<%= moduleNames.slug %>')
+    .module('<%= names.slug %>')
     .factory('<%= names.single.classed %>', <%= names.single.classed %>);
 
   /* @inject */

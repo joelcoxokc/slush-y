@@ -19,7 +19,6 @@
 
     function link(scope, element, attrs) {
       // Sidenav directive logic
-      console.log('yolo');
 
       /**
        * open description

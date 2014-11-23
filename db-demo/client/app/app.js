@@ -24,9 +24,7 @@ angular
           $location.path('/signin');
         }
       });
-      if(next.name === 'home'){
-        $rootScope.$broadcast('y:changed', next);
-      }
+      $rootScope.$broadcast('y:changed', next);
     });
   }
 

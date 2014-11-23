@@ -1,11 +1,11 @@
-<div class="y-toolbar" color="blue-500">
+<nav class="y-toolbar" color="blue-500">
   <div class="y-tools y-tools-left y-toggle-tools">
     <button class="btn y-tool" y-toggle-side-nav>
       <i class="mdi-navigation-menu"></i>
     </button>
   </div>
 
-  <div class="y-toolbar-header">
+  <div class="y-toolbar-header" ui-sref="home" point>
     slush-y
   </div>
 
@@ -13,11 +13,20 @@
     <button class="btn y-tool">
       <i class="mdi-action-search"></i>
     </button>
-    <button class="btn y-tool">
+    <button class="btn y-tool" ui-sref="home">
       <i class="mdi-action-dashboard"></i>
     </button>
-      <button class="btn y-tool">
+      <button class="btn y-tool" ui-sref="signin">
       <i class="mdi-social-person"></i>
     </button>
   </div>
-</div>
+
+  <div class="y-sub-header">
+    <div class="y-sub-header-action">
+    <p></p>
+    </div>
+    <div class="y-sub-heading">
+      slush-y
+    </div>
+  </div>
+</nav>

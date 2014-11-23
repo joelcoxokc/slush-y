@@ -1,3 +1,6 @@
+.y-item {
+  background-color: color-red;
+}
 .y-side-nav {
   width: 256px;
   height: 100%;
@@ -9,8 +12,16 @@
   background-color: #fff;
   box-shadow: 2px 0 4px rgba(0,0,0,0.3);
   -webkit-box-shadow: 2px 0 4px rgba(0,0,0,0.3);
-  transition: left 100ms ease-in-out;
-  -webkit-transition: left 100ms ease-in-out;
+  transition: left 300ms ease-in-out;
+  -webkit-transition: left 300ms ease-in-out;
+}
+.y-side-toolbar {
+  height: 64px;
+  width: 100%;
+}
+.y-side-header {
+  height: 80px;
+  width: 100%;
 }
 .y-overlay {
   z-index: 2999;
@@ -42,6 +53,7 @@ body.y-open .y-side-nav {
   font-size: 1.3em;
   min-height: 64px;
   width: 100%;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.12), 0 1px 6px rgba(0,0,0,0.12);
 }
 .y-toolbar .y-toolbar-header {
   float: left;
@@ -49,8 +61,31 @@ body.y-open .y-side-nav {
   font-size: 1.3em;
   line-height: 2.6em;
 }
+.y-toolbar .y-sub-header {
+  display: none;
+  width: 100%;
+  height: 80px;
+  float: left;
+  background-color: #808080;
+}
+.y-toolbar .y-sub-header .y-sub-header-action {
+  float: left;
+  width: 104px;
+}
+.y-toolbar .y-sub-header .y-sub-heading {
+  float: left;
+  margin-top: 15px;
+  font-size: 2em;
+}
 .y-toolbar.y-tall {
-  height: 192px;
+  height: 144px;
+}
+.y-toolbar.y-tall .y-toolbar-header {
+  font-size: 2em;
+  margin-top: 50px;
+}
+.y-toolbar.y-tall .y-toolbar-header .y-sub-header {
+  display: block;
 }
 .y-toolbar.y-medium-tall {
   height: 88px;
@@ -83,6 +118,7 @@ body.y-open .y-side-nav {
 .y-tool:hover,
 .y-tool:active,
 .y-tool:focus,
+.y-tool:visited,
 .y-tool.active {
   color: inherit;
   text-decoration: none;
@@ -95,9 +131,6 @@ body.y-open .y-side-nav {
   box-shadow: none;
   -webkit-box-shadow: none;
 }
-.y-tool > * {
-  margin: 0 8px;
-}
 .y-tool h2,
 .y-tool h3 {
   font-weight: normal;
@@ -105,4 +138,29 @@ body.y-open .y-side-nav {
 .y-tool a {
   color: inherit;
   text-decoration: none;
+}
+.y-list,
+ul.y-list {
+  margin: 0;
+  padding: 0;
+}
+.y-list .y-item,
+ul.y-list .y-item {
+  height: 64px;
+  margin: 0;
+  padding: 12px 0 0 0;
+  border-bottom: 1px solid #eee;
+  padding-left: 32px;
+}
+.y-list .y-item .y-item-action,
+ul.y-list .y-item .y-item-action {
+  float: left;
+  width: 64px;
+  font-size: 2em;
+}
+.y-list .y-item .y-item-text,
+ul.y-list .y-item .y-item-text {
+  float: left;
+  font-size: 18px;
+  line-height: 2em;
 }

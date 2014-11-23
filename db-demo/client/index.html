@@ -47,7 +47,14 @@
     <!-- <div ng-include="'app/core/views/navbar.view.html'" class="navbar color-blue-500 navbar-fixed-top" ng-controller="NavbarCtrl as nav"></div> -->
     <y-toolbar></y-toolbar>
 
-    <y-side-nav></y-side-nav>
+    <y-side-nav>
+      <y-list hover="true">
+        <y-item ui-sref="generators">
+          <div class="y-item-action"><i class="mdi-navigation-apps"></i></div>
+          <div class="y-item-text"> Generators</div>
+        </y-item>
+      </y-list>
+    </y-side-nav>
 
     <ui-view></ui-view>
 
@@ -148,6 +155,8 @@
 <script src="app/modules/people/config/person.run.js"></script>
 <script src="app/modules/people/controllers/person.controller.js"></script>
 <script src="app/modules/administration/directives/admin-nav/admin-nav.directive.js"></script>
+<script src="app/modules/y-modules/directives/yItem/y-item.directive.js"></script>
+<script src="app/modules/y-modules/directives/yList/y-list.directive.js"></script>
 <script src="app/modules/y-modules/directives/ySideNav/ySideNav.directive.js"></script>
 <script src="app/modules/y-modules/directives/yToggleSideNav/yToggleSideNav.directive.js"></script>
 <script src="app/modules/y-modules/directives/yToolbar/y-toolbar.directive.js"></script>

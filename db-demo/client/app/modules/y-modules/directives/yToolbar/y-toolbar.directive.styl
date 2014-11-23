@@ -1,7 +1,8 @@
 toolbar-tool-height = 64px
 toolbar-height = 64px
 toolbar-medium-tall-height = 88px
-toolbar-tall-height = 192px
+toolbar-tall-height = 144px
+// toolbar-tall-height = 192px
 toolbar-indent-margin = 64px
 
 baseline-grid = 8px !default
@@ -16,6 +17,7 @@ baseline-grid = 8px !default
   font-size 1.3em
   min-height baseline-grid * 8
   width 100%
+  shadow-z-1()
 
   .y-toolbar-header
     float left
@@ -23,12 +25,32 @@ baseline-grid = 8px !default
     font-size 1.3em
     line-height 2.6em
 
+  .y-sub-header
+    display none
+    width 100%
+    height 80px
+    float left
+    background-color grey
+
+    .y-sub-header-action
+      float left
+      width 104px
+
+    .y-sub-heading
+      float left
+      margin-top 15px
+      font-size 2em
 
 
 
   &.y-tall
     height toolbar-tall-height
+    .y-toolbar-header
+      font-size 2em
+      margin-top 50px
 
+      .y-sub-header
+        display block
 
   &.y-medium-tall
     height toolbar-medium-tall-height
@@ -53,9 +75,8 @@ baseline-grid = 8px !default
     float right
 
 
-
 .y-tool
-
+  // width 50px
   height toolbar-tool-height
   font-weight normal
   padding 0 10px
@@ -67,11 +88,10 @@ baseline-grid = 8px !default
   &:hover,
   &:active,
   &:focus,
+  &:visited,
   &.active
     color inherit
     text-decoration none
-
-
 
   &.btn
     background-color inherit
@@ -81,7 +101,7 @@ baseline-grid = 8px !default
       -webkit-box-shadow none
 
   > *
-    margin 0 8px
+    // margin 0 8px
 
   h2, h3
     font-weight normal

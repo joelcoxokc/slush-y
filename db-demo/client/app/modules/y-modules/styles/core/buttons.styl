@@ -1,0 +1,104 @@
+$btn-sizes = xs sm md lg lx
+
+btn-shadow()
+  shadow-z-2()
+  transition box-shadow transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)
+  &:active:not(.btn-link)
+      shadow-z-3()
+  &:hover
+      shadow-z-5()
+
+
+
+
+.btn
+  position relative
+  border 0
+  margin 10px 1px
+  cursor pointer
+  border-radius none
+  text-transform uppercase
+  text-decoration none
+  color $darkbg-text
+
+  &:hover,
+  &:focus
+    color $darkbg-text
+
+  &:hover:not(.btn-link)
+    shadow-z-2-hover()
+  transition box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1)
+
+  &:active:not(.btn-link)
+    shadow-z-3()
+    color $darkbg-text
+
+  outline none !important
+
+.btn-link,
+.btn:not([class^="btn btn-"]),
+.btn-default
+    color $lightbg-text
+    &:hover,
+    &:active,
+    &:focus
+      color $lightbg-text
+
+
+.btn:not([class^="btn btn-"]),
+.btn-default
+  &:hover
+    background-color: rgba(255,255,255,0.5);
+
+.btn-raised
+  btn-raised()
+
+.btn-flat
+  box-shadow none !important
+    &.btn-default:hover
+      background none
+
+.btn-group,
+.btn-group-vertical
+    position relative
+    border-radius 4px
+    margin 10px 1px
+
+    btn-shadow()
+    &.open .dropdown-toggle
+        box-shadow none
+
+    &.btn-group-raised
+        btn-shadow()
+
+    .btn,
+    .btn:active,
+    .btn-group
+        box-shadow none !important
+        margin 0
+
+    .btn:active .caret
+      margin-left: -1px
+
+.btn-group-flat
+    box-shadow none !important
+
+.btn-action
+    margin 0
+    padding 15px
+    font-size 26px
+    width 56px
+    height 56px
+    btn-shadow()
+
+    &, .ripple-wrapper
+        border-radius 100%
+
+    &.btn-mini
+        width 40px
+        height 40px
+        padding 13px
+        font-size 15px
+
+.toolbar-action-btn
+  margin-bottom -80%

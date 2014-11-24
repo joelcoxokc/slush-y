@@ -31,6 +31,22 @@
         resolve: {
           Resolved: ResolvedFeature
         }
+      })
+      .state('home.edit', {
+        url: '/features/:id/edit',
+        templateUrl: 'app/core/views/edit.view.html',
+        controller: 'FeatureCtrl as vm',
+        resolve: {
+          Resolved: ResolvedFeature
+        }
+      })
+      .state('home.create', {
+        url: '/features/create',
+        templateUrl: 'app/core/views/create.view.html',
+        controller: 'FeatureCtrl as vm',
+        resolve: {
+          Resolved: ResolvedFeature
+        }
       });
 
       /*

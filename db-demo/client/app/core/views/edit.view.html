@@ -1,0 +1,33 @@
+<y-flex>
+  <div class="y-panel-toolbar color-grey-200">
+    <div class="y-panel-toolbar-right">
+      <button class="btn y-tool text-right" ui-sref="home.detail({id: vm.thing._id})">
+        <i class="mdi-navigation-close"></i>
+      </button>
+    </div>
+  </div>
+</y-flex>
+<y-flex>
+  <div class="y-panel-header large color-grey-200">
+    <div class="y-panel-heading">
+      {{vm.thing.name}}
+    </div>
+  </div>
+</y-flex>
+<form ng-submit="vm.updateThing(vm.thing)">
+<y-flex>
+  <div class="f-md-12 y-pad-30">
+    <div class="form-group">
+      <label for="name" class="control-label">Name</label>
+      <input type="text" class="form-control primary" ng-model="vm.thing.name" id="name" placeholder="name">
+    </div>
+    <div class="form-group">
+      <label for="info" class="control-label">Information</label>
+      <textarea class="form-control primary" ng-model="vm.thing.info" id="name" placeholder="name" style="min-height:100px;"></textarea>
+    </div>
+  </div>
+  <div class="y-md-12 y-pad-20">
+    <button type="submit" class="btn btn-clear btn-lg" text-white>Done</button>
+  </div>
+</y-flex>
+</form>

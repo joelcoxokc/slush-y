@@ -1,15 +1,19 @@
-<div class="flex">
+<y-flex>
   <section class="f-md-8 f-md-offset-2 z-top">
     <div class="flex">
-      <div class="y-panel filled f-md-12">
-
-
+      <div class="y-panel filled f-md-12 lighter">
         <ui-view></ui-view>
-
       </div>
     </div>
   </section>
-</div>
+  <div class="f-md-2 z-top">
+    <button class="btn btn-action btn-pink-A100 toolbar-action-btn" ui-sref="home.create">
+      <i class="mdi-content-add"></i>
+    </button>
+  </div>
+</y-flex>
+
+
     <!-- <section class="f-md-8 col-sm-height panel" data-ng-show="vm.showDetailsss">
       <h1 ng-hide="vm.creating" class="panel-heading">
         {{vm.shown.name}}</h1>

@@ -1,5 +1,5 @@
 <y-flex>
-  <div class="y-panel-header">
+  <div class="y-panel-header large color-grey-200">
     <div class="y-panel-heading">
       Features
       <!-- <button
@@ -13,7 +13,7 @@
 <y-list>
   <y-item ng-repeat="thing in vm.awesomeThings" ui-sref="home.detail({id:thing._id})">
     <div class="flex">
-      <div class="f-auto">
+      <div class="f-auto y-item-content">
         {{thing.name}}
       </div>
       <div class="f-xs-1">
@@ -22,5 +22,6 @@
         </button>
       </div>
     </div>
+    <div class="y-divider" ng-if="!$last"></div>
   </y-item>
 </y-list>

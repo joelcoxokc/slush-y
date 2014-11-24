@@ -6,16 +6,17 @@
     .controller('FeatureCtrl', FeatureCtrl);
 
   /* @inject */
-  function FeatureCtrl(Resolved, $scope, Thing, socket, logger) {
+  function FeatureCtrl(Resolved, $scope, Thing, socket, logger, $state) {
     var vm = this;
     vm.thing = Resolved;
     vm.deleteThing = deleteThing;
     vm.showThing = showThing;
     vm.updateThing = updateThing;
+    vm.addThing = addThing;
 
 
 
-    socket.syncUpdates('things', vm.awesomeThings);
+    // socket.syncUpdates('things', vm.awesomeThings);
 
     ////////////////////
 
@@ -23,25 +24,30 @@
       if(vm.newThing === '') {
         return;
       }
-      Thing.create( {name: vm.newThing} );
+      Thing
+        .create( {name: vm.newThing.name, info:vm.newThing.info} )
+        .then(function(){
+          $state.go('home.features')
+        })
+
       vm.newThing = '';
-      vm.showDetail = false;
-      vm.creating = false;
-      vm.shown = {};
     }
 
     function deleteThing(thing) {
       // console.log(thing)
-      Thing.destroy(thing._id);
-      vm.showDetail = false;
-      vm.editing = false;
+      Thing
+        .destroy(thing._id)
+        .then(function(){
+          $state.go('home.features');
+        });
+
     }
 
     function updateThing(thing){
       Thing
         .update(thing._id, thing)
         .then( function (data) {
-          vm.editing = false
+          $state.go('home.detail', {id:thing._id});
         });
     }
 
@@ -62,8 +68,6 @@
       vm.creating = true;
     }
 
-    $scope.$on('$destroy', function () {
-      socket.unsyncUpdates('things');
-    });
+
   }
 }).call(this);

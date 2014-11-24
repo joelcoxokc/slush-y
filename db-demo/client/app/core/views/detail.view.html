@@ -1,7 +1,27 @@
 <y-flex>
+  <div class="y-panel-toolbar color-grey-200">
+    <button class="btn y-tool y-font-md" ui-sref="home.features">
+      <i class="mdi-navigation-arrow-back"></i>
+    </button>
+    <div class="y-panel-toolbar-right">
+      <button class="btn y-tool text-right" ui-sref="home.edit({id: vm.thing._id})">
+        <i class="mdi-editor-mode-edit"></i>
+      </button>
+      <button class="btn y-tool text-right" data-ng-click="vm.deleteThing(vm.thing)">
+        <i class="mdi-action-delete"></i>
+      </button>
+    </div>
+  </div>
+</y-flex>
+<y-flex>
   <div class="y-panel-header large color-grey-200">
     <div class="y-panel-heading">
       {{vm.thing.name}}
     </div>
+  </div>
+</y-flex>
+<y-flex>
+  <div class="f-md-12 y-pad-24">
+    {{vm.thing.info}}
   </div>
 </y-flex>

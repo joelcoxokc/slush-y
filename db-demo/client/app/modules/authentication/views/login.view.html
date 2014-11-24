@@ -1,23 +1,27 @@
-<div class="container top">
-  <div class="row">
-    <div class="col-sm-12">
+<toolbar-control title="Login">
+</toolbar-control>
+<y-flex>
+  <div class="f-md-8 f-md-offset-2 z-top">
 
-      <section class="panel">
-        <h3 class="panel-heading bg-deeporange-300">
-          Login</h3>
-        <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
+    <div class="y-panel filled y-pad-24 y-mr-bottom-24">
+      <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
+      <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+    </div>
 
 
-          <article class="panel-body">
-            <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-            <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+    <section class="y-panel filled y-mr-bottom-24">
+
+      <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
+
+        <y-flex>
+          <article class="y-panel-content y-pad-24">
 
             <div class="form-group">
               <label for="email" class="control-label">Email</label>
 
               <input type="email"
                      name="email"
-                     class="form-control warning"
+                     class="form-control primary"
                      ng-model="vm.user.email"
                      required
                      id="email">
@@ -28,7 +32,7 @@
 
               <input  type="password"
                       name="password"
-                      class="form-control warning"
+                      class="form-control primary"
                       ng-model="vm.user.password"
                       required
                       id="password">
@@ -46,34 +50,36 @@
             </div>
           </article>
 
-          <article class="panel-footer">
-            <button class="btn colored button-deeporange-300 btn-lg btn-login" type="submit">
+          <article class="f-md-12">
+            <button class="btn btn-lg btn-clear btn-login" type="submit">
               Sign in
             </button>
-            <a class="btn btn-white btn-lg btn-register pull-right" ui-sref="signup">
+            <a class="btn btn-clear btn-lg btn-register pull-right" ui-sref="signup">
               Register
               <i class="fa fa-arrow-right"></i></a>
           </article>
 
-        </form>
-      </section>
+        </y-flex>
+      </form>
+    </section>
 
-      <section class="panel panel-default">
-        <article class="panel-body text-center">
+    <y-flex>
+      <section class="y-panel filled f-md-12">
+        <article class="y-panel-content text-center">
 
-          <a class="btn btn-white" href="" ng-click="vm.loginOauth('facebook')">
+          <a class="btn btn-clear" href="" ng-click="vm.loginOauth('facebook')">
             <i class="fa fa-facebook"></i> Connect with Facebook
           </a>
-          <a class="btn btn-white" href="" ng-click="vm.loginOauth('google')">
+          <a class="btn btn-clear" href="" ng-click="vm.loginOauth('google')">
             <i class="fa fa-google-plus"></i> Connect with Google+
           </a>
-          <a class="btn btn-white" href="" ng-click="vm.loginOauth('twitter')">
+          <a class="btn btn-clear" href="" ng-click="vm.loginOauth('twitter')">
             <i class="fa fa-twitter"></i> Connect with Twitter
           </a>
 
         </article>
       </section>
+    </y-flex>
 
-    </div>
   </div>
-</div>
+</y-flex>

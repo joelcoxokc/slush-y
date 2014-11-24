@@ -20,6 +20,7 @@
     function link(scope, element, attrs) {
       // Sidenav directive logic
 
+
       /**
        * open description
        * @return {[type]} description

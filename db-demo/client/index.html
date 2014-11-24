@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="app/core/styles/panel.css">
 <link rel="stylesheet" href="app/core/styles/stylus.css">
 <link rel="stylesheet" href="app/modules/authentication/styles/auth.styles.css">
+<link rel="stylesheet" href="app/modules/y-modules/directives/toolbarControl/toolbar-control.directive.styles.css">
 <!-- endinject -->
 
 
@@ -114,13 +115,13 @@
 <!-- core:js -->
 <script src="app/app.js"></script>
 <script src="app/core/core.module.js"></script>
-<script src="app/core/config/core.routes.js"></script>
 <script src="app/core/controllers/feature.controller.js"></script>
 <script src="app/core/controllers/footer.controller.js"></script>
 <script src="app/core/controllers/header.controller.js"></script>
 <script src="app/core/controllers/home.controller.js"></script>
 <script src="app/core/controllers/navbar.controller.js"></script>
 <script src="app/core/controllers/sidebar.controller.js"></script>
+<script src="app/core/config/core.routes.js"></script>
 <script src="app/core/api/thing/thing.model.js"></script>
 <script src="app/core/api/user/user.model.js"></script>
 <script src="app/core/directives/mongoose-error/mongoose-error.directive.js"></script>
@@ -129,9 +130,9 @@
 <script src="app/core/services/logger/logger.factory.js"></script>
 <script src="app/core/services/menus/menus.service.js"></script>
 <script src="app/core/services/modal/modal.service.js"></script>
-<script src="app/core/services/storage/storage.service.js"></script>
 <script src="app/core/services/socket/socket.mock.js"></script>
 <script src="app/core/services/socket/socket.service.js"></script>
+<script src="app/core/services/storage/storage.service.js"></script>
 <!-- endinject -->
 
 <!-- modules:js -->
@@ -155,20 +156,21 @@
 <script src="app/modules/authentication/services/auth.factory.js"></script>
 <script src="app/modules/authentication/services/authInterceptor.factory.js"></script>
 <script src="app/modules/contacts/api/contacts.api.service.js"></script>
+<script src="app/modules/contacts/config/contacts.routes.js"></script>
+<script src="app/modules/contacts/config/contacts.run.js"></script>
 <script src="app/modules/contacts/controllers/contacts.create.controller.js"></script>
 <script src="app/modules/contacts/controllers/contacts.detail.controller.js"></script>
 <script src="app/modules/contacts/controllers/contacts.list.controller.js"></script>
-<script src="app/modules/contacts/config/contacts.routes.js"></script>
-<script src="app/modules/contacts/config/contacts.run.js"></script>
 <script src="app/modules/generators/api/generators.api.js"></script>
-<script src="app/modules/generators/controllers/generators.controller.js"></script>
-<script src="app/modules/generators/controllers/generators.detail.controller.js"></script>
 <script src="app/modules/generators/config/generators.config.js"></script>
 <script src="app/modules/generators/config/generators.routes.js"></script>
+<script src="app/modules/generators/controllers/generators.controller.js"></script>
+<script src="app/modules/generators/controllers/generators.detail.controller.js"></script>
 <script src="app/modules/people/config/person.routes.js"></script>
 <script src="app/modules/people/config/person.run.js"></script>
 <script src="app/modules/people/controllers/person.controller.js"></script>
 <script src="app/modules/administration/directives/admin-nav/admin-nav.directive.js"></script>
+<script src="app/modules/y-modules/directives/toolbarControl/toolbar-control.directive.js"></script>
 <script src="app/modules/y-modules/directives/yFlex/y-flex.directive.js"></script>
 <script src="app/modules/y-modules/directives/yItem/y-item.directive.js"></script>
 <script src="app/modules/y-modules/directives/yList/y-list.directive.js"></script>

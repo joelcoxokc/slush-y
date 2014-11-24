@@ -11,7 +11,6 @@
       vm.errors = {};
       vm.login = login;
       vm.loginOauth = loginOauth;
-
       ///////////////////////
 
       function login(form) {

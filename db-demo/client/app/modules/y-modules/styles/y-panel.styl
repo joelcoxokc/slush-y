@@ -1,10 +1,11 @@
 .y-divider
-  height 8px
+  height 1px
   float left
   width 100%
+  background-color $light-grey
 
-  &.last
-    border-top 1px solid #ddd
+  &.y-divider-md
+    height 8px
 
   &.y-divider-large
     height 24px
@@ -33,15 +34,17 @@
     &.large
       position relative
       float left
-      padding-top 50px
       height 140px
-      font-size 3em
       padding-left 56px
+
+      .y-panel-heading
+        font-size 3em
+        line-height 140px
 
     .y-panel-heading
       float left
-      padding-top 20px
-      font-size 20px
+      font-size 2em
+      line-height 64px
 
     .y-panel-header-actions
       float right
@@ -50,12 +53,17 @@
     width 100%
     position relative
     // clear both
-    padding 0 24px
+    padding 0 16px
     float left
 
-    .y-panel-toolbar-left
+    .y-tool
+      padding 0
+
+    .y-panel-toolbar-right
       float right
       clear both
+      .y-tool
+        padding-left 10px
 
   .y-panel-content
     float left
@@ -68,10 +76,8 @@
     position relative
     // top 64px
     margin 0
-    padding 0 0 0 24px
 
     .y-item
-      padding 0
       // border-bottom 1px solid #eee
       // padding-left 32px
 

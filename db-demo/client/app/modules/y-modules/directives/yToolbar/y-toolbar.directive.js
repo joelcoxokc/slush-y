@@ -6,7 +6,7 @@
     .directive('yToolbar', yToolbar);
 
   /* @inject */
-  function yToolbar($state) {
+  function yToolbar($state, $rootScope) {
     return {
       templateUrl: 'app/modules/y-modules/directives/yToolbar/y-toolbar.directive.view.html',
       restrict: 'E',
@@ -22,6 +22,9 @@
       // Y toolbar directive logic
       // scope.tallHeader = true;
       // grow()
+      $rootScope.toolbar = {};
+      $rootScope.toolbar.title = 'slush-y';
+
       if($state.current.name === 'home'){
         scope.tallHeader = true;
         grow()

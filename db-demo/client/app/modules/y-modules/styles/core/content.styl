@@ -1,0 +1,57 @@
+$integers = 5 10 16 20 24 30 40 50 60 70 80 90 100 120 140 160 180 200
+$sides    = top right bottom left
+$font-sizes = 1em 1.6em 2em 2.5em 3em
+$font-labels = xs sm md lg xl
+
+create-heights(item)
+  .y-tall-{item}
+    height unit(item, 'px')
+
+create-margin(item)
+  .y-mr-{item}
+    margin unit(item, 'px')
+
+create-padding(item)
+  .y-pad-{item}
+    padding unit(item, 'px') !important
+
+create-margin-sides(side, item)
+  .y-mr-{side}-{item}
+    margin-{side} unit(item, 'px') !important
+
+create-padding-sides(side, item)
+  .y-pad-{side}-{item}
+    padding-{side} unit(item, 'px') !important
+
+create-font-sizes(label, size)
+  .y-font-{label}
+    font-size size !important
+
+for item in $integers
+
+  create-heights(item)
+  create-padding(item)
+  create-margin(item)
+
+for side in $sides
+  for item in $integers
+    create-padding-sides(side, item)
+    create-margin-sides(side, item)
+
+for label, index in $font-labels
+  create-font-sizes(label, $font-sizes[index])
+
+
+.btns-lighter
+  .btn
+    color $lighterbg-text
+    &:hover
+      color $lighterbg-text
+
+.lighter
+  color $lighterbg-text
+  .btn,
+  .y-tool
+    color $lighterbg-text
+    &:hover
+      color $lighterbg-text

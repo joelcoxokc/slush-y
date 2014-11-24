@@ -1,0 +1,59 @@
+<div class="container top">
+  <div class="row">
+    <section class="col-md-12">
+      <div class="panel">
+        <h1 class="panel-heading">
+          {{vm.contact.title}}
+        </h1>
+        <article class="panel-body">
+          <form data-ng-submit="vm.update()" novalidate>
+
+              <div class="form-group">
+                <label class="control-label" for="title">
+                  Title
+                </label>
+                  <input
+                        type="text"
+                        data-ng-model="vm.contact.title"
+                        id="title"
+                        class="form-control primary"
+                        placeholder="Title"
+                        required>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label" for="content">Content</label>
+                  <textarea
+                        data-ng-model="vm.contact.content"
+                        id="content"
+                        class="form-control primary"
+                        placeholder="Content"
+                        required
+                        cols="30" rows="10" wrap="hard"
+                        ></textarea>
+              </div>
+
+              <hr>
+
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary">Done</button>
+                <a
+                  class="btn btn-white text-red pull-right"
+                  y-icon='trash-o'
+                  data-ng-click="vm.remove()"
+                  ></a>
+                <a
+                  class="btn btn-white pull-right"
+                  y-icon='close'
+                  data-ui-sref="contact-detail({contactId: vm.contact._id})"
+                  ></a>
+              </div>
+              <div data-ng-show="error" class="text-danger">
+                <strong>{{error}}</strong>
+              </div>
+          </form>
+        </article>
+      </div>
+    </section>
+  </div>
+</div>

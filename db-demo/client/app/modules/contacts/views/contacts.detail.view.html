@@ -1,0 +1,71 @@
+<div class="y-panel-toolbar color-indigo-50">
+  <div class="y-panel-toolbar-left">
+    <button class="btn y-tool">
+      <i class="mdi-editor-mode-edit"></i>
+    </button>
+    <button class="btn y-tool">
+      <i class="mdi-action-grade"></i>
+    </button>
+    <button class="btn y-tool">
+      <i class="fa fa-share"></i>
+    </button>
+    <button class="btn y-tool">
+      <i class="mdi-navigation-more-vert"></i>
+    </button>
+  </div>
+</div>
+<div class="y-panel-header large color-indigo-50">
+  {{vm.contact.firstName}} {{vm.contact.lastName}}
+</div>
+<div class="y-divider y-divider-large"></div>
+<div class="y-panel-content">
+  <y-list-table>
+    <y-list-group>
+      <div class="y-item-action">
+        <i class="mdi-communication-phone"></i>
+      </div>
+      <div class="items">
+        <y-item>
+          <div class="y-item-content">
+            <div class="title">
+              {{vm.contact.phone}}
+            </div>
+            <div class="sub-title">
+              modile
+            </div>
+          </div>
+          <div class="y-item-tools">
+            <button class="btn y-tool">
+              <i class="mdi-communication-textsms"></i>
+            </button>
+          </div>
+        </y-item>
+        <div class="y-divider last"></div>
+      </div>
+    </y-list-group>
+    <y-list-group>
+      <div class="y-item-action">
+        <i class="mdi-communication-email"></i>
+      </div>
+      <div class="items">
+        <y-item>
+          <div class="y-item-content">
+            <div class="title">
+              {{vm.contact.phone}}
+            </div>
+            <div class="sub-title">
+              modile
+            </div>
+          </div>
+          <div class="y-item-tools">
+            <button class="btn y-tool">
+              <i class="mdi-communication-textsms"></i>
+            </button>
+          </div>
+        </y-item>
+        <!-- <div class="y-divider last"></div> -->
+      </div>
+    </y-list-group>
+
+  </y-list-table>
+</div>

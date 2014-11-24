@@ -1,0 +1,93 @@
+$columns = 12
+
+$column-width = calc(100% / $columns)
+$cols = one two three four five six seven eight nine ten eleven twelve
+$sizes = {
+  xs: 768px,
+  sm: 768px,
+  md: 992px,
+  lg: 1200px
+}
+
+
+columns-width(num)
+  // width unit((100%/12*num), '%')
+  -webkit-flex-basis: (100%/12*num)
+  flex-basis: (100%/12*num)
+
+column-defaults()
+  // columns-width(12)
+  width 100%
+  -webkit-box-sizing border-box
+  -moz-box-sizing border-box
+  box-sizing border-box
+  padding-left 1rem
+  padding-right 1rem
+
+columns-offset-margin(num)
+
+  margin-left (100%/12*num)
+
+
+build-columns(cols, sizes)
+
+  for label, size in sizes
+
+    foo = 'f-'+label
+    [class*={foo}]
+      column-defaults()
+
+
+    for index in 12..1
+      .f-{index}
+        // height foo
+        columns-width (index)
+
+
+      .f-offset-{index}
+        columns-offset-margin (index)
+
+
+    @media (min-width size)
+
+      for index in 12..1
+
+        .f-{label}-{index}
+          columns-width (index)
+
+
+        .f-{label}-offset-{index}
+          columns-offset-margin (index)
+
+
+build-column-helpers()
+  .f-full
+    width 100%
+
+  .f-half
+    width 50%
+
+  .f-row
+    -webkit-flex-basis 100%
+    flex-basis 100%
+
+  .f-auto
+    -webkit-box-flex 1
+    -moz-box-flex 1
+    -o-box-flex 1
+    box-flex 1
+    -webkit-flex 1 1 0 !important
+    -ms-flex 1 1 0 !important
+    flex 1 1 0 !important
+
+
+
+build-grid(cols, sizes)
+
+  build-column-helpers()
+
+  build-columns(cols, sizes)
+
+
+
+build-grid($cols, $sizes)

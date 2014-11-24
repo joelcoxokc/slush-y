@@ -3,22 +3,24 @@
 
   angular
     .module('y-modules')
-    .directive('yItem', yItem);
+    .directive('yListTable', yListTable);
 
   /* @inject */
-  function yItem() {
+  function yListTable() {
     return {
-      template: '<div class="y-item f-md-12" point><div ng-transclude></div></div>',
-      restrict: 'EA',
-      transclude:true,
+      templateUrl: 'app/modules/y-modules/directives/yListTable/y-list-table.directive.view.html',
+      restrict: 'E',
+      scope: true,
+      transclude: true,
       link: link
     };
 
-    ////////////////////
+    ////////////////
 
     function link(scope, element, attrs) {
-      // Y item directive logic
-      // element.text('this is the yItem directive');
+      // Y list table directive logic
+
+
       /**
        * actionOne description
        * @return {[type]} description
@@ -30,6 +32,7 @@
        * @return {[type]} description
        */
       function actionTwo (){}
+
 
     }
   }

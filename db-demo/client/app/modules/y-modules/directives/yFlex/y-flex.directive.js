@@ -3,12 +3,12 @@
 
   angular
     .module('y-modules')
-    .directive('yItem', yItem);
+    .directive('yFlex', yFlex);
 
   /* @inject */
-  function yItem() {
+  function yFlex() {
     return {
-      template: '<div class="y-item f-md-12" point><div ng-transclude></div></div>',
+      template: '<div class="flex ng-transclude"></div>',
       restrict: 'EA',
       transclude:true,
       link: link
@@ -17,8 +17,10 @@
     ////////////////////
 
     function link(scope, element, attrs) {
-      // Y item directive logic
-      // element.text('this is the yItem directive');
+      // Y flex directive logic
+
+      // element.text('this is the yFlex directive');
+
       /**
        * actionOne description
        * @return {[type]} description

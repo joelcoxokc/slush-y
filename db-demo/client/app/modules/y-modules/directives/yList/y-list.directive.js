@@ -8,7 +8,7 @@
   /* @inject */
   function yList() {
     return {
-      template: '<article class="y-list" ng-transclude></article>',
+      template: '<div class="flex"><article class="y-list f-12 flex-verticle" ng-transclude></article></div>',
       restrict: 'EA',
       scope: true,
       transclude: true,

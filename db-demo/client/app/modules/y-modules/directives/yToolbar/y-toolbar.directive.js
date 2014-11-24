@@ -20,6 +20,8 @@
 
     function link(scope, element, attrs) {
       // Y toolbar directive logic
+      // scope.tallHeader = true;
+      // grow()
       if($state.current.name === 'home'){
         scope.tallHeader = true;
         grow()
@@ -29,11 +31,11 @@
       // var body = angular.element( document.querySelector('body') );
       scope.$on('y:changed', function (event, next){
         if(next.name === 'home') {
-          grow();
-          scope.tallHeader = true;
+          // grow();
+          // scope.tallHeader = true;
         } else {
-          shrink();
-          scope.tallHeader = false;
+          // shrink();
+          // scope.tallHeader = false;
         }
       });
 

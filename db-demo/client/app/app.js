@@ -9,6 +9,7 @@ angular
   'btford.socket-io',
   'ui.router',
   'ui.bootstrap',
+  'ngFx',
   'core',
   'app.modules'
 

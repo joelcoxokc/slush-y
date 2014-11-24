@@ -1,0 +1,45 @@
+<div class="flex">
+  <div class="row">
+    <section class="f-md-4 y-panel">
+
+        <div class="y-panel-header">
+          <div class="y-panel-heading"> Contacts</div>
+          <div class="y-panel-header-actions">
+            <button class="btn y-tool">
+              <i class="mdi-action-search"></i>
+            </button>
+            <button class="btn y-tool">
+              <i class="mdi-navigation-more-vert"></i>
+            </button>
+            <!-- <a
+               class="btn btn-clear pull-right"
+               ui-sref="contacts-create"
+               y-icon='plus'></a> -->
+          </div>
+        </div>
+        <y-list hover="true">
+          <div class="y-divider last"></div>
+          <y-list-group>
+            <div class="action">
+              <i class="mdi-action-grade"></i>
+            </div>
+            <div class="items">
+              <y-item
+                  ng-repeat="contact in vm.contacts"
+                  ui-sref="contacts.detail({contactId: contact._id})">
+                  <div class="y-item-action"><i class="mdi-image-lens"></i></div>
+
+                  <p class="y-item-text">
+                    {{contact.firstName}} {{contact.lastName}}
+                  </p>
+
+              </y-item>
+            </div>
+          </y-list-group>
+        </y-list>
+    </section>
+    <section class="f-md-8 y-panel filled pad">
+      <ui-view></ui-view>
+    </section>
+  </div>
+</div>

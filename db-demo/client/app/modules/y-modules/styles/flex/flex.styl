@@ -1,0 +1,69 @@
+// [class~='flex-']
+
+flex-defaults()
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-lines: multiple;
+  -moz-box-lines: multiple;
+  -o-box-lines: multiple;
+
+.flex
+  flex-defaults()
+  size 100%
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+
+.flex-verticle
+  flex-defaults()
+  size 100%
+  -webkit-flex-direction: column;
+  flex-direction: column;
+
+.flex-align-middle
+  flex-defaults()
+  -webkit-flex-direction: row /* works with row or column */
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  // -webkit-justify-content: center;
+  // justify-content: center;
+
+
+  // margin-left: -1rem;
+  // margin-right: -1rem;
+
+// .row {
+//     -webkit-box-sizing: border-box;
+//     -moz-box-sizing: border-box;
+//     box-sizing: border-box;
+//     display: -webkit-box;
+//     display: -moz-box;
+//     display: -webkit-flex;
+//     display: -ms-flexbox;
+//     display: box;
+//     display: flex;
+//     -webkit-box-lines: multiple;
+//     -moz-box-lines: multiple;
+//     -o-box-lines: multiple;
+//     -webkit-flex-wrap: wrap;
+//     -ms-flex-wrap: wrap;
+//     flex-wrap: wrap;
+//     margin-left: -1rem;
+//     margin-right: -1rem;
+// }
+
+align-items(direction)
+  $legacyDirection = unquote("flex-" + $direction)
+  -webkit-box-align direction
+  -webkit-align-items $legacyDirection
+  -moz-box-align direction
+  -ms-flex-align direction
+  align-items $legacyDirection

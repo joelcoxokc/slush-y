@@ -1,0 +1,26 @@
+<y-flex>
+  <div class="y-panel-header">
+    <div class="y-panel-heading">
+      Features
+      <!-- <button
+        type="button"
+        class="btn btn-white pull-right"
+        ng-click="vm.createNewThing()"
+        y-icon="plus"></button> -->
+    </div>
+  </div>
+</y-flex>
+<y-list>
+  <y-item ng-repeat="thing in vm.awesomeThings" ui-sref="home.detail({id:thing._id})">
+    <div class="flex">
+      <div class="f-auto">
+        {{thing.name}}
+      </div>
+      <div class="f-xs-1">
+        <button class="btn y-tool text-right">
+          <i class="mdi-navigation-more-vert"></i>
+        </button>
+      </div>
+    </div>
+  </y-item>
+</y-list>

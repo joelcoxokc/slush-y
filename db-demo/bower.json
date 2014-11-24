@@ -20,7 +20,8 @@
     "angular-ui-utils": "~0.1.1",
     "angular-touch": "*",
     "toastr": "~2.0.3",
-    "material-styles": "*"
+    "material-styles": "*",
+    "ng-Fx": "~1.0.5"
   },
   "devDependencies": {
     "angular-mocks": "*",
@@ -28,12 +29,12 @@
   },
   "overrides": {
     "font-awesome": {
-        "main": "./css/font-awesome.css"
+      "main": "./css/font-awesome.css"
     },
     "bootstrap": {
-        "main": [
-          "./dist/js/bootstrap.js"
-        ]
+      "main": [
+        "./dist/js/bootstrap.js"
+      ]
     }
   }
 }

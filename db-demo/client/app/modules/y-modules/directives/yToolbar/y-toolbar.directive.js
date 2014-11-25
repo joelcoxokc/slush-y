@@ -12,7 +12,7 @@
       restrict: 'E',
       scope: true,
       transclude: true,
-      // replace: true,
+      replace: true,
       link: link
     };
 
@@ -24,7 +24,8 @@
       // grow()
       $rootScope.toolbar = {};
       $rootScope.toolbar.title = 'slush-y';
-
+      $rootScope.toolbar.grow = grow;
+      $rootScope.toolbar.shrink = shrink;
       if($state.current.name === 'home'){
         scope.tallHeader = true;
         grow()
@@ -48,8 +49,10 @@
        */
       function grow (){
         toolbar.addClass('y-tall');
+        scope.tallHeader = true;
+
         toolbar.removeClass('y-medium');
-        toolbar.removeClass('y-short');
+        // toolbar.removeClass('y-short');
       }
 
       /**
@@ -57,9 +60,13 @@
        * @return {[type]} description
        */
       function shrink (){
-        toolbar.addClass('y-short');
-        toolbar.removeClass('y-medium');
-        toolbar.removeClass('y-tall');
+        scope.tallHeader = false;
+        attrs.class = attrs.class + ' y-short'
+        console.log(attrs.class)
+        angular.element(toolbar).addClass(attrs.class);
+        // toolbar.
+        // toolbar.removeClass('y-medium');
+        // toolbar.removeClass('y-tall');
       }
 
       /**

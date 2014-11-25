@@ -1,15 +1,26 @@
-<section class="container">
-  <div class="row">
-    <div class="col-md-4">
-
-      <admin-nav></admin-nav>
-
+<toolbar-control title="admin" size="short" type="paper">
+</toolbar-control>
+<y-flex>
+  <section class="y-panel f-md-3 flex">
+    <div class="y-panel-toolbar y-pad-left-80">
+      <button class="btn y-tool y-font-sm">
+        Admin
+      </button>
+      <div class="y-panel-toolbar-right">
+        <button class="btn y-tool text-right" ui-sref="home.edit({id: vm.thing._id})">
+          <i class="mdi-action-search"></i>
+        </button>
+        <button class="btn y-tool text-right" data-ng-click="vm.deleteThing(vm.thing)">
+          <i class="mdi-navigation-more-vert"></i>
+        </button>
+      </div>
     </div>
+    <div class="y-divider color-grey-500"></div>
+  </section>
+  <section class="f-md-7">
+    <ui-view></ui-view>
 
-    <div class="col-md-8">
-
-      <ui-view></ui-view>
-
-    </div>
-  </div>
-</section>
+  </section>
+  <section class="f-md-2">
+  </section>
+</y-flex>

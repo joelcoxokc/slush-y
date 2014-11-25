@@ -18,7 +18,7 @@ baseline-grid = 8px !default
   font-size 1.3em
   min-height baseline-grid * 8
   width 100%
-  shadow-z-1()
+
 
   .y-toolbar-header
     float left
@@ -52,6 +52,13 @@ baseline-grid = 8px !default
 
       .y-sub-header
         display block
+
+  &.y-paper
+    shadow-z-1()
+
+  &.y-ink
+    box-shadow none
+    -webkit-box-shadow none
 
   &.y-medium-tall
     height toolbar-medium-tall-height

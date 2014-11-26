@@ -23,7 +23,7 @@
     "npm": ">=1.4.3"
   },
   "scripts": {
-    "test": "echo \"No tests\""
+    "test": "slush y"
   },
   "dependencies": {
     "bluebird": "^2.3.10",
@@ -61,6 +61,5 @@
     "Angularjs",
     "Node"
   ],
-  "devDependencies": {},
   "license": "ISC"
 }

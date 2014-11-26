@@ -1,10 +1,7 @@
-<!-- # slush-y [![Build Status](https://secure.travis-ci.org/joelcoxio/slush-y.png?branch=master)](https://travis-ci.org/arvindr21/slush-y) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-y.png)](http://badges.enytc.com/for/npm/slush-y) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/arvindr21/slush-y/trend.png)](https://bitdeli.com/free "Bitdeli Badge") -->
-
-<!-- [![NPM](https://nodei.co/npm/slush-y.png?downloads=true&stars=true)](https://nodei.co/npm/slush-y/) -->
 # slush-y
 #### Why 'Y' ? Because it is easy to type!
 
-> A slush generator to scaffold MEAN Apps
+> A slush generator for Best Practices with AngularJS Fullstack applications.
 
 Inspired by [MEAN](http://meanjs.org/)
 Inspired by [slush-meanjs](http://npmjs.org/package/slush-meanjs)
@@ -72,9 +69,9 @@ $ gulp test
 
 ##Issues
 
-  - The testing currently does not work
-  - The Oauth needs to be configured
-  - Possible Bug issues on the client side
+- The testing currently does not work
+- The Oauth needs to be configured
+- Possible Bug issues on the client side
 
 ## FEATURES
 <table>
@@ -126,26 +123,6 @@ $ gulp test
 <td><a href="#angularjs-config-sub-generator">AngularJs Config sub-generator</a></td>
 <td>slush y:config {{config-name}}</td>
 </tr>
-<!--<tr>
-<td><a href="#angularjs-test-sub-generator">AngularJs Test sub-generator</a></td>
-<td>slush y:test {{controller-name}}</td>
-</tr>
-<tr>
-<td><a href="#express-model-sub-generator">Express Model sub-generator</a></td>
-<td>slush y:express-model {{model-name}}</td>
-</tr>
-<tr>
-<td><a href="#express-controller-sub-generator">Express Controller sub-generator</a></td>
-<td>slush y:express-controller {{controller-name}}</td>
-</tr>
-<tr>
-<td><a href="#express-routes-sub-generator">Express Routes sub-generator</a></td>
-<td>slush y:express-route {{route-name}}</td>
-</tr>
-<tr>
-<td><a href="#express-test-sub-generator">Express Test sub-generator</a></td>
-<td>slush y:express-test {{model-name}}</td>
-</tr>-->
 </table>
 
 **Note: Generators are to be run from the root directory of your app.**

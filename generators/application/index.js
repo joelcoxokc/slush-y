@@ -5,7 +5,7 @@
     var _         = require('lodash');
     var path      = require('path');
     var gulp      = require('gulp');
-    var storage   = require('gulp-storage')(gulp)
+    // var storage   = require('gulp-storage')(gulp)
     var questions = require('./prompts');
     var inquirer  = require('inquirer');
     var _str = require('../../src/Utility/strings/index.js');
@@ -21,10 +21,7 @@
     module.exports = function ( done ) {
 
       var _this = this;
-      _this.storage.create('config-y','config-y.json');
 
-      // setDefaults();
-      // generate();
       _this.prompts = questions();
       /////////////////////
 

@@ -18,32 +18,32 @@
 
   Generator = module.exports = Generator;
 
-  function Generator (gulpInst) {
+  function Generator (task, args, slushy) {
 
 
     var _this = this;
 
 
     Utility.apply(_this, arguments);
-    // initialize();
+    initialize();
 
 
-    // _this.default = _this.isDefault();
-    // _this.validate();
+    _this.default = _this.isDefault();
+    _this.validate();
 
-    // _this.name      = this.seq[0];
-    // _this.title     = this.args[0] || 'application';
-    // _this.type      = args.type;
-    // _this.done      = args.done;
-    // _this.path      = _this.getPath();
-    // _this.flags     = _this.getFlags();
-    // _this.storage   = slushy.storage
-    // _this.config    = _this.resolve( 'config' );
-    // _this.prompts   = _this.resolve( 'prompts' );
+    _this.name      = this.seq[0];
+    _this.title     = this.args[0] || 'application';
+    _this.type      = args.type;
+    _this.done      = args.done;
+    _this.path      = _this.getPath();
+    _this.flags     = _this.getFlags();
+    _this.storage   = slushy.storage
+    _this.config    = _this.resolve( 'config' );
+    _this.prompts   = _this.resolve( 'prompts' );
 
-    // _this.tempPath  = _this.find( 'templates' );
-    // _this.templates = slushy.finder( _this.tempPath );
-    // _this.dirs      = _this.getDirs();
+    _this.tempPath  = _this.find( 'templates' );
+    _this.templates = slushy.finder( _this.tempPath );
+    _this.dirs      = _this.getDirs();
 
 
 

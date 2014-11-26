@@ -8,15 +8,14 @@
 
 'use strict';
 
-var gulp    = require('gulp'),
-    del     = require('del'),
-    Config  = require('gulp-config')(gulp),
-    Storage = require('gulp-storage')(gulp),
-    Finder  = require('gulp-finder')(gulp),
-    Slushy  = require('./src')(gulp);
-    var plugins  = require('gulp-load-plugins')({lazy:false})
-    var lodash   = require('lodash');
+var gulp       = require('gulp'),
+    del        = require('del'),
+    Config     = require('gulp-config')(gulp),
+    Generator  = require('./src'),
+    plugins  = require('gulp-load-plugins')({lazy:false}),
+    lodash   = require('lodash');
 
+    new Generator(gulp)
 
     gulp.task('default', require('./generators/application'));
     gulp.task('controller', require('./generators/client/controller'));
@@ -29,8 +28,7 @@ var gulp    = require('gulp'),
     gulp.task('view', require('./generators/client/view'));
     gulp.task('module', require('./generators/client/module'));
     gulp.task('crud', require('./generators/crud'));
-
-    Slushy.plugins(plugins, lodash)
+    // Slushy.plugins(plugins, lodash)
 
     // Slushy.siphon('default', {type: 'application'})
     // Slushy.siphon('module', {type: 'client'})

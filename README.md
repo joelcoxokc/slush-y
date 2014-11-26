@@ -317,7 +317,7 @@ Dynamically **inject** providers to the to the controller
 y:controller <name> --providers '$scope,$http,$q'
 ```
 ```bash
-y:controller <name> -f '$scope,$http,$q'
+y:controller <name> -p '$scope,$http,$q'
 ```
 >Example of dynamically injected providers
 
@@ -370,7 +370,7 @@ Dynamically **inject** providers to the to the service.
 y:service <name> --providers '$http,$q'
 ```
 ```bash
-y:service <name> -f '$http,$q'
+y:service <name> -p '$http,$q'
 ```
 
 >Example of dynamically injecting providers
@@ -378,7 +378,7 @@ y:service <name> -f '$http,$q'
 ```javascript
    angular
      .module('moduleName')
-     .factory('Storage', Storage);
+     .service('Storage', Storage);
    /* @inject */
    function Storage ($http, $q){}
 ```
@@ -424,7 +424,7 @@ Dynamically **inject** providers to the to the factory.
 y:factory <name> --providers '$http,$q'
 ```
 ```bash
-y:factory <name> -f '$http,$q'
+y:factory <name> -p '$http,$q'
 ```
 
 >Example of dynamically injected providers
@@ -484,7 +484,7 @@ Dynamically **inject** providers to the to the directive.
 y:directive <name> --providers '$http,$q'
 ```
 ```bash
-y:directive <name> -f '$http,$q'
+y:directive <name> -p '$http,$q'
 ```
 
 >Example of dynamically injected providers
@@ -505,7 +505,7 @@ The sub-generator will ask you for the module name under which you would like to
 ####Complex Directive
 The complex directive will provide you with the following
  - {name}.directive.js
- - {name} .styles.css
+ - {name}.styles.css
  - {name}.view.js
  - {name}.test.js
 
@@ -546,7 +546,7 @@ Dynamically **inject** providers to the to the filter.
 y:filter <name> --providers '$http,$q'
 ```
 ```bash
-y:filter <name> -f '$http,$q'
+y:filter <name> -p '$http,$q'
 ```
 >Example of dynamically injected providers
 
@@ -573,10 +573,10 @@ $ slush y:config <config-name>
 
 Dynamically **inject** providers to the to the configuration.
 ```bash
-y:filter <name> --providers '$http,$q'
+y:config <name> --providers '$http,$q'
 ```
 ```bash
-y:filter <name> -f '$http,$q'
+y:config <name> -p '$http,$q'
 ```
 >Example of dynamically injected providers
 ```javascript

@@ -1,6 +1,6 @@
 /*
- * slush-slush-db
- * https://github.com/joelcoxokc/slush-slush-db
+ * slush-y
+ * https://github.com/joelcoxokc/slush-y
  *
  * Copyright (c) 2014, Joel Cox
  * Licensed under the MIT license.
@@ -43,5 +43,5 @@ var gulp    = require('gulp'),
     // Slushy.siphon('service', {type: 'client'})
     // Slushy.siphon('view', {type: 'client'})
 
-    Slushy.task('clear', del.bind(null, ['./db-demo/**/*']))
+    // Slushy.task('clear', del.bind(null, ['./db-demo/**/*']))
 

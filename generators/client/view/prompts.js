@@ -2,50 +2,22 @@
 ;(function(){
 
   'use strict';
-    var inquirer = require('inquirer')
-    var _ = require('lodash')
+
+    module.exports = prompts;
 
 
-    module.exports = viewPrompts;
+    function prompts () {
 
-
-    function viewPrompts (done) {
-
-      var _this = this;
-      var questions = viewQuestions();
-
-      if( _.size(questions) ){
-        _this.questions = _this.questions.concat( questions )
+      var pendingPrompts = {
+        module : {
+          type: 'list',
+          name: 'module',
+          default: 'core',
+          message: 'Which module does this view belongs to?'
+        }
       }
 
-      /**
-       * Ask the first round of questions
-       */
-      inquirer
-        .prompt(_this.questions, promptCallback);
-
-
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
-
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
-      }
-    }
-
-
-
-    function viewQuestions(){
-
-      var questions = [];
-
-
-      return questions;
+      return pendingPrompts;
 
     }
 

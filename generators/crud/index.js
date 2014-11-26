@@ -10,7 +10,8 @@
     var inquirer  = require('inquirer');
     var _str = require('../../src/Utility/strings/index.js');
     var fs = require('fs')
-    var finder = require('gulp-finder')(gulp);
+    var chalk = require('chalk');
+
 
 
     /**
@@ -22,6 +23,14 @@
     module.exports = function ( done ) {
 
       var _this = this;
+      if(!_this.args[0]){
+        console.log(chalk.bold.red('**************************************************************************'));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
+        console.log(chalk.bold.red('**************************************************************************'));
+        return done();
+      }
       _this.storage.create('config-y','config-y.json');
 
       _this.prompts = [];
@@ -33,11 +42,9 @@
 
       var flags = {};
           flags.folders = _this.util.env.f || _this.util.env.folders || [];
+          flags.menu    = _this.util.env.menu || false;
 
-      if(!flags.folders.length){
-        var prompts = questions();
-        _this.prompts.push(prompts)
-      }
+      var prompts = questions();
 
       var filters = {};
           filters.module    = null;
@@ -65,15 +72,18 @@
 
       function init(cb){
 
-        _.forEach( flags, function (flag, key){
-          if(!_.isEmpty(flag) ){
-             if(!Array.isArray(flag) ) {
-              filters[key] = flag.split(',');
-            } else {
-              filters[key] = flag;
-            }
-          }
-        })
+        if(!flags.folders.length){
+        _this.prompts.push(prompts.folders)
+        }
+        if(!flags.menu){
+          _this.prompts.push(prompts.menu)
+        }
+        if(_.isString(filters.folders)){
+          filters.folders = flags.folders.split(',');
+        } else {
+          filters.folders = flags.folders;
+        }
+        filters.menu = flags.menu;
 
         if(_.size( _this.prompts )){
 
@@ -86,11 +96,12 @@
         }
 
         function next(answers){
-              console.log(filters.folders)
 
           filters.moduleNames = _str.str().simple( _this.name );
           _.assign(filters, config);
 
+          filters.folders = answers.folders || filters.folders;
+          filters.menu =  answers.menu || flags.menu;
           filters.names = _this.names;
 
           if(_.isEmpty(filters.folders)){
@@ -108,19 +119,23 @@
           .prompt(_this.prompts, function (chosen){
             var finalAnswers = {};
             if(chosen.folders ){finalAnswers.folders = chosen.folders }
+            if(chosen.menu ){finalAnswers.menu = chosen.menu }
+
             callback(finalAnswers);
           })
       }
 
       function generate(){
-        console.log(filters.folders)
-        create_selected_folders();
+        if(_.size(filters.folders)) create_selected_folders();
         create_server_module();
         create_client_module();
         create_client_module_options();
+        if(filters.menu) create_client_menu();
       }
 
       function create_selected_folders() {
+        // filters.folders.push('!**/index')
+        console.log(filters.folders)
         gulp
           .src( templates.client.folders.dirs( filters.folders ) )
           .pipe( gulp.dest( dest.module ) );
@@ -148,6 +163,15 @@
 
         gulp
           .src( templates.client.options[filters.httpType].all() )
+          .pipe( $.template( filters ) )
+          .pipe( $.rename(  rename( filters.names.plural.slug )  )  )
+          .pipe( $.conflict( dest.module ) )
+          .pipe( gulp.dest( dest.module  ) );
+      }
+      function create_client_menu(){
+
+        gulp
+          .src( templates.client.options.menu.all() )
           .pipe( $.template( filters ) )
           .pipe( $.rename(  rename( filters.names.plural.slug )  )  )
           .pipe( $.conflict( dest.module ) )

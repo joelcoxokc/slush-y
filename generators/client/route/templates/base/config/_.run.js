@@ -1,7 +1,5 @@
 ;(function(){
-'use strict';
-
-
+  'use strict';
   // Configuring the Articles module
   angular
     .module('<%= moduleNames.slug %>')
@@ -10,7 +8,7 @@
   /* @inject */
   function Run(Menus) {
     // Set top bar menu items
-    Menus.set('<%= moduleNames.slug %>', '/<%=names.plural.slug %>', 'grey-500');
+    Menus.set('<%= names.classed %>', '/<%=names.slug %>', 'grey-500');
   }
 
 }).call(this);

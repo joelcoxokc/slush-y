@@ -3,10 +3,10 @@
 
   angular
     .module('<%= moduleNames.slug %>')
-    .directive('<%= names.single.camel %>', <%= names.single.camel %>);
+    .directive('<%= names.camelized %>', <%= names.camelized %>);
 
   /* @inject */
-  function <%= names.single.camel %>(<%=providers%>) {
+  function <%= names.camelized %>(<%=providers%>) {
     return {
       templateUrl: '<%= directive_view_path %>'
       restrict: 'E',
@@ -18,7 +18,7 @@
     ////////////////
 
     function link(scope, element, attrs) {
-      // <%= names.single.humanized %> directive logic
+      // <%= names.humanized %> directive logic
 
       <% _.forEach( functions, function(func){ %>
       /**

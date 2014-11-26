@@ -2,20 +2,20 @@
   'use strict';
 
   angular
-    .module('<%= names.slug %>')
-    .filter('<%= names.single.camel %>', <%= names.single.camel %>);
+    .module('<%= moduleNames.slug %>')
+    .filter('<%= names.camelized %>', <%= names.camelized %>);
 
   /* @inject */
-  function <%= names.single.camel %>(<%=providers%>) {
+  function <%= names.camelized %>(<%=providers%>) {
 
     return filter;
 
     //////////////
 
     function filter(input) {
-      // <%= names.single.humanized %> filter logic
+      // <%= names.humanized %> filter logic
 
-      return '<%= names.single.camel %> filter: ' + input;
+      return '<%= names.camelized %> filter: ' + input;
 
       ////////////////////////////////
       <% _.forEach( functions, function(func){ %>

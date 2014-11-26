@@ -1,16 +1,14 @@
 ;(function(){
-'use strict';
-
-
+  'use strict';
   // Configuring the Articles module
   angular
-    .module('people')
+    .module('<%= moduleNames.slug %>')
     .run( Run );
 
   /* @inject */
   function Run(Menus) {
     // Set top bar menu items
-    Menus.set('people', '/people', 'grey-500');
+    Menus.set('<%= moduleNames.slug %>', '/<%=names.slug %>', 'grey-500');
   }
 
 }).call(this);

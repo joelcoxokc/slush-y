@@ -1,3 +1,11 @@
+      // var dest = {};
+      //     dest.app = path.join(process.cwd(), 'client/app');
+      //     dest.modules = path.join(dest.app, 'modules');
+      //     if(filters.moduleNames.slug === 'core'){
+      //       dest.final = path.join(dest.app, 'core');
+      //     } else {
+      //       dest.final = path.join(dest.modules, filters.moduleNames.slug);
+      //     }
 (function(){
   'use strict';
 
@@ -9,7 +17,8 @@
     var questions = require('./prompts');
     var inquirer  = require('inquirer');
     var _str = require('../../../src/Utility/strings/index.js');
-    var fs = require('fs')
+    var fs = require('fs');
+    var chalk = require('chalk')
 
 
     /**
@@ -21,6 +30,15 @@
     module.exports = function ( done ) {
 
       var _this = this;
+      var generator = _this.seq[0];
+      if(!_this.args[0]){
+        console.log(chalk.bold.red('**************************************************************************'));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
+        console.log(chalk.bold.red('**************************************************************************'));
+        return done();
+      }
       _this.storage.create('config-y','config-y.json');
 
       // setDefaults();
@@ -34,7 +52,8 @@
           templates.all  = path.join( templates.path, '**/*' );
 
       var dest = {};
-          dest.modules = path.join(process.cwd(), 'client/app/modules');
+          dest.app = path.join(process.cwd(), 'client/app');
+          dest.modules = path.join(dest.app, 'modules');
 
       var flags = {};
           flags.module    = _this.util.env.m || _this.util.env.module    || [];
@@ -66,7 +85,7 @@
 
       function init(cb){
         _this.name = args[0];
-        _this.names = _str.str().multi(_this.name);
+        _this.names = _str.str().simple(_this.name);
 
         _.forEach( flags, function (flag, key){
           if(_.isEmpty(flag)){
@@ -95,15 +114,18 @@
         }
 
         function next(answers){
-          filters.moduleNames = _str.str().simple( filters.module );
+          filters.moduleNames = _str.str().simple( answers.module || filters.module );
           _.assign(filters, config);
           _.assign(filters, answers);
           filters.names = _this.names;
 
           // console.log(filters.providers)
 
-
-          dest.final = path.join(dest.modules, _this.names.slug);
+          if(filters.moduleNames.slug === 'core'){
+            dest.final = path.join(dest.app, 'core');
+          } else {
+            dest.final = path.join(dest.modules, filters.moduleNames.slug);
+          }
 
           generate()
         }
@@ -130,7 +152,7 @@
           .pipe( $.template( filters ) )
           .pipe( $.rename(function (file){
             if (file.basename.indexOf('_') == 0) {
-              file.basename = file.basename.replace('_', _this.names.single.slug);
+              file.basename = file.basename.replace('_', _this.names.slug);
             }
           }))
           .pipe( $.conflict( dest.final ))

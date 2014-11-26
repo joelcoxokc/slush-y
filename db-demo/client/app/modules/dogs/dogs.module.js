@@ -1,6 +1,6 @@
 ;(function(){
   'use strict';
 
-  window.Application.register('people');
+  window.Application.register('dogs');
 
 }).call(this);

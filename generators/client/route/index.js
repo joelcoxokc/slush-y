@@ -9,7 +9,9 @@
     var questions = require('./prompts');
     var inquirer  = require('inquirer');
     var _str = require('../../../src/Utility/strings/index.js');
-    var fs = require('fs')
+    var fs = require('fs');
+    var chalk = require('chalk');
+
 
 
     /**
@@ -21,6 +23,14 @@
     module.exports = function ( done ) {
 
       var _this = this;
+      if(!_this.args[0]){
+        console.log(chalk.bold.red('**************************************************************************'));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
+        console.log(chalk.bold.red('**************************************************************************'));
+        return done();
+      }
       _this.storage.create('config-y','config-y.json');
 
       // setDefaults();
@@ -32,12 +42,14 @@
       var templates = _this.finder(__dirname + '/templates');
 
       var dest = {};
-          dest.modules = path.join(process.cwd(), 'client/app/modules');
+          dest.app = path.join(process.cwd(), 'client/app');
+          dest.modules = path.join(dest.app, 'modules');
 
       var flags = {};
           flags.module     = _this.util.env.m       || _this.util.env.module || false;
           flags.simple     = _this.util.env.simple  || false;
           flags.complex    = _this.util.env.complex || false;
+          flags.menu       = _this.util.env.menu    || false;
 
       var prompts = questions(_this.args[0]);
 
@@ -67,10 +79,14 @@
 
       function init(cb){
         _this.name = args[0];
-        _this.names = _str.str().multi(_this.name);
+        _this.names = _str.str().simple(_this.name);
 
         if(!flags.module){
           _this.prompts.push( prompts.module );
+        }
+
+        if(!flags.menu){
+          _this.prompts.push( prompts.menu );
         }
 
         _this.prompts.push( prompts.routePath );
@@ -93,10 +109,15 @@
 
           _.assign(filters, config);
           _.assign(filters, answers);
-          filters.moduleNames = _str.str().simple( filters.module );
+          filters.moduleNames = _str.str().simple( filters.module || answers.module );
           filters.names = _this.names;
+          filters.menu = flags.menu || answers.menu;
 
-          dest.final = path.join(dest.modules, _this.names.slug);
+          if(filters.moduleNames.slug === 'core'){
+            dest.final = path.join(dest.app, 'core');
+          } else {
+            dest.final = path.join(dest.modules, filters.moduleNames.slug);
+          }
 
           generate()
         }
@@ -148,6 +169,8 @@
         // console.log(filters);
         create_base();
         if(filters.complex) create_complex();
+        console.log(filters)
+        if(filters.menu) create_menu();
 
       }
 
@@ -156,7 +179,7 @@
         gulp
           .src( templates.base.all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename( rename( filters.names.single.slug ) ))
+          .pipe( $.rename( rename( filters.names.slug ) ))
           .pipe( $.conflict( dest.final ))
           .pipe( gulp.dest( dest.final  ));
       }
@@ -165,7 +188,15 @@
         gulp
           .src( templates.options.complex.all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename( rename( filters.names.single.slug ) ))
+          .pipe( $.rename( rename( filters.names.slug ) ))
+          .pipe( $.conflict( dest.final ))
+          .pipe( gulp.dest( dest.final  ));
+      }
+      function create_menu(){
+        gulp
+          .src( templates.options.menu.all() )
+          .pipe( $.template( filters ) )
+          .pipe( $.rename( rename( filters.names.slug ) ))
           .pipe( $.conflict( dest.final ))
           .pipe( gulp.dest( dest.final  ));
       }

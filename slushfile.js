@@ -26,6 +26,7 @@ var gulp    = require('gulp'),
     gulp.task('service', require('./generators/client/service'));
     gulp.task('filter', require('./generators/client/filter'));
     gulp.task('route', require('./generators/client/route'));
+    gulp.task('view', require('./generators/client/view'));
     gulp.task('module', require('./generators/client/module'));
     gulp.task('crud', require('./generators/crud'));
 

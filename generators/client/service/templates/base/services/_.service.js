@@ -3,14 +3,14 @@
 
   angular
     .module('<%= moduleNames.slug %>')
-    .factory('<%= names.single.classed %>', <%= names.single.classed %>);
+    .factory('<%= names.classed %>', <%= names.classed %>);
 
   /* @inject */
-  function <%= names.single.classed %>(<%=providers%>) {
+  function <%= names.classed %>(<%=providers%>) {
 
     this._storage = {};
 
-    // <%= names.single.humanized %> service logic
+    // <%= names.humanized %> service logic
     ////////////////////////////////
     <% _.forEach( functions, function(func){ %>
     /**

@@ -9,7 +9,8 @@
     var questions = require('./prompts');
     var inquirer  = require('inquirer');
     var _str = require('../../../src/Utility/strings/index.js');
-    var fs = require('fs')
+    var fs = require('fs');
+    var chalk = require('chalk');
 
 
     /**
@@ -21,6 +22,15 @@
     module.exports = function ( done ) {
 
       var _this = this;
+      var generator = _this.seq[0];
+      if(!_this.args[0]){
+        console.log(chalk.bold.red('**************************************************************************'));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
+        console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
+        console.log(chalk.bold.red('**************************************************************************'));
+        return done();
+      }
       _this.storage.create('config-y','config-y.json');
 
       // setDefaults();
@@ -40,7 +50,8 @@
           templates.simple.all  = path.join( templates.simple.path, '**/*' );
 
       var dest = {};
-          dest.modules = path.join(process.cwd(), 'client/app/modules');
+          dest.app = path.join(process.cwd(), 'client/app');
+          dest.modules = path.join(dest.app, 'modules');
 
       var flags = {};
           flags.module    = _this.util.env.m || _this.util.env.module    || [];
@@ -79,7 +90,7 @@
 
       function init(cb){
         _this.name = args[0];
-        _this.names = _str.str().multi(_this.name);
+        _this.names = _str.str().simple(_this.name);
 
         _.forEach( flags, function (flag, key){
           if(_.isEmpty(flag)){
@@ -94,10 +105,15 @@
           }
         });
 
+        console.log(filters)
+
+        if(filters.complex) filters.type = 'complex';
+        if(filters.simple)  filters.type = 'simple';
+
         /**
          * Add the prompt for choosing complex or simple
          */
-        if(!filters.complex || filters.simple){
+        if(!filters.type){
           _this.prompts.push( prompts.type );
         }
 
@@ -116,10 +132,13 @@
         }
 
         function next(answers){
-          filters.moduleNames = _str.str().simple( filters.module );
+          filters.moduleNames = _str.str().simple( filters.module || answers.module );
           _.assign(filters, config);
           _.assign(filters, answers);
           filters.names = _this.names;
+
+          if(filters.complex) filters.type = 'complex';
+          if(filters.simple)  filters.type = 'simple';
 
           if(_.isEmpty(filters.functions)){
             filters.functions = defaults.functions;
@@ -129,11 +148,17 @@
             filters.providers = defaults.providers;
           }
 
+          if(filters.moduleNames.slug === 'core'){
+            dest.final = path.join(dest.app, 'core', 'directives', filters.names.camelized);
+          } else {
+            console.log(filters)
+            dest.final = path.join(dest.modules, filters.moduleNames.slug, 'directives', filters.names.camelized);
+          }
 
-          dest.final = path.join(dest.modules, _this.names.slug, 'directives', _this.names.single.camel);
 
-          var directivePath = path.join( 'app/modules',  filters.names.slug, 'directives', filters.names.single.camel );
-          filters.directive_view_path = path.join( directivePath, filters.names.single.camel + '.directive.view.html' );
+
+          var directivePath = path.join( 'app/modules',  filters.moduleNames.slug, 'directives', filters.names.camelized );
+          filters.directive_view_path = path.join( directivePath, filters.names.camelized + '.view.html' );
 
           generate()
         }
@@ -156,11 +181,12 @@
 
 
       function generate(){
+        console.log(filters)
         gulp.src( templates[filters.type].all )
           .pipe( $.template( filters ) )
           .pipe( $.rename(function (file){
             if (file.basename.indexOf('_') == 0) {
-              file.basename = file.basename.replace('_', _this.names.single.slug);
+              file.basename = file.basename.replace('_', _this.names.camelized);
             }
           }))
           .pipe( $.conflict( dest.final ))

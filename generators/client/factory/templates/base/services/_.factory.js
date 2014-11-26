@@ -2,11 +2,11 @@
   'use strict';
 
   angular
-    .module('<%= names.slug %>')
-    .factory('<%= names.single.classed %>', <%= names.single.classed %>);
+    .module('<%= moduleNames.slug %>')
+    .factory('<%= names.classed %>', <%= names.classed %>);
 
   /* @inject */
-  function <%= names.single.classed %>(<%=providers%>) {
+  function <%= names.classed %>(<%=providers%>) {
 
     // Define Public API
     var instance = {<% _.forEach( functions, function(func){ %>
@@ -15,7 +15,7 @@
 
     return instance;
 
-    // <%= names.single.humanized %> service logic
+    // <%= names.humanized %> service logic
     ////////////////////////////////
     <% _.forEach( functions, function(func){ %>
     /**

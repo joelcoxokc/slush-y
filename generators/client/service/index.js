@@ -9,7 +9,9 @@
     var questions = require('./prompts');
     var inquirer  = require('inquirer');
     var _str = require('../../../src/Utility/strings/index.js');
-    var fs = require('fs')
+    var fs = require('fs');
+    var chalk = require('chalk');
+
 
 
     /**
@@ -32,7 +34,8 @@
       var templates = _this.finder(__dirname + '/templates');
 
       var dest = {};
-          dest.modules = path.join(process.cwd(), 'client/app/modules');
+          dest.app = path.join(process.cwd(), 'client/app');
+          dest.modules = path.join(dest.app, 'modules');
 
       var flags = {};
           flags.module    = _this.util.env.m || _this.util.env.module    || [];
@@ -67,7 +70,7 @@
 
       function init(cb){
         _this.name = args[0];
-        _this.names = _str.str().multi(_this.name);
+        _this.names = _str.str().simple(_this.name);
 
         _.forEach( flags, function (flag, key){
           if(_.isEmpty(flag)){
@@ -98,7 +101,7 @@
         function next(answers){
           // console.log(filters);
 
-          filters.moduleNames = _str.str().simple( _this.name );
+          filters.moduleNames = _str.str().simple( answers.module || filters.module );
           _.assign(filters, config);
           _.assign(filters, answers);
           filters.names = _this.names;
@@ -107,7 +110,11 @@
             filters.functions = defaults.functions;
           }
 
-          dest.final = path.join(dest.modules, _this.names.slug);
+          if(filters.moduleNames.slug === 'core'){
+            dest.final = path.join(dest.app, 'core');
+          } else {
+            dest.final = path.join(dest.modules, filters.moduleNames.slug);
+          }
 
           generate()
         }
@@ -132,7 +139,7 @@
 
         gulp.src( templates.base.all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename( rename(_this.names.single.slug) ))
+          .pipe( $.rename( rename(_this.names.slug) ))
           .pipe( $.conflict( dest.final ))
           .pipe( gulp.dest( dest.final  ))
       }

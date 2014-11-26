@@ -3,11 +3,11 @@
 
   angular
     .module('<%= moduleNames.slug %>')
-    .controller('<%= names.single.classed %>Controller', <%= names.single.classed %>Controller);
+    .controller('<%= names.classed %>Controller', <%= names.classed %>Controller);
 
   /* @inject */
-  function <%= names.single.classed %>Controller(<%=providers%>) {
-    // <%= names.single.humanized %> controller logic
+  function <%= names.classed %>Controller(<%=providers%>) {
+    // <%= names.humanized %> controller logic
 
     $scope.val = 0;
     <% _.forEach( functions, function(func){ %>

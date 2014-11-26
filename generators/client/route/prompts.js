@@ -46,6 +46,12 @@
             name: 'controllerName',
             message: 'What do you want to call your controller?',
             default: _str.classify(_str.slugify(name))
+        },
+        menu: {
+            type: 'confirm',
+            name: 'menu',
+            message: 'Do you want to add this route to the menu?',
+            default: true
         }
       }
 

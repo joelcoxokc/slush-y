@@ -3,16 +3,16 @@
 
   angular
     .module('<%= moduleNames.slug %>')
-    .factory('<%= names.single.classed %>', <%= names.single.classed %>);
+    .factory('<%= names.classed %>', <%= names.classed %>);
 
   /* @inject */
-  function <%= names.single.classed %>() {
+  function <%= names.classed %>() {
     this._storage = {};
     this.set      = set;
     this.get      = get;
     this.remove   = remove;
 
-    // <%= names.single.humanized %> service logic
+    // <%= names.humanized %> service logic
 
     /**
      * [set description]

@@ -105,7 +105,6 @@
           }
         });
 
-        console.log(filters)
 
         if(filters.complex) filters.type = 'complex';
         if(filters.simple)  filters.type = 'simple';
@@ -118,7 +117,6 @@
         }
 
         if(_.size( _this.prompts )){
-          console.log
           if(_this.prompts[0].name === 'module'){
             _this.prompts[0].choices = findModules();
           }
@@ -151,7 +149,6 @@
           if(filters.moduleNames.slug === 'core'){
             dest.final = path.join(dest.app, 'core', 'directives', filters.names.camelized);
           } else {
-            console.log(filters)
             dest.final = path.join(dest.modules, filters.moduleNames.slug, 'directives', filters.names.camelized);
           }
 
@@ -181,7 +178,6 @@
 
 
       function generate(){
-        console.log(filters)
         gulp.src( templates[filters.type].all )
           .pipe( $.template( filters ) )
           .pipe( $.rename(function (file){

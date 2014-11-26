@@ -163,8 +163,8 @@ $ slush y:crud <module-name>
 
 ###--flags
 ```bash
-y:crud <module-name> --folders config,services
-y:crud <module-name> -f config,services
+y:crud <module-name> --folders 'config,services'
+y:crud <module-name> -f 'config,services'
 ```
 **The --folders flag requires the input to be a comma separated list, with no spaces.**
 
@@ -189,7 +189,7 @@ The CRUD Module will generate a whole new module in your client side modules dir
   * {module-name}.edit.view.js
   * {module-name}.create.view.js
 
-This will also generator the full api for this module. the angular-service in the services directory is directly connected to the api created on the backend.
+This will also generator the full api for this module. the angular-service in the api directory is directly connected to the api created on the backend.
 
 #### Server
 * {module-name}.model.js  -  (Mongoose Model & Schema)
@@ -210,16 +210,17 @@ Generates a new AngularJS module structure. For this purpose you can use the Ang
 ```
 $ slush y:module <module-name>
 ```
-###--flags
+###--Flags
 ```bash
-y:crud <name> --folders config,services
-y:crud <name> -f config,services
+y:crud <name> --folders 'config,services'
+y:crud <name> -f 'config,services'
 ```
 **The --folders flag requires the input to be a comma separated list, with no spaces.**
 
 The sub-generator will ask for more information about your folder structure, and will create the empty new AngularJS module.
-Instead of manually filling out the components ti this new module, we can use the provided sub-generators
-to fill in the missing gaps.
+Instead of manually filling out the components ti this new module, we can use the provided sub-generators to fill in the missing gaps.
+
+**Note:** Don’t forget to use your module name as an argument when calling the CRUD module sub-generator.
 
 
 #AngularJS Sub-Generators
@@ -291,24 +292,24 @@ $ slush y:controller <controller-name>
 Dynamically create the functions that will be on scope from the command line
 
 ```bash
-y:controller <name> --functions funcOne,funcTwo
+y:controller <name> --functions 'actionOne, actionTwo'
 ```
 ```bash
-y:controller <name>r -f funcOne,funcTwo
+y:controller <name>r -f 'actionOne, actionTwo'
 ```
 >Example of a dynamically added function;
 
 ```javascript
-  $scope.funcOne = funcOne;
+  $scope.actionOne = actionOne;
 
     //////////////////
 
     /*
-     * funcOne      description
+     * actionOne      description
      * @return {[type]} description
      *
      */
-    function funcOne() {}
+    function actionOne() {}
 ```
 
 Dynamically **inject** providers to the to the controller
@@ -319,12 +320,13 @@ y:controller <name> --providers '$scope,$http,$q'
 y:controller <name> -f '$scope,$http,$q'
 ```
 >Example of dynamically injected providers
-```javascript
- angular
-    .module('moduleName')
-    .controller('SomeController', SomeController);
 
-  function SomeController($scope,$http,$q) {}
+```javascript
+   angular
+      .module('moduleName')
+      .controller('SomeController', SomeController);
+
+    function SomeController($scope,$http,$q) {}
 ```
 
 **NOTE:**  arguments must be passed as a comma separated list with no spaces.

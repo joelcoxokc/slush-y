@@ -212,8 +212,8 @@ $ slush y:module <module-name>
 ```
 ###--Flags
 ```bash
-y:crud <name> --folders 'config,services'
-y:crud <name> -f 'config,services'
+y:module <name> --folders 'config,services'
+y:module <name> -f 'config,services'
 ```
 **The --folders flag requires the input to be a comma separated list, with no spaces.**
 

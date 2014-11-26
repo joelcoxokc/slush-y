@@ -350,20 +350,20 @@ $ slush y:service <service-name>
 Dynamically create the functions that will exist on the service
 
 ```bash
-y:service <name> --functions funcOne,funcTwo
+y:service <name> --functions 'actionOne,actionTwo'
 ```
 ```bash
-y:service <name> -f functionOne,functionTwo
+y:service <name> -f 'actionOne,actionTwo'
 ```
 >Example of a dynamically added function;
 
 ```javascript
     /*
-     * funcOne      description
+     * actionOne      description
      * @return {[type]} description
      *
      */
-    this.funcOne = function() {}
+    this.actionOne = function() {}
 ```
 Dynamically **inject** providers to the to the service.
 ```bash
@@ -372,7 +372,9 @@ y:service <name> --providers '$http,$q'
 ```bash
 y:service <name> -f '$http,$q'
 ```
+
 >Example of dynamically injecting providers
+
 ```javascript
    angular
      .module('moduleName')
@@ -380,6 +382,7 @@ y:service <name> -f '$http,$q'
    /* @inject */
    function Storage ($http, $q){}
 ```
+
 **NOTE:**  arguments must be passed as a comma separated list with no spaces.
 **NOTE:**  if using a **$** in one of the providers, it must be escaped.
 
@@ -398,23 +401,23 @@ $ slush y:factory <factory-name>
 Dynamically create the functions that will exist on the factory
 
 ```bash
-y:factory <name> --functions funcOne,funcTwo
+y:factory <name> --functions 'actionOne,actionTwo'
 ```
 ```bash
-y:factory <name> -f functionOne,functionTwo
+y:factory <name> -f 'actionOne,actionTwo'
 ```
 >Example of a dynamically added function;
 
 ```javascript
   return {
-      funcOne:funcOne
+      actionOne:actionOne
   }
     /*
-     * funcOne      description
+     * actionOne      description
      * @return {[type]} description
      *
      */
-  function funcOne() {}
+  function actionOne() {}
 ```
 Dynamically **inject** providers to the to the factory.
 ```bash
@@ -423,7 +426,9 @@ y:factory <name> --providers '$http,$q'
 ```bash
 y:factory <name> -f '$http,$q'
 ```
+
 >Example of dynamically injected providers
+
 ```javascript
   angular
     .module('moduleName')
@@ -431,7 +436,6 @@ y:factory <name> -f '$http,$q'
   /* @inject */
     function Storage ($http, $q){}
 ```
-
 
 **NOTE:**  arguments must be passed as a comma separated list with no spaces.
 **NOTE:**  if using a **$** in one of the providers, it must be escaped.
@@ -457,12 +461,14 @@ y:directive <name> --simple
 ```
 Dynamically create the functions that will be on scope from the command line
 ```bash
-y:directive <name> --functions funcOne,funcTwo
+y:directive <name> --functions 'actionOne,actionTwo'
 ```
 ```bash
-y:directive <name> -f funcOne,funcTwo
+y:directive <name> -f 'actionOne,actionTwo'
 ```
->Example of a dynamically added function;
+
+>Example of a dynamically added function
+
 ```javascript
   function link(scope, element, attrs) {
 
@@ -480,7 +486,9 @@ y:directive <name> --providers '$http,$q'
 ```bash
 y:directive <name> -f '$http,$q'
 ```
+
 >Example of dynamically injected providers
+
 ```javascript
   angular
     .module('moduleName')
@@ -500,6 +508,7 @@ The complex directive will provide you with the following
  - {name} .styles.css
  - {name}.view.js
  - {name}.test.js
+
 ####Simple Directive
 The complex directive will provide you with the following
  - {name}.directive.js
@@ -515,12 +524,13 @@ $ slush y:filter <filter-name>
 
 Dynamically create the functions within the filter.
 ```bash
-y:filter <name> --functions funcOne,funcTwo
+y:filter <name> --functions 'actionOne,actionTwo'
 ```
 ```bash
-y:filter <name> -f funcOne,funcTwo
+y:filter <name> -f 'actionOne,actionTwo'
 ```
 >Example of a dynamically created function
+
 ```javascript
   function filter(input) {
     return action( input )
@@ -539,6 +549,7 @@ y:filter <name> --providers '$http,$q'
 y:filter <name> -f '$http,$q'
 ```
 >Example of dynamically injected providers
+
 ```javascript
   angular
     .module('moduleName')
@@ -546,6 +557,7 @@ y:filter <name> -f '$http,$q'
   /* @inject */
     function myFilter ($http, $q){}
 ```
+
 The sub-generator will ask you for the module name under which you would like to create your new filter, and will create a new AngularJS filter file in that module **filters** folder.
 
 

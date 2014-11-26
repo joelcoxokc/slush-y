@@ -7,6 +7,9 @@ Inspired by [MEAN](http://meanjs.org/)
 Inspired by [slush-meanjs](http://npmjs.org/package/slush-meanjs)
 Inspired by John Papa's [angularjs-styleguide](https://github.com/johnpapa/angularjs-styleguide#factories)
 
+##NEW
+####Generators now support flags, in place of the prompts
+
 ## Getting Started
 
 ### Installation
@@ -158,23 +161,43 @@ To create a new CRUD module you will need to use *slush y* again:
 $ slush y:crud <module-name>
 ```
 
+###--flags
+```bash
+y:crud <module-name> --folders config,services
+y:crud <module-name> -f config,services
+```
+**The --folders flag requires the input to be a comma separated list, with no spaces.**
+
+```bash
+y:crud <module-name> --menu
+```
+**The --menus flag adds a link to the module in the navigation bar dynamically**
+
 The CRUD Module will generate a whole new module in your client side modules directory.
-##### Client
+#### Client
+* api
+  * {module-name}.api.service.js
 * config
+  * {module-name}.routes.js
 * controllers
-* directives
-* services
-* tests
-* styles
+  * {module-name}.list.controller.js
+  * {module-name}.detail.controller.js
+  * {module-name}.create.controller.js
 * views
+  * {module-name}.view.js
+  * {module-name}.detail.view.js
+  * {module-name}.edit.view.js
+  * {module-name}.create.view.js
 
 This will also generator the full api for this module. the angular-service in the services directory is directly connected to the api created on the backend.
 
-##### Server
-* model  -  (Mongoose Model & Schema)
-* controller  -  (Express request and response handler)
-* route  -  (Express Restful Router)
-* test  -  (mocha super test)
+#### Server
+* {module-name}.model.js  -  (Mongoose Model & Schema)
+* {module-name}.controller.js  -  (Express request and response handler)
+* {module-name}.route.js  -  (Express Restful Router)
+* {module-name}.test.js  -  (mocha super test)
+* {module-name}.socket.js  -  (Socket.io integration)
+* {module-name}.seed.js  -  (MongoDB Seed)
 
 The Module comes packed with everything you need to start developing.
 
@@ -187,6 +210,12 @@ Generates a new AngularJS module structure. For this purpose you can use the Ang
 ```
 $ slush y:module <module-name>
 ```
+###--flags
+```bash
+y:crud <name> --folders config,services
+y:crud <name> -f config,services
+```
+**The --folders flag requires the input to be a comma separated list, with no spaces.**
 
 The sub-generator will ask for more information about your folder structure, and will create the empty new AngularJS module.
 Instead of manually filling out the components ti this new module, we can use the provided sub-generators
@@ -198,6 +227,16 @@ to fill in the missing gaps.
 The Sub-Generators will read the current modules in modules directory, and ask will which which module to use.
 Based upon your option, the generator will generate the proper files the proper directory within the chosen module.
 
+##Global -- Flags for all sub-generators
+
+Set the module for the sub-generator, and bypass the prompt.
+```bash
+y:<generator> <name> --module 'people'
+```
+```bash
+y:<generator> <name> -m 'people'
+```
+
 ## AngularJS Route Sub-Generator
 
 To construct your module you will often need to create a new route. The AngularJS route sub-generator will help you create a view, controller and a proper route in your module **routes.js** file. If it can’t find the module routes file the sub-generator will create one for you. Creating a new AngularJS route will involve executing this command:
@@ -205,25 +244,337 @@ To construct your module you will often need to create a new route. The AngularJ
 ```
 $ slush y:route <route-name>
 ```
+###--Flags
+Specify whether you would like a **complex** or **simple** route.
+```bash
+y:route <name> --complex
+```
+```bash
+y:route <name> --simple
+```
+The --menu flag allows you to dynamically add the route to the navigation bar
+```bash
+y:route <name> --menu
+```
+###Complex Route
+The Complex option will provide you with the following
+ - conifg/
+   - {name}.route.js
+   - {name}.run.js --- (for dynamically adding to the menu)
+ - controllers/
+   - {name}.controller.js
+ - tests/
+   - {name}.controller.test.js
+ - styles/
+   - {name}.style.css
+ - views/
+   - {name}.view.html
 
-The sub-generator will ask for more information about your controller, view and routing URL, and will generate the appropriate files for you.
+###Simple Route
+The Simple option will provide you with the following
+ - conifg/
+   - {name}.route.js
+   - {name}.run.js --- (for dynamically adding to the menu)
 
+The Route sub-generator will ask for more information about your controller, view and routing URL, and will generate the appropriate files for you.
 
 
 ## AngularJS Controller Sub-Generator
 
 The AngularJS Controller sub-generator will create a new AngularJS controller in the specified module's **controllers** folder. To create a new AngularJS controller run *slush y* again by using this command:
 
-
 ```
 $ slush y:controller <controller-name>
 ```
+###--Flags
 
-The sub-generator will ask you for the module name under which you would like to create your new controller, and will create a new AngularJS controller file in that module **controllers** folder and a test file in the **tests** folder.
+Dynamically create the functions that will be on scope from the command line
 
+```bash
+y:controller <name> --functions funcOne,funcTwo
+```
+```bash
+y:controller <name>r -f funcOne,funcTwo
+```
+>Example of a dynamically added function;
+
+```javascript
+  $scope.funcOne = funcOne;
+
+    //////////////////
+
+    /*
+     * funcOne      description
+     * @return {[type]} description
+     *
+     */
+    function funcOne() {}
+```
+
+Dynamically **inject** providers to the to the controller
+```bash
+y:controller <name> --providers '$scope,$http,$q'
+```
+```bash
+y:controller <name> -f '$scope,$http,$q'
+```
+>Example of dynamically injected providers
+```javascript
+ angular
+    .module('moduleName')
+    .controller('SomeController', SomeController);
+
+  function SomeController($scope,$http,$q) {}
+```
+
+**NOTE:**  arguments must be passed as a comma separated list with no spaces.
+**NOTE:**  if using a **$** in one of the providers, it must be escaped.
+
+The sub-generator will ask you for the module name under which you would like to create your new controller, and will create a new AngularJS controller file in that module **controllers** folder.
 
 **Don’t forget!** This time you pass the controller name as an argument.
 
+
+## AngularJS Service Sub-Generator
+
+The AngularJS service sub-generator will create a new AngularJS service in the specified module's **services** folder. To create a new AngularJS service you will need to execute this command:
+
+```
+$ slush y:service <service-name>
+```
+
+###--Flags
+
+Dynamically create the functions that will exist on the service
+
+```bash
+y:service <name> --functions funcOne,funcTwo
+```
+```bash
+y:service <name> -f functionOne,functionTwo
+```
+>Example of a dynamically added function;
+
+```javascript
+    /*
+     * funcOne      description
+     * @return {[type]} description
+     *
+     */
+    this.funcOne = function() {}
+```
+Dynamically **inject** providers to the to the service.
+```bash
+y:service <name> --providers '$http,$q'
+```
+```bash
+y:service <name> -f '$http,$q'
+```
+>Example of dynamically injecting providers
+```javascript
+   angular
+     .module('moduleName')
+     .factory('Storage', Storage);
+   /* @inject */
+   function Storage ($http, $q){}
+```
+**NOTE:**  arguments must be passed as a comma separated list with no spaces.
+**NOTE:**  if using a **$** in one of the providers, it must be escaped.
+
+The sub-generator will ask you for the module name under which you would like to create your new service, and will create a new AngularJS service file in that module's **services** folder.
+
+## AngularJS Factory Sub-Generator
+
+The AngularJS factory sub-generator will create a new AngularJS factory in the specified module's **factory** folder. To create a new AngularJS factory you will need to execute this command:
+
+```
+$ slush y:factory <factory-name>
+```
+
+###--Flags
+
+Dynamically create the functions that will exist on the factory
+
+```bash
+y:factory <name> --functions funcOne,funcTwo
+```
+```bash
+y:factory <name> -f functionOne,functionTwo
+```
+>Example of a dynamically added function;
+
+```javascript
+  return {
+      funcOne:funcOne
+  }
+    /*
+     * funcOne      description
+     * @return {[type]} description
+     *
+     */
+  function funcOne() {}
+```
+Dynamically **inject** providers to the to the factory.
+```bash
+y:factory <name> --providers '$http,$q'
+```
+```bash
+y:factory <name> -f '$http,$q'
+```
+>Example of dynamically injected providers
+```javascript
+  angular
+    .module('moduleName')
+    .factory('Storage', Storage);
+  /* @inject */
+    function Storage ($http, $q){}
+```
+
+
+**NOTE:**  arguments must be passed as a comma separated list with no spaces.
+**NOTE:**  if using a **$** in one of the providers, it must be escaped.
+
+The sub-generator will ask you for the module name under which you would like to create your new service, and will create a new AngularJS service file in that module's **factory** folder.
+
+
+## AngularJS Directive Sub-Generator
+
+The AngularJS directive sub-generator will create a new AngularJS directive in the specified module's **directives** folder. Creating a new AngularJS directive should already look familiar:
+
+```
+$ slush y:directive <directive-name>
+```
+###--Flags
+
+Specify whether you want a **simple** or **complex** directive.
+```bash
+y:directive <name> --complex
+```
+```bash
+y:directive <name> --simple
+```
+Dynamically create the functions that will be on scope from the command line
+```bash
+y:directive <name> --functions funcOne,funcTwo
+```
+```bash
+y:directive <name> -f funcOne,funcTwo
+```
+>Example of a dynamically added function;
+```javascript
+  function link(scope, element, attrs) {
+
+      /**
+       * action description
+       * @return {[type]} description
+       */
+      function action (){}
+    }
+```
+Dynamically **inject** providers to the to the directive.
+```bash
+y:directive <name> --providers '$http,$q'
+```
+```bash
+y:directive <name> -f '$http,$q'
+```
+>Example of dynamically injected providers
+```javascript
+  angular
+    .module('moduleName')
+    .directive('myAction', myAction);
+  /* @inject */
+    function myAction ($http, $q){}
+```
+
+**NOTE:**  arguments must be passed as a comma separated list with no spaces.
+**NOTE:**  if using a **$** in one of the providers, it must be escaped.
+
+The sub-generator will ask you for the module name under which you would like to create your new directive, and will create a new AngularJS directive file in that module's **directives** folder.
+
+####Complex Directive
+The complex directive will provide you with the following
+ - {name}.directive.js
+ - {name} .styles.css
+ - {name}.view.js
+ - {name}.test.js
+####Simple Directive
+The complex directive will provide you with the following
+ - {name}.directive.js
+
+## AngularJS Filter Sub-Generator
+
+The AngularJS filter sub-generator will create a new AngularJS filter in a specified module's **filters** folder. To create a new AngularJS filter you need to call *slush y* again:
+
+```
+$ slush y:filter <filter-name>
+```
+###--Flags
+
+Dynamically create the functions within the filter.
+```bash
+y:filter <name> --functions funcOne,funcTwo
+```
+```bash
+y:filter <name> -f funcOne,funcTwo
+```
+>Example of a dynamically created function
+```javascript
+  function filter(input) {
+    return action( input )
+      /**
+       * action description
+       * @return {[type]} description
+       */
+      function action (){}
+    }
+```
+Dynamically **inject** providers to the to the filter.
+```bash
+y:filter <name> --providers '$http,$q'
+```
+```bash
+y:filter <name> -f '$http,$q'
+```
+>Example of dynamically injected providers
+```javascript
+  angular
+    .module('moduleName')
+    .directive('myFilter', myFilter);
+  /* @inject */
+    function myFilter ($http, $q){}
+```
+The sub-generator will ask you for the module name under which you would like to create your new filter, and will create a new AngularJS filter file in that module **filters** folder.
+
+
+
+## AngularJS Config Sub-Generator
+
+The AngularJS config sub-generator will create a new AngularJS config section in a specified module's **config** folder. To create a new AngularJS config file just call *slush y*:
+
+```
+$ slush y:config <config-name>
+```
+###--Flags
+
+Dynamically **inject** providers to the to the configuration.
+```bash
+y:filter <name> --providers '$http,$q'
+```
+```bash
+y:filter <name> -f '$http,$q'
+```
+>Example of dynamically injected providers
+```javascript
+  angular
+    .module('moduleName')
+    .config(Configuration);
+  /* @inject */
+    function Configuration ($http, $q){}
+```
+
+
+The sub-generator will ask you for the module name under which you would like to create your new config, and will create a new AngularJS config file in that module's **config** folder.
 
 
 ## AngularJS View Sub-Generator
@@ -235,66 +586,14 @@ Once you have your controller file ready, you may want to add a view that makes 
 $ slush y:view <view-name>
 ```
 
-The sub-generator will ask you for the module name under which you would like to create your new view, and some additional routing information. It will then create a new view file in that module's **views** folder and add a routing state to the module **routes.js** file. If it can’t find the module routes file it will create one for you.
-
-
-
-## AngularJS Service Sub-Generator
-
-The AngularJS service sub-generator will create a new AngularJS service in the specified module's **services** folder. To create a new AngularJS service you will need to execute this command:
-
-
-```
-$ slush y:service <service-name>
-```
-
-The sub-generator will ask you for the module name under which you would like to create your new service, and will create a new AngularJS service file in that module's **services** folder.
-
-
-
-## AngularJS Directive Sub-Generator
-
-The AngularJS directive sub-generator will create a new AngularJS directive in the specified module's **directives** folder. Creating a new AngularJS directive should already look familiar:
-
-
-```
-$ slush y:directive <directive-name>
-```
-
-The sub-generator will ask you for the module name under which you would like to create your new directive, and will create a new AngularJS directive file in that module's **directives** folder.
-
-
-
-## AngularJS Filter Sub-Generator
-
-The AngularJS filter sub-generator will create a new AngularJS filter in a specified module's **filters** folder. To create a new AngularJS filter you need to call *slush y* again:
-
-
-```
-$ slush y:filter <filter-name>
-```
-
-The sub-generator will ask you for the module name under which you would like to create your new filter, and will create a new AngularJS filter file in that module **filters** folder.
-
-
-
-## AngularJS Config Sub-Generator
-
-The AngularJS config sub-generator will create a new AngularJS config section in a specified module's **config** folder. To create a new AngularJS config file just call *slush y*:
-
-
-```
-$ slush y:config <config-name>
-```
-
-The sub-generator will ask you for the module name under which you would like to create your new config, and will create a new AngularJS config file in that module's **config** folder.
-
+The sub-generator will ask you for the module name under which you would like to create your new view, and some additional routing information. It will then create a new view file in that module's **views** folder.
 
 
 ## AngularJS Test Sub-Generator
 
-Your MEAN application comes pre-bundled with the Karma test runner and Jasmine testing framework. To test your AngularJS controllers you’ll need to create a test file, which Karma will later use to run the tests. For this purpose we provided you with the AngularJS test sub-generator. Creating a new AngularJS test is effortless, just execute this command:
+####Coming Soon!!!
 
+Your MEAN application comes pre-bundled with the Karma test runner and Jasmine testing framework. To test your AngularJS controllers you’ll need to create a test file, which Karma will later use to run the tests. For this purpose we provided you with the AngularJS test sub-generator. Creating a new AngularJS test is effortless, just execute this command:
 
 ```
 $ slush y:test <controller-name>

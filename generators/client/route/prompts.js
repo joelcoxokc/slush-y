@@ -2,30 +2,20 @@
 ;(function(){
 
   'use strict';
-
-    var _ = require('lodash');
-    var _str = require('underscore.string');
-
-    module.exports = RoutePrompt;
+    var _str = require('underscore.string')
+    module.exports = prompts;
 
 
-    function RoutePrompt(generator, done){
+    function prompts (name) {
 
-      var __this       = this;
-      var finalAnswers = [];
-
-
-      var questions1   = [{
-
+      var pendingPrompts = {
+        module : {
           type: 'list',
-          name: 'moduleName',
+          name: 'module',
           default: 'core',
-          message: 'Which module does this route belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        },{
+          message: 'Which module does this factory belongs to?'
+        },
+        type : {
           type: 'list',
           name: 'routeType',
           message: 'What type of route would you like to generate?',
@@ -37,74 +27,35 @@
             value: 'simple',
             name: '(simple)  --- comes with just a route & view'
           }]
-        }];
-
-        /**
-         * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-         */
-        questions1 = __this.findModules(questions1, __this.__modulesDir);
-
-        /**
-         * Ask first round of questions
-         */
-        __this.prompt( questions1, function (answers) {
-            answers.moduleNames = __this.str().simple(answers.moduleName);
-            _.assign(finalAnswers, answers);
-
-            /**
-             * Create the second round of questions, using the answers from the first round
-             */
-            var questions2 = fetchMoreQuestions( generator.args[0] );
-
-            /**
-             * Ask the second round of questions;
-             */
-            __this.prompt( questions2, function (answers) {
-                answers.routePath       = _str.slugify( answers.routePath );
-                answers.viewNames       = __this.str().simple( answers.viewName );
-                answers.controllerNames = __this.str().simple( answers.controllerName );
-
-                _.assign(finalAnswers, answers);
-
-                /**
-                 * Complete the prompting
-                 */
-                done( finalAnswers );
-          });
-
-        });
-
-
-        /**
-         * [fetchMoreQuestions creates the second round of questions based on the answers from the first round]
-         * @param  {Object} finalAnswers [contains the answers from the first round of questions]
-         * @return {Array}               [an array of new questions to ask the user]
-         */
-        function fetchMoreQuestions(name){
-
-          var questions = [{
+        },
+        routePath: {
+            type: 'input',
             name: 'routePath',
             message: 'What do you want your route path to be?',
             default: name
-          }]
-          var complexQuestions = [{
+
+        },
+        viewName:{
+            type: 'input',
             name: 'viewName',
             message: 'What do you want to call your view?',
             default: name
-          }, {
+        },
+        controllerName: {
+            type: 'input',
             name: 'controllerName',
             message: 'What do you want to call your controller?',
             default: _str.classify(_str.slugify(name))
-          }];
-
-          if( finalAnswers.routeType === 'complex' ){
-            finalAnswers.complex = true;
-            _.forEach( complexQuestions, function (item){
-              questions.push(item);
-            })
-          }
-          return questions;
+        },
+        menu: {
+            type: 'confirm',
+            name: 'menu',
+            message: 'Do you want to add this route to the menu?',
+            default: true
         }
+      }
+
+      return pendingPrompts;
 
     }
 

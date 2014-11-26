@@ -1,0 +1,79 @@
+<div class="container top">
+  <div class="row">
+    <div class="col-sm-12">
+
+      <section class="panel">
+        <h3 class="panel-heading bg-deeporange-300">
+          Login</h3>
+        <form class="form" name="form" ng-submit="vm.login(form)" novalidate>
+
+
+          <article class="panel-body">
+            <p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
+            <p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+
+            <div class="form-group">
+              <label for="email" class="control-label">Email</label>
+
+              <input type="email"
+                     name="email"
+                     class="form-control warning"
+                     ng-model="vm.user.email"
+                     required
+                     id="email">
+            </div>
+
+            <div class="form-group">
+              <label for="password" class="control-label">Password</label>
+
+              <input  type="password"
+                      name="password"
+                      class="form-control warning"
+                      ng-model="vm.user.password"
+                      required
+                      id="password">
+            </div>
+
+            <div class="form-group has-error">
+              <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && vm.submitted">
+                 Please enter your email and password.
+              </p>
+              <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+                 Please enter a valid email.
+              </p>
+
+              <p class="help-block">{{ vm.errors.other }}</p>
+            </div>
+          </article>
+
+          <article class="panel-footer">
+            <button class="btn colored button-deeporange-300 btn-lg btn-login" type="submit">
+              Sign in
+            </button>
+            <a class="btn btn-white btn-lg btn-register pull-right" ui-sref="signup">
+              Register
+              <i class="fa fa-arrow-right"></i></a>
+          </article>
+
+        </form>
+      </section>
+
+      <section class="panel panel-default">
+        <article class="panel-body text-center">
+
+          <a class="btn btn-white" href="" ng-click="vm.loginOauth('facebook')">
+            <i class="fa fa-facebook"></i> Connect with Facebook
+          </a>
+          <a class="btn btn-white" href="" ng-click="vm.loginOauth('google')">
+            <i class="fa fa-google-plus"></i> Connect with Google+
+          </a>
+          <a class="btn btn-white" href="" ng-click="vm.loginOauth('twitter')">
+            <i class="fa fa-twitter"></i> Connect with Twitter
+          </a>
+
+        </article>
+      </section>
+
+    </div>
+  </div>
+</div>

@@ -3,56 +3,27 @@
 
   'use strict';
 
-
     module.exports = directivePrompts;
 
 
-    function directivePrompts (generator, done) {
+    function directivePrompts () {
 
-      var __this = this;
-      var prompts = directiveQuestions();
-
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
-
-      /**
-       * Ask the first round of questions
-       */
-      __this
-        .prompt(prompts, promptCallback);
-
-
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
-        answers[answers.directiveType] = true;
-
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
-      }
-    }
-
-
-
-    function directiveQuestions(){
-
-      var questions = [{
-
+      var pendingPrompts = {
+        module : {
           type: 'list',
-          name: 'moduleName',
+          name: 'module',
           default: 'core',
-          message: 'Which module does this directive belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        },{
+          message: 'Which module does this directive belongs to?'
+        },
+        providers: {
+          name: 'providers',
+          message: 'inject any providers? (please camma separate each)',
+        },
+        functions: {
+          name: 'functions',
+          message: 'add fucntions to the directive? (please camma separate each)',
+        },
+        type: {
           type: 'list',
           name: 'directiveType',
           message: 'What type of directive would you like to generate?',
@@ -64,9 +35,10 @@
             value: 'simple',
             name: '(simple)  --- comes with just a directive file'
           }]
-        }];
+        }
+      }
 
-      return questions;
+      return pendingPrompts;
 
     }
 

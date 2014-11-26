@@ -4,14 +4,13 @@
 
   // Configuring the Articles module
   angular
-    .module('<%= slugifiedPluralName %>')
-    .config( Config );
+    .module('<%= moduleNames.slug %>')
+    .run( Run );
 
   /* @inject */
   function Run(Menus) {
     // Set top bar menu items
-    Menus.addMenuItem('<%= menuId %>', '<%= humanizedPluralName %>', '<%= slugifiedPluralName %>');
-    Menus.addMenuItem('<%= menuId %>', 'New <%= humanizedSingularName %>', '<%= slugifiedPluralName %>/create');
+    Menus.set('<%= names.plural.classed %>', '/<%=names.slug%>', 'grey-500');
   }
 
 }).call(this);

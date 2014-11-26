@@ -1,0 +1,320 @@
+.content {
+  margin-top: 50px;
+}
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+/**
+ * Bootstrap Fonts
+ */
+
+/*@font-face {
+    font-family: 'Glyphicons Halflings';
+    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot');
+    src: url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+    url('../bower_components/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}*/
+
+/**
+ *Font Awesome Fonts
+ */
+/*
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?v=4.1.0');
+    src: url('../bower_components/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0') format('embedded-opentype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.woff?v=4.1.0') format('woff'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.ttf?v=4.1.0') format('truetype'),
+    url('../bower_components/font-awesome/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+/**
+ * App-wide Styles
+ */
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+.btn.btn-clear,
+a.btn.btn-clear,
+button.btn.btn-clear {
+  background-color: none;
+  background: none;
+  color:inherit;
+}
+.btn.btn-clear:hover,
+.btn.btn-clear:focus,
+.btn.btn-clear:active,
+.btn.btn-clear:visited,
+.btn.btn-clear.active {
+  color:inherit;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+body {
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
+.container.top {
+  margin-top: 30px;
+}
+
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+  background-color: #428bca;
+  -webkit-box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+          box-shadow: inset 0 -2px 5px rgba(0,0,0,.1);
+}
+
+.blog-header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.blog-title {
+  margin-top: 30px;
+  margin-bottom: 0;
+  font-size: 60px;
+  font-weight: normal;
+}
+.blog-description {
+  font-size: 20px;
+  color: #999;
+}
+
+
+/*
+ * Main column and sidebar layout
+ */
+
+.blog-main {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Sidebar modules for boxing content */
+.sidebar-module {
+  padding: 15px;
+  margin: 0 -15px 15px;
+}
+.sidebar-module-inset {
+  padding: 15px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.sidebar-module-inset p:last-child,
+.sidebar-module-inset ul:last-child,
+.sidebar-module-inset ol:last-child {
+  margin-bottom: 0;
+}
+
+
+
+/* Pagination */
+.pager {
+  margin-bottom: 60px;
+  text-align: left;
+}
+.pager > li > a {
+  width: 140px;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 30px;
+}
+
+
+/*
+ * Blog posts
+ */
+
+.blog-post {
+  margin-bottom: 60px;
+}
+.blog-post-title {
+  margin-bottom: 5px;
+  font-size: 40px;
+}
+.blog-post-meta {
+  margin-bottom: 20px;
+  color: #999;
+}
+
+
+/*
+ * Footer
+ */
+
+.blog-footer {
+  position: fixed;
+  bottom: 0;
+  padding: 15px 0;
+  height: 50px;
+  width:100%;
+  color: #999;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.05);
+}
+.blog-footer p:last-child {
+  margin-bottom: 0;
+}
+
+
+.sidebar-btn {
+  border-left-color: red;
+}
+.sidebar-btn.active {
+  border-left-color: orange;
+  color: orange;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3B5998;
+  border-color: #133783;
+}
+
+.btn-twitter {
+  color: #fff;
+  background-color: #2daddc;
+  border-color: #0271bf;
+}
+
+.btn-google-plus {
+  color: #fff;
+  background-color: #dd4b39;
+  border-color: #c53727;
+}
+
+.btn-github {
+  color: #fff;
+  background-color: #fafafa;
+  border-color: #ccc;
+}
+
+
+.modal-primary .modal-header,
+.modal-info .modal-header,
+.modal-success .modal-header,
+.modal-warning .modal-header,
+.modal-danger .modal-header {
+  color: #fff;
+  border-radius: 5px 5px 0 0;
+}
+.modal-primary .modal-header {
+  background: #428bca;
+}
+.modal-info .modal-header {
+  background: #5bc0de;
+}
+.modal-success .modal-header {
+  background: #5cb85c;
+}
+.modal-warning .modal-header {
+  background: #f0ad4e;
+}
+.modal-danger .modal-header {
+  background: #d9534f;
+}
+
+
+/* vertical alignment styles */
+.col-top {
+    vertical-align:top;
+}
+.col-middle {
+    vertical-align:middle;
+}
+.col-bottom {
+    vertical-align:bottom;
+}
+
+/* fix firefox responsive images */
+.img-responsive {
+    width: 100%
+}
+
+/* columns of same height styles */
+.container-xs-height {
+    display:table;
+    padding-left:0px;
+    padding-right:0px;
+}
+.row-xs-height {
+    display:table-row;
+}
+.col-xs-height {
+    display:table-cell;
+    float:none;
+}
+@media (min-width: 768px) {
+    .container-sm-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-sm-height {
+        display:table-row;
+    }
+    .col-sm-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 992px) {
+    .container-md-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-md-height {
+        display:table-row;
+    }
+    .col-md-height {
+        display:table-cell;
+        float:none;
+    }
+}
+@media (min-width: 1200px) {
+    .container-lg-height {
+        display:table;
+        padding-left:0px;
+        padding-right:0px;
+    }
+    .row-lg-height {
+        display:table-row;
+    }
+    .col-lg-height {
+        display:table-cell;
+        float:none;
+    }
+}

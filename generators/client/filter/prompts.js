@@ -3,57 +3,29 @@
 
   'use strict';
 
-
-    module.exports = filterPrompts;
-
-
-    function filterPrompts (generator, done) {
-
-      var __this = this;
-      var prompts = filterQuestions();
-
-      /**
-       * Find all the modules in the client/app/modules directory, and add them to the choices form the first question;
-       */
-      prompts     = __this.findModules( prompts, __this.__modulesDir );
-
-      /**
-       * Ask the first round of questions
-       */
-      __this
-        .prompt(prompts, promptCallback);
+    module.exports = prompts;
 
 
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
+    function prompts () {
 
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
-      }
-    }
-
-
-
-    function filterQuestions(){
-
-      var questions = [{
-
+      var pendingPrompts = {
+        module : {
           type: 'list',
-          name: 'moduleName',
+          name: 'module',
           default: 'core',
-          message: 'Which module does this filter belongs to?',
-          choices: [{
-              name: 'core',
-              value: 'core'
-            }]
-        }];
+          message: 'Which module does this filter belongs to?'
+        },
+        providers: {
+          name: 'providers',
+          message: 'inject any providers? (please camma separate each)',
+        },
+        functions: {
+          name: 'functions',
+          message: 'add fucntions to the filter? (please camma separate each)',
+        }
+      }
 
-      return questions;
+      return pendingPrompts;
 
     }
 

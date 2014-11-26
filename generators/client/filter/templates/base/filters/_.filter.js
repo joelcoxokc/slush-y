@@ -3,20 +3,28 @@
 
   angular
     .module('<%= moduleNames.slug %>')
-    .filter('<%= names.single.camel %>', <%= names.single.camel %>);
+    .filter('<%= names.camelized %>', <%= names.camelized %>);
 
   /* @inject */
-  function <%= names.single.camel %>() {
+  function <%= names.camelized %>(<%=providers%>) {
 
     return filter;
 
     //////////////
 
     function filter(input) {
-      // <%= names.single.humanized %> directive logic
-      // ...
+      // <%= names.humanized %> filter logic
 
-      return '<%= names.single.camel %> filter: ' + input;
+      return '<%= names.camelized %> filter: ' + input;
+
+      ////////////////////////////////
+      <% _.forEach( functions, function(func){ %>
+      /**
+       * <%=func%> description
+       * @return {[type]} description
+       */
+      function <%=func%> (){}
+      <% }) %>
     }
   }
 }).call(this);

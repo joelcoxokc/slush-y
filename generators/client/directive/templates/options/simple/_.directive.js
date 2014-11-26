@@ -3,23 +3,29 @@
 
   angular
     .module('<%= moduleNames.slug %>')
-    .directive('<%= names.single.camel %>', <%= names.single.camel %>);
+    .directive('<%= names.camelized %>', <%= names.camelized %>);
 
   /* @inject */
-  function <%= names.single.camel %>() {
+  function <%= names.camelized %>(<%=providers%>) {
     return {
       template: '<div></div>',
       restrict: 'E',
       link: link
     };
 
-    //////////
+    ////////////////////
 
     function link(scope, element, attrs) {
-      // <%= names.single.humanized %> directive logic
-      // ...
+      // <%= names.humanized %> directive logic
 
-      element.text('this is the <%= names.single.camel %> directive');
+      element.text('this is the <%= names.camelized %> directive');
+      <% _.forEach( functions, function(func){ %>
+      /**
+       * <%=func%> description
+       * @return {[type]} description
+       */
+      function <%=func%> (){}
+      <% }) %>
     }
   }
 }).call(this);

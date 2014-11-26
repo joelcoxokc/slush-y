@@ -3,38 +3,13 @@
 
   'use strict';
 
-
-    module.exports = crudPrompts;
-
-
-    function crudPrompts (generator, done) {
-
-      var __this = this;
-      var prompts = crudQuestions();
-
-      /**
-       * Ask the first round of questions
-       */
-      __this
-        .prompt(prompts, promptCallback);
+    module.exports = controllerPrompts;
 
 
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
+    function controllerPrompts () {
 
-        /**
-         * Complete the prompt;
-         */
-
-        done( answers )
-      }
-
-      function crudQuestions(){
-
-        var questions = [{
+      var pendingPrompts = {
+        folders: {
           type: 'checkbox',
           name: 'folders',
           message: 'Which supplemental folders would you like to include in your angular module?',
@@ -55,18 +30,17 @@
             name: 'filters',
             checked: true
           }]
+        },
+        menu: {
+            type: 'confirm',
+            name: 'menu',
+            message: 'Do you want to add this route to the menu?',
+            default: true
         }
-        // {
-        //   type: 'confirm',
-        //   name: 'addMenuItems',
-        //   message: 'Would you like to add the CRUD module links to a menu?',
-        //   default: true
-        // }
-        ];
-
-        return questions;
-
       }
+      return pendingPrompts;
+
     }
+
 
 }).call(this);

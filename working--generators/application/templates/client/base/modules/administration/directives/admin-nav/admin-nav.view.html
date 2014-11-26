@@ -1,0 +1,26 @@
+<section class="panel">
+  <h3 class="panel-heading bg-indigo-500">
+      Admin</h3>
+  <ul class="list-group">
+    <a ui-sref="admin.settings" class="list-group-item">
+        <i class="fa fa-cogs"></i> <strong>Settings</strong><br>
+    </a>
+    <a ui-sref="admin.profile" class="list-group-item">
+        <i class="fa fa-user"></i> <strong>Profile</strong><br>
+    </a>
+  </ul>
+</section>
+
+<section class="panel" data-ng-if="isAdmin()">
+  <h3 class="panel-heading bg-indigo-500">
+      Accounts</h3>
+  <ul class="list-group">
+    <a ui-sref="admin.accounts-list" class="list-group-item">
+      All Accounts</a>
+    <a ui-sref="admin.account-detail({id:user._id})" class="list-group-item" ng-repeat="user in users">
+        <strong>{{user.name}}</strong><br>
+        <span class="text-muted">{{user.email}}</span>
+        <!-- <button class="btn btn-sm btn-danger pull-right" y-icon="trash-o"></button> -->
+    </a>
+  </ul>
+</section>

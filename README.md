@@ -70,6 +70,12 @@ To run tests
 $ gulp test
 ```
 
+##Issues
+
+  - The testing currently does not work
+  - The Oauth needs to be configured
+  - Possible Bug issues on the client side
+
 ## FEATURES
 <table>
 <tr>
@@ -120,7 +126,7 @@ $ gulp test
 <td><a href="#angularjs-config-sub-generator">AngularJs Config sub-generator</a></td>
 <td>slush y:config {{config-name}}</td>
 </tr>
-<tr>
+<!--<tr>
 <td><a href="#angularjs-test-sub-generator">AngularJs Test sub-generator</a></td>
 <td>slush y:test {{controller-name}}</td>
 </tr>
@@ -139,7 +145,7 @@ $ gulp test
 <tr>
 <td><a href="#express-test-sub-generator">Express Test sub-generator</a></td>
 <td>slush y:express-test {{model-name}}</td>
-</tr>
+</tr>-->
 </table>
 
 **Note: Generators are to be run from the root directory of your app.**
@@ -325,7 +331,7 @@ This will create a test file for your controller, and if the sub-generator doesn
 
 
 ## Express Model Sub-Generator
-
+#### Coming Soon!!!
 Often you will find the need to just create a single Express model. The Express model sub-generator will help you with creating an Express model in the **app/models** folder. To create a new model just use *slush y*:
 
 
@@ -341,6 +347,7 @@ This will create a new empty model in the **app/models** folder and a test file 
 
 
 ## Express Controller Sub-Generator
+#### Coming Soon!!!
 
 Another recurring task is creating an empty Express controller. The Express controller sub-generator will help you with creating an Express controller in the **app/controllers** folder. To create a new controller just use *slush y*:
 
@@ -354,6 +361,7 @@ This will create a new empty controller in the **app/controllers** folder.
 
 
 ## Express Routes Sub-Generator
+#### Coming Soon!!!
 
 To make HTTP requests to your controller methods you will need to use a routing file in the **app/routes** folder. The Express routes sub-generator will help you to add a new empty routes file. To create a new routes file execute this *slush y* command:
 
@@ -366,6 +374,7 @@ This will create a new empty route file in the **app/routes** folder.
 
 
 ## Express Test Sub-Generator
+#### Coming Soon!!!
 
 Your MEAN application comes pre-bundled with the Mocha testing framework. To test your Express models you’ll need to create a new test file, which Mocha will use while running tests. For this purpose we provided you with the Express test sub-generator. Creating a new Express test is easy, just execute this command:
 

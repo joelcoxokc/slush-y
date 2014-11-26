@@ -1,52 +1,47 @@
 /*
- * slush-meanjs
- * https://github.com/JoelCoxOKC/slush-y
+ * slush-slush-db
+ * https://github.com/joelcoxokc/slush-slush-db
  *
- * Copyright (c) 2014, Arvind Ravulavaru
+ * Copyright (c) 2014, Joel Cox
  * Licensed under the MIT license.
  */
 
 'use strict';
 
-    var gulp      = require('gulp');
-    var slushy    = require('./slushy');
-    var helper = require('gulp-help');
-    var config = require('gulp-config')(gulp)
-    // gulp = require('./default.js')(gulp)
-    var _ = require('lodash')
-
-    var path = require('path');
-
-
+var gulp    = require('gulp'),
+    del     = require('del'),
+    Config  = require('gulp-config')(gulp),
+    Storage = require('gulp-storage')(gulp),
+    Finder  = require('gulp-finder')(gulp),
+    Slushy  = require('./src')(gulp);
+    var plugins  = require('gulp-load-plugins')({lazy:false})
+    var lodash   = require('lodash');
 
 
+    gulp.task('default', require('./generators/application'));
+    gulp.task('controller', require('./generators/client/controller'));
+    gulp.task('config', require('./generators/client/config'));
+    gulp.task('directive', require('./generators/client/directive'));
+    gulp.task('factory', require('./generators/client/factory'));
+    gulp.task('service', require('./generators/client/service'));
+    gulp.task('filter', require('./generators/client/filter'));
+    gulp.task('route', require('./generators/client/route'));
+    gulp.task('view', require('./generators/client/view'));
+    gulp.task('module', require('./generators/client/module'));
+    gulp.task('crud', require('./generators/crud'));
 
+    Slushy.plugins(plugins, lodash)
 
+    // Slushy.siphon('default', {type: 'application'})
+    // Slushy.siphon('module', {type: 'client'})
+    // Slushy.siphon('config', {type: 'client'})
+    // Slushy.siphon('controller', {type: 'client'})
+    // Slushy.siphon('directive', {type: 'client'})
+    // Slushy.siphon('factory', {type: 'client'})
+    // Slushy.siphon('filter', {type: 'client'})
+    // // Slushy.siphon('route', {type: 'client'})
+    // Slushy.siphon('service', {type: 'client'})
+    // Slushy.siphon('view', {type: 'client'})
 
-    gulp.task( 'default', slushy.siphon() );
-
-    // console.log(process.mainModule.children[process.mainModule.children.length-1])
-    /**
-     * Client Generators
-     */
-    gulp.task( 'controller', slushy.siphon( 'client' ) );
-    gulp.task( 'directive',  slushy.siphon( 'client' ) );
-    gulp.task( 'factory',    slushy.siphon( 'client' ) );
-    gulp.task( 'service',    slushy.siphon( 'client' ) );
-    gulp.task( 'module',     slushy.siphon( 'client' ) );
-    gulp.task( 'config',     slushy.siphon( 'client' ) );
-    gulp.task( 'filter',     slushy.siphon( 'client' ) );
-    gulp.task( 'route',      slushy.siphon( 'client' ) );
-    gulp.task( 'view',       slushy.siphon( 'client' ) );
-
-
-    /**
-     * Server Generators
-
-     */
-    gulp.task( 'crud',              slushy.siphon( ) );
-    gulp.task( 'server-model',      slushy.siphon( 'server' ) );
-    gulp.task( 'server-controller', slushy.siphon( 'server' ) );
-    gulp.task( 'server-route',      slushy.siphon( 'server' ) );
-    gulp.task( 'server-test',       slushy.siphon( 'server' ) );
+    Slushy.task('clear', del.bind(null, ['./db-demo/**/*']))
 

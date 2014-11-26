@@ -3,43 +3,13 @@
 
   'use strict';
 
-
-    module.exports = modulePrompts;
-
-
-    function modulePrompts (generator, done) {
-
-      var __this = this;
-      var prompts = moduleQuestions();
-
-      /**
-       * Ask the first round of questions
-       */
-      __this
-        .prompt(prompts, promptCallback);
+    module.exports = prompts;
 
 
-      /**
-       * [promptCallback Callback invoked when prompt is finished]
-       * @param  {Object} answers [A list of answers]
-       */
-      function promptCallback ( answers ) {
+    function prompts () {
 
-        /**
-         * Complete the prompt;
-         */
-        done( answers )
-      }
+      var pendingPrompts = {
 
-      function moduleQuestions(){
-
-        var questions = [
-          {
-            name: 'moduleName',
-            message: 'What would you like to name this module?',
-            default: generator.title
-
-          },{
             type: 'checkbox',
             name: 'folders',
             message: 'Which folders would you like your module to include?',
@@ -84,11 +54,11 @@
               name: 'views',
               checked: true
             }]
-          }];
+          }
 
-        return questions;
+      return pendingPrompts;
 
-      }
     }
+
 
 }).call(this);

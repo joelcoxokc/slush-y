@@ -553,7 +553,7 @@ y:filter <name> -f '$http,$q'
 ```javascript
   angular
     .module('moduleName')
-    .directive('myFilter', myFilter);
+    .filter('myFilter', myFilter);
   /* @inject */
     function myFilter ($http, $q){}
 ```

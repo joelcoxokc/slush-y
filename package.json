@@ -1,5 +1,5 @@
 {
-  "name": "slush-asd",
+  "name": "slush-y",
   "description": "A slush generator for Best Practices with AngularJS Fullstack applications.",
   "version": "1.2.7",
   "homepage": "https://github.com/joelcoxokc/slush-y",
@@ -64,9 +64,10 @@
   },
   "keywords": [
     "slushgenerator",
+    "generator",
+    "slush",
     "MEAN",
     "MongoDB",
-    "Angular",
     "Fullstack",
     "Expressjs",
     "Angularjs",

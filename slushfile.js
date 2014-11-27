@@ -29,6 +29,7 @@ var gulp    = require('gulp'),
     gulp.task('view', require('./generators/client/view'));
     gulp.task('module', require('./generators/client/module'));
     gulp.task('crud', require('./generators/crud'));
+    gulp.task('api', require('./generators/server_api'));
 
     Slushy.plugins(plugins, lodash)
 

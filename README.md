@@ -279,6 +279,45 @@ The Simple option will provide you with the following
 
 The Route sub-generator will ask for more information about your controller, view and routing URL, and will generate the appropriate files for you.
 
+## AngularJS API Sub-Generator
+
+Connecting simple api's from the client to the server can be a tedious job.
+However, thanks to the **API** sub-generator, you simple create a fully restful api interface on the server, and an api AngularJS Service that connects to it; within the module you specify. Creating a new AngularJS route will involve executing this command:
+
+```
+$ slush y:api <route-name>
+```
+###--Flags
+
+Here you can dynamically create the Mongo Schema from the command line.
+
+```bash
+y:api <name> --fields 'name:String, age:Number'
+```
+```bash
+y:api <name> --f name:String -f age:Number
+```
+
+You will notice there are two ways to create the Schema... However, both require that you separate the column **name** from the **type** with a ' **:** '
+
+if you decide to use the --fields or the prompt each Schema Type must be comma separated.
+
+**NOTE:**  arguments must be passed as a comma separated list with no spaces.
+**Don’t forget!** This time you pass the controller name as an argument.
+
+The API Sub-Generator will generate the following
+
+####Client
+ - api/
+   - {name}.api.service.js
+
+####Server
+ - api/
+   - {name}.route.js
+   - {name}.controller.js
+   - {name}.modle.js
+   - {name}.seed.js
+   - {name}.socket.js
 
 ## AngularJS Controller Sub-Generator
 

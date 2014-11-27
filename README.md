@@ -282,10 +282,10 @@ The Route sub-generator will ask for more information about your controller, vie
 ## AngularJS API Sub-Generator
 
 Connecting simple api's from the client to the server can be a tedious job.
-However, thanks to the **API** sub-generator, you simple create a fully restful api interface on the server, and an api AngularJS Service that connects to it; within the module you specify. Creating a new AngularJS route will involve executing this command:
+However, thanks to the **API** sub-generator, you simply create a fully restful api interface on the server, and an API AngularJS Service that connects to it; within the module you specify. Creating a new AngularJS API will involve executing this command:
 
 ```
-$ slush y:api <route-name>
+$ slush y:api <api-name>
 ```
 ###--Flags
 
@@ -737,7 +737,7 @@ If you have any problem or suggestion please open an issue [here](https://github
 
 The MIT License
 
-Copyright (c) 2014, Arvind Ravulavaru
+Copyright (c) 2014, Joel Cox
 
 Permission is hereby granted, free of charge, to any person
 obtaining a copy of this software and associated documentation

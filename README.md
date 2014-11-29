@@ -91,6 +91,10 @@ $ gulp test
 <td>slush y:crud {{module-name}}</td>
 </tr>
 <tr>
+<td><a href="#api-sub-generato">API sub-generator</a></td>
+<td>slush y:api {{name}}</td>
+</tr>
+<tr>
 <td><a href="#angularjs-module-sub-generator">AngularJs Module sub-generator</a></td>
 <td>slush y:module {{module-name}}</td>
 </tr>

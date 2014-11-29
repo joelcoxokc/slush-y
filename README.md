@@ -87,11 +87,11 @@ $ gulp test
 <td>slush y</td>
 </tr>
 <tr>
-<td><a href="#crud-module-sub-generato">CRUD Module sub-generator</a></td>
+<td><a href="#crud-module-sub-generator">CRUD Module sub-generator</a></td>
 <td>slush y:crud {{module-name}}</td>
 </tr>
 <tr>
-<td><a href="#api-sub-generato">API sub-generator</a></td>
+<td><a href="#api-sub-generator">API sub-generator</a></td>
 <td>slush y:api {{name}}</td>
 </tr>
 <tr>

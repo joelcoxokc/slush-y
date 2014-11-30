@@ -67,7 +67,7 @@
         resolve: {
           ResolvedAccount: ResolvedAccount
         }
-      })
+      });
 
 
     ////////////////////

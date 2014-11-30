@@ -8,7 +8,7 @@
     function Thing($http, serverUrl, $q, logger) {
       // Define Private Variables
 
-      var api = createUrl( serverUrl, 'things' )
+      var api = createUrl( serverUrl, 'things' );
 
       // Define the public api
       var instance = {

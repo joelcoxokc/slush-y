@@ -26,7 +26,7 @@
       if(vm.newThing === '') {
         return;
       }
-      Thing.create( {name: vm.newThing} );
+      Thing.create( vm.newThing);
       vm.newThing = '';
       vm.showDetail = false;
       vm.creating = false;
@@ -44,7 +44,7 @@
       Thing
         .update(thing._id, thing)
         .then( function (data) {
-          vm.editing = false
+          vm.editing = false;
         });
     }
 

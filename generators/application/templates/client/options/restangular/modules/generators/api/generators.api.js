@@ -6,7 +6,7 @@
     .factory('Generator', Generator);
 
     /* @inject */
-    function Generators(Restangular) {
+    function Generator(Restangular) {
       return Restangular.service('generators');
     }
 }).call(this);

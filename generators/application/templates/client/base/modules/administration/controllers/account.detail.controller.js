@@ -10,7 +10,6 @@
 
     vm.account = ResolvedAccount;
     vm.updateUser = updateUser;
-    console.log(vm.account)
 
     //////////////////////
 

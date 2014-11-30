@@ -5,9 +5,9 @@
   window.modules = [
       'authentication',
       'administration'
-  ]
+  ];
   window.ModuleGenerator = ModuleGenerator;
-  window.Application = ModuleGenerator();
+  window.Application = new ModuleGenerator();
 
   function ModuleGenerator(){
 

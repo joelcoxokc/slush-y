@@ -6,34 +6,27 @@
     .controller('HomeCtrl', HomeCtrl);
 
   /* @inject */
-  function HomeCtrl($scope, Thing, socket) {
+  function HomeCtrl(Resolved, $scope, Thing, socket, logger) {
     var vm = this;
-    vm.awesomeThings = [];
     vm.shown = {};
-    vm.getThings = getThings;
+    vm.awesomeThings = Resolved;
     vm.addThing = addThing;
     vm.deleteThing = deleteThing;
     vm.showThing = showThing;
     vm.createNewThing = createNewThing;
+    vm.updateThing = updateThing;
 
-    vm.getThings();
 
+
+    socket.syncUpdates('things', vm.awesomeThings);
 
     ////////////////////
-    function getThings(){
-      Thing
-        .getList()
-        .then(function (data){
-          vm.awesomeThings = data;
-          socket.syncUpdates('things', vm.awesomeThings);
-        });
-    }
 
     function addThing() {
       if(vm.newThing === '') {
         return;
       }
-      vm.awesomeThings.post({name: vm.newThing});
+      vm.awesomeThings.post( vm.newThing);
       vm.newThing = '';
       vm.showDetail = false;
       vm.creating = false;
@@ -41,11 +34,19 @@
     }
 
     function deleteThing(thing) {
+      // console.log(thing)
       vm.awesomeThings.one(thing._id).remove();
       vm.showDetail = false;
       vm.editing = false;
     }
 
+    function updateThing(thing){
+      thing
+        .update()
+        .then( function (data) {
+          vm.editing = false;
+        });
+    }
 
     function showThing(thing){
 

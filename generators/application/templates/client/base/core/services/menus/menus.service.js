@@ -90,13 +90,13 @@
         title:title,
         link:link,
         color:color
-      }
+      };
       this.menuItems.push(item);
-    }
+    };
 
     this.get = function(){
       return this.menuItems;
-    }
+    };
     // Add menu item object
     this.addMenuItem = function(menuId, menuItemTitle, menuItemURL, menuItemUIRoute, isPublic, roles) {
       // Validate that the menu exists

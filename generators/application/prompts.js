@@ -43,11 +43,11 @@
             name: 'angular $http',
             default: false
           }
-          // ,{
-          //   value: 'restangular',
-          //   name: 'Restangular',
-          //   default: false
-          // }
+          ,{
+            value: 'restangular',
+            name: 'Restangular',
+            default: false
+          }
           ]
         },
         // {

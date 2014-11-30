@@ -21,8 +21,8 @@ angular
     // ];
     vm.menu = Menus.get();
     vm.toggle = function(){
-      $('#dr3').dropdown('toggle')
-    }
+      $('#dr3').dropdown('toggle');
+    };
 
     // $scope.menu = Menus.getMenu('topbar');
 

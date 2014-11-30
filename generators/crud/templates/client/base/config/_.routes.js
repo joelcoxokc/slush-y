@@ -52,7 +52,7 @@
         .then( function ( response ){<% if(restangular){ %>
           return response;<% } %><% if(http){ %>
           return response.data;<% } %>
-        })
+        });
     }
 
     /**
@@ -65,7 +65,7 @@
         .then( function ( response ){<% if(restangular){ %>
           return response;<% } %><% if(http){ %>
           return response.data;<% } %>
-        })
+        });
     }
   }
 }).call(this);

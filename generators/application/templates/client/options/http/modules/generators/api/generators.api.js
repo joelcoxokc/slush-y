@@ -8,7 +8,7 @@
     function Generator($http, serverUrl, $q, logger) {
       // Define Private Variables
 
-      var api = createUrl( serverUrl, 'generators' )
+      var api = createUrl( serverUrl, 'generators' );
 
       // Define the public api
       var instance = {

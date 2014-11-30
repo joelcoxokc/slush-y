@@ -9,7 +9,6 @@
     var vm = this;
 
     vm.accounts = resolvedAccounts;
-    console.log(vm.accounts)
     //////////////////////
   }
 

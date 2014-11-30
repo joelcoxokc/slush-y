@@ -20,7 +20,7 @@
 
     // Create new <%= names.single.humanized %>
     function create() {
-      <%= names.plural.classed %>.create( vm.<%= names.single.camel %> )
+      <%= names.plural.classed %>.post( vm.<%= names.single.camel %> )
         .then( function (response){
           // Redirect after save
           $state.go('<%= names.plural.camel %>', {<%= names.single.camel %>Id: response._id});

@@ -72,9 +72,17 @@
             config.appName = answers.appName;
             config.app_names = _str.str().multi(answers.appName);
             config[answers.script] = true;
-            config[answers.httpType] = true;
             _.assign(config, answers)
-            config.restangular = false;
+
+            if(config.httpType ==='restangular') {
+              config.restangular = true;
+              config.http = false;
+            } else {
+              config.restangular = false;
+              config.http = true;
+            }
+            // config[answers.httpType] = true;
+            // config.restangular = false;
 
             _this.storage.store( config );
 

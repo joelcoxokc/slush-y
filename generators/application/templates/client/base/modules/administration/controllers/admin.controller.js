@@ -33,7 +33,7 @@
       user.remove()<% } %><% if(http){ %>
       User.destroy(id)<% } %>
         .then(function(){
-          removeUserFromScope(id)
+          removeUserFromScope(id);
         });
     }
 

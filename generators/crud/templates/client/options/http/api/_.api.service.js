@@ -47,7 +47,7 @@
           })
           .catch( function (err){
             logger.logError('Error Saving');
-            return err
+            return err;
           });
       }
       function destroy ( id ){

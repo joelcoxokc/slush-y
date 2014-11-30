@@ -26,7 +26,7 @@
         })
         .catch( function (error){
           logger.logError('User not updated');
-        })
+        });
     }
 
     function changePassword(form) {

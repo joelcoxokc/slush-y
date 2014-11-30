@@ -26,7 +26,7 @@
         resolve: {
           resolvedDetail: resolvedDetail
         }
-      })
+      });
 
 
     ////////////////
@@ -36,7 +36,7 @@
         .then( function ( response ){<% if(restangular){ %>
           return response;<% } %><% if(http){ %>
           return response.data;<% } %>
-        })
+        });
     }
     function resolvedList(Generator){<% if(restangular){ %>
       return Generator.getList()<% } %><% if(http){ %>
@@ -44,7 +44,7 @@
         .then( function ( response ){<% if(restangular){ %>
           return response;<% } %><% if(http){ %>
           return response.data;<% } %>
-        })
+        });
     }
   }
 }).call(this);

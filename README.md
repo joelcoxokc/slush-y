@@ -44,27 +44,17 @@ $ cd my-slush-y && slush y
 To run the app , first make sure mongoDB is running (```$ mongod```) then
 
 ```bash
-$ gulp
-```
-or
-```bash
 $ gulp dev
 ```
 and navigate to ```http://localhost:9000```
 
-To generate minified js & css files inside the `public/dist` folder, run
+To generate minified js & css files inside the `dist/` folder, run, this will also boot up a server for you to view the minified version
 
 ```bash
-$ gulp build
+$ gulp dist
 ```
 
-To lint files
-
-```bash
-$ gulp jshint
-```
-
-To run tests
+To run tests (TESTS Are Currently not all working)
 
 ```bash
 $ gulp test

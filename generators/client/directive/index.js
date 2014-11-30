@@ -23,40 +23,10 @@
 
       var _this = this;
       var generator = _this.seq[0];
-      if(!_this.args[0]){
-        console.log(chalk.bold.red('**************************************************************************'));
-        console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
-        console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
-        console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
-        console.log(chalk.bold.red('**************************************************************************'));
-        return done();
-      }
-      _this.storage.create('config-y','config-y.json');
-
-      // setDefaults();
-      // generate();
 
       _this.prompts = [];
       /////////////////////
 
-      var templates = {};
-          templates.complex = {}
-          templates.simple = {}
-
-          templates.complex.path = path.join(__dirname+'', 'templates', 'options', 'complex');
-          templates.simple.path = path.join(__dirname+'', 'templates', 'options', 'simple');
-
-          templates.complex.all  = path.join( templates.complex.path, '**/*' );
-          templates.simple.all  = path.join( templates.simple.path, '**/*' );
-
-      var dest = {};
-          dest.app = path.join(process.cwd(), 'client/app');
-          dest.modules = path.join(dest.app, 'modules');
-
-      var flags = {};
-          flags.module    = _this.util.env.m || _this.util.env.module    || [];
-          flags.providers = _this.util.env.p || _this.util.env.providers || [];
-          flags.functions = _this.util.env.f || _this.util.env.functions || [];
       var prompts = questions();
 
 
@@ -66,11 +36,8 @@
           filters.module    = null;
           filters.appName   = null;
           filters.names     = {};
-          filters.simple    = _this.util.env.simple  || false;
-          filters.complex   = _this.util.env.complex || false;
-
-      var config = _this.storage.get();
-
+          filters.simple    = _this.flags.simple;
+          filters.complex   = _this.flags.complex;
 
 
       var defaults = {};
@@ -89,30 +56,28 @@
 
 
       function init(cb){
-        _this.name = args[0];
-        _this.names = _str.str().simple(_this.name);
+        _this.name = _this.args[0];
+        _this.names = _this.str.simple(_this.name);
 
-        _.forEach( flags, function (flag, key){
+        _.forEach(_this.flags, function (flag, key){
+          // console.log(flag, key);
           if(_.isEmpty(flag)){
-            _this.prompts.push( prompts[key] )
-          } else if(_.isString( flag )) {
-            if(key === 'module'){
-              filters[key] = flag;
-            } else {
-              filters[key] = flag.split(',');
-
+            if(prompts[key]){
+              _this.prompts.push( prompts[key] )
             }
+          } else {
+            filters[key] = flag;
           }
         });
 
 
         if(filters.complex) filters.type = 'complex';
         if(filters.simple)  filters.type = 'simple';
-
         /**
          * Add the prompt for choosing complex or simple
          */
         if(!filters.type){
+
           _this.prompts.push( prompts.type );
         }
 
@@ -120,7 +85,6 @@
           if(_this.prompts[0].name === 'module'){
             _this.prompts[0].choices = findModules();
           }
-
           startPrompt( next );
 
         } else {
@@ -130,8 +94,8 @@
         }
 
         function next(answers){
-          filters.moduleNames = _str.str().simple( filters.module || answers.module );
-          _.assign(filters, config);
+          filters.moduleNames = _this.str.simple( filters.module || answers.module );
+          _.assign(filters, _this.config);
           _.assign(filters, answers);
           filters.names = _this.names;
 
@@ -147,9 +111,9 @@
           }
 
           if(filters.moduleNames.slug === 'core'){
-            dest.final = path.join(dest.app, 'core', 'directives', filters.names.camelized);
+            _this.cwd.final = path.join(_this.cwd.app, 'core', 'directives', filters.names.camelized);
           } else {
-            dest.final = path.join(dest.modules, filters.moduleNames.slug, 'directives', filters.names.camelized);
+            _this.cwd.final = path.join(_this.cwd.modules, filters.moduleNames.slug, 'directives', filters.names.camelized);
           }
 
 
@@ -168,7 +132,7 @@
         inquirer
           .prompt(_this.prompts, function (chosen){
             var finalAnswers = {};
-            finalAnswers.type = chosen.directiveType;
+            if(chosen.directiveType) {finalAnswers.type = chosen.directiveType};
             if(chosen.providers ){finalAnswers.providers = chosen.providers.split(",")}
             if(chosen.functions ){finalAnswers.functions = chosen.functions.split(",")}
             if(chosen.module){finalAnswers.module = chosen.module}
@@ -178,34 +142,11 @@
 
 
       function generate(){
-        gulp.src( templates[filters.type].all )
+        gulp.src( _this.templates.options[filters.type].all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename(function (file){
-            if (file.basename.indexOf('_') == 0) {
-              file.basename = file.basename.replace('_', _this.names.camelized);
-            }
-          }))
-          .pipe( $.conflict( dest.final ))
-          .pipe( gulp.dest( dest.final  ))
-      }
-
-
-      function findModules(){
-        var array = [{value:'core',name:'core'}];
-        var dirs = fs.readdirSync(dest.modules);
-        getModules()
-        return array;
-        function getModules(){
-          _.forEach(dirs, function (folder){
-            var stat = fs.statSync(dest.modules + '/' + folder);
-            if (stat.isDirectory()) {
-              array.push({
-                value: folder,
-                name: folder
-              });
-            }
-          });
-        }
+          .pipe( $.rename( _this.fs.rename(_this.names.camelized) ))
+          .pipe( $.conflict( _this.cwd.final ))
+          .pipe( gulp.dest( _this.cwd.final  ))
       }
 
     };

@@ -28,52 +28,32 @@
 
 
     module.exports = function ( done ) {
-      console.log('test', this.flags);
       var _this = this;
       var generator = _this.seq[0];
-      if(!_this.args[0]){
-        console.log(chalk.bold.red('**************************************************************************'));
-        console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
-        console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
-        console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
-        console.log(chalk.bold.red('**************************************************************************'));
-        return done();
-      }
-      _this.storage.create('config-y','config-y.json');
-
-      // setDefaults();
-      // generate();
+      // if(!_this.args[0]){
+      //   console.log(chalk.bold.red('**************************************************************************'));
+      //   console.log(chalk.bold.red('******   '+chalk.bold.red('Incorrect usage of the sub-generator!!')));
+      //   console.log(chalk.bold.red('******   '+chalk.bold.red('Try slush y:'+generator+' <'+generator+'-name>')));
+      //   console.log(chalk.bold.red('******   '+chalk.bold.red('Ex: slush y:'+generator+' article')));
+      //   console.log(chalk.bold.red('**************************************************************************'));
+      //   return done();
+      // }
 
       _this.prompts = [];
       /////////////////////
 
-      var templates = {};
-          templates.path = path.join(__dirname+'', 'templates', 'base');
-          templates.all  = path.join( templates.path, '**/*' );
-
-      var dest = {};
-          dest.app = path.join(process.cwd(), 'client/app');
-          dest.modules = path.join(dest.app, 'modules');
-
-      var flags = {};
-          flags.module    = _this.util.env.m || _this.util.env.module    || [];
-          flags.providers = _this.util.env.p || _this.util.env.providers || [];
-
+      var templates = _this.templates;
+      var dest = _this.cwd;
+      var flags = _this.flags;
       var prompts = questions();
-
       var filters = {};
           filters.providers = [];
           filters.functions = [];
           filters.module    = null;
           filters.names     = {};
 
-      var config = _this.storage.get();
-
-
-      var defaults = {};
-
-      var args = _this.args;
-
+      var config = _this.config;
+      var defaults = _this.defaults;
       /////////////////////
 
       init( function (){
@@ -84,25 +64,21 @@
 
 
       function init(cb){
-        _this.name = args[0];
-        _this.names = _str.str().simple(_this.name);
+        _this.name = _this.args[0];
+        _this.names = _this.str.simple(_this.name);
 
         _.forEach( flags, function (flag, key){
           if(_.isEmpty(flag)){
             _this.prompts.push( prompts[key] )
-          } else if(_.isString( flag )) {
-            if(key === 'module'){
-              filters[key] = flag;
-            } else {
-              filters[key] = flag.split(',');
-
-            }
+          } else {
+            filters[key] = flag;
           }
+
         })
         if(_.size( _this.prompts )){
 
           if(_this.prompts[0].name === 'module'){
-            _this.prompts[0].choices = findModules();
+            _this.prompts[0].choices = _this.fs.findModules();
           }
 
           startPrompt( next );
@@ -114,7 +90,7 @@
         }
 
         function next(answers){
-          filters.moduleNames = _str.str().simple( answers.module || filters.module );
+          filters.moduleNames = _this.str.simple( answers.module || filters.module );
           _.assign(filters, config);
           _.assign(filters, answers);
           filters.names = _this.names;
@@ -122,17 +98,15 @@
           // console.log(filters.providers)
 
           if(filters.moduleNames.slug === 'core'){
-            dest.final = path.join(dest.app, 'core');
+            _this.cwd.final = path.join(_this.cwd.app, 'core');
           } else {
-            dest.final = path.join(dest.modules, filters.moduleNames.slug);
+            _this.cwd.final = path.join(_this.cwd.modules, filters.moduleNames.slug);
           }
 
           generate()
         }
 
-
       }
-
 
       function startPrompt(callback){
         inquirer
@@ -145,37 +119,12 @@
           })
       }
 
-
       function generate(){
-
-        gulp.src( templates.all )
+        gulp.src( _this.templates.base.all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename(function (file){
-            if (file.basename.indexOf('_') == 0) {
-              file.basename = file.basename.replace('_', _this.names.slug);
-            }
-          }))
-          .pipe( $.conflict( dest.final ))
-          .pipe( gulp.dest( dest.final  ))
-      }
-
-
-      function findModules(){
-        var array = [{value:'core',name:'core'}];
-        var dirs = fs.readdirSync(dest.modules);
-        getModules()
-        return array;
-        function getModules(){
-          _.forEach(dirs, function (folder){
-            var stat = fs.statSync(dest.modules + '/' + folder);
-            if (stat.isDirectory()) {
-              array.push({
-                value: folder,
-                name: folder
-              });
-            }
-          });
-        }
+          .pipe( $.rename( _this.fs.rename(_this.names.slug) ))
+          .pipe( $.conflict( _this.cwd.final ))
+          .pipe( gulp.dest( _this.cwd.final  ))
       }
 
     };

@@ -18,20 +18,35 @@ var gulp    = require('gulp'),
     var lodash   = require('lodash');
 
     var Generator = require('./lib');
-    // var ee      = require('event-emitter'),
-    //   emitter = ee({}), listener
 
 
     Generator
       .start('default', {root:'./generators/application'})
       .option('name', '-n', '--name', 'String')
+
     Generator
       .start('config', {root:'./generators/client/config'})
-      .option('name', '-n', '--name', 'String');
-    // gulp.task('default', require('./generators/application'));
-    gulp.task('controller', require('./generators/client/controller'));
-    // gulp.task('config', require('./generators/client/config'));
-    gulp.task('directive', require('./generators/client/directive'));
+      .required('name')
+      .option('module', '-m', '--module', 'String')
+      .option('providers', '-p', '--providers', 'Array');
+
+    Generator
+      .start('controller', {root:'./generators/client/controller'})
+      .required('name')
+      .option('module', '-m', '--module', 'String')
+      .option('providers', '-p', '--providers', 'Array')
+      .option('functions', '-f', '--functions', 'Array');
+
+    Generator
+      .start('directive', {root: './generators/client/directive'})
+      .required('name')
+      .option('module', '-m', '--module', 'String')
+      .option('providers', '-p', '--providers', 'Array')
+      .option('functions', '-f', '--functions', 'Array')
+      .option('simple', '-s', '--simple', 'Bool')
+      .option('complex', '-c', '--complex', 'Bool');
+
+    // gulp.task('directive', require('./generators/client/directive'));
     gulp.task('factory', require('./generators/client/factory'));
     gulp.task('service', require('./generators/client/service'));
     gulp.task('filter', require('./generators/client/filter'));

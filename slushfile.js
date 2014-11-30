@@ -17,8 +17,13 @@ var gulp    = require('gulp'),
     var plugins  = require('gulp-load-plugins')({lazy:false})
     var lodash   = require('lodash');
 
+    var Generator = require('./lib');
+    // var ee      = require('event-emitter'),
+    //   emitter = ee({}), listener
 
-    gulp.task('default', require('./generators/application'));
+
+    Generator.start('default', {root:'./generators/application'});
+    // gulp.task('default', require('./generators/application'));
     gulp.task('controller', require('./generators/client/controller'));
     gulp.task('config', require('./generators/client/config'));
     gulp.task('directive', require('./generators/client/directive'));

@@ -22,10 +22,15 @@ var gulp    = require('gulp'),
     //   emitter = ee({}), listener
 
 
-    Generator.start('default', {root:'./generators/application'});
+    Generator
+      .start('default', {root:'./generators/application'})
+      .option('name', '-n', '--name', 'String')
+    Generator
+      .start('config', {root:'./generators/client/config'})
+      .option('name', '-n', '--name', 'String');
     // gulp.task('default', require('./generators/application'));
     gulp.task('controller', require('./generators/client/controller'));
-    gulp.task('config', require('./generators/client/config'));
+    // gulp.task('config', require('./generators/client/config'));
     gulp.task('directive', require('./generators/client/directive'));
     gulp.task('factory', require('./generators/client/factory'));
     gulp.task('service', require('./generators/client/service'));

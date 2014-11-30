@@ -28,7 +28,7 @@
 
 
     module.exports = function ( done ) {
-
+      console.log('test', this.flags);
       var _this = this;
       var generator = _this.seq[0];
       if(!_this.args[0]){

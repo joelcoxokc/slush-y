@@ -16,9 +16,18 @@ var gulp    = require('gulp'),
     Slushy  = require('./src')(gulp);
     var plugins  = require('gulp-load-plugins')({lazy:false})
     var lodash   = require('lodash');
-
     var Generator = require('./lib');
+    var gulpCommand = require('gulp-command')(gulp)
 
+    gulp
+      .option('me', '-s', '--save', 'DEscription')
+      .task('me', function(){
+        console.log('test', this.flags);
+      })
+
+    Generator
+      .start('try', {root: './generators/try'})
+      .action('-s, --save <value>', 'trying to save');
 
     Generator
       .start('default', {root:'./generators/application'})
@@ -77,7 +86,7 @@ var gulp    = require('gulp'),
     gulp.task('crud', require('./generators/crud'));
     gulp.task('api', require('./generators/server_api'));
 
-    Slushy.plugins(plugins, lodash)
+    // Slushy.plugins(plugins, lodash)
 
     // Slushy.siphon('default', {type: 'application'})
     // Slushy.siphon('module', {type: 'client'})

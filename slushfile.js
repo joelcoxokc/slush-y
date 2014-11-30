@@ -45,11 +45,32 @@ var gulp    = require('gulp'),
       .option('functions', '-f', '--functions', 'Array')
       .option('simple', '-s', '--simple', 'Bool')
       .option('complex', '-c', '--complex', 'Bool');
-
     // gulp.task('directive', require('./generators/client/directive'));
-    gulp.task('factory', require('./generators/client/factory'));
-    gulp.task('service', require('./generators/client/service'));
-    gulp.task('filter', require('./generators/client/filter'));
+
+    Generator
+      .start('factory', {root:'./generators/client/factory'})
+      .required('name')
+      .option('module', '-m', '--module', 'String')
+      .option('providers', '-p', '--providers', 'Array')
+      .option('functions', '-f', '--functions', 'Array');
+    // gulp.task('factory', require('./generators/client/factory'));
+
+    Generator
+      .start('service', {root:'./generators/client/service'})
+      .required('name')
+      .option('module', '-m', '--module', 'String')
+      .option('providers', '-p', '--providers', 'Array')
+      .option('functions', '-f', '--functions', 'Array');
+    // gulp.task('service', require('./generators/client/service'));
+
+    Generator
+      .start('filter', {root:'./generators/client/filter'})
+      .required('name')
+      .option('module', '-m', '--module', 'String')
+      .option('providers', '-p', '--providers', 'Array')
+      .option('functions', '-f', '--functions', 'Array');
+    // gulp.task('filter', require('./generators/client/filter'));
+
     gulp.task('route', require('./generators/client/route'));
     gulp.task('view', require('./generators/client/view'));
     gulp.task('module', require('./generators/client/module'));

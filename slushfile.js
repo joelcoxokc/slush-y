@@ -76,6 +76,10 @@ var gulp    = require('gulp'),
       .option('folders', '-f', '--folders', 'Array');
     // gulp.task('module', require('./generators/client/module'));
 
+    Generator
+      .start('save', {root: './lib/store'})
+      .option('module', '-m', '--module', 'String')
+
     gulp.task('route', require('./generators/client/route'));
     gulp.task('view', require('./generators/client/view'));
     gulp.task('crud', require('./generators/crud'));

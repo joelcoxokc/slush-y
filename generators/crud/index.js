@@ -59,7 +59,7 @@
       var args = _this.args;
 
       var dest = {};
-          dest.module = path.join(process.cwd(), 'client/app/modules', _this.names.plural.slug );
+          dest.module = path.join(process.cwd(), 'src/js/app/modules', _this.names.plural.slug );
           dest.api = path.join(process.cwd(), 'server/api/', _this.names.single.slug )
 
       /////////////////////

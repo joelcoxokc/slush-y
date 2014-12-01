@@ -1,0 +1,17 @@
+{
+  "store": {
+    "githubPublished": true,
+    "npmPublished": true,
+    "travisTested": true,
+    "appName": "testing-demo",
+    "appDescription": "",
+    "appVersion": "0.1.0",
+    "authorName": "joelcoxokc",
+    "authorEmail": "joelcox@hisimagination.com",
+    "userName": "",
+    "appNameSlug": "testing-demo",
+    "appNameJs": "testingDemo",
+    "year": 2014,
+    "date": "2014-10-30"
+  }
+}

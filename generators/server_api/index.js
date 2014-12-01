@@ -60,7 +60,7 @@
       var args = _this.args;
 
       var dest = {};
-          dest.app = path.join(process.cwd(), 'client/app');
+          dest.app = path.join(process.cwd(), 'src/js/app');
           dest.modules = path.join(dest.app, 'modules');
           dest.api = path.join(process.cwd(), 'server/api/', _this.names.single.slug )
 

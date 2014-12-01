@@ -21,32 +21,22 @@
 
     module.exports = function ( done ) {
 
-      var _this = this;
-      var generator = _this.seq[0];
+      var _this      = this,
+          config     = _this.config,
+          prompts    = questions(),
+          filters    = {},
+          flags      = _(_this.flags);
 
-      _this.name = _this.args[0]
-      // setDefaults();
-      // generate();
+          config.name  = _this.args[0],
+          config.names = _this.str.simple( config.name )
+          config.prompts = [];
 
-      _this.prompts = [];
       /////////////////////
-
-
-      var prompts = questions();
-
-      var filters = {};
-          filters.providers = [];
-          filters.functions = [];
-          filters.module    = null;
-          filters.appName   = null;
-          filters.names     = {};
-
-      var config = _this.config;
-
 
       var defaults = {};
           defaults.functions = ['create', 'update', 'destroy'];
           defaults.providers = ['$scope'];
+
 
 
       /////////////////////
@@ -59,27 +49,28 @@
 
 
       function init(cb){
-        _this.names = _this.str.simple(_this.name);
 
-        _.forEach( _this.flags, function (flag, key){
-          if(_.isEmpty(flag)){
-            _this.prompts.push( prompts[key] )
+        _.forEach(_this.flags, function (flag, key){
+          if(_.isEmpty(flag)) {
+            console.log('test');
+            config.prompts.push( prompts[key] );
+            config.ask = true;
           } else {
-              filters[key] = flag;
+            filters[key] = flag;
           }
-        })
-        if(_.size( _this.prompts )){
+        });
 
-          if(_this.prompts[0].name === 'module'){
-            _this.prompts[0].choices = _this.fs.findModules();
+
+        if(_.size(config.prompts)){
+          if( config.prompts[0].name ==='module' ){
+              config.prompts[0].choices = _this.fs.findModules();
           }
+        }
 
+        if(config.ask){
           startPrompt( next );
-
         } else {
-
           next({});
-
         }
 
         function next(answers){
@@ -88,7 +79,7 @@
           filters.moduleNames = _this.str.simple( filters.module || answers.module );
           _.assign(filters, config);
           _.assign(filters, answers);
-          filters.names = _this.names;
+          filters.names = config.names;
 
           if(_.isEmpty(filters.functions)){
             filters.functions = defaults.functions;
@@ -106,17 +97,14 @@
           } else {
             _this.cwd.final = path.join(_this.cwd.modules, filters.moduleNames.slug);
           }
-
           generate()
         }
-
-
       }
 
 
       function startPrompt(callback){
         inquirer
-          .prompt(_this.prompts, function (chosen){
+          .prompt(config.prompts, function (chosen){
             var finalAnswers = {};
             if(chosen.providers ){finalAnswers.providers = chosen.providers.split(",")}
             if(chosen.functions ){finalAnswers.functions = chosen.functions.split(",")}
@@ -130,7 +118,7 @@
 
         gulp.src( _this.templates.base.all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename( _this.fs.rename(_this.name) ))
+          .pipe( $.rename( _this.fs.rename(config.name) ))
           .pipe( $.conflict( _this.cwd.final ))
           .pipe( gulp.dest( _this.cwd.final  ))
       }

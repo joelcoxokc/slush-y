@@ -43,7 +43,7 @@
       var templates = _this.finder(__dirname + '/templates');
 
       var dest = {};
-          dest.app = path.join(process.cwd(), 'client/app');
+          dest.app = path.join(process.cwd(), 'src/js/app');
           dest.modules = path.join(dest.app, 'modules');
 
       var flags = {};

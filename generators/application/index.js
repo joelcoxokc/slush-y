@@ -20,7 +20,6 @@
       var _this = this;
       _this.prompts = questions();
       /////////////////////
-
       var filters = {};
           filters.appName   = null;
 
@@ -48,20 +47,20 @@
         function next(answers){
           // console.log(filters);
 
-            config.appName = answers.appName;
-            config.app_names = _str.str().multi(answers.appName);
-            config[answers.script] = true;
-            _.assign(config, answers)
+            _this.config.appName = answers.appName;
+            _this.config.app_names = _this.str.multi(answers.appName);
+            _this.config[answers.script] = true;
+            _.assign(_this.config, answers)
 
-            if(config.httpType ==='restangular') {
-              config.restangular = true;
-              config.http = false;
+            if(_this.config.httpType ==='restangular') {
+              _this.config.restangular = true;
+              _this.config.http = false;
             } else {
-              config.restangular = false;
-              config.http = true;
+              _this.config.restangular = false;
+              _this.config.http = true;
             }
-            // config[answers.httpType] = true;
-            // config.restangular = false;
+            // _this.config[answers.httpType] = true;
+            // _this.config.restangular = false;
 
 
             _this.storage.store( _this.config );
@@ -71,7 +70,6 @@
         }
       }
 
-
       function startPrompt(callback){
         inquirer
           .prompt(_this.prompts, function (chosen){
@@ -79,7 +77,6 @@
             callback(chosen)
           })
       }
-
 
       function generate(){
         create_server();

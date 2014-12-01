@@ -24,7 +24,7 @@
       var _this = this;
       var generator = _this.seq[0];
 
-
+      _this.name = _this.args[0]
       // setDefaults();
       // generate();
 

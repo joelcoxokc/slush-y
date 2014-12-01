@@ -21,7 +21,6 @@
     module.exports = function ( done ) {
 
       var _this = this;
-      _this.storage.create('config-y','config-y.json');
 
       // setDefaults();
       // generate();
@@ -30,16 +29,6 @@
       _this.prompts.push( questions() );
       /////////////////////
 
-      var templates = _this.finder(__dirname + '/templates');
-
-      var dest = {};
-          dest.modules = path.join(process.cwd(), 'client/app/modules');
-
-      var flags = {};
-
-
-
-
       var filters = {};
           filters.providers = [];
           filters.functions = [];
@@ -47,15 +36,6 @@
           filters.appName   = null;
           filters.names     = {};
 
-      var config = _this.storage.get();
-
-
-      var defaults = {};
-          defaults.functions = ['create', 'update', 'destroy'];
-
-      var args = _this.args;
-
-      /////////////////////
 
       init( function (){
         done();
@@ -65,8 +45,8 @@
 
 
       function init(cb){
-        _this.name = args[0];
-        _this.names = _str.str().multi(_this.name);
+        _this.name = _this.args[0];
+        _this.names = _this.str.multi(_this.name);
 
 
 
@@ -76,16 +56,12 @@
         function next(answers){
           // console.log(filters);
 
-          filters.moduleNames = _str.str().simple( _this.name );
-          _.assign(filters, config);
+          filters.moduleNames = _this.str.simple( _this.name );
+          _.assign(filters, _this.config);
           _.assign(filters, answers);
           filters.names = _this.names;
 
-          if(_.isEmpty(filters.functions)){
-            filters.functions = defaults.functions;
-          }
-
-          dest.final = path.join(dest.modules, _this.names.slug);
+          _this.cwd.final = path.join(_this.cwd.modules, _this.names.slug);
 
           generate()
         }
@@ -113,24 +89,16 @@
       function create_folders(){
 
         gulp
-          .src( templates.options.dirs( filters.folders ) )
-          .pipe( gulp.dest( dest.final ) )
+          .src( _this.templates.options.dirs( filters.folders ) )
+          .pipe( gulp.dest( _this.cwd.final ) )
       }
 
       function create_module(){
-        gulp.src( templates.base.all() )
+        gulp.src( _this.templates.base.all() )
           .pipe( $.template( filters ) )
-          .pipe( $.rename( rename(_this.names.plural.slug) ))
-          .pipe( $.conflict( dest.final ))
-          .pipe( gulp.dest( dest.final  ))
-      }
-
-      function rename ( name ) {
-        return function (file){
-          if (file.basename.indexOf('_') == 0) {
-            file.basename = file.basename.replace('_', name);
-          }
-        };
+          .pipe( $.rename( _this.fs.rename(_this.names.slug) ))
+          .pipe( $.conflict( _this.cwd.final ))
+          .pipe( gulp.dest( _this.cwd.final  ))
       }
 
     };

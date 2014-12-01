@@ -19,25 +19,15 @@ var gulp    = require('gulp'),
     var Generator = require('./lib');
     var gulpCommand = require('gulp-command')(gulp)
 
-    gulp
-      .option('me', '-s', '--save', 'DEscription')
-      .task('me', function(){
-        console.log('test', this.flags);
-      })
-
-    Generator
-      .start('try', {root: './generators/try'})
-      .action('-s, --save <value>', 'trying to save');
 
     Generator
       .start('default', {root:'./generators/application'})
-      .option('name', '-n', '--name', 'String')
 
     Generator
       .start('config', {root:'./generators/client/config'})
       .required('name')
-      .option('module', '-m', '--module', 'String')
-      .option('providers', '-p', '--providers', 'Array');
+      .option('module', '-m, --module', 'String')
+      .option('providers', '-p, --providers', 'Array');
 
     Generator
       .start('controller', {root:'./generators/client/controller'})
@@ -80,9 +70,14 @@ var gulp    = require('gulp'),
       .option('functions', '-f', '--functions', 'Array');
     // gulp.task('filter', require('./generators/client/filter'));
 
+    Generator
+      .start('module', {root:'./generators/client/module'})
+      .required('name')
+      .option('folders', '-f', '--folders', 'Array');
+    // gulp.task('module', require('./generators/client/module'));
+
     gulp.task('route', require('./generators/client/route'));
     gulp.task('view', require('./generators/client/view'));
-    gulp.task('module', require('./generators/client/module'));
     gulp.task('crud', require('./generators/crud'));
     gulp.task('api', require('./generators/server_api'));
 

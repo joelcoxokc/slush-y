@@ -3,6 +3,7 @@
 describe('Controller: HomeCtrl', function () {
 
   // load the controller's module
+  beforeEach(module('<%= app_names.slug %>'));
   beforeEach(module('core'));
   beforeEach(module('socketMock'));
 
@@ -18,12 +19,13 @@ describe('Controller: HomeCtrl', function () {
 
     scope = $rootScope.$new();
     HomeCtrl = $controller('HomeCtrl as vm', {
-      $scope: scope
+      $scope: scope,
+      Resolved: ['HTML5 Boilerplate', 'AngularJS', 'Karma', 'Express']
     });
   }));
 
   it('should attach a list of things to the scope', function () {
-    $httpBackend.flush();
+    // $httpBackend.flush();
     expect(scope.vm.awesomeThings.length).toBe(4);
   });
 });

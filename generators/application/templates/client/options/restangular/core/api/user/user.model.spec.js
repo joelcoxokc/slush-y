@@ -3,6 +3,7 @@
 describe('API: User', function () {
 
   // load the service's module
+  beforeEach(module('<%= app_names.slug %>'));
   beforeEach(module('core'));
 
   // instantiate service

@@ -1,0 +1,26 @@
+<section class="panel">
+  <h3 class="panel-heading bg-indigo-600">
+    Accounts</h3>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Email</th>
+      <th>Role</th>
+    </tr>
+    <tr ng-repeat="account in vm.accounts"
+        ui-sref="admin.account-detail({id: account._id})">
+      <td ng-if="account.firstName">
+        {{account.firstName}} {{account.lastName}}</td>
+      <td ng-if="!account.firstName">
+        {{account.name}}</td>
+      <td>
+        {{account.username}}</td>
+      <td>
+        {{account.email}}</td>
+      <td>
+        {{account.role}}</td>
+    </tr>
+  </table>
+
+</section>

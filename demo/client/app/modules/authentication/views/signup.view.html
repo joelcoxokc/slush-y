@@ -1,0 +1,100 @@
+<section class="container top">
+  <div class="row">
+    <div class="col-md-12">
+
+      <form class="form" name="form" ng-submit="vm.register(form)" novalidate>
+        <section class="panel panel-primary">
+          <h3 class="panel-heading">Sign up</h3>
+          <article class="panel-body">
+              <div  class="form-group"
+                    ng-class="{ 'has-success': form.name.$valid && vm.submitted,
+                                'has-error': form.name.$invalid && vm.submitted }">
+                <label for="name" class="control-label">Name</label>
+                <input  type="text"
+                        id="name"
+                        name="name" class="form-control primary"
+                        ng-model="vm.user.name"
+                        required/>
+
+                <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
+                  A name is required</p>
+
+              </div>
+
+              <div  class="form-group"
+                    ng-class="{ 'has-success': form.email.$valid && vm.submitted,
+                                'has-error': form.email.$invalid && vm.submitted }">
+                <label for="email" class="control-label">Email</label>
+
+                <input type="email"
+                       id="email"
+                       name="email"
+                       class="form-control primary"
+                       ng-model="vm.user.email"
+                       required
+                       mongoose-error/>
+
+                <p class="help-block" ng-show="form.email.$error.email && vm.submitted">
+                  Doesn't look like a valid email.</p>
+
+                <p class="help-block" ng-show="form.email.$error.required && vm.submitted">
+                  What's your email address?</p>
+
+                <p class="help-block" ng-show="form.email.$error.mongoose">
+                  {{ vm.errors.email }}</p>
+
+              </div>
+
+              <div  class="form-group"
+                    ng-class="{ 'has-success': form.password.$valid && vm.submitted,
+                                'has-error': form.password.$invalid && vm.submitted }">
+                <label for="password" class="control-label">Password</label>
+
+                <input type="password"
+                       name="password"
+                       class="form-control primary"
+                       ng-model="vm.user.password"
+                       id="password"
+                       ng-minlength="3"
+                       required
+                       mongoose-error/>
+                <p class="help-block"
+                   ng-show="(form.password.$error.minlength || form.password.$error.required) && vm.submitted">
+
+                  Password must be at least 3 characters.</p>
+                <p class="help-block" ng-show="form.password.$error.mongoose">
+                  {{ vm.errors.password }}</p>
+
+              </div>
+
+          </article>
+          <article class="panel-footer">
+              <div>
+                <button class="btn btn-primary btn-lg" type="submit">
+                  Sign up</button>
+                <a class="btn btn-white btn-lg btn-register pull-right" ui-sref="signin">
+                  Sign in
+                  <i class="fa fa-arrow-right"></i></a>
+
+              </div>
+          </article>
+
+        </section>
+      </form>
+      <section class="panel panel-default text-center">
+        <div class="panel-body">
+          <a class="btn btn-white" href="" ng-click="vm.loginOauth('facebook')">
+            <i class="fa fa-facebook"></i>
+            Connect with Facebook</a>
+          <a class="btn btn-white" href="" ng-click="vm.loginOauth('google')">
+            <i class="fa fa-google-plus"></i>
+            Connect with Google+</a>
+          <a class="btn btn-white" href="" ng-click="vm.loginOauth('twitter')">
+            <i class="fa fa-twitter"></i>
+            Connect with Twitter</a>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</section>

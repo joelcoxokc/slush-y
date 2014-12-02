@@ -1,0 +1,27 @@
+<div class="container container-sm-height equal top">
+  <div class="row row-sm-height">
+    <section class="col-md-12 col-sm-height panel" data-ng-class="{'col-md-6': vm.showDetail}">
+      <h1 class="panel-heading">
+        Sub Generators:
+        </h1>
+      <ul class="list-group">
+        <li ng-repeat="generator in vm.generators | orderBy: 'position' "
+            ng-click="vm.showGenerator(generator)"
+            point
+            class="list-group-item">
+            <h5>{{generator.title}}
+              <button type="button"
+                      class="btn btn-sm btn-white pull-right"
+                      data-ng-hide="vm.showDetail"
+                      y-icon="arrow-right"></button>
+            </h5>
+
+        </li>
+      </ul>
+    </section>
+
+    <section class="col-md-6 col-sm-height panel" ng-show="vm.showDetail">
+      <ui-view></ui-view>
+    </section>
+  </div>
+</div>

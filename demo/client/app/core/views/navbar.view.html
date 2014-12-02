@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="navbar-header">
+    <button class="navbar-toggle" type="button" ng-click="nav.isCollapsed = !nav.isCollapsed">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <!-- <a href="/" class="navbar-brand">yo-soa</a> -->
+  </div>
+  <div collapse="nav.isCollapsed" class="navbar-collapse collapse" id="navbar-main">
+    <ul class="nav navbar-nav">
+      <li ng-repeat="item in nav.menu">
+        <a ng-class="{'active': nav.isActive(item.link)}"
+           btn-color="{{item.color}}"
+           text-white
+           ng-href="{{item.link}}">
+          {{item.title}}</a></li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" data-ng-hide="nav.isLoggedIn()">
+      <li id="dr1" class="dropdown">
+        <a href="" class="dropdown-toggle btn-primary" data-toggle="#dr1">
+          <i class="fa fa-user"></i>
+        </a>
+        <ul class="dropdown-menu">
+          <li ng-class="{active: nav.isActive('signup')}"><a ui-sref="signup"> Sign up</a></li>
+          <li ng-class="{active: nav.isActive('signin')}"><a ui-sref="signin"> Signin</a></li>
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right" data-ng-show="nav.isLoggedIn()">
+      <li id="dr4" class="dropdown">
+        <a point class="dropdown-toggle" data-toggle="#dr4">
+          {{ nav.getCurrentUser().name }}<b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a ui-sref="admin.profile"><i class="fa fa-male pull-right"></i> Profile</a>
+          </li>
+          <li ng-if="nav.isAdmin()">
+            <a ui-sref="admin.accounts-list"><i class="fa fa-users pull-right"></i> Accounts</a>
+          </li>
+          <!-- <li data-ng-show="authentication.user.provider === 'local'">
+            <a href="/#!/settings/password">Change Password</a>
+          </li> -->
+          <li>
+            <a ui-sref="admin.settings"><i class="fa fa-cogs pull-right"></i> Settings</a>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="" data-ng-click="nav.logout()"><i class="fa fa-lock pull-right"></i> Signout</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>

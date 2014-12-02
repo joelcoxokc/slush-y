@@ -1,0 +1,24 @@
+<section class="panel">
+  <h3 ng-if="vm.account.firstName" class="panel-heading bg-indigo-500">
+    {{vm.account.firstName}}</h3>
+  <h3 ng-if="!vm.account.firstName" class="panel-heading bg-indigo-500">
+    {{vm.account.name}}</h3>
+  <article class="panel-body">
+    <dl class="dl-horizontal">
+      <dt ng-if="vm.account.name">Full Name</dt>
+      <dd ng-if="vm.account.name"> {{vm.account.name}} </dd>
+      <dt ng-if="vm.account.firstName">First Name</dt>
+      <dd ng-if="vm.account.firstName"> {{vm.account.firstName}} </dd>
+      <dt ng-if="vm.account.lastName">Last Name</dt>
+      <dd ng-if="vm.account.lastName"> {{vm.account.lastName}} </dd>
+      <dt ng-if="vm.account.username">Username</dt>
+      <dd ng-if="vm.account.username"> {{vm.account.username}} </dd>
+      <dt ng-if="vm.account.email">Email</dt>
+      <dd ng-if="vm.account.email"> {{vm.account.email}} </dd>
+    </dl>
+    <hr>
+    <a ui-sref='admin.profile-edit'
+       class="btn btn-white" y-icon="pencil"></a>
+
+  </article>
+</section>

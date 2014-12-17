@@ -43,14 +43,14 @@ module.exports = function(app) {
     store: new mongoStore({ mongoose_connection: mongoose.connection })
   }));
 
-  if ('production' === env) {
+  if (process.env.NODE_ENV === 'production' ) {
     app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
     app.use(express.static(path.join(config.root, 'dist')));
     app.set('appPath', config.root + '/dist');
     app.use(morgan('dev'));
   }
 
-  if ('development' === env || 'test' === env) {
+  if ('development' === process.env.NODE_ENV || 'test' === process.env.NODE_ENV) {
     app.use(require('connect-livereload')());
     // app.use(express.static(path.join(config.root, '.tmp')));
     app.use(express.static(path.join(config.root, 'client')));

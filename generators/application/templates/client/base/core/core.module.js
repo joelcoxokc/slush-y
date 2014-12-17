@@ -3,7 +3,7 @@
 
   angular
     .module('core', [])
-    .constant('serverBaseUrl', 'http://localhost:9000')
-    .constant('serverUrl', 'http://localhost:9000/api');
+    .constant('serverBaseUrl', 'http://' + window.location.host)
+    .constant('serverUrl', 'http://' + window.location.host +'/api');
 
 }).call(this);

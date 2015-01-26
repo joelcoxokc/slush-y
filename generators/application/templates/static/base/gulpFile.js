@@ -69,14 +69,14 @@
       styles: './dist/styles',
       images: './dist/images',
       bower: './dist/bower_components'
-    }
+    };
 
     var tasks = {
       dev: require('./gulp/dev.tasks.js')($, client, tmp, gulp),
       dist: require('./gulp/dist.tasks.js')($, client, tmp, dist, gulp),
       util: require('./gulp/util.tasks.js')($, client, tmp, dist, gulp),
       test: require('./gulp/test.tasks.js')($, client, tmp, dist, gulp)
-    }
+    };
 
 
 
@@ -85,7 +85,7 @@
      */
     gulp
       .task('default', ['build:all'])
-      .task('build:all', $.sequence('cleaner', 'build:dist', 'build:dev'))
+      .task('build:all', $.sequence('cleaner', 'build:dist', 'build:dev'));
 
     /**
      * dev: = all tasks for development env
@@ -94,13 +94,13 @@
     gulp
       .task('dev', $.sequence('cleaner', 'build:dev', 'server:dev', 'watch'))
       .task('server:dev', tasks.dev.server)
-      .task('watch', tasks.dev.watch)
+      .task('watch', tasks.dev.watch);
 
     gulp
       .task('build:dev', $.sequence('scripts:dev', 'inject:dev', 'bower:dev'))
       .task('scripts:dev', tasks.dev.scripts)
       .task('inject:dev', tasks.dev.inject)
-      .task('bower:dev', tasks.dev.bower)
+      .task('bower:dev', tasks.dev.bower);
 
     /*
      | static = build:production, run static production server
@@ -119,7 +119,7 @@
       .task('scripts:dist', tasks.dist.scripts)
       .task('stylus:dist', tasks.dist.stylus)
       .task('styles:dist', tasks.dist.styles)
-      .task('templates:dist', tasks.dist.templates)
+      .task('templates:dist', tasks.dist.templates);
 
     gulp
       .task('assets:dist', ['copy','images','bower:dist'])
@@ -127,7 +127,7 @@
       .task('images', tasks.dist.images)
       .task('bowerFiles:dist', tasks.dist.bowerFiles)
       .task('bower:dist', ['bowerFiles:dist'], tasks.dist.bower)
-      .task('inject:dist', tasks.dist.inject)
+      .task('inject:dist', tasks.dist.inject);
 
     gulp
       .task('cleaner',['clean'], tasks.util.cleaner)
@@ -136,7 +136,7 @@
 
     gulp
       .task('test', $.sequence('karma:inject'))
-      .task('karma:inject', karmaInject)
+      .task('karma:inject', karmaInject);
 
 
 
@@ -148,7 +148,7 @@
           bowerJson: './bower.json',
           includeDev: true
         }
-      })
+      });
       // var tmpBower = gulp.src('./.tmp/bower/*.js');
       return gulp.src('./karma.conf.js')
         // .pipe(gulp.dest( tmp.bower ))

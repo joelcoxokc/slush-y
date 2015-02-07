@@ -6,7 +6,7 @@
     .factory('Auth', Auth);
 
     /* @inject */
-    function Auth(User, $storage, serverUrl, $location, $rootScope, $http, $q, logger) {
+    function Auth(User, $storage, serverUrl, $location, $rootScope, $http, $q, logger, $cookieStore) {
       var self = this;
 
       var currentUser = {};
@@ -19,7 +19,13 @@
           .then( function ( data ){
             currentUser = data || {};
           });
+      } else if($cookieStore.get('token')){
+        reloadUserAsync()
+          .then( function ( data ){
+            currentUser = data || {};
+          });
       }
+      
       return {
         login: login,
         logout: logout,
@@ -72,6 +78,7 @@
        */
       function logout() {
         $storage.clear();
+        $cookieStore.remove('token');
         currentUser = {};
       }
 

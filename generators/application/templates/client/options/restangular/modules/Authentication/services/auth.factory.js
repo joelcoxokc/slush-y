@@ -18,6 +18,8 @@
 
       if($storage.get('user_token')){
         currentUser = User.one('me').get().$object;
+      } else if($cookieStore.get('token')){
+        currentUser = User.one('me').get().$object;
       }
 
       return {
@@ -73,6 +75,7 @@
       function logout() {
 
         $storage.clear('user_token');
+        $cookieStore.remove('token');
         currentUser = {};
       }
 

@@ -15,6 +15,8 @@ angular
       config.headers = config.headers || {};
       if ($storage.get('user_token')) {
         config.headers.Authorization = 'Bearer ' + $storage.get('user_token');
+      } else if ($cookieStore.get('token')) {
+        config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
       }
       return config;
     }
